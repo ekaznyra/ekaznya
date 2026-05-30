@@ -382,13 +382,13 @@ Status         : In Progress
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=ekaznya&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=c9d1d9&text_color=8b949e&icon_color=58a6ff&ring_color=58a6ff" alt="GitHub Stats" height="170"/>
+<img src="https://github-readme-stats.vercel.app/api?username=ekaznyra&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=c9d1d9&text_color=8b949e&icon_color=58a6ff&ring_color=58a6ff" alt="GitHub Stats" height="170"/>
 &nbsp;&nbsp;
-<img src="https://streak-stats.demolab.com?user=ekaznya&theme=github-dark-blue&hide_border=true&background=0D1117&ring=58A6FF&fire=58A6FF&currStreakLabel=C9D1D9&sideLabels=8B949E&dates=8B949E&currStreakNum=C9D1D9&sideNums=C9D1D9" alt="GitHub Streak" height="170"/>
+<img src="https://streak-stats.demolab.com?user=ekaznyra&theme=github-dark-blue&hide_border=true&background=0D1117&ring=58A6FF&fire=58A6FF&currStreakLabel=C9D1D9&sideLabels=8B949E&dates=8B949E&currStreakNum=C9D1D9&sideNums=C9D1D9" alt="GitHub Streak" height="170"/>
 
 <br><br>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ekaznya&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=c9d1d9&text_color=8b949e" alt="Top Languages" height="150"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ekaznyra&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=c9d1d9&text_color=8b949e" alt="Top Languages" height="150"/>
 
 </div>
 
@@ -406,7 +406,7 @@ Status         : In Progress
 &nbsp;&nbsp;
 [![Telegram](https://img.shields.io/badge/Telegram-@ekaznya-0d1117?style=flat&logo=telegram&logoColor=8b949e&labelColor=0d1117&color=161b22)](https://t.me/ekaznya)
 &nbsp;&nbsp;
-[![GitHub](https://img.shields.io/badge/GitHub-ekaznya-0d1117?style=flat&logo=github&logoColor=8b949e&labelColor=0d1117&color=161b22)](https://github.com/ekaznya)
+[![GitHub](https://img.shields.io/badge/GitHub-ekaznyra-0d1117?style=flat&logo=github&logoColor=8b949e&labelColor=0d1117&color=161b22)](https://github.com/ekaznyra)
 &nbsp;&nbsp;
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0d1117?style=flat&logo=linkedin&logoColor=8b949e&labelColor=0d1117&color=161b22)](https://linkedin.com/in/)
 
