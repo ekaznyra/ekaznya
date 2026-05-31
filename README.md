@@ -11,30 +11,97 @@
 <!-- ─── SECTION: ABOUT ──────────────────────────────────────────── -->
 
 <div align="center">
-
 <img src="assets/divider.svg" width="60%"/>
-
+</div>
 <br>
 
-<img src="assets/about.svg" width="100%"/>
+<table>
+<tr>
+<td width="50%" valign="top">
 
-</div>
+```text
+┌──────────────────────────────────────────────────┐
+│  IDENTITY & FOCUS                                │
+├──────────────────────────────────────────────────┤
+│  Name   : Nguyễn Ngọc Anh Tú                     │
+│  Alias  : ekaznyra                               │
+│  Role   : Cybersecurity Student                  │
+│  Focus  : DFIR · Threat Hunting · Detection      │
+│                                                  │
+│  Path   : SOC Analyst ➔ Detection Engineer       │
+│  Method : Observe ➔ Investigate ➔ Document       │
+└──────────────────────────────────────────────────┘
+```
+
+</td>
+<td width="50%" valign="top">
+
+```text
+┌──────────────────────────────────────────────────┐
+│  ACTIVE INTERCEPTS                               │
+├──────────────────────────────────────────────────┤
+│  ◉ Digital Forensics & Incident Response         │
+│  ◉ Threat Hunting Workflows                      │
+│  ◉ YARA & Sigma Rule Engineering                 │
+│  ◉ Malware Behavior Analysis                     │
+│  ◉ Windows Event Log Correlation                 │
+└──────────────────────────────────────────────────┘
+```
+
+</td>
+</tr>
+</table>
 
 <!-- ─── SECTION: CAPABILITY MAP ─────────────────────────────────── -->
 
-<div align="center">
+<table width="100%">
+<tr>
+<td width="100%" valign="top">
 
-<img src="assets/skillmap.svg" width="100%"/>
+```text
+┌────────────────────────────────────────────────────────────────────────┐
+│  CAPABILITY MAP: NETWORK TOPOLOGY                                      │
+├────────────────────────────────────────────────────────────────────────┤
+│  [DFIR & MALWARE ANALYSIS]           [THREAT HUNTING & DETECTION]      │
+│  ████████░░ (80%)                    ███████░░░ (70%)                  │
+│  ├─ Memory & Disk Forensics          ├─ Log Analysis (Splunk, ELK)     │
+│  ├─ Static/Dynamic Analysis          ├─ YARA, Sigma, Snort             │
+│  └─ Reverse Engineering (Basic)      └─ KQL & EDR Telemetry            │
+│                                                                        │
+│  [SECURITY ENGINEERING]              [OFFENSIVE SECURITY]              │
+│  ██████░░░░ (60%)                    █████░░░░░ (50%)                  │
+│  ├─ Scripting (Python, PowerShell)   ├─ Web App Penetration Testing    │
+│  ├─ SIEM Deployment                  ├─ Network Scanning               │
+│  └─ Automation                       └─ Privilege Escalation           │
+└────────────────────────────────────────────────────────────────────────┘
+```
 
-</div>
+</td>
+</tr>
+</table>
 
 <!-- ─── SECTION: TIMELINE ───────────────────────────────────────── -->
 
-<div align="center">
+<table width="100%">
+<tr>
+<td width="100%" valign="top">
 
-<img src="assets/timeline.svg" width="100%"/>
+```text
+┌────────────────────────────────────────────────────────────────────────┐
+│  CAREER TIMELINE & PROGRESSION                                         │
+├────────────────────────────────────────────────────────────────────────┤
+│  [2025] ➔ [2026] ➔ [FUTURE]                                            │
+│  ██████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    │
+│                                                                        │
+│  • 2025: Built Fundamentals (Linux, Networking, Home Lab)              │
+│  • 2026: Specialized in DFIR & Detection Engineering (Current Focus)   │
+│  • Future: SOC Analyst / Threat Hunter                                 │
+└────────────────────────────────────────────────────────────────────────┘
+```
 
-</div>
+</td>
+</tr>
+</table>
 
 <!-- ─── SECTION: CASE FILES ─────────────────────────────────────── -->
 
