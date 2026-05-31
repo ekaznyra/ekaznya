@@ -40,11 +40,11 @@
   <circle cx="200" cy="10" r="3" fill="#00f0ff" filter="url(#hyperGlow)" class="glow-cyan"/>
   <circle cx="700" cy="10" r="3" fill="#ffd700" filter="url(#hyperGlow)" class="glow-gold"/>
 
-  <text x="450" y="45" text-anchor="middle" class="font-sans" font-weight="900" font-size="12" fill="#00f0ff" letter-spacing="1" filter="url(#hyperGlow)" class="glow-cyan">
+  <text x="450" y="45" text-anchor="middle" class="font-sans glow-cyan" font-weight="900" font-size="12" fill="#00f0ff" letter-spacing="1" filter="url(#hyperGlow)">
     "EVERY INVESTIGATION TEACHES SOMETHING. EVERY DETECTION RULE IS A LESSON DOCUMENTED."
   </text>
 
-  <text x="450" y="75" text-anchor="middle" class="font-mono" font-weight="bold" font-size="10" fill="#ffd700" letter-spacing="1" filter="url(#hyperGlow)" class="glow-gold">
+  <text x="450" y="75" text-anchor="middle" class="font-mono glow-gold" font-weight="bold" font-size="10" fill="#ffd700" letter-spacing="1" filter="url(#hyperGlow)">
     NOT CHASING TITLES — BUILDING THE DISCIPLINE TO UNDERSTAND, DETECT, AND DEFEND.
   </text>
 </svg>
