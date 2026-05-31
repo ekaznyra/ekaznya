@@ -3,7 +3,7 @@
 <!-- ═══════════════════════════════════════════════════════════════ -->
 
 <div align="center">
-<img src="assets/header-dark.svg?v=1" width="100%"/>
+<img src="assets/header-dark.svg?v=2" width="100%"/>
 </div>
 
 <br>
