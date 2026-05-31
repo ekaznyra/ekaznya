@@ -1,260 +1,102 @@
-<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#02000a"/>
-      <stop offset="30%" stop-color="#060318"/>
-      <stop offset="60%" stop-color="#080420"/>
-      <stop offset="100%" stop-color="#02000a"/>
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#010409"/>
     </linearGradient>
-
-    <!-- Milky Way core -->
-    <radialGradient id="mwC" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#5040a0" stop-opacity="0.7"/>
-      <stop offset="20%" stop-color="#4030a0" stop-opacity="0.5"/>
-      <stop offset="50%" stop-color="#251a60" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="mwHot" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#e8a0d0" stop-opacity="0.4"/>
-      <stop offset="40%" stop-color="#a06090" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="mwBlue" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#4060d0" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
-    </radialGradient>
-
-    <!-- Nebula patches -->
-    <radialGradient id="nPink" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#d04080" stop-opacity="0.45"/>
-      <stop offset="60%" stop-color="#802050" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="nGold" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.35"/>
-      <stop offset="60%" stop-color="#8a6a15" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="nBlue" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#3060c0" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
-    </radialGradient>
-
-    <!-- Planet: Jupiter-like -->
-    <radialGradient id="pJup" cx="35%" cy="30%" r="65%">
-      <stop offset="0%" stop-color="#c09060"/>
-      <stop offset="30%" stop-color="#8a6040"/>
-      <stop offset="60%" stop-color="#5a3a25"/>
-      <stop offset="100%" stop-color="#2a1a10"/>
-    </radialGradient>
-    <!-- Planet: Saturn body -->
-    <radialGradient id="pSat" cx="38%" cy="32%" r="62%">
-      <stop offset="0%" stop-color="#e8d0a0"/>
-      <stop offset="35%" stop-color="#c0a060"/>
-      <stop offset="70%" stop-color="#8a7030"/>
-      <stop offset="100%" stop-color="#4a3a15"/>
-    </radialGradient>
-    <!-- Planet: Ice -->
-    <radialGradient id="pIce" cx="35%" cy="30%" r="65%">
-      <stop offset="0%" stop-color="#a0d0f0"/>
-      <stop offset="40%" stop-color="#6090b0"/>
-      <stop offset="100%" stop-color="#2a4a6a"/>
-    </radialGradient>
-
-    <!-- Ring gradient -->
-    <linearGradient id="ring1" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#f0d060"/>
+    </linearGradient>
+    <linearGradient id="line1" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#d4af37" stop-opacity="0"/>
-      <stop offset="12%" stop-color="#c0a030" stop-opacity="0.6"/>
-      <stop offset="25%" stop-color="#e8d080" stop-opacity="0.8"/>
-      <stop offset="38%" stop-color="#a08020" stop-opacity="0.3"/>
-      <stop offset="50%" stop-color="#d4af37" stop-opacity="0.15"/>
-      <stop offset="62%" stop-color="#a08020" stop-opacity="0.3"/>
-      <stop offset="75%" stop-color="#e8d080" stop-opacity="0.8"/>
-      <stop offset="88%" stop-color="#c0a030" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#d4af37" stop-opacity="0.6"/>
       <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
     </linearGradient>
-
-    <!-- Gold text -->
-    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#b8860b"/>
-      <stop offset="50%" stop-color="#ffd700"/>
-      <stop offset="100%" stop-color="#d4af37"/>
-    </linearGradient>
-
-    <filter id="gl"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-    <filter id="gl2"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-    <filter id="gl3"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
-
   <style>
-    @keyframes shoot1{0%{transform:translate(0,0);opacity:1}70%{opacity:0.6}100%{transform:translate(150px,75px);opacity:0}}
-    @keyframes shoot2{0%{transform:translate(0,0);opacity:1}70%{opacity:0.5}100%{transform:translate(-120px,60px);opacity:0}}
-    @keyframes shoot3{0%{transform:translate(0,0);opacity:1}100%{transform:translate(100px,50px);opacity:0}}
-    @keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-    @keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
-    @keyframes float3{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-    @keyframes ringRotate{0%,100%{opacity:0.7}50%{opacity:0.95}}
-    @keyframes tw1{0%,100%{opacity:0.2}50%{opacity:1}}
-    @keyframes tw2{0%,100%{opacity:0.6}50%{opacity:0.1}}
-    @keyframes tw3{0%,100%{opacity:0.15}50%{opacity:0.9}}
-    @keyframes breathe{0%,100%{opacity:0.35}50%{opacity:0.55}}
-    @keyframes shimmer{0%{fill-opacity:0.85}50%{fill-opacity:1}100%{fill-opacity:0.85}}
+    @keyframes typing{0%{width:0}40%{width:430px}60%{width:430px}100%{width:0}}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+    @keyframes fadeIn{0%{opacity:0;transform:translateY(8px)}100%{opacity:1;transform:translateY(0)}}
+    @keyframes pulse{0%,100%{opacity:0.4}50%{opacity:1}}
+    @keyframes dash{0%{stroke-dashoffset:1000}100%{stroke-dashoffset:0}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+    @keyframes twinkle{0%,100%{opacity:0.15}50%{opacity:0.6}}
 
-    .s1{animation:shoot1 2.5s linear infinite}.s2{animation:shoot2 3.5s linear infinite 1s}.s3{animation:shoot3 3s linear infinite 2s}
-    .f1{animation:float1 10s ease-in-out infinite}.f2{animation:float2 8s ease-in-out infinite}.f3{animation:float3 12s ease-in-out infinite 3s}
-    .rp{animation:ringRotate 6s ease-in-out infinite}
-    .t1{animation:tw1 3s infinite ease-in-out}.t2{animation:tw2 4s infinite ease-in-out}.t3{animation:tw3 5s infinite ease-in-out}
-    .t4{animation:tw1 6s infinite ease-in-out 1s}.t5{animation:tw2 3.5s infinite ease-in-out 0.5s}.t6{animation:tw3 4.5s infinite ease-in-out 2s}
-    .nb{animation:breathe 7s ease-in-out infinite}.nb2{animation:breathe 9s ease-in-out infinite 3s}
-    .shm{animation:shimmer 4s infinite}
-    .fs{font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif}
-    .fm{font-family:Consolas,"SFMono-Regular",Menlo,Monaco,"Liberation Mono",monospace}
+    .cursor{animation:blink 0.8s infinite}
+    .p1{animation:pulse 3s infinite ease-in-out}
+    .p2{animation:pulse 4s infinite ease-in-out 1s}
+    .p3{animation:pulse 5s infinite ease-in-out 2s}
+    .fl{animation:float 6s ease-in-out infinite}
+    .tw{animation:twinkle 4s infinite ease-in-out}
+
+    .fs{font-family:Arial,"Segoe UI",Helvetica,sans-serif}
+    .fm{font-family:"Courier New",Consolas,monospace}
   </style>
 
-  <!-- DEEP SPACE -->
-  <rect width="900" height="400" fill="url(#bg)"/>
+  <rect width="900" height="320" fill="url(#bg)"/>
 
-  <!-- MILKY WAY BAND -->
-  <g transform="rotate(-28 450 200)">
-    <!-- Outer glow -->
-    <ellipse cx="450" cy="200" rx="650" ry="100" fill="url(#mwC)"/>
-    <!-- Mid band -->
-    <ellipse cx="450" cy="200" rx="550" ry="55" fill="#2a1e55" opacity="0.6"/>
-    <!-- Hot pink/magenta center -->
-    <ellipse cx="430" cy="200" rx="400" ry="30" fill="url(#mwHot)"/>
-    <!-- Bright core -->
-    <ellipse cx="460" cy="200" rx="250" ry="15" fill="#4a3580" opacity="0.6"/>
-    <ellipse cx="470" cy="200" rx="150" ry="8" fill="#6a50a0" opacity="0.5"/>
-    <!-- Blue tint edges -->
-    <ellipse cx="300" cy="195" rx="180" ry="40" fill="url(#mwBlue)" opacity="0.5"/>
-    <ellipse cx="650" cy="205" rx="200" ry="35" fill="url(#mwBlue)" opacity="0.4"/>
+  <!-- Subtle constellation dots -->
+  <g fill="#d4af37" opacity="0.15">
+    <circle cx="620" cy="40" r="1.5" class="tw"/><circle cx="700" cy="80" r="1" class="tw"/>
+    <circle cx="750" cy="35" r="1.2"/><circle cx="800" cy="100" r="1.5" class="tw"/>
+    <circle cx="680" cy="120" r="1"/><circle cx="850" cy="55" r="1.2" class="tw"/>
+    <circle cx="770" cy="150" r="1"/><circle cx="830" cy="180" r="1.5" class="tw"/>
+    <circle cx="640" cy="170" r="1.2"/><circle cx="720" cy="200" r="1"/>
+    <circle cx="860" cy="250" r="1.5" class="tw"/><circle cx="600" cy="260" r="1"/>
+    <circle cx="780" cy="280" r="1.2" class="tw"/><circle cx="700" cy="290" r="1"/>
+  </g>
+  <!-- Constellation lines -->
+  <g stroke="#d4af37" stroke-width="0.3" opacity="0.08">
+    <line x1="620" y1="40" x2="700" y2="80"/><line x1="700" y1="80" x2="750" y2="35"/>
+    <line x1="700" y1="80" x2="800" y2="100"/><line x1="800" y1="100" x2="850" y2="55"/>
+    <line x1="800" y1="100" x2="770" y2="150"/><line x1="680" y1="120" x2="770" y2="150"/>
+    <line x1="770" y1="150" x2="830" y2="180"/><line x1="640" y1="170" x2="720" y2="200"/>
+    <line x1="830" y1="180" x2="860" y2="250"/><line x1="720" y1="200" x2="780" y2="280"/>
   </g>
 
-  <!-- NEBULA CLOUDS (breathing) -->
-  <ellipse cx="220" cy="130" rx="90" ry="50" fill="url(#nPink)" class="nb" transform="rotate(-25 220 130)"/>
-  <ellipse cx="480" cy="180" rx="100" ry="50" fill="url(#nGold)" class="nb2" transform="rotate(-20 480 180)"/>
-  <ellipse cx="680" cy="240" rx="80" ry="45" fill="url(#nBlue)" class="nb" transform="rotate(-30 680 240)"/>
-  <ellipse cx="350" cy="155" rx="70" ry="35" fill="url(#nPink)" class="nb2" transform="rotate(-15 350 155)" opacity="0.6"/>
-  <ellipse cx="550" cy="200" rx="60" ry="30" fill="url(#nGold)" class="nb" transform="rotate(-35 550 200)" opacity="0.5"/>
+  <!-- Left accent line -->
+  <line x1="60" y1="60" x2="60" y2="260" stroke="#d4af37" stroke-width="1" opacity="0.15"/>
+  <circle cx="60" cy="60" r="2" fill="#d4af37" opacity="0.3" class="p1"/>
+  <circle cx="60" cy="260" r="2" fill="#d4af37" opacity="0.3" class="p2"/>
 
-  <!-- STARFIELD: Bright main -->
-  <g fill="#fff">
-    <circle cx="55" cy="50" r="2" filter="url(#gl)" class="t1"/><circle cx="125" cy="78" r="2.5" filter="url(#gl2)" class="t3"/>
-    <circle cx="195" cy="105" r="1.5" class="t5"/><circle cx="265" cy="128" r="2.8" filter="url(#gl2)" class="t2"/>
-    <circle cx="330" cy="148" r="1.8" class="t4"/><circle cx="395" cy="165" r="2.5" filter="url(#gl)" class="t6"/>
-    <circle cx="455" cy="178" r="1.5" class="t1"/><circle cx="520" cy="193" r="3" filter="url(#gl2)" class="t3"/>
-    <circle cx="585" cy="208" r="2" class="t5"/><circle cx="645" cy="223" r="2.5" filter="url(#gl)" class="t2"/>
-    <circle cx="715" cy="243" r="2" class="t4"/><circle cx="785" cy="258" r="2.8" filter="url(#gl2)" class="t6"/>
-    <circle cx="855" cy="278" r="2" filter="url(#gl)" class="t1"/>
-  </g>
-  <!-- Medium density -->
-  <g fill="#c8c0f0" opacity="0.6">
-    <circle cx="85" cy="65" r="1.2" class="t4"/><circle cx="160" cy="90" r="1"/><circle cx="230" cy="115" r="1.3"/>
-    <circle cx="300" cy="138" r="1" class="t6"/><circle cx="365" cy="155" r="1.2"/><circle cx="425" cy="170" r="1" class="t2"/>
-    <circle cx="490" cy="186" r="1.3"/><circle cx="555" cy="200" r="1"/><circle cx="615" cy="215" r="1.2" class="t5"/>
-    <circle cx="680" cy="232" r="1" class="t3"/><circle cx="750" cy="250" r="1.3"/><circle cx="820" cy="268" r="1"/>
-  </g>
-  <!-- Scattered field -->
-  <g fill="#fff" opacity="0.45">
-    <circle cx="40" cy="18" r="1.5" filter="url(#gl)" class="t3"/><circle cx="200" cy="12" r="1"/><circle cx="460" cy="28" r="1.8" filter="url(#gl)" class="t5"/>
-    <circle cx="720" cy="22" r="1.2"/><circle cx="870" cy="38" r="1.5" filter="url(#gl)" class="t1"/>
-    <circle cx="110" cy="358" r="1.2" class="t6"/><circle cx="310" cy="372" r="1.5" filter="url(#gl)" class="t2"/>
-    <circle cx="560" cy="362" r="1"/><circle cx="760" cy="378" r="1.3" class="t4"/><circle cx="885" cy="358" r="1"/>
-  </g>
-  <!-- Colored accent stars -->
-  <circle cx="155" cy="310" r="2.2" fill="#ffa0a0" filter="url(#gl2)" class="t2"/>
-  <circle cx="870" cy="55" r="2" fill="#a0c4ff" filter="url(#gl2)" class="t4"/>
-  <circle cx="480" cy="38" r="2" fill="#ffb8b8" filter="url(#gl)" class="t1"/>
-  <circle cx="30" cy="240" r="1.8" fill="#ffe0a0" filter="url(#gl)" class="t6"/>
+  <!-- Label -->
+  <text x="80" y="95" class="fm" font-size="11" fill="#484f58" letter-spacing="3">// PROFILE</text>
 
-  <!-- PLANET: JUPITER (bottom-left) -->
-  <g class="f1">
-    <circle cx="140" cy="310" r="45" fill="#1a0a05" opacity="0.3" filter="url(#gl3)"/>
-    <circle cx="140" cy="310" r="40" fill="url(#pJup)"/>
-    <!-- Bands -->
-    <ellipse cx="140" cy="295" rx="38" ry="4" fill="#d0a060" opacity="0.25"/>
-    <ellipse cx="140" cy="305" rx="39" ry="3.5" fill="#6a4020" opacity="0.3"/>
-    <ellipse cx="140" cy="315" rx="38" ry="4" fill="#c09050" opacity="0.2"/>
-    <ellipse cx="140" cy="325" rx="36" ry="3" fill="#5a3520" opacity="0.25"/>
-    <!-- Great Red Spot -->
-    <ellipse cx="158" cy="308" rx="8" ry="5" fill="#a05030" opacity="0.4"/>
-    <!-- Highlight -->
-    <ellipse cx="125" cy="290" rx="12" ry="18" fill="#fff" opacity="0.06"/>
-    <!-- Atmosphere rim -->
-    <circle cx="140" cy="310" r="42" fill="none" stroke="#c09060" stroke-width="1" opacity="0.2"/>
-  </g>
+  <!-- Main name -->
+  <text x="80" y="150" class="fs" font-weight="300" font-size="64" fill="#e6edf3" letter-spacing="6">ekaznyra</text>
 
-  <!-- PLANET: SATURN (top-right) -->
-  <g class="f2">
-    <!-- Shadow/atmosphere -->
-    <circle cx="750" cy="85" r="30" fill="#2a1a05" opacity="0.2" filter="url(#gl3)"/>
-    <!-- Body -->
-    <circle cx="750" cy="85" r="22" fill="url(#pSat)"/>
-    <!-- Bands -->
-    <ellipse cx="750" cy="78" rx="20" ry="3" fill="#e8d0a0" opacity="0.2"/>
-    <ellipse cx="750" cy="88" rx="21" ry="2.5" fill="#a08030" opacity="0.2"/>
-    <ellipse cx="750" cy="95" rx="19" ry="2" fill="#c0a050" opacity="0.15"/>
-    <!-- Highlight -->
-    <ellipse cx="742" cy="76" rx="6" ry="10" fill="#fff" opacity="0.07"/>
-    <!-- RINGS (behind planet - bottom half) -->
-    <ellipse cx="750" cy="85" rx="48" ry="10" fill="none" stroke="url(#ring1)" stroke-width="5" class="rp"/>
-    <ellipse cx="750" cy="85" rx="40" ry="8" fill="none" stroke="#e8d080" stroke-width="2" opacity="0.4" class="rp"/>
-    <ellipse cx="750" cy="85" rx="55" ry="12" fill="none" stroke="#c0a030" stroke-width="1.5" opacity="0.25"/>
-  </g>
+  <!-- Animated underline -->
+  <line x1="80" y1="165" x2="470" y2="165" stroke="url(#accent)" stroke-width="2" filter="url(#glow)"/>
+  <circle cx="472" cy="165" r="3" fill="#d4af37" filter="url(#glow)" class="p1"/>
 
-  <!-- PLANET: ICE MOON (far right) -->
-  <g class="f3">
-    <circle cx="840" cy="140" r="10" fill="url(#pIce)"/>
-    <ellipse cx="840" cy="136" rx="8" ry="2" fill="#c0e0ff" opacity="0.15"/>
-    <ellipse cx="836" cy="134" rx="3" ry="5" fill="#fff" opacity="0.08"/>
-    <circle cx="840" cy="140" r="12" fill="none" stroke="#80b0d0" stroke-width="0.8" opacity="0.3"/>
-  </g>
+  <!-- Subtitle -->
+  <text x="82" y="198" class="fs" font-weight="400" font-size="15" fill="#8b949e" letter-spacing="2">Anh Tu Nguyen</text>
+  <text x="250" y="198" class="fm" font-size="12" fill="#484f58">// cybersecurity operative</text>
 
-  <!-- PLANET: Tiny distant -->
-  <g class="f1">
-    <circle cx="410" cy="42" r="4" fill="#7a7a7a"/>
-    <ellipse cx="408" cy="40" rx="1.5" ry="2.5" fill="#aaa" opacity="0.2"/>
-  </g>
-
-  <!-- SHOOTING STARS -->
-  <g class="s1"><line x1="180" y1="45" x2="155" y2="32" stroke="#fff" stroke-width="2" opacity="0.9"/><line x1="155" y1="32" x2="145" y2="28" stroke="#fff" stroke-width="1" opacity="0.4"/></g>
-  <g class="s2"><line x1="650" y1="100" x2="670" y2="90" stroke="#fff" stroke-width="1.5" opacity="0.8"/><line x1="670" y1="90" x2="678" y2="87" stroke="#fff" stroke-width="0.8" opacity="0.3"/></g>
-  <g class="s3"><line x1="420" y1="60" x2="400" y2="50" stroke="#ffe0a0" stroke-width="1.5" opacity="0.7"/><line x1="400" y1="50" x2="392" y2="47" stroke="#ffe0a0" stroke-width="0.8" opacity="0.3"/></g>
-
-  <!-- NAME SECTION -->
+  <!-- Tags -->
   <g>
-    <!-- Decorative top bracket -->
-    <line x1="60" y1="155" x2="60" y2="170" stroke="#d4af37" stroke-width="1" opacity="0.6"/>
-    <line x1="60" y1="155" x2="80" y2="155" stroke="#d4af37" stroke-width="1" opacity="0.6"/>
+    <rect x="82" y="218" width="52" height="22" rx="4" fill="none" stroke="#d4af37" stroke-width="0.8" opacity="0.5"/>
+    <text x="108" y="233" text-anchor="middle" class="fm" font-size="9" fill="#d4af37" letter-spacing="1">DFIR</text>
 
-    <!-- Small label -->
-    <text x="90" y="165" class="fm" font-weight="normal" font-size="10" fill="#888888" letter-spacing="4">OPERATIVE_ID</text>
+    <rect x="144" y="218" width="108" height="22" rx="4" fill="none" stroke="#30363d" stroke-width="0.8"/>
+    <text x="198" y="233" text-anchor="middle" class="fm" font-size="9" fill="#8b949e" letter-spacing="1">THREAT HUNT</text>
 
-    <!-- HERO: ekaznyra (pure ASCII = perfect rendering) -->
-    <text x="56" y="230" class="fs shm" font-weight="900" font-size="72" fill="url(#gold)" letter-spacing="4">ekaznyra</text>
+    <rect x="262" y="218" width="108" height="22" rx="4" fill="none" stroke="#30363d" stroke-width="0.8"/>
+    <text x="316" y="233" text-anchor="middle" class="fm" font-size="9" fill="#8b949e" letter-spacing="1">DETECTION</text>
 
-    <!-- Decorative line under hero text -->
-    <line x1="60" y1="248" x2="480" y2="248" stroke="url(#gold)" stroke-width="1.5" filter="url(#gl)"/>
-    <circle cx="484" cy="248" r="3" fill="#d4af37" filter="url(#gl)"/>
-    <line x1="490" y1="248" x2="520" y2="248" stroke="#d4af37" stroke-width="0.5" opacity="0.4"/>
-
-    <!-- Real name (clean, smaller) -->
-    <text x="62" y="275" class="fs" font-weight="600" font-size="16" fill="#ffffff" letter-spacing="3">ANH TU NGUYEN</text>
-    <text x="280" y="275" class="fm" font-weight="normal" font-size="12" fill="#666666">// Cybersecurity Operative</text>
-
-    <!-- Role tags -->
-    <rect x="60" y="295" width="60" height="20" rx="2" fill="none" stroke="#d4af37" stroke-width="0.8" opacity="0.6"/>
-    <text x="90" y="309" text-anchor="middle" class="fm" font-weight="normal" font-size="9" fill="#d4af37" letter-spacing="1">DFIR</text>
-
-    <rect x="130" y="295" width="120" height="20" rx="2" fill="none" stroke="#888888" stroke-width="0.5" opacity="0.5"/>
-    <text x="190" y="309" text-anchor="middle" class="fm" font-weight="normal" font-size="9" fill="#a9a9a9" letter-spacing="1">THREAT HUNTING</text>
-
-    <rect x="260" y="295" width="120" height="20" rx="2" fill="none" stroke="#888888" stroke-width="0.5" opacity="0.5"/>
-    <text x="320" y="309" text-anchor="middle" class="fm" font-weight="normal" font-size="9" fill="#a9a9a9" letter-spacing="1">DETECTION ENG</text>
-
-    <!-- Decorative bottom bracket -->
-    <line x1="60" y1="330" x2="80" y2="330" stroke="#d4af37" stroke-width="1" opacity="0.6"/>
-    <line x1="60" y1="330" x2="60" y2="315" stroke="#d4af37" stroke-width="1" opacity="0.6"/>
+    <rect x="380" y="218" width="80" height="22" rx="4" fill="none" stroke="#30363d" stroke-width="0.8"/>
+    <text x="420" y="233" text-anchor="middle" class="fm" font-size="9" fill="#8b949e" letter-spacing="1">SIGMA</text>
   </g>
-</svg>
 
+  <!-- Bottom line -->
+  <line x1="0" y1="318" x2="900" y2="318" stroke="url(#line1)" stroke-width="1"/>
+</svg>

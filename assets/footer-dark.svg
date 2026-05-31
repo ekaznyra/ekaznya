@@ -1,33 +1,31 @@
-<svg viewBox="0 0 900 100" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 900 70" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#000000"/>
-      <stop offset="50%" stop-color="#050505"/>
-      <stop offset="100%" stop-color="#000000"/>
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#010409"/>
     </linearGradient>
-
-    <filter id="softGlow">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
+    <linearGradient id="gl" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#d4af37" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+    </linearGradient>
   </defs>
-
   <style>
-    .font-sans { font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif; }
-    .font-mono { font-family: Consolas, "SFMono-Regular", Menlo, Monaco, "Liberation Mono", monospace; }
+    .fs{font-family:Arial,"Segoe UI",Helvetica,sans-serif}
+    .fm{font-family:"Courier New",Consolas,monospace}
   </style>
 
-  <rect width="900" height="100" fill="url(#bg)"/>
+  <rect width="900" height="70" fill="url(#bg)"/>
 
-  <!-- Minimal Border -->
-  <line x1="200" y1="10" x2="700" y2="10" stroke="#111111" stroke-width="1"/>
-  <line x1="300" y1="10" x2="600" y2="10" stroke="#d4af37" stroke-width="0.5" filter="url(#softGlow)"/>
+  <!-- Top line -->
+  <line x1="200" y1="8" x2="700" y2="8" stroke="url(#gl)" stroke-width="0.5"/>
 
-  <text x="450" y="45" text-anchor="middle" class="font-sans" font-weight="600" font-size="11" fill="#e0e0e0" letter-spacing="2">
-    "EVERY INVESTIGATION TEACHES SOMETHING. EVERY DETECTION RULE IS A LESSON DOCUMENTED."
+  <!-- Quote -->
+  <text x="450" y="35" text-anchor="middle" class="fs" font-size="11" fill="#484f58" font-style="italic" letter-spacing="1">
+    "Every investigation teaches something. Every detection rule is a lesson documented."
   </text>
 
-  <text x="450" y="75" text-anchor="middle" class="font-mono" font-weight="normal" font-size="9" fill="#777777" letter-spacing="1">
-    NOT CHASING TITLES — BUILDING THE DISCIPLINE TO UNDERSTAND, DETECT, AND DEFEND.
+  <text x="450" y="55" text-anchor="middle" class="fm" font-size="9" fill="#30363d" letter-spacing="2">
+    UNDERSTAND. DETECT. DEFEND.
   </text>
 </svg>

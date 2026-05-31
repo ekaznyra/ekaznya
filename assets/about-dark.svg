@@ -1,105 +1,66 @@
-<svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#000000"/>
-      <stop offset="50%" stop-color="#050505"/>
-      <stop offset="100%" stop-color="#000000"/>
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#010409"/>
     </linearGradient>
-
-    <radialGradient id="glowPulse" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.05"/>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#d4af37" stop-opacity="0.5"/>
+      <stop offset="80%" stop-color="#d4af37" stop-opacity="0.5"/>
       <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
-    </radialGradient>
-
-    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#b8860b"/>
-      <stop offset="50%" stop-color="#ffd700"/>
-      <stop offset="100%" stop-color="#d4af37"/>
     </linearGradient>
-    
-    <linearGradient id="silver" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#a9a9a9"/>
-      <stop offset="100%" stop-color="#e0e0e0"/>
-    </linearGradient>
-
-    <filter id="softGlow">
-      <feGaussianBlur stdDeviation="2" result="blur1"/>
-      <feMerge>
-        <feMergeNode in="blur1"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-
   <style>
-    @keyframes flowLine { 0% { stroke-dashoffset: 100; } 100% { stroke-dashoffset: 0; } }
-    .energy-flow { stroke-dasharray: 10 5; animation: flowLine 2s linear infinite; }
-
-    .font-sans { font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif; }
-    .font-mono { font-family: Consolas, "SFMono-Regular", Menlo, Monaco, "Liberation Mono", monospace; }
+    @keyframes pulse{0%,100%{opacity:0.4}50%{opacity:0.8}}
+    .p1{animation:pulse 3s infinite ease-in-out}
+    .p2{animation:pulse 4s infinite ease-in-out 1s}
+    .fs{font-family:Arial,"Segoe UI",Helvetica,sans-serif}
+    .fm{font-family:"Courier New",Consolas,monospace}
   </style>
 
-  <rect width="900" height="220" fill="url(#bg)"/>
+  <rect width="900" height="200" fill="url(#bg)"/>
 
-  <!-- Minimal Background -->
-  <rect width="900" height="220" fill="url(#glowPulse)" transform="translate(0, -50)"/>
-  <g stroke="#d4af37" stroke-width="0.2" opacity="0.2">
-    <line x1="30" y1="0" x2="30" y2="220"/>
-    <line x1="450" y1="0" x2="450" y2="220"/>
-    <line x1="870" y1="0" x2="870" y2="220"/>
+  <!-- Section label -->
+  <text x="60" y="35" class="fm" font-size="10" fill="#484f58" letter-spacing="4">// ABOUT</text>
+  <line x1="60" y1="45" x2="840" y2="45" stroke="#21262d" stroke-width="0.5"/>
+
+  <!-- Left column -->
+  <g>
+    <text x="60" y="80" class="fm" font-size="10" fill="#484f58">name</text>
+    <text x="160" y="80" class="fs" font-size="13" fill="#e6edf3" font-weight="500">Anh Tu Nguyen</text>
+
+    <text x="60" y="108" class="fm" font-size="10" fill="#484f58">alias</text>
+    <text x="160" y="108" class="fm" font-size="13" fill="#d4af37">ekaznyra</text>
+
+    <text x="60" y="136" class="fm" font-size="10" fill="#484f58">role</text>
+    <text x="160" y="136" class="fs" font-size="13" fill="#e6edf3" font-weight="500">Cybersecurity Researcher</text>
+
+    <text x="60" y="164" class="fm" font-size="10" fill="#484f58">focus</text>
+    <text x="160" y="164" class="fs" font-size="13" fill="#8b949e">DFIR &amp; Detection Engineering</text>
   </g>
 
-  <!-- Left Panel: Identity -->
+  <!-- Vertical separator -->
+  <line x1="450" y1="60" x2="450" y2="180" stroke="#21262d" stroke-width="0.5"/>
+
+  <!-- Right column -->
   <g>
-    <text x="50" y="38" class="font-sans" font-weight="600" font-size="11" fill="#a9a9a9" letter-spacing="4">
-      PROFILE_SYSTEM
-    </text>
-    <line x1="50" y1="46" x2="300" y2="46" stroke="url(#gold)" stroke-width="0.5"/>
-    <line x1="50" y1="46" x2="150" y2="46" stroke="#d4af37" stroke-width="1.5" filter="url(#softGlow)"/>
+    <text x="480" y="80" class="fm" font-size="10" fill="#484f58">research</text>
 
-    <text x="50" y="75" class="font-mono" font-size="10" font-weight="normal" fill="#888888">NAME_</text>
-    <text x="140" y="75" class="font-sans" font-size="12" font-weight="600" fill="#ffffff">Nguyễn Ngọc Anh Tú</text>
-    
-    <text x="50" y="98" class="font-mono" font-size="10" font-weight="normal" fill="#888888">ALIAS_</text>
-    <text x="140" y="98" class="font-mono" font-size="12" font-weight="normal" fill="#d4af37">ekaznyra</text>
-    
-    <text x="50" y="121" class="font-mono" font-size="10" font-weight="normal" fill="#888888">ROLE_</text>
-    <text x="140" y="121" class="font-sans" font-size="12" font-weight="600" fill="url(#silver)">Cybersecurity Operative</text>
-    
-    <text x="50" y="144" class="font-mono" font-size="10" font-weight="normal" fill="#888888">FOCUS_</text>
-    <text x="140" y="144" class="font-sans" font-size="12" font-weight="normal" fill="#d4af37">DFIR · Threat Hunting · Detection</text>
-    
-    <text x="50" y="167" class="font-mono" font-size="10" font-weight="normal" fill="#888888">PATH_</text>
-    <text x="140" y="167" class="font-sans" font-size="12" font-weight="normal" fill="#777777">SOC Analyst</text>
-    <text x="225" y="167" class="font-sans" font-size="12" font-weight="normal" fill="#d4af37">→</text>
-    <text x="245" y="167" class="font-sans" font-size="12" font-weight="600" fill="#ffffff" filter="url(#softGlow)">Detection Engineer</text>
-    
-    <text x="50" y="195" class="font-mono" font-size="10" font-weight="normal" fill="#888888">METHOD_</text>
-    <text x="140" y="195" class="font-mono" font-size="10" font-weight="normal" fill="#a9a9a9" letter-spacing="1">Observe · Investigate · Document · Improve</text>
-  </g>
+    <circle cx="490" cy="103" r="2" fill="#d4af37" opacity="0.5" class="p1"/>
+    <text x="502" y="107" class="fs" font-size="12" fill="#e6edf3">Digital Forensics &amp; Incident Response</text>
 
-  <!-- Right Panel: Current Focus -->
-  <g>
-    <text x="470" y="38" class="font-sans" font-weight="600" font-size="11" fill="#d4af37" letter-spacing="4">
-      ACTIVE RESEARCH
-    </text>
-    <line x1="470" y1="46" x2="800" y2="46" stroke="#333333" stroke-width="0.5"/>
-    <line x1="470" y1="46" x2="600" y2="46" stroke="#d4af37" stroke-width="1.5" filter="url(#softGlow)" class="energy-flow"/>
+    <circle cx="490" cy="127" r="2" fill="#8b949e" opacity="0.4" class="p2"/>
+    <text x="502" y="131" class="fs" font-size="12" fill="#8b949e">Threat Hunting Workflows</text>
 
-    <!-- Subtle Nodes -->
-    <rect x="473" y="69" width="4" height="4" fill="#d4af37" transform="rotate(45 475 71)"/>
-    <text x="495" y="75" class="font-sans" font-size="11" font-weight="normal" fill="#ffffff">Digital Forensics &amp; Incident Response</text>
+    <circle cx="490" cy="151" r="2" fill="#8b949e" opacity="0.4" class="p1"/>
+    <text x="502" y="155" class="fs" font-size="12" fill="#8b949e">YARA &amp; Sigma Rule Engineering</text>
 
-    <rect x="473" y="97" width="4" height="4" fill="#a9a9a9" transform="rotate(45 475 99)"/>
-    <text x="495" y="103" class="font-sans" font-size="11" font-weight="normal" fill="#e0e0e0">Threat Hunting Workflows</text>
-
-    <rect x="473" y="125" width="4" height="4" fill="#b8860b" transform="rotate(45 475 127)"/>
-    <text x="495" y="131" class="font-sans" font-size="11" font-weight="normal" fill="#e0e0e0">YARA &amp; Sigma Rule Engineering</text>
-
-    <rect x="473" y="153" width="4" height="4" fill="#a9a9a9" transform="rotate(45 475 155)"/>
-    <text x="495" y="159" class="font-sans" font-size="11" font-weight="normal" fill="#e0e0e0">Malware Behavior Analysis</text>
-
-    <rect x="473" y="181" width="4" height="4" fill="#d4af37" transform="rotate(45 475 183)"/>
-    <text x="495" y="187" class="font-sans" font-size="11" font-weight="normal" fill="#ffffff">Windows Event Log Correlation</text>
+    <circle cx="490" cy="175" r="2" fill="#8b949e" opacity="0.4" class="p2"/>
+    <text x="502" y="179" class="fs" font-size="12" fill="#8b949e">Malware Behavior Analysis</text>
   </g>
 </svg>
