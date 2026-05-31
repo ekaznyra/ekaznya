@@ -28,6 +28,8 @@
   </defs>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+
     @keyframes pulseGlow { 0%, 100% { filter: drop-shadow(0 0 5px #00f0ff); opacity: 0.8; } 50% { filter: drop-shadow(0 0 15px #00f0ff); opacity: 1; } }
     @keyframes flowLine { 0% { stroke-dashoffset: 100; } 100% { stroke-dashoffset: 0; } }
     @keyframes energyPacket { 0% { stroke-dashoffset: 200; } 100% { stroke-dashoffset: -200; } }
@@ -37,8 +39,8 @@
     .packet { stroke-dasharray: 20 180; animation: energyPacket 2s linear infinite; }
     .packet2 { stroke-dasharray: 20 180; animation: energyPacket 2s linear infinite 1s; }
 
-    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
-    .font-mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
+    .font-sans { font-family: 'Rajdhani', sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
   </style>
 
   <rect width="900" height="220" fill="url(#bg)"/>
