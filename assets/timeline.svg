@@ -1,0 +1,80 @@
+<svg viewBox="0 0 900 120" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes timelinePulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+    @keyframes progressGrow {
+      0% { width: 0; }
+      100% { width: 100%; }
+    }
+    @keyframes signalBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+    .year-label {
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .year-desc {
+      font-family: 'Courier New', monospace;
+      font-size: 9px;
+      fill: #586069;
+    }
+    .milestone {
+      animation: timelinePulse 3s ease-in-out infinite;
+    }
+    .milestone2 {
+      animation: timelinePulse 3s ease-in-out infinite 1s;
+    }
+    .milestone3 {
+      animation: timelinePulse 3s ease-in-out infinite 2s;
+    }
+  </style>
+
+  <rect width="900" height="120" fill="#0a0e17"/>
+  
+  <!-- Main timeline axis -->
+  <line x1="50" y1="60" x2="850" y2="60" stroke="#1b2332" stroke-width="2"/>
+  
+  <!-- 2025 completed section -->
+  <line x1="50" y1="60" x2="420" y2="60" stroke="#00ff41" stroke-width="2" opacity="0.6"/>
+  
+  <!-- 2026 in-progress section -->
+  <line x1="420" y1="60" x2="620" y2="60" stroke="#ffd93d" stroke-width="2" stroke-dasharray="6 3"/>
+  
+  <!-- Future section -->
+  <line x1="620" y1="60" x2="850" y2="60" stroke="#1b2332" stroke-width="2" stroke-dasharray="4 4"/>
+  
+  <!-- 2025 node -->
+  <circle cx="130" cy="60" r="8" fill="#0a0e17" stroke="#00ff41" stroke-width="2"/>
+  <circle cx="130" cy="60" r="3" fill="#00ff41" class="milestone"/>
+  <text x="130" y="38" text-anchor="middle" class="year-label" fill="#00ff41">2025</text>
+  <text x="130" y="85" text-anchor="middle" class="year-desc">Linux · Networking</text>
+  <text x="130" y="97" text-anchor="middle" class="year-desc">Home Lab · Fundamentals</text>
+  
+  <!-- 2025-2026 transition -->
+  <circle cx="280" cy="60" r="5" fill="#0a0e17" stroke="#00ff41" stroke-width="1.5"/>
+  <circle cx="280" cy="60" r="2" fill="#00ff41" class="milestone2"/>
+  <text x="280" y="38" text-anchor="middle" class="year-desc" fill="#8b949e">SysAdmin</text>
+  <text x="280" y="85" text-anchor="middle" class="year-desc">Security Monitoring</text>
+
+  <!-- 2026 current -->
+  <circle cx="480" cy="60" r="10" fill="#0a0e17" stroke="#ffd93d" stroke-width="2.5"/>
+  <circle cx="480" cy="60" r="4" fill="#ffd93d" class="milestone3"/>
+  <text x="480" y="32" text-anchor="middle" class="year-label" fill="#ffd93d">2026 ◄ NOW</text>
+  <text x="480" y="85" text-anchor="middle" class="year-desc" fill="#8b949e">DFIR · Threat Hunting</text>
+  <text x="480" y="97" text-anchor="middle" class="year-desc" fill="#8b949e">YARA · Sigma · Malware</text>
+
+  <!-- Next milestone -->
+  <circle cx="700" cy="60" r="7" fill="#0a0e17" stroke="#3a4553" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <text x="700" y="38" text-anchor="middle" class="year-label" fill="#3a4553">NEXT</text>
+  <text x="700" y="85" text-anchor="middle" class="year-desc" fill="#3a4553">SOC Operations</text>
+  <text x="700" y="97" text-anchor="middle" class="year-desc" fill="#3a4553">BTL1 · CCD · Open Source</text>
+
+  <!-- Future end -->
+  <circle cx="840" cy="60" r="5" fill="#0a0e17" stroke="#1b2332" stroke-width="1" stroke-dasharray="2 2"/>
+  <text x="840" y="38" text-anchor="middle" class="year-desc" fill="#1b2332">TARGET</text>
+  <text x="840" y="85" text-anchor="middle" class="year-desc" fill="#1b2332">Detection Engineer</text>
+</svg>

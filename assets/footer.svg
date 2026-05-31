@@ -1,0 +1,48 @@
+<svg viewBox="0 0 900 80" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes termType {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes cursorFlash {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(5px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .footer-text {
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      fill: #586069;
+    }
+    .footer-accent {
+      font-family: 'Courier New', monospace;
+      font-size: 10px;
+      fill: #00ff41;
+      opacity: 0.5;
+    }
+    .cursor {
+      animation: cursorFlash 1s step-end infinite;
+    }
+  </style>
+
+  <rect width="900" height="80" fill="#0a0e17"/>
+  
+  <!-- Top line -->
+  <line x1="50" y1="10" x2="850" y2="10" stroke="#1b2332" stroke-width="0.5"/>
+  
+  <!-- Quote -->
+  <text x="450" y="35" text-anchor="middle" class="footer-text">
+    "Every investigation teaches something. Every detection rule is a lesson documented."
+  </text>
+  <text x="450" y="52" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#3a4553">
+    Not chasing titles — building the discipline to understand what happened and detect it next time.
+  </text>
+  
+  <!-- Session end marker -->
+  <text x="450" y="72" text-anchor="middle" class="footer-accent">
+    ── SESSION.LOG ── LAST UPDATED: 2026 ── EOF ──<tspan class="cursor"> █</tspan>
+  </text>
+</svg>

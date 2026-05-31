@@ -1,10 +1,13 @@
 <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
-<!-- CASE FILE: NGUYEN NGOC ANH TU | CYBERSECURITY STUDENT                        -->
-<!-- Classification: PUBLIC | Last Updated: 2026                                  -->
+<!-- SIGINT INTERCEPT TERMINAL | ANALYST DOSSIER                                  -->
+<!-- Classification: PUBLIC | Protocol: OSINT | Last Updated: 2026                -->
 <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
 
 <div align="center">
 
+<<<<<<< HEAD
+<img src="assets/header.svg" width="100%"/>
+=======
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0d1117&height=1&section=header" width="100%"/>
 
 <br>
@@ -20,12 +23,48 @@ Understanding Systems. Investigating Evidence. Building Better Defenses.
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=300&size=14&duration=3000&pause=2000&color=8B949E&center=true&vCenter=true&repeat=true&width=600&height=30&lines=Cybersecurity+Student+%7C+Aspiring+SOC+Analyst+%7C+DFIR+Researcher" alt="Role"/>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0d1117&height=1&section=header" width="100%"/>
+>>>>>>> cc0cd7e664427512dd165c458d18663c55b71036
 
 </div>
 
 <br>
 
 <!-- ─────────────────────────────────────────────────────────────────────────────── -->
+<<<<<<< HEAD
+<!-- INTERCEPT 01: THREAT LANDSCAPE ASSESSMENT                                     -->
+<!-- ─────────────────────────────────────────────────────────────────────────────── -->
+
+<table>
+<tr>
+<td width="60%" valign="top">
+
+```
+┌──────────────────────────────────────────────────┐
+│  INTERCEPT LOG: ACTIVE OPERATIONS                │
+├──────────────────────────────────────────────────┤
+│                                                  │
+│  ██ Windows Event Log Correlation                │
+│  ├─ Sysmon + PowerShell + Security               │
+│  └─ Status: ACTIVE ◉                             │
+│                                                  │
+│  ██ Malware Behavior Research                    │
+│  ├─ Execution · Persistence · Evasion            │
+│  └─ Status: ACTIVE ◉                             │
+│                                                  │
+│  ██ Threat Hunt: Hypothesis-Driven               │
+│  ├─ MITRE ATT&CK framework mapping              │
+│  └─ Status: ACTIVE ◉                             │
+│                                                  │
+│  ██ Detection Rule Development                   │
+│  ├─ YARA signatures + Sigma rules                │
+│  └─ Status: ACTIVE ◉                             │
+│                                                  │
+│  ██ Digital Forensics Workflows                  │
+│  ├─ Evidence → Analysis → Reporting              │
+│  └─ Status: ACTIVE ◉                             │
+│                                                  │
+└──────────────────────────────────────────────────┘
+=======
 <!-- SECTION 01: WHOAMI                                                            -->
 <!-- ─────────────────────────────────────────────────────────────────────────────── -->
 
@@ -40,11 +79,62 @@ Focus           : DFIR | Threat Hunting | Detection Engineering
 Objective       : SOC Analyst → Threat Hunter → Detection Engineer
 Status          : Building investigation skills through structured research
 Operating Mode  : Observe → Investigate → Document → Improve
+>>>>>>> cc0cd7e664427512dd165c458d18663c55b71036
 ```
+
+</td>
+<td width="40%" valign="top">
+
+```
+╔══════════════════════════════════╗
+║  INVESTIGATION PROTOCOL         ║
+╠══════════════════════════════════╣
+║                                  ║
+║  01 ▸ OBSERVE                    ║
+║       Monitor telemetry          ║
+║       ·                          ║
+║  02 ▸ COLLECT                    ║
+║       Acquire artifacts          ║
+║       ·                          ║
+║  03 ▸ CORRELATE                  ║
+║       Map across sources         ║
+║       ·                          ║
+║  04 ▸ HYPOTHESIZE                ║
+║       Develop theories           ║
+║       ·                          ║
+║  05 ▸ VALIDATE                   ║
+║       Test against data          ║
+║       ·                          ║
+║  06 ▸ RESPOND                    ║
+║       Contain & remediate        ║
+║       ·                          ║
+║  07 ▸ IMPROVE                    ║
+║       Write new detections       ║
+║                                  ║
+╚══════════════════════════════════╝
+```
+
+</td>
+</tr>
+</table>
 
 <br>
 
 <!-- ─────────────────────────────────────────────────────────────────────────────── -->
+<<<<<<< HEAD
+<!-- INTERCEPT 02: CAPABILITY NETWORK TOPOLOGY                                     -->
+<!-- ─────────────────────────────────────────────────────────────────────────────── -->
+
+<div align="center">
+
+```
+SIGNAL INTELLIGENCE ── CAPABILITY TOPOLOGY MAP ── CLASSIFIED
+```
+
+<img src="assets/skillmap.svg" width="100%"/>
+
+</div>
+=======
 <!-- SECTION 02: SECURITY PHILOSOPHY                                               -->
 <!-- ─────────────────────────────────────────────────────────────────────────────── -->
 
@@ -55,10 +145,124 @@ Operating Mode  : Observe → Investigate → Document → Improve
 > *It is the speed of detection, the depth of understanding, and the precision of response that define effective defense.*
 >
 > *Every alert is an opportunity to learn. Every investigation sharpens the analyst. Every detection rule written today prevents tomorrow's blind spot.*
+>>>>>>> cc0cd7e664427512dd165c458d18663c55b71036
 
 <br>
 
 <!-- ─────────────────────────────────────────────────────────────────────────────── -->
+<<<<<<< HEAD
+<!-- INTERCEPT 03: ARSENAL                                                         -->
+<!-- ─────────────────────────────────────────────────────────────────────────────── -->
+
+<details>
+<summary><b>▸ <code>DECRYPT /arsenal/toolchain.enc</code></b> — Click to access classified arsenal</summary>
+<br>
+
+<table>
+<tr>
+<td width="33%" valign="top">
+
+<div align="center">
+
+**`RECON SUITE`**
+
+</div>
+
+```
+OPERATING SYSTEMS
+═══════════════════
+▓ Windows     ████████░░  80%
+  → Event Logs
+  → Registry Analysis
+  → Internals
+
+▓ Linux       ████████░░  80%
+  → Security Hardening
+  → Audit Framework
+  → System Admin
+
+▓ Kali        ███████░░░  70%
+  → Security Tooling
+  → Pentesting Utils
+```
+
+</td>
+<td width="33%" valign="top">
+
+<div align="center">
+
+**`WEAPONS CACHE`**
+
+</div>
+
+```
+INVESTIGATION TOOLS
+═══════════════════
+▓ DFIR        ████████░░  80%
+  → Disk Forensics
+  → Timeline Analysis
+  → Memory Analysis
+
+▓ Detection   ███████░░░  70%
+  → YARA Signatures
+  → Sigma Rules
+  → ATT&CK Mapping
+
+▓ Network     ██████░░░░  60%
+  → Packet Analysis
+  → Traffic Patterns
+  → C2 Detection
+```
+
+</td>
+<td width="34%" valign="top">
+
+<div align="center">
+
+**`COMMS ARRAY`**
+
+</div>
+
+```
+PROGRAMMING & INFRA
+═══════════════════
+▓ Python      ███████░░░  70%
+  → Automation
+  → Log Parsers
+  → Analysis Scripts
+
+▓ Bash        ██████░░░░  60%
+  → System Scripts
+  → Pipeline Tools
+
+▓ DevOps      █████░░░░░  50%
+  → Docker Labs
+  → VM Environments
+  → Git Workflows
+```
+
+</td>
+</tr>
+</table>
+
+</details>
+
+<br>
+
+<!-- ─────────────────────────────────────────────────────────────────────────────── -->
+<!-- INTERCEPT 04: OPERATION TIMELINE                                               -->
+<!-- ─────────────────────────────────────────────────────────────────────────────── -->
+
+<div align="center">
+
+```
+OPERATIONAL TIMELINE ── INTELLIGENCE GATHERING PROGRESSION
+```
+
+<img src="assets/timeline.svg" width="100%"/>
+
+</div>
+=======
 <!-- SECTION 03: CURRENT INVESTIGATIONS                                            -->
 <!-- ─────────────────────────────────────────────────────────────────────────────── -->
 
@@ -71,19 +275,58 @@ Operating Mode  : Observe → Investigate → Document → Improve
 | `[ACTIVE]` | Threat Hunting Methodologies | Developing hypothesis-driven hunting workflows using MITRE ATT&CK |
 | `[ACTIVE]` | Detection Rule Development | Writing YARA and Sigma rules for known threat behaviors |
 | `[ACTIVE]` | Digital Forensics Workflows | Building repeatable evidence collection and analysis procedures |
+>>>>>>> cc0cd7e664427512dd165c458d18663c55b71036
 
 <br>
 
 <!-- ─────────────────────────────────────────────────────────────────────────────── -->
+<<<<<<< HEAD
+<!-- INTERCEPT 05: CASE FILES                                                      -->
+<!-- ─────────────────────────────────────────────────────────────────────────────── -->
+
+<details>
+<summary><b>▸ <code>ACCESS /cases/classified/ --clearance=TS</code></b> — Click to review case files</summary>
+<br>
+=======
 <!-- SECTION 04: SECURITY RESEARCH LABS                                            -->
 <!-- ─────────────────────────────────────────────────────────────────────────────── -->
 
 ## `> ls /labs/`
+>>>>>>> cc0cd7e664427512dd165c458d18663c55b71036
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
+<<<<<<< HEAD
+```
+╔══════════════════════════════════╗
+║  CASE-2026-001                   ║
+║  DFIR Investigation Toolkit      ║
+╠══════════════════════════════════╣
+║                                  ║
+║  CLASS    : Research             ║
+║  PRIORITY : HIGH                 ║
+║  STATUS   : ◉ IN PROGRESS       ║
+║                                  ║
+║  OBJECTIVE:                      ║
+║  Build structured toolkit for    ║
+║  conducting digital forensic     ║
+║  investigations with repeatable  ║
+║  documented workflows            ║
+║                                  ║
+║  TOOLS:                          ║
+║  Autopsy · Volatility · Python   ║
+║                                  ║
+║  SKILLS:                         ║
+║  Evidence Acquisition            ║
+║  Timeline Analysis               ║
+║  Artifact Parsing                ║
+║  Report Generation               ║
+║                                  ║
+╚══════════════════════════════════╝
+```
+=======
 ### 🔬 DFIR Lab
 Building repeatable forensic investigation workflows — from evidence acquisition through timeline reconstruction to final reporting.
 
@@ -92,10 +335,104 @@ Exploring proactive detection techniques using hypothesis-driven methodologies, 
 
 ### 🧪 Malware Analysis Lab
 Studying malware execution flows, persistence mechanisms, process injection techniques, and behavioral indicators in controlled environments.
+>>>>>>> cc0cd7e664427512dd165c458d18663c55b71036
 
 </td>
 <td width="50%" valign="top">
 
+<<<<<<< HEAD
+```
+╔══════════════════════════════════╗
+║  CASE-2026-002                   ║
+║  Detection Rule Library          ║
+╠══════════════════════════════════╣
+║                                  ║
+║  CLASS    : Engineering          ║
+║  PRIORITY : HIGH                 ║
+║  STATUS   : ◉ IN PROGRESS       ║
+║                                  ║
+║  OBJECTIVE:                      ║
+║  Develop and maintain detection  ║
+║  rules covering common attack    ║
+║  techniques mapped to MITRE      ║
+║  ATT&CK framework               ║
+║                                  ║
+║  TOOLS:                          ║
+║  Sigma · YARA · ATT&CK Nav      ║
+║                                  ║
+║  SKILLS:                         ║
+║  Sigma Rule Authoring            ║
+║  YARA Signatures                 ║
+║  Threat Modeling                 ║
+║  Log Source Mapping              ║
+║                                  ║
+╚══════════════════════════════════╝
+```
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+```
+╔══════════════════════════════════╗
+║  CASE-2026-003                   ║
+║  Threat Hunting Playbooks        ║
+╠══════════════════════════════════╣
+║                                  ║
+║  CLASS    : Operations           ║
+║  PRIORITY : MEDIUM               ║
+║  STATUS   : ◉ IN PROGRESS       ║
+║                                  ║
+║  OBJECTIVE:                      ║
+║  Document hypothesis-driven      ║
+║  threat hunting procedures for   ║
+║  proactive detection of          ║
+║  adversary behaviors             ║
+║                                  ║
+║  TOOLS:                          ║
+║  Python · Jupyter · ELK · Sysmon ║
+║                                  ║
+║  SKILLS:                         ║
+║  Hypothesis Development          ║
+║  Data Analysis                   ║
+║  Statistical Baselines           ║
+║  ATT&CK Mapping                 ║
+║                                  ║
+╚══════════════════════════════════╝
+```
+
+</td>
+<td width="50%" valign="top">
+
+```
+╔══════════════════════════════════╗
+║  CASE-2026-004                   ║
+║  Malware Analysis Notes          ║
+╠══════════════════════════════════╣
+║                                  ║
+║  CLASS    : Research             ║
+║  PRIORITY : MEDIUM               ║
+║  STATUS   : ◉ IN PROGRESS       ║
+║                                  ║
+║  OBJECTIVE:                      ║
+║  Analyze malware samples in      ║
+║  isolated environments to        ║
+║  understand execution flows,     ║
+║  persistence, and evasion        ║
+║                                  ║
+║  TOOLS:                          ║
+║  REMnux · Ghidra · ProcMon      ║
+║                                  ║
+║  SKILLS:                         ║
+║  Static Analysis                 ║
+║  Dynamic Analysis                ║
+║  Behavioral Indicators           ║
+║  YARA Signatures                 ║
+║                                  ║
+╚══════════════════════════════════╝
+```
+=======
 ### ⚙️ Detection Engineering Lab
 Developing and testing YARA signatures and Sigma detection rules mapped to MITRE ATT&CK techniques for measurable coverage improvement.
 
@@ -104,11 +441,15 @@ Investigating network traffic patterns, C2 communication behaviors, DNS anomalie
 
 ### 📋 Log Analysis Lab
 Parsing and correlating Windows Event Logs, Sysmon telemetry, and Linux audit logs to reconstruct attack timelines and identify gaps in visibility.
+>>>>>>> cc0cd7e664427512dd165c458d18663c55b71036
 
 </td>
 </tr>
 </table>
 
+<<<<<<< HEAD
+</details>
+=======
 <br>
 
 <!-- ─────────────────────────────────────────────────────────────────────────────── -->
@@ -161,10 +502,35 @@ Parsing and correlating Windows Event Logs, Sysmon telemetry, and Linux audit lo
     ║                                                               ║
     ╚═══════════════════════════════════════════════════════════════╝
 ```
+>>>>>>> cc0cd7e664427512dd165c458d18663c55b71036
 
 <br>
 
 <!-- ─────────────────────────────────────────────────────────────────────────────── -->
+<<<<<<< HEAD
+<!-- INTERCEPT 06: SIGNAL METRICS                                                  -->
+<!-- ─────────────────────────────────────────────────────────────────────────────── -->
+
+<div align="center">
+
+```
+SIGNAL METRICS ── OPERATIONAL ANALYTICS ── LIVE FEED
+```
+
+<br>
+
+<img src="https://github-readme-stats.vercel.app/api?username=ekaznyra&show_icons=true&hide_border=true&bg_color=0a0e17&title_color=00ff41&text_color=8b949e&icon_color=00ff41&ring_color=00ff41&border_radius=0" alt="Signal Metrics" height="170"/>
+&nbsp;&nbsp;
+<img src="https://streak-stats.demolab.com?user=ekaznyra&hide_border=true&background=0A0E17&ring=00FF41&fire=FFD93D&currStreakLabel=E2E8F0&sideLabels=8B949E&dates=586069&currStreakNum=E2E8F0&sideNums=8B949E&border_radius=0" alt="Operational Streak" height="170"/>
+
+<br><br>
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ekaznyra&layout=compact&hide_border=true&bg_color=0a0e17&title_color=00ff41&text_color=8b949e&border_radius=0" alt="Language Intel" height="150"/>
+
+<br>
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=ekaznyra&bg_color=0a0e17&color=00ff41&line=00ff41&point=ffd93d&area=true&area_color=00ff41&hide_border=true&custom_title=CONTRIBUTION%20SIGNAL%20ANALYSIS" alt="Signal Analysis" width="95%"/>
+=======
 <!-- SECTION 06: TECHNICAL CAPABILITY MAP                                          -->
 <!-- ─────────────────────────────────────────────────────────────────────────────── -->
 
@@ -389,12 +755,16 @@ Status         : In Progress
 <br><br>
 
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ekaznyra&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=c9d1d9&text_color=8b949e" alt="Top Languages" height="150"/>
+>>>>>>> cc0cd7e664427512dd165c458d18663c55b71036
 
 </div>
 
 <br>
 
 <!-- ─────────────────────────────────────────────────────────────────────────────── -->
+<<<<<<< HEAD
+<!-- INTERCEPT 07: SECURE COMMS                                                    -->
+=======
 <!-- SECTION 10: CONTACT                                                           -->
 <!-- ─────────────────────────────────────────────────────────────────────────────── -->
 
@@ -416,10 +786,42 @@ Status         : In Progress
 
 <!-- ─────────────────────────────────────────────────────────────────────────────── -->
 <!-- FOOTER                                                                        -->
+>>>>>>> cc0cd7e664427512dd165c458d18663c55b71036
 <!-- ─────────────────────────────────────────────────────────────────────────────── -->
 
 <div align="center">
 
+<<<<<<< HEAD
+```
+SECURE COMMUNICATIONS CHANNEL ── ENCRYPTED
+```
+
+<br>
+
+<a href="mailto:anhtunguyen.sec@proton.me"><img src="https://img.shields.io/badge/PROTONMAIL-anhtunguyen.sec-0a0e17?style=for-the-badge&logo=protonmail&logoColor=00ff41&labelColor=0a0e17&color=0d1220" alt="ProtonMail"/></a>
+&nbsp;
+<a href="https://t.me/ekaznya"><img src="https://img.shields.io/badge/TELEGRAM-@ekaznya-0a0e17?style=for-the-badge&logo=telegram&logoColor=00ff41&labelColor=0a0e17&color=0d1220" alt="Telegram"/></a>
+&nbsp;
+<a href="https://github.com/ekaznyra"><img src="https://img.shields.io/badge/GITHUB-ekaznyra-0a0e17?style=for-the-badge&logo=github&logoColor=00ff41&labelColor=0a0e17&color=0d1220" alt="GitHub"/></a>
+&nbsp;
+<a href="https://linkedin.com/in/"><img src="https://img.shields.io/badge/LINKEDIN-Connect-0a0e17?style=for-the-badge&logo=linkedin&logoColor=00ff41&labelColor=0a0e17&color=0d1220" alt="LinkedIn"/></a>
+
+</div>
+
+<br>
+
+<!-- ─────────────────────────────────────────────────────────────────────────────── -->
+<!-- FOOTER: SESSION END                                                           -->
+<!-- ─────────────────────────────────────────────────────────────────────────────── -->
+
+<div align="center">
+
+<img src="assets/footer.svg" width="100%"/>
+
+<br>
+
+<img src="https://komarev.com/ghpvc/?username=ekaznyra&style=for-the-badge&color=0d1220&label=INTERCEPTS" alt="Profile Intercepts"/>
+=======
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0d1117&height=1&section=footer" width="100%"/>
 
 <br>
@@ -431,5 +833,6 @@ why it happened, and how to ensure it is detected next time.
 ```
 
 <sub>Profile last updated: 2026 · This README is a living document, updated as skills and investigations evolve.</sub>
+>>>>>>> cc0cd7e664427512dd165c458d18663c55b71036
 
 </div>
