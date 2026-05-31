@@ -1,42 +1,43 @@
 <svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Deep Cosmic High-FX Background -->
+    <!-- Dark Luxury Background -->
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#050110"/>
-      <stop offset="50%" stop-color="#0a0518"/>
-      <stop offset="100%" stop-color="#020005"/>
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="50%" stop-color="#050505"/>
+      <stop offset="100%" stop-color="#000000"/>
     </linearGradient>
 
-    <!-- Intense Nebula Gradients -->
+    <!-- Subtle Luxury Glows -->
     <radialGradient id="nebula1" cx="30%" cy="30%" r="50%">
-      <stop offset="0%" stop-color="#8e44ad" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#8e44ad" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="nebula2" cx="70%" cy="70%" r="50%">
-      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="nebula3" cx="50%" cy="50%" r="60%">
-      <stop offset="0%" stop-color="#ffd700" stop-opacity="0.08"/>
-      <stop offset="100%" stop-color="#ffd700" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#e0e0e0" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#e0e0e0" stop-opacity="0"/>
     </radialGradient>
 
     <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffeaa7"/>
+      <stop offset="0%" stop-color="#b8860b"/>
       <stop offset="50%" stop-color="#ffd700"/>
-      <stop offset="100%" stop-color="#fdcb6e"/>
+      <stop offset="100%" stop-color="#d4af37"/>
+    </linearGradient>
+    <linearGradient id="silver" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a9a9a9"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e0e0e0"/>
     </linearGradient>
 
-    <linearGradient id="cyan" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00f0ff"/>
-      <stop offset="100%" stop-color="#0984e3"/>
-    </linearGradient>
-
-    <filter id="hyperGlow">
-      <feGaussianBlur stdDeviation="3" result="blur1"/>
-      <feGaussianBlur stdDeviation="6" result="blur2"/>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur1"/>
       <feMerge>
-        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="goldGlow">
+      <feGaussianBlur stdDeviation="4" result="blur1"/>
+      <feMerge>
         <feMergeNode in="blur1"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
@@ -44,138 +45,96 @@
   </defs>
 
   <style>
-    @keyframes fastRotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-    @keyframes fastRotateRev { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
-    @keyframes pulseGlow { 0%, 100% { filter: drop-shadow(0 0 2px #ffd700); opacity: 0.7; } 50% { filter: drop-shadow(0 0 10px #ffd700); opacity: 1; } }
-    @keyframes shootingStar { 0% { transform: translateX(1000px) translateY(-500px); opacity: 1; } 5% { transform: translateX(-200px) translateY(500px); opacity: 0; } 100% { opacity: 0; } }
-    @keyframes shootingStar2 { 0%, 30% { opacity: 0; } 30.1% { transform: translateX(1200px) translateY(-100px); opacity: 1; } 35% { transform: translateX(-200px) translateY(600px); opacity: 0; } 100% { opacity: 0; } }
-    @keyframes shootingStar3 { 0%, 70% { opacity: 0; } 70.1% { transform: translateX(600px) translateY(-400px); opacity: 1; } 75% { transform: translateX(-400px) translateY(400px); opacity: 0; } 100% { opacity: 0; } }
+    @keyframes slowRotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    @keyframes slowRotateRev { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
+    @keyframes pulseGlow { 0%, 100% { filter: drop-shadow(0 0 2px #d4af37); opacity: 0.7; } 50% { filter: drop-shadow(0 0 8px #d4af37); opacity: 1; } }
+    @keyframes shimmerText { 0% { fill-opacity: 0.8; } 50% { fill-opacity: 1; text-shadow: 0 0 10px rgba(212,175,55,0.5); } 100% { fill-opacity: 0.8; } }
     
-    @keyframes flickerText { 0%, 100% { opacity: 1; text-shadow: 0 0 15px rgba(0, 240, 255, 0.8); } 50% { opacity: 0.8; text-shadow: 0 0 5px rgba(0, 240, 255, 0.4); } 90% { opacity: 0.9; } 92% { opacity: 0.4; } 94% { opacity: 1; } }
+    .rot1 { transform-origin: 700px 200px; animation: slowRotate 30s linear infinite; }
+    .rot2 { transform-origin: 700px 200px; animation: slowRotateRev 40s linear infinite; }
+    .rot3 { transform-origin: 700px 200px; animation: slowRotate 25s linear infinite; }
+    .rot4 { transform-origin: 700px 200px; animation: slowRotateRev 20s linear infinite; }
     
-    @keyframes flowLine { 0% { stroke-dashoffset: 200; } 100% { stroke-dashoffset: 0; } }
-    
-    .rot1 { transform-origin: 700px 200px; animation: fastRotate 15s linear infinite; }
-    .rot2 { transform-origin: 700px 200px; animation: fastRotateRev 20s linear infinite; }
-    .rot3 { transform-origin: 700px 200px; animation: fastRotate 8s linear infinite; }
-    .rot4 { transform-origin: 700px 200px; animation: fastRotateRev 5s linear infinite; }
-    
-    .comet1 { animation: shootingStar 12s linear infinite; }
-    .comet2 { animation: shootingStar2 15s linear infinite; }
-    .comet3 { animation: shootingStar3 18s linear infinite; }
-    
-    .energy-flow { stroke-dasharray: 20 10; animation: flowLine 2s linear infinite; }
-    .flicker { animation: flickerText 4s infinite; }
-    .node-pulse { animation: pulseGlow 2s infinite; }
-    
-    @keyframes glitchMove {
-      0% { transform: translate(0,0); }
-      20% { transform: translate(-2px,2px); }
-      40% { transform: translate(2px,-2px); }
-      60% { transform: translate(-2px,-2px); }
-      80% { transform: translate(2px,2px); }
-      100% { transform: translate(0,0); }
-    }
-    .glitch-cyan { animation: glitchMove 3s infinite alternate; fill: #00f0ff; opacity: 0.7; filter: drop-shadow(0 0 5px #00f0ff); }
-    .glitch-purple { animation: glitchMove 3s infinite alternate-reverse; fill: #8e44ad; opacity: 0.7; filter: drop-shadow(0 0 5px #8e44ad); }
+    .shimmer { animation: shimmerText 4s infinite; }
+    .node-pulse { animation: pulseGlow 3s infinite ease-in-out; }
 
     .font-sans { font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif; }
     .font-mono { font-family: Consolas, "SFMono-Regular", Menlo, Monaco, "Liberation Mono", monospace; }
   </style>
 
-  <!-- Deep Space Base -->
+  <!-- Pitch Black Base -->
   <rect width="900" height="400" fill="url(#bg)"/>
 
-  <!-- Intense Nebulas -->
+  <!-- Subtle Luxury Nebulas -->
   <ellipse cx="250" cy="100" rx="400" ry="250" fill="url(#nebula1)" transform="rotate(-15 250 100)"/>
   <ellipse cx="750" cy="300" rx="500" ry="300" fill="url(#nebula2)" transform="rotate(-25 750 300)"/>
-  <rect width="900" height="400" fill="url(#nebula3)"/>
 
-  <!-- High-Speed Shooting Stars (Comets) -->
-  <g class="comet1">
-    <line x1="0" y1="0" x2="100" y2="-50" stroke="#ffffff" stroke-width="2" filter="url(#hyperGlow)"/>
-    <circle cx="0" cy="0" r="3" fill="#ffffff" filter="url(#hyperGlow)"/>
-  </g>
-  <g class="comet2">
-    <line x1="0" y1="0" x2="150" y2="-75" stroke="#00f0ff" stroke-width="3" filter="url(#hyperGlow)"/>
-    <circle cx="0" cy="0" r="4" fill="#00f0ff" filter="url(#hyperGlow)"/>
-  </g>
-  <g class="comet3">
-    <line x1="0" y1="0" x2="80" y2="-40" stroke="#ffd700" stroke-width="2" filter="url(#hyperGlow)"/>
-    <circle cx="0" cy="0" r="2.5" fill="#ffd700" filter="url(#hyperGlow)"/>
-  </g>
-
-  <!-- Starfield Layer (Dense & Bright) -->
-  <g fill="#ffffff">
-    <circle cx="50" cy="150" r="1.5"/><circle cx="120" cy="40" r="2" filter="url(#hyperGlow)"/>
-    <circle cx="280" cy="300" r="1"/><circle cx="450" cy="80" r="1.5"/><circle cx="600" cy="250" r="2"/>
-    <circle cx="850" cy="120" r="1"/><circle cx="700" cy="380" r="1.5"/><circle cx="350" cy="180" r="1.5" filter="url(#hyperGlow)"/>
-    <circle cx="520" cy="320" r="1.5"/><circle cx="780" cy="40" r="2"/><circle cx="900" cy="280" r="1"/>
+  <!-- Luxury Starfield Layer (Sparse & Elegant) -->
+  <g fill="#d4af37" opacity="0.4">
+    <circle cx="50" cy="150" r="1"/><circle cx="120" cy="40" r="1.5" filter="url(#softGlow)"/>
+    <circle cx="280" cy="300" r="0.8"/><circle cx="450" cy="80" r="1.2"/><circle cx="600" cy="250" r="1.5"/>
+    <circle cx="850" cy="120" r="1"/><circle cx="700" cy="380" r="1"/><circle cx="350" cy="180" r="1.5" filter="url(#softGlow)"/>
+    <circle cx="520" cy="320" r="1.2"/><circle cx="780" cy="40" r="1.5"/><circle cx="900" cy="280" r="0.8"/>
   </g>
 
   <!-- Left Side: Identity -->
   <g>
-    <text x="100" y="160" class="font-sans" font-weight="700" font-size="16" fill="#00f0ff" letter-spacing="10" filter="url(#hyperGlow)">
+    <text x="100" y="160" class="font-sans" font-weight="600" font-size="14" fill="#a9a9a9" letter-spacing="8">
       OPERATIVE ID
     </text>
     
-    <text x="96" y="220" class="font-sans" font-weight="900" font-size="64" fill="#ffffff" letter-spacing="2">
+    <text x="98" y="220" class="font-sans" font-weight="800" font-size="58" fill="#ffffff" letter-spacing="2">
       NGUYỄN NGỌC
     </text>
     
-    <!-- Intense Glitch Text Effect for Name -->
-    <g class="flicker">
-      <text x="94" y="282" class="font-sans glitch-cyan" font-weight="900" font-size="72" letter-spacing="2">ANH TÚ</text>
-      <text x="98" y="278" class="font-sans glitch-purple" font-weight="900" font-size="72" letter-spacing="2">ANH TÚ</text>
-      <text x="96" y="280" class="font-sans" font-weight="900" font-size="72" fill="#ffffff" letter-spacing="2" filter="url(#hyperGlow)">ANH TÚ</text>
-    </g>
+    <!-- Shimmering Gold Text for Name -->
+    <text x="96" y="280" class="font-sans shimmer" font-weight="900" font-size="64" fill="url(#gold)" letter-spacing="2">ANH TÚ</text>
   </g>
 
-  <!-- Energy Line -->
-  <line x1="100" y1="315" x2="400" y2="315" stroke="url(#gold)" stroke-width="3" filter="url(#hyperGlow)"/>
-  <line x1="100" y1="315" x2="400" y2="315" stroke="#ffffff" stroke-width="1"/>
-  <rect x="400" y="310" width="10" height="10" fill="url(#gold)" class="node-pulse"/>
+  <!-- Thin Elegant Divider Line -->
+  <line x1="100" y1="315" x2="400" y2="315" stroke="url(#gold)" stroke-width="1" filter="url(#softGlow)"/>
+  <rect x="400" y="313" width="4" height="4" fill="url(#gold)" class="node-pulse" transform="rotate(45 402 315)"/>
 
   <!-- Role Details -->
-  <text x="100" y="350" class="font-mono" font-weight="bold" font-size="14" fill="#ffd700" letter-spacing="3" filter="url(#hyperGlow)">
+  <text x="100" y="350" class="font-mono" font-weight="normal" font-size="13" fill="#d4af37" letter-spacing="4">
     CYBERSECURITY // DFIR // DETECTION ENG
   </text>
 
-  <!-- Right Side: Glowing High-FX Astrolabe / Quantum Core -->
+  <!-- Right Side: Luxury Watch / Astrolabe Mechanism -->
   <g>
     <!-- Core -->
-    <circle cx="700" cy="200" r="8" fill="#ffffff" filter="url(#hyperGlow)"/>
-    <circle cx="700" cy="200" r="20" fill="none" stroke="#00f0ff" stroke-width="3" opacity="0.8" class="node-pulse"/>
+    <circle cx="700" cy="200" r="6" fill="#d4af37" filter="url(#softGlow)"/>
+    <circle cx="700" cy="200" r="15" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.6"/>
     
-    <!-- Outer Sweep 1 (Cyan) -->
+    <!-- Outer Sweep 1 (Silver) -->
     <g class="rot1">
-      <circle cx="700" cy="200" r="60" fill="none" stroke="#00f0ff" stroke-width="1" opacity="0.5"/>
-      <path d="M 700 140 A 60 60 0 0 1 760 200" fill="none" stroke="#00f0ff" stroke-width="4" filter="url(#hyperGlow)"/>
-      <circle cx="700" cy="140" r="5" fill="#ffffff" filter="url(#hyperGlow)"/>
+      <circle cx="700" cy="200" r="60" fill="none" stroke="#e0e0e0" stroke-width="0.5" opacity="0.4"/>
+      <path d="M 700 140 A 60 60 0 0 1 760 200" fill="none" stroke="#e0e0e0" stroke-width="1.5" filter="url(#softGlow)"/>
+      <circle cx="700" cy="140" r="3" fill="#ffffff"/>
     </g>
 
-    <!-- Outer Sweep 2 (Purple) -->
+    <!-- Outer Sweep 2 (Gold Dashed) -->
     <g class="rot2">
-      <circle cx="700" cy="200" r="100" fill="none" stroke="#8e44ad" stroke-width="1.5" stroke-dasharray="10 5" opacity="0.8"/>
-      <path d="M 600 200 A 100 100 0 0 0 700 300" fill="none" stroke="#8e44ad" stroke-width="5" filter="url(#hyperGlow)"/>
-      <polygon points="600,195 605,200 600,205 595,200" fill="#ffffff" transform="rotate(45 600 200)" filter="url(#hyperGlow)"/>
+      <circle cx="700" cy="200" r="100" fill="none" stroke="#d4af37" stroke-width="1" stroke-dasharray="2 4" opacity="0.6"/>
+      <path d="M 600 200 A 100 100 0 0 0 700 300" fill="none" stroke="#d4af37" stroke-width="2" filter="url(#goldGlow)"/>
+      <rect x="597" y="197" width="6" height="6" fill="#d4af37" transform="rotate(45 600 200)"/>
     </g>
 
-    <!-- Outer Sweep 3 (Gold) -->
+    <!-- Outer Sweep 3 (Thin Gold) -->
     <g class="rot3">
-      <circle cx="700" cy="200" r="150" fill="none" stroke="#ffd700" stroke-width="0.5" opacity="0.4"/>
-      <path d="M 700 50 A 150 150 0 0 1 850 200" fill="none" stroke="#ffd700" stroke-width="3" filter="url(#hyperGlow)"/>
-      <circle cx="700" cy="50" r="4" fill="#ffd700" filter="url(#hyperGlow)"/>
+      <circle cx="700" cy="200" r="150" fill="none" stroke="#b8860b" stroke-width="0.3" opacity="0.5"/>
+      <path d="M 700 50 A 150 150 0 0 1 850 200" fill="none" stroke="url(#gold)" stroke-width="1.5"/>
+      <circle cx="700" cy="50" r="2.5" fill="#d4af37" filter="url(#softGlow)"/>
     </g>
 
-    <!-- Fast Inner Ring -->
+    <!-- Fast Inner Ring (Silver) -->
     <g class="rot4">
-      <circle cx="700" cy="200" r="35" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="15 15" filter="url(#hyperGlow)"/>
+      <circle cx="700" cy="200" r="35" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="10 5" opacity="0.7"/>
     </g>
     
-    <!-- Crosshairs & Grid Lines -->
-    <line x1="500" y1="200" x2="900" y2="200" stroke="#00f0ff" stroke-width="1" class="energy-flow"/>
-    <line x1="700" y1="0" x2="700" y2="400" stroke="#8e44ad" stroke-width="1" class="energy-flow"/>
+    <!-- Subtle Crosshairs -->
+    <line x1="530" y1="200" x2="870" y2="200" stroke="#d4af37" stroke-width="0.3" opacity="0.5"/>
+    <line x1="700" y1="30" x2="700" y2="370" stroke="#d4af37" stroke-width="0.3" opacity="0.5"/>
   </g>
 
 </svg>

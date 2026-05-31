@@ -1,26 +1,25 @@
 <svg viewBox="0 0 900 40" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#050110"/>
-      <stop offset="50%" stop-color="#0a0518"/>
-      <stop offset="100%" stop-color="#020005"/>
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="50%" stop-color="#050505"/>
+      <stop offset="100%" stop-color="#000000"/>
     </linearGradient>
 
-    <filter id="hyperGlow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
+  
   <style>
-    @keyframes moveDashFast { 0% { transform: translateX(-100px); } 100% { transform: translateX(1000px); } }
-    @keyframes moveDashFast2 { 0% { transform: translateX(1000px); } 100% { transform: translateX(-100px); } }
-    .dash1 { animation: moveDashFast 2s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
-    .dash2 { animation: moveDashFast2 3s cubic-bezier(0.4, 0, 0.2, 1) infinite 1s; }
+    @keyframes slowDash { 0% { transform: translateX(-100px); } 100% { transform: translateX(1000px); } }
+    .dash1 { animation: slowDash 6s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
   </style>
 
   <rect width="900" height="40" fill="url(#bg)"/>
   
-  <line x1="0" y1="20" x2="900" y2="20" stroke="#00f0ff" stroke-width="1" opacity="0.3"/>
-  <rect class="dash1" x="0" y="18" width="50" height="4" fill="#ffd700" filter="url(#hyperGlow)"/>
-  <rect class="dash2" x="0" y="18" width="80" height="4" fill="#8e44ad" filter="url(#hyperGlow)"/>
+  <!-- Subtle Elegant Line -->
+  <line x1="0" y1="20" x2="900" y2="20" stroke="#111111" stroke-width="1"/>
+  <rect class="dash1" x="0" y="19" width="60" height="2" fill="#d4af37" filter="url(#softGlow)"/>
 </svg>

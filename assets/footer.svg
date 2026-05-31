@@ -1,50 +1,33 @@
 <svg viewBox="0 0 900 100" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#050110"/>
-      <stop offset="50%" stop-color="#0a0518"/>
-      <stop offset="100%" stop-color="#020005"/>
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="50%" stop-color="#050505"/>
+      <stop offset="100%" stop-color="#000000"/>
     </linearGradient>
 
-    <filter id="hyperGlow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-
-    <radialGradient id="nebula" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#8e44ad" stop-opacity="0.1"/>
-      <stop offset="100%" stop-color="#8e44ad" stop-opacity="0"/>
-    </radialGradient>
   </defs>
 
   <style>
-    @keyframes pulseGlow { 0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 5px #00f0ff); } 50% { opacity: 1; filter: drop-shadow(0 0 15px #00f0ff); } }
-    @keyframes pulseGold { 0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 5px #ffd700); } 50% { opacity: 1; filter: drop-shadow(0 0 15px #ffd700); } }
-
-    .glow-cyan { animation: pulseGlow 3s infinite; }
-    .glow-gold { animation: pulseGold 3s infinite 1.5s; }
-
     .font-sans { font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif; }
     .font-mono { font-family: Consolas, "SFMono-Regular", Menlo, Monaco, "Liberation Mono", monospace; }
   </style>
 
   <rect width="900" height="100" fill="url(#bg)"/>
-  
-  <ellipse cx="450" cy="50" rx="450" ry="50" fill="url(#nebula)"/>
 
-  <!-- High-FX Border -->
-  <line x1="200" y1="10" x2="700" y2="10" stroke="#8e44ad" stroke-width="2" filter="url(#hyperGlow)"/>
-  <line x1="200" y1="10" x2="700" y2="10" stroke="#ffffff" stroke-width="0.5"/>
+  <!-- Minimal Border -->
+  <line x1="200" y1="10" x2="700" y2="10" stroke="#111111" stroke-width="1"/>
+  <line x1="300" y1="10" x2="600" y2="10" stroke="#d4af37" stroke-width="0.5" filter="url(#softGlow)"/>
 
-  <!-- Glowing Particles -->
-  <circle cx="200" cy="10" r="3" fill="#00f0ff" filter="url(#hyperGlow)" class="glow-cyan"/>
-  <circle cx="700" cy="10" r="3" fill="#ffd700" filter="url(#hyperGlow)" class="glow-gold"/>
-
-  <text x="450" y="45" text-anchor="middle" class="font-sans glow-cyan" font-weight="900" font-size="12" fill="#00f0ff" letter-spacing="1" filter="url(#hyperGlow)">
+  <text x="450" y="45" text-anchor="middle" class="font-sans" font-weight="600" font-size="11" fill="#e0e0e0" letter-spacing="2">
     "EVERY INVESTIGATION TEACHES SOMETHING. EVERY DETECTION RULE IS A LESSON DOCUMENTED."
   </text>
 
-  <text x="450" y="75" text-anchor="middle" class="font-mono glow-gold" font-weight="bold" font-size="10" fill="#ffd700" letter-spacing="1" filter="url(#hyperGlow)">
+  <text x="450" y="75" text-anchor="middle" class="font-mono" font-weight="normal" font-size="9" fill="#777777" letter-spacing="1">
     NOT CHASING TITLES — BUILDING THE DISCIPLINE TO UNDERSTAND, DETECT, AND DEFEND.
   </text>
 </svg>

@@ -1,25 +1,23 @@
 <svg viewBox="0 0 900 90" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#050110"/>
-      <stop offset="50%" stop-color="#0a0518"/>
-      <stop offset="100%" stop-color="#020005"/>
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="50%" stop-color="#050505"/>
+      <stop offset="100%" stop-color="#000000"/>
     </linearGradient>
 
-    <filter id="hyperGlow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
 
   <style>
-    @keyframes pulseGlow { 0%, 100% { filter: drop-shadow(0 0 5px #00f0ff); opacity: 0.8; } 50% { filter: drop-shadow(0 0 20px #00f0ff); opacity: 1; } }
-    @keyframes fastSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    @keyframes slowSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     @keyframes beam { 0% { stroke-dashoffset: 700; } 100% { stroke-dashoffset: 0; } }
 
-    .node-pulse { animation: pulseGlow 1.5s infinite; }
-    .spin { transform-origin: center; animation: fastSpin 2s linear infinite; }
-    .energy-beam { stroke-dasharray: 50 700; animation: beam 1.5s linear infinite; }
+    .spin { transform-origin: center; animation: slowSpin 10s linear infinite; }
+    .energy-beam { stroke-dasharray: 50 700; animation: beam 3s linear infinite; }
 
     .font-sans { font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif; }
     .font-mono { font-family: Consolas, "SFMono-Regular", Menlo, Monaco, "Liberation Mono", monospace; }
@@ -27,42 +25,37 @@
 
   <rect width="900" height="90" fill="url(#bg)"/>
 
-  <!-- High-FX Line -->
-  <line x1="100" y1="45" x2="800" y2="45" stroke="#333" stroke-width="4" stroke-linecap="round"/>
-  <line x1="100" y1="45" x2="800" y2="45" stroke="#00f0ff" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
-  <line x1="100" y1="45" x2="800" y2="45" stroke="#ffffff" stroke-width="4" class="energy-beam" filter="url(#hyperGlow)"/>
+  <!-- Minimal Line -->
+  <line x1="100" y1="45" x2="800" y2="45" stroke="#111111" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="100" y1="45" x2="800" y2="45" stroke="#ffffff" stroke-width="1.5" class="energy-beam" filter="url(#softGlow)" opacity="0.5"/>
 
   <!-- ProtonMail -->
   <g>
-    <circle cx="200" cy="45" r="5" fill="#000000" stroke="#00f0ff" stroke-width="3" filter="url(#hyperGlow)"/>
-    <g transform="translate(200,45)"><polygon points="0,-8 2,-2 8,0 2,2 0,8 -2,2 -8,0 -2,-2" fill="#ffffff" class="spin"/></g>
-    <text x="200" y="25" text-anchor="middle" class="font-sans" font-weight="900" font-size="12" fill="#00f0ff" letter-spacing="2" filter="url(#hyperGlow)">PROTONMAIL</text>
-    <text x="200" y="70" text-anchor="middle" class="font-mono" font-size="10" font-weight="bold" fill="#ffffff">anhtunguyen.sec</text>
+    <rect x="197" y="42" width="6" height="6" fill="#000000" stroke="#e0e0e0" stroke-width="1" transform="rotate(45 200 45)"/>
+    <text x="200" y="25" text-anchor="middle" class="font-sans" font-weight="600" font-size="11" fill="#e0e0e0" letter-spacing="2">PROTONMAIL</text>
+    <text x="200" y="70" text-anchor="middle" class="font-mono" font-size="10" font-weight="normal" fill="#a9a9a9">anhtunguyen.sec</text>
   </g>
 
   <!-- Telegram -->
   <g>
-    <circle cx="366" cy="45" r="5" fill="#000000" stroke="#8e44ad" stroke-width="3" filter="url(#hyperGlow)"/>
-    <g transform="translate(366,45)"><polygon points="0,-8 2,-2 8,0 2,2 0,8 -2,2 -8,0 -2,-2" fill="#ffffff" class="spin"/></g>
-    <text x="366" y="25" text-anchor="middle" class="font-sans" font-weight="900" font-size="12" fill="#8e44ad" letter-spacing="2" filter="url(#hyperGlow)">TELEGRAM</text>
-    <text x="366" y="70" text-anchor="middle" class="font-mono" font-size="10" font-weight="bold" fill="#ffffff">@ekaznya</text>
+    <rect x="363" y="42" width="6" height="6" fill="#000000" stroke="#a9a9a9" stroke-width="1" transform="rotate(45 366 45)"/>
+    <text x="366" y="25" text-anchor="middle" class="font-sans" font-weight="600" font-size="11" fill="#a9a9a9" letter-spacing="2">TELEGRAM</text>
+    <text x="366" y="70" text-anchor="middle" class="font-mono" font-size="10" font-weight="normal" fill="#777777">@ekaznya</text>
   </g>
 
   <!-- GitHub -->
   <g>
-    <circle cx="533" cy="45" r="5" fill="#000000" stroke="#ffd700" stroke-width="3" filter="url(#hyperGlow)"/>
-    <circle cx="533" cy="45" r="8" fill="none" stroke="#ffd700" stroke-width="1.5" stroke-dasharray="4 2" class="spin"/>
-    <g transform="translate(533,45)"><polygon points="0,-8 2,-2 8,0 2,2 0,8 -2,2 -8,0 -2,-2" fill="#ffffff" class="spin"/></g>
-    <text x="533" y="25" text-anchor="middle" class="font-sans" font-weight="900" font-size="12" fill="#ffd700" letter-spacing="2" filter="url(#hyperGlow)">GITHUB</text>
-    <text x="533" y="70" text-anchor="middle" class="font-mono" font-size="10" font-weight="bold" fill="#ffffff">ekaznyra</text>
+    <rect x="530" y="42" width="6" height="6" fill="#000000" stroke="#d4af37" stroke-width="1.5" transform="rotate(45 533 45)" filter="url(#softGlow)"/>
+    <circle cx="533" cy="45" r="8" fill="none" stroke="#d4af37" stroke-width="0.5" stroke-dasharray="2 2" class="spin"/>
+    <text x="533" y="25" text-anchor="middle" class="font-sans" font-weight="800" font-size="11" fill="#d4af37" letter-spacing="2" filter="url(#softGlow)">GITHUB</text>
+    <text x="533" y="70" text-anchor="middle" class="font-mono" font-size="10" font-weight="normal" fill="#ffffff">ekaznyra</text>
   </g>
 
   <!-- LinkedIn -->
   <g>
-    <circle cx="700" cy="45" r="5" fill="#000000" stroke="#00f0ff" stroke-width="3" filter="url(#hyperGlow)"/>
-    <g transform="translate(700,45)"><polygon points="0,-8 2,-2 8,0 2,2 0,8 -2,2 -8,0 -2,-2" fill="#ffffff" class="spin"/></g>
-    <text x="700" y="25" text-anchor="middle" class="font-sans" font-weight="900" font-size="12" fill="#00f0ff" letter-spacing="2" filter="url(#hyperGlow)">LINKEDIN</text>
-    <text x="700" y="70" text-anchor="middle" class="font-mono" font-size="10" font-weight="bold" fill="#ffffff">Connect</text>
+    <rect x="697" y="42" width="6" height="6" fill="#000000" stroke="#e0e0e0" stroke-width="1" transform="rotate(45 700 45)"/>
+    <text x="700" y="25" text-anchor="middle" class="font-sans" font-weight="600" font-size="11" fill="#e0e0e0" letter-spacing="2">LINKEDIN</text>
+    <text x="700" y="70" text-anchor="middle" class="font-mono" font-size="10" font-weight="normal" fill="#a9a9a9">Connect</text>
   </g>
 
 </svg>
