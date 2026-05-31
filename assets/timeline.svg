@@ -137,9 +137,9 @@
     <circle cx="680" cy="80" r="6" fill="#0b0e1a" stroke="#2d3047" stroke-width="1.5" stroke-dasharray="3 2" class="future"/>
   </g>
   <g class="l4">
-    <text x="680" y="58" text-anchor="middle" class="year-text" fill="#2d3047" class="future">NEXT</text>
-    <text x="680" y="105" text-anchor="middle" class="desc-text" fill="#2d3047" class="future">SOC Operations · BTL1 · CCD</text>
-    <text x="680" y="118" text-anchor="middle" class="desc-text" fill="#1e2035" class="future">Open Source · Detection Eng</text>
+    <text x="680" y="58" text-anchor="middle" class="year-text future" fill="#2d3047">NEXT</text>
+    <text x="680" y="105" text-anchor="middle" class="desc-text future" fill="#2d3047">SOC Operations · BTL1 · CCD</text>
+    <text x="680" y="118" text-anchor="middle" class="desc-text future" fill="#1e2035">Open Source · Detection Eng</text>
   </g>
 
   <!-- End target -->
