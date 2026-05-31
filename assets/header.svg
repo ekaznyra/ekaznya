@@ -44,8 +44,6 @@
   </defs>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700;900&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap');
-
     @keyframes fastRotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     @keyframes fastRotateRev { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
     @keyframes pulseGlow { 0%, 100% { filter: drop-shadow(0 0 2px #ffd700); opacity: 0.7; } 50% { filter: drop-shadow(0 0 10px #ffd700); opacity: 1; } }
@@ -81,8 +79,8 @@
     .glitch-cyan { animation: glitchMove 3s infinite alternate; fill: rgba(0,240,255,0.7); filter: drop-shadow(0 0 5px #00f0ff); }
     .glitch-purple { animation: glitchMove 3s infinite alternate-reverse; fill: rgba(142,68,173,0.7); filter: drop-shadow(0 0 5px #8e44ad); }
 
-    .font-sans { font-family: 'Rajdhani', sans-serif; }
-    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .font-sans { font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif; }
+    .font-mono { font-family: Consolas, "SFMono-Regular", Menlo, Monaco, "Liberation Mono", monospace; }
   </style>
 
   <!-- Deep Space Base -->

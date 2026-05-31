@@ -18,16 +18,14 @@
   </defs>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700;900&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap');
-
     @keyframes pulseGlow { 0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 5px #00f0ff); } 50% { opacity: 1; filter: drop-shadow(0 0 15px #00f0ff); } }
     @keyframes pulseGold { 0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 5px #ffd700); } 50% { opacity: 1; filter: drop-shadow(0 0 15px #ffd700); } }
 
     .glow-cyan { animation: pulseGlow 3s infinite; }
     .glow-gold { animation: pulseGold 3s infinite 1.5s; }
 
-    .font-sans { font-family: 'Rajdhani', sans-serif; }
-    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .font-sans { font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif; }
+    .font-mono { font-family: Consolas, "SFMono-Regular", Menlo, Monaco, "Liberation Mono", monospace; }
   </style>
 
   <rect width="900" height="100" fill="url(#bg)"/>

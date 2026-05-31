@@ -18,8 +18,6 @@
   </defs>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700;900&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap');
-
     @keyframes pulseNode { 0%, 100% { r: 6; filter: drop-shadow(0 0 10px #ffd700); } 50% { r: 8; filter: drop-shadow(0 0 25px #ffd700); } }
     @keyframes energyBeam { 0% { stroke-dashoffset: 800; } 100% { stroke-dashoffset: 0; } }
     @keyframes haloPulse { 0%, 100% { r: 15; opacity: 0.5; stroke-width: 1; } 50% { r: 25; opacity: 0; stroke-width: 3; } }
@@ -28,8 +26,8 @@
     .node-active { animation: pulseNode 1.5s infinite; }
     .halo { animation: haloPulse 2s ease-out infinite; }
 
-    .font-sans { font-family: 'Rajdhani', sans-serif; }
-    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .font-sans { font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif; }
+    .font-mono { font-family: Consolas, "SFMono-Regular", Menlo, Monaco, "Liberation Mono", monospace; }
   </style>
 
   <rect width="900" height="200" fill="url(#bg)"/>
