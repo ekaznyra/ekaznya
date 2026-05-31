@@ -1,265 +1,310 @@
 <svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Gradient definitions -->
+    <!-- Deeper luxury dark background -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#06070d"/>
-      <stop offset="50%" stop-color="#0b0e1a"/>
-      <stop offset="100%" stop-color="#080a14"/>
+      <stop offset="0%" stop-color="#020205"/>
+      <stop offset="40%" stop-color="#05060A"/>
+      <stop offset="80%" stop-color="#080A12"/>
+      <stop offset="100%" stop-color="#030408"/>
     </linearGradient>
+    
+    <!-- Cyberpunk Accent Gradient (Purple to Cyan) -->
     <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#6c5ce7" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#6c5ce7" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#6c5ce7" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#a29bfe" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#00f0ff" stop-opacity="0.9"/>
+      <stop offset="80%" stop-color="#6c5ce7" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#a29bfe" stop-opacity="0"/>
-      <stop offset="20%" stop-color="#a29bfe" stop-opacity="0.4"/>
-      <stop offset="80%" stop-color="#6c5ce7" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#6c5ce7" stop-opacity="0"/>
+
+    <!-- Luxury Gold Accent -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd700"/>
+      <stop offset="50%" stop-color="#ffb86c"/>
+      <stop offset="100%" stop-color="#d4af37"/>
     </linearGradient>
+
+    <!-- Name Text Gradient -->
     <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#e2e8f0"/>
-      <stop offset="50%" stop-color="#f8f9fb"/>
-      <stop offset="100%" stop-color="#c4b5fd"/>
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="30%" stop-color="#e2e8f0"/>
+      <stop offset="60%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#a29bfe"/>
     </linearGradient>
-    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#6c5ce7" stop-opacity="0"/>
-      <stop offset="30%" stop-color="#a29bfe" stop-opacity="0.3"/>
-      <stop offset="70%" stop-color="#6c5ce7" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#6c5ce7" stop-opacity="0"/>
-    </linearGradient>
-    <radialGradient id="orbGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#a29bfe" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#a29bfe" stop-opacity="0"/>
+
+    <!-- Core Glow (Cyan/Purple mix) -->
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.3"/>
+      <stop offset="40%" stop-color="#6c5ce7" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#020205" stop-opacity="0"/>
     </radialGradient>
 
+    <radialGradient id="goldGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffd700" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ffd700" stop-opacity="0"/>
+    </radialGradient>
 
-
+    <!-- Filters for Intense Glow -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glitch">
+      <feOffset dx="2" dy="0" in="SourceGraphic" result="red-shift"/>
+      <feOffset dx="-2" dy="0" in="SourceGraphic" result="blue-shift"/>
+      <!-- A simplified glitch effect by overlaying slightly offset versions -->
+    </filter>
   </defs>
 
   <style>
-    @keyframes drift {
-      0%, 100% { transform: translateY(0px); opacity: 0.3; }
-      50% { transform: translateY(-8px); opacity: 0.8; }
-    }
-    @keyframes drift2 {
-      0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.2; }
-      33% { transform: translateY(-5px) translateX(3px); opacity: 0.6; }
-      66% { transform: translateY(3px) translateX(-2px); opacity: 0.4; }
-    }
-    @keyframes orbitSlow {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    @keyframes orbitReverse {
-      0% { transform: rotate(360deg); }
-      100% { transform: rotate(0deg); }
-    }
-    @keyframes fadeSlideUp {
-      0% { opacity: 0; transform: translateY(15px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes pulseRing {
-      0% { r: 40; opacity: 0.3; }
-      50% { r: 55; opacity: 0; }
-      100% { r: 40; opacity: 0.3; }
-    }
-    @keyframes scanVertical {
-      0% { transform: translateY(-400px); }
-      100% { transform: translateY(400px); }
-    }
-    @keyframes shimmer {
-      0% { transform: translateX(-900px); }
-      100% { transform: translateX(900px); }
-    }
-    @keyframes breathe {
-      0%, 100% { opacity: 0.04; }
-      50% { opacity: 0.08; }
-    }
-    @keyframes particleFade {
-      0%, 100% { opacity: 0; r: 0.5; }
-      50% { opacity: 0.7; r: 1.5; }
-    }
-    @keyframes hexRotate {
-      0% { transform: rotate(0deg); opacity: 0.06; }
-      50% { opacity: 0.12; }
-      100% { transform: rotate(60deg); opacity: 0.06; }
-    }
-    @keyframes lineTrace {
-      0% { stroke-dashoffset: 600; }
-      100% { stroke-dashoffset: 0; }
-    }
-    @keyframes statusBlink {
-      0%, 40% { opacity: 1; }
-      50%, 90% { opacity: 0.3; }
-      100% { opacity: 1; }
-    }
-    .p1 { animation: drift 6s ease-in-out infinite; }
-    .p2 { animation: drift 8s ease-in-out infinite 1s; }
-    .p3 { animation: drift2 7s ease-in-out infinite 0.5s; }
-    .p4 { animation: drift 9s ease-in-out infinite 2s; }
-    .p5 { animation: drift2 5s ease-in-out infinite 1.5s; }
-    .p6 { animation: drift 10s ease-in-out infinite 3s; }
-    .p7 { animation: drift2 6.5s ease-in-out infinite 0.8s; }
-    .p8 { animation: drift 7.5s ease-in-out infinite 2.5s; }
-    .p9 { animation: particleFade 4s ease-in-out infinite; }
-    .p10 { animation: particleFade 5s ease-in-out infinite 1s; }
-    .p11 { animation: particleFade 6s ease-in-out infinite 2s; }
-    .p12 { animation: particleFade 4.5s ease-in-out infinite 0.5s; }
-    .p13 { animation: particleFade 5.5s ease-in-out infinite 1.5s; }
-    .orbit1 { transform-origin: 740px 200px; animation: orbitSlow 20s linear infinite; }
-    .orbit2 { transform-origin: 740px 200px; animation: orbitReverse 15s linear infinite; }
-    .orbit3 { transform-origin: 740px 200px; animation: orbitSlow 25s linear infinite; }
-    .fade1 { animation: fadeSlideUp 0.8s ease-out 0.3s both; }
-    .fade2 { animation: fadeSlideUp 0.8s ease-out 0.6s both; }
-    .fade3 { animation: fadeSlideUp 0.8s ease-out 0.9s both; }
-    .fade4 { animation: fadeSlideUp 0.8s ease-out 1.2s both; }
-    .fade5 { animation: fadeSlideUp 0.8s ease-out 1.5s both; }
-    .scan { animation: scanVertical 6s linear infinite; }
-    .shimmer-bar { animation: shimmer 4s ease-in-out infinite; }
-    .breathe { animation: breathe 4s ease-in-out infinite; }
-    .hex-spin { transform-origin: center; animation: hexRotate 12s linear infinite; }
-    .trace { stroke-dasharray: 600; animation: lineTrace 3s ease-out both; }
-    .trace2 { stroke-dasharray: 600; animation: lineTrace 3s ease-out 0.5s both; }
-    .status-dot { animation: statusBlink 2s ease-in-out infinite; }
-    .pulse-ring { animation: pulseRing 3s ease-out infinite; }
+    @keyframes drift { 0%,100%{transform:translateY(0);opacity:.4} 50%{transform:translateY(-12px);opacity:.9} }
+    @keyframes drift2 { 0%,100%{transform:translate(0,0);opacity:.3} 50%{transform:translate(-5px, 8px);opacity:.7} }
+    @keyframes orbitFast { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
+    @keyframes orbitSlow { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
+    @keyframes orbitReverse { 0%{transform:rotate(360deg)} 100%{transform:rotate(0deg)} }
+    @keyframes fadeSlideUp { 0%{opacity:0;transform:translateY(20px)} 100%{opacity:1;transform:translateY(0)} }
+    @keyframes scanV { 0%{transform:translateY(-400px)} 100%{transform:translateY(400px)} }
+    @keyframes shimmer { 0%{transform:translateX(-900px)} 100%{transform:translateX(900px)} }
+    @keyframes pulseRing { 0%{r:20;opacity:0.6;stroke-width:2} 100%{r:90;opacity:0;stroke-width:0.5} }
+    @keyframes hexRotate { 0%{transform:rotate(0deg);opacity:0.05} 50%{opacity:0.18} 100%{transform:rotate(60deg);opacity:0.05} }
+    @keyframes matrixFall { 0%{transform:translateY(-20px);opacity:0} 10%{opacity:0.8} 90%{opacity:0.8} 100%{transform:translateY(420px);opacity:0} }
+    @keyframes glitchAnim { 0%,100%{transform:translate(0)} 20%{transform:translate(-2px,1px)} 40%{transform:translate(2px,-1px)} 60%{transform:translate(-1px,2px)} 80%{transform:translate(1px,-2px)} }
+    @keyframes dataStream { 0%{stroke-dashoffset:60} 100%{stroke-dashoffset:0} }
+    @keyframes corePulse { 0%,100%{opacity:0.7;r:5} 50%{opacity:1;r:7} }
+    @keyframes radarSweep { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
+    @keyframes blink { 0%,49%{opacity:1} 50%,100%{opacity:0.2} }
+
+    .p1{animation:drift 5s ease-in-out infinite}
+    .p2{animation:drift2 7s ease-in-out infinite 1s}
+    .p3{animation:drift 6s ease-in-out infinite 2s}
+    
+    .orbit-outer{transform-origin:720px 200px;animation:orbitSlow 30s linear infinite}
+    .orbit-mid{transform-origin:720px 200px;animation:orbitReverse 20s linear infinite}
+    .orbit-inner{transform-origin:720px 200px;animation:orbitFast 10s linear infinite}
+    
+    .fade1{animation:fadeSlideUp 1s cubic-bezier(0.1, 0.8, 0.2, 1) 0.2s both}
+    .fade2{animation:fadeSlideUp 1s cubic-bezier(0.1, 0.8, 0.2, 1) 0.4s both}
+    .fade3{animation:fadeSlideUp 1s cubic-bezier(0.1, 0.8, 0.2, 1) 0.6s both}
+    .fade4{animation:fadeSlideUp 1s cubic-bezier(0.1, 0.8, 0.2, 1) 0.8s both}
+    .fade5{animation:fadeSlideUp 1s cubic-bezier(0.1, 0.8, 0.2, 1) 1.0s both}
+    
+    .scan{animation:scanV 4s linear infinite}
+    .shimmer-bar{animation:shimmer 3s ease-in-out infinite}
+    
+    .hex-spin{transform-origin:450px 200px;animation:hexRotate 15s linear infinite}
+    .matrix{animation:matrixFall 6s linear infinite}
+    .data-s{stroke-dasharray:10 5;animation:dataStream 1s linear infinite}
+    .pulse-ring{transform-origin:720px 200px; animation:pulseRing 2.5s cubic-bezier(0.2, 0.8, 0.3, 1) infinite}
+    .pulse-ring2{transform-origin:720px 200px; animation:pulseRing 2.5s cubic-bezier(0.2, 0.8, 0.3, 1) infinite 1.25s}
+    .core-p{animation:corePulse 2s ease-in-out infinite}
+    .radar{transform-origin:720px 200px; animation:radarSweep 4s linear infinite}
+    .glitch-text{animation:glitchAnim 4s infinite step-end}
+    .blinker{animation:blink 1.5s step-end infinite}
   </style>
 
-  <!-- Background -->
+  <!-- Void Background -->
   <rect width="900" height="400" fill="url(#bgGrad)"/>
 
-  <!-- Atmospheric haze orbs -->
-  <circle cx="200" cy="180" r="120" fill="url(#orbGlow)" class="breathe"/>
-  <circle cx="700" cy="200" r="150" fill="url(#orbGlow)" class="breathe" style="animation-delay: 2s"/>
-  <circle cx="450" cy="350" r="100" fill="url(#orbGlow)" class="breathe" style="animation-delay: 1s"/>
-
-  <!-- Subtle hex grid pattern (unique, not the generic square grid) -->
-  <g opacity="0.03" stroke="#a29bfe" stroke-width="0.3" fill="none" class="hex-spin">
-    <polygon points="450,50 480,67 480,100 450,117 420,100 420,67"/>
-    <polygon points="450,130 480,147 480,180 450,197 420,180 420,147"/>
-    <polygon points="380,90 410,107 410,140 380,157 350,140 350,107"/>
-    <polygon points="520,90 550,107 550,140 520,157 490,140 490,107"/>
-    <polygon points="380,170 410,187 410,220 380,237 350,220 350,187"/>
-    <polygon points="520,170 550,187 550,220 520,237 490,220 490,187"/>
-    <polygon points="310,130 340,147 340,180 310,197 280,180 280,147"/>
-    <polygon points="590,130 620,147 620,180 590,197 560,180 560,147"/>
+  <!-- Complex Data Grid -->
+  <g opacity="0.04" stroke="#00f0ff" stroke-width="0.5">
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00f0ff" stroke-width="0.5"/>
+    </pattern>
+    <rect width="900" height="400" fill="url(#grid)"/>
+    <!-- Diagonal crosshatches for luxury tech feel -->
+    <pattern id="diag" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="20" stroke="#6c5ce7" stroke-width="0.2"/>
+    </pattern>
+    <rect width="900" height="400" fill="url(#diag)"/>
   </g>
 
-  <!-- Scan line effect -->
-  <rect class="scan" x="0" y="0" width="900" height="3" fill="url(#accentGrad)" opacity="0.15"/>
+  <!-- Large Core Glows -->
+  <circle cx="200" cy="200" r="180" fill="url(#coreGlow)" opacity="0.6"/>
+  <circle cx="720" cy="200" r="220" fill="url(#coreGlow)" opacity="0.8"/>
+  <circle cx="450" cy="350" r="150" fill="url(#goldGlow)" opacity="0.3"/>
 
-  <!-- Floating particles constellation -->
-  <g>
-    <circle cx="80" cy="90" r="1.2" fill="#a29bfe" class="p1"/>
-    <circle cx="150" cy="60" r="0.8" fill="#6c5ce7" class="p2"/>
-    <circle cx="230" cy="120" r="1" fill="#c4b5fd" class="p3"/>
-    <circle cx="310" cy="45" r="0.6" fill="#a29bfe" class="p4"/>
-    <circle cx="400" cy="85" r="1.1" fill="#6c5ce7" class="p5"/>
-    <circle cx="500" cy="55" r="0.7" fill="#c4b5fd" class="p6"/>
-    <circle cx="560" cy="100" r="0.9" fill="#a29bfe" class="p7"/>
-    <circle cx="650" cy="70" r="1" fill="#6c5ce7" class="p8"/>
-    <circle cx="120" cy="300" r="1" fill="#a29bfe" class="p9"/>
-    <circle cx="280" cy="330" r="0.8" fill="#c4b5fd" class="p10"/>
-    <circle cx="420" cy="350" r="1.2" fill="#6c5ce7" class="p11"/>
-    <circle cx="560" cy="320" r="0.7" fill="#a29bfe" class="p12"/>
-    <circle cx="700" cy="340" r="0.9" fill="#c4b5fd" class="p13"/>
-    <!-- Constellation lines between particles -->
-    <line x1="80" y1="90" x2="150" y2="60" stroke="#a29bfe" stroke-width="0.2" opacity="0.15"/>
-    <line x1="150" y1="60" x2="230" y2="120" stroke="#a29bfe" stroke-width="0.2" opacity="0.1"/>
-    <line x1="230" y1="120" x2="310" y2="45" stroke="#6c5ce7" stroke-width="0.2" opacity="0.1"/>
-    <line x1="400" y1="85" x2="500" y2="55" stroke="#6c5ce7" stroke-width="0.2" opacity="0.12"/>
-    <line x1="500" y1="55" x2="560" y2="100" stroke="#a29bfe" stroke-width="0.2" opacity="0.1"/>
-    <line x1="560" y1="100" x2="650" y2="70" stroke="#c4b5fd" stroke-width="0.2" opacity="0.08"/>
-    <line x1="120" y1="300" x2="280" y2="330" stroke="#a29bfe" stroke-width="0.2" opacity="0.1"/>
-    <line x1="420" y1="350" x2="560" y2="320" stroke="#6c5ce7" stroke-width="0.2" opacity="0.08"/>
+  <!-- Rotating Hex Grid Layer -->
+  <g opacity="0.06" stroke="#00f0ff" stroke-width="0.5" fill="none" class="hex-spin">
+    <polygon points="450,50 493,75 493,125 450,150 407,125 407,75"/>
+    <polygon points="450,150 493,175 493,225 450,250 407,225 407,175"/>
+    <polygon points="364,100 407,125 407,175 364,200 321,175 321,125"/>
+    <polygon points="536,100 579,125 579,175 536,200 493,175 493,125"/>
+    <!-- Extra hexes -->
+    <polygon points="364,200 407,225 407,275 364,300 321,275 321,225"/>
+    <polygon points="536,200 579,225 579,275 536,300 493,275 493,225"/>
   </g>
 
-  <!-- Left side: Identity block -->
+  <!-- Matrix Rain / Encrypted Data -->
+  <g font-family="Consolas, monospace" font-size="10" font-weight="bold" opacity="0.12">
+    <text x="40" y="0" fill="#00f0ff" class="matrix" style="animation-delay:0.1s">0x9A</text>
+    <text x="120" y="0" fill="#6c5ce7" class="matrix" style="animation-delay:1.5s">DECRYPT</text>
+    <text x="220" y="0" fill="#ffd700" class="matrix" style="animation-delay:0.8s">SYS_OK</text>
+    <text x="320" y="0" fill="#00f0ff" class="matrix" style="animation-delay:2.4s">YARA_MATCH</text>
+    <text x="410" y="0" fill="#6c5ce7" class="matrix" style="animation-delay:0.3s">SIGMA</text>
+    <text x="500" y="0" fill="#ffd700" class="matrix" style="animation-delay:3.1s">ANOMALY</text>
+    <text x="590" y="0" fill="#00f0ff" class="matrix" style="animation-delay:1.9s">IOC_FOUND</text>
+    <text x="680" y="0" fill="#6c5ce7" class="matrix" style="animation-delay:0.7s">MEMDUMP</text>
+    <text x="790" y="0" fill="#ffd700" class="matrix" style="animation-delay:2.8s">0xFF</text>
+    <text x="860" y="0" fill="#00f0ff" class="matrix" style="animation-delay:1.2s">C2_SYNC</text>
+  </g>
+
+  <!-- High-Tech HUD Corners (Luxury Gold & Cyan) -->
+  <g opacity="0.8">
+    <!-- Top Left -->
+    <path d="M 20 50 L 20 20 L 50 20" fill="none" stroke="#00f0ff" stroke-width="2" filter="url(#glow)"/>
+    <rect x="18" y="18" width="4" height="4" fill="#ffd700"/>
+    <!-- Top Right -->
+    <path d="M 880 50 L 880 20 L 850 20" fill="none" stroke="#00f0ff" stroke-width="2" filter="url(#glow)"/>
+    <rect x="878" y="18" width="4" height="4" fill="#ffd700"/>
+    <!-- Bottom Left -->
+    <path d="M 20 350 L 20 380 L 50 380" fill="none" stroke="#00f0ff" stroke-width="2" filter="url(#glow)"/>
+    <rect x="18" y="378" width="4" height="4" fill="#ffd700"/>
+    <!-- Bottom Right -->
+    <path d="M 880 350 L 880 380 L 850 380" fill="none" stroke="#00f0ff" stroke-width="2" filter="url(#glow)"/>
+    <rect x="878" y="378" width="4" height="4" fill="#ffd700"/>
+  </g>
+
+  <!-- Circuit Traces / Data Streams -->
+  <g opacity="0.3" stroke="#00f0ff" stroke-width="1.5">
+    <path d="M 0 120 L 80 120 L 100 140 L 180 140" class="data-s"/>
+    <circle cx="180" cy="140" r="3" fill="#ffd700" filter="url(#glow)"/>
+    
+    <path d="M 900 280 L 820 280 L 800 260 L 750 260" class="data-s" style="animation-delay:0.5s" stroke="#6c5ce7"/>
+    <circle cx="750" cy="260" r="3" fill="#00f0ff" filter="url(#glow)"/>
+    
+    <path d="M 400 380 L 420 350 L 480 350 L 500 380" class="data-s" style="animation-delay:0.2s" stroke="#ffd700"/>
+  </g>
+
+  <!-- Left Side: Identity & Profile -->
   <g class="fade1">
-    <!-- Thin accent line -->
-    <line x1="50" y1="70" x2="50" y2="340" stroke="url(#lineGrad)" stroke-width="1" class="trace" opacity="0.5"/>
-    <circle cx="50" cy="70" r="2" fill="#a29bfe" opacity="0.6"/>
-    <circle cx="50" cy="340" r="2" fill="#6c5ce7" opacity="0.4"/>
+    <!-- Vertical luxury line -->
+    <line x1="50" y1="60" x2="50" y2="340" stroke="url(#goldGrad)" stroke-width="3" filter="url(#glow)"/>
+    <rect x="47" y="60" width="6" height="6" fill="#00f0ff" filter="url(#glow)"/>
+    <rect x="47" y="334" width="6" height="6" fill="#00f0ff" filter="url(#glow)"/>
   </g>
 
-  <!-- Name -->
+  <!-- Classification Label -->
   <g class="fade2">
-    <text x="75" y="120" font-family="'Segoe UI', system-ui, sans-serif" font-weight="200" font-size="13" fill="#6c5ce7" letter-spacing="6" opacity="0.7">
-      IDENTITY
+    <rect x="75" y="82" width="130" height="18" fill="#00f0ff" opacity="0.1"/>
+    <text x="82" y="94" font-family="Consolas, monospace" font-size="10" font-weight="bold" fill="#00f0ff" letter-spacing="3" class="blinker">
+      CLEARANCE // L-5
     </text>
-    <text x="75" y="170" font-family="'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="42" fill="url(#nameGrad)">
+  </g>
+
+  <!-- Name Plate -->
+  <g class="fade3">
+    <text x="75" y="130" font-family="'Segoe UI', system-ui, sans-serif" font-weight="400" font-size="14" fill="#a29bfe" letter-spacing="8">
+      OPERATIVE ID
+    </text>
+    <text x="75" y="180" font-family="'Segoe UI', system-ui, sans-serif" font-weight="900" font-size="48" fill="url(#nameGrad)" filter="url(#glow)" class="glitch-text">
       NGUYỄN NGỌC
     </text>
-    <text x="75" y="220" font-family="'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="42" fill="url(#nameGrad)">
+    <text x="75" y="235" font-family="'Segoe UI', system-ui, sans-serif" font-weight="900" font-size="48" fill="url(#nameGrad)" filter="url(#glow)">
       ANH TÚ
     </text>
   </g>
 
-  <!-- Role line -->
-  <g class="fade3">
-    <line x1="75" y1="240" x2="200" y2="240" stroke="#6c5ce7" stroke-width="0.5" opacity="0.4" class="trace2"/>
-    <text x="75" y="268" font-family="Consolas, monospace" font-weight="300" font-size="13" fill="#8b8fa3" letter-spacing="1">
-      Cybersecurity · DFIR · Detection Engineering
-    </text>
-  </g>
-
-  <!-- Status indicators -->
+  <!-- Role Description -->
   <g class="fade4">
-    <circle cx="83" cy="305" r="3" fill="#a29bfe" class="status-dot"/>
-    <text x="95" y="309" font-family="Consolas, monospace" font-size="10" fill="#565a6e" letter-spacing="0.5">
-      investigating threats · building detections
+    <!-- Underline -->
+    <path d="M 75 255 L 250 255 L 270 270" stroke="#00f0ff" stroke-width="1.5" fill="none" filter="url(#glow)"/>
+    <text x="75" y="285" font-family="Consolas, monospace" font-weight="bold" font-size="14" fill="#ffb86c" letter-spacing="1">
+      Cybersecurity · DFIR · Detection Eng.
     </text>
   </g>
 
-  <!-- Right side: Orbital system (unique visual element) -->
+  <!-- Status Module -->
   <g class="fade5">
-    <!-- Outer orbital ring -->
-    <g class="orbit1">
-      <circle cx="740" cy="200" r="110" fill="none" stroke="#6c5ce7" stroke-width="0.3" opacity="0.15"/>
-      <circle cx="740" cy="90" r="3" fill="#a29bfe" opacity="0.5"/>
-      <circle cx="850" cy="200" r="2" fill="#6c5ce7" opacity="0.4"/>
-    </g>
-
-    <!-- Middle orbital ring -->
-    <g class="orbit2">
-      <circle cx="740" cy="200" r="75" fill="none" stroke="#a29bfe" stroke-width="0.3" opacity="0.12"/>
-      <circle cx="740" cy="125" r="2.5" fill="#c4b5fd" opacity="0.5"/>
-      <circle cx="665" cy="200" r="2" fill="#a29bfe" opacity="0.3"/>
-    </g>
-
-    <!-- Inner orbital ring -->
-    <g class="orbit3">
-      <circle cx="740" cy="200" r="40" fill="none" stroke="#c4b5fd" stroke-width="0.4" opacity="0.1"/>
-      <circle cx="740" cy="160" r="2" fill="#a29bfe" opacity="0.6"/>
-    </g>
-
-    <!-- Center core -->
-    <circle cx="740" cy="200" r="6" fill="#0b0e1a" stroke="#a29bfe" stroke-width="1.5" opacity="0.6"/>
-    <circle cx="740" cy="200" r="2" fill="#a29bfe" opacity="0.8"/>
-    <circle cx="740" cy="200" r="0" fill="none" stroke="#a29bfe" stroke-width="0.5" class="pulse-ring"/>
-
-    <!-- Orbital labels -->
-    <text x="740" y="320" text-anchor="middle" font-family="Consolas, monospace" font-size="8" fill="#3d4155" letter-spacing="3">
-      THREAT LANDSCAPE
+    <rect x="75" y="320" width="180" height="24" rx="2" fill="#080A12" stroke="#6c5ce7" stroke-width="1"/>
+    <circle cx="90" cy="332" r="4" fill="#00f0ff" class="blinker" filter="url(#glow)"/>
+    <text x="105" y="336" font-family="Consolas, monospace" font-size="11" fill="#e2e8f0" letter-spacing="0.5">
+      SYSTEM STATUS: <tspan fill="#00f0ff">ACTIVE</tspan>
     </text>
+  </g>
 
-    <!-- Skill nodes around orbit -->
-    <g opacity="0.7">
-      <text x="640" y="135" text-anchor="middle" font-family="Consolas, monospace" font-size="8" fill="#ff6b9d" letter-spacing="1">DFIR</text>
-      <text x="835" y="165" text-anchor="end" font-family="Consolas, monospace" font-size="8" fill="#ffd93d" letter-spacing="1">HUNT</text>
-      <text x="835" y="250" text-anchor="end" font-family="Consolas, monospace" font-size="8" fill="#4ecdc4" letter-spacing="1">DETECT</text>
-      <text x="640" y="280" text-anchor="middle" font-family="Consolas, monospace" font-size="8" fill="#a29bfe" letter-spacing="1">ANALYZE</text>
+  <!-- Right Side: Complex Threat Radar / Orbital System -->
+  <g class="fade5">
+    <!-- Radar Base Rings -->
+    <circle cx="720" cy="200" r="140" fill="none" stroke="#6c5ce7" stroke-width="1" opacity="0.3" stroke-dasharray="4 8"/>
+    <circle cx="720" cy="200" r="100" fill="none" stroke="#00f0ff" stroke-width="0.5" opacity="0.4"/>
+    <circle cx="720" cy="200" r="60" fill="none" stroke="#ffd700" stroke-width="0.5" opacity="0.2"/>
+
+    <!-- Radar Sweep Effect -->
+    <g class="radar">
+      <path d="M 720 200 L 720 60 A 140 140 0 0 1 860 200 Z" fill="url(#accentGrad)" opacity="0.3"/>
+      <line x1="720" y1="200" x2="720" y2="60" stroke="#00f0ff" stroke-width="2" filter="url(#glow)"/>
+    </g>
+
+    <!-- Outer Orbit (Threats) -->
+    <g class="orbit-outer">
+      <circle cx="720" cy="60" r="4" fill="#ff4757" filter="url(#glow)"/>
+      <circle cx="860" cy="200" r="3" fill="#ff4757" opacity="0.6"/>
+      <circle cx="620" cy="300" r="5" fill="#ff4757" filter="url(#glowStrong)"/>
+    </g>
+
+    <!-- Mid Orbit (Defenses) -->
+    <g class="orbit-mid">
+      <circle cx="720" cy="100" r="5" fill="#00f0ff" filter="url(#glow)"/>
+      <circle cx="633" cy="250" r="4" fill="#00f0ff"/>
+      <circle cx="807" cy="150" r="4" fill="#00f0ff"/>
+    </g>
+
+    <!-- Inner Orbit (Analysis) -->
+    <g class="orbit-inner">
+      <circle cx="720" cy="140" r="3" fill="#ffd700" filter="url(#glow)"/>
+      <circle cx="780" cy="200" r="2" fill="#ffd700"/>
+    </g>
+
+    <!-- Glowing Core Center -->
+    <circle cx="720" cy="200" r="12" fill="#00f0ff" filter="url(#glowStrong)" class="core-p"/>
+    <circle cx="720" cy="200" r="6" fill="#ffffff"/>
+    
+    <!-- Expanding Pulse Rings -->
+    <circle cx="720" cy="200" fill="none" stroke="#00f0ff" class="pulse-ring"/>
+    <circle cx="720" cy="200" fill="none" stroke="#6c5ce7" class="pulse-ring2"/>
+
+    <!-- Crosshairs -->
+    <path d="M 720 180 L 720 190 M 720 210 L 720 220 M 700 200 L 710 200 M 730 200 L 740 200" stroke="#ffd700" stroke-width="1.5"/>
+
+    <!-- High-Tech Radar Labels -->
+    <text x="720" y="360" text-anchor="middle" font-family="Consolas, monospace" font-size="10" fill="#a29bfe" letter-spacing="4" font-weight="bold">
+      THREAT RADAR // ONLINE
+    </text>
+    
+    <!-- Skill/Node text on radar -->
+    <g font-family="Consolas, monospace" font-size="11" font-weight="bold">
+      <text x="600" y="110" fill="#00f0ff" filter="url(#glow)">[ FORENSICS ]</text>
+      <text x="820" y="110" fill="#ffd700" filter="url(#glow)">[ HUNTING ]</text>
+      <text x="820" y="300" fill="#ff4757" filter="url(#glow)">[ DETECTION ]</text>
+      <text x="600" y="300" fill="#6c5ce7" filter="url(#glow)">[ ANALYSIS ]</text>
     </g>
   </g>
 
-  <!-- Bottom accent line -->
+  <!-- Top Info Bar (Luxury Details) -->
+  <g opacity="0.6">
+    <text x="40" y="35" font-family="Consolas, monospace" font-size="8" fill="#a29bfe" letter-spacing="2">IP: 127.0.0.1</text>
+    <text x="450" y="35" text-anchor="middle" font-family="Consolas, monospace" font-size="8" fill="#ffd700" letter-spacing="6">ENCRYPTED CONNECTION</text>
+    <text x="860" y="35" text-anchor="end" font-family="Consolas, monospace" font-size="8" fill="#00f0ff" letter-spacing="2">TIME: 2026.05.31</text>
+  </g>
+
+  <!-- Bottom Data Bar -->
   <g class="fade5">
-    <rect x="50" y="375" width="800" height="1" fill="url(#accentGrad)" opacity="0.3"/>
-    <text x="450" y="393" text-anchor="middle" font-family="Consolas, monospace" font-size="8" fill="#2d3047" letter-spacing="4">
+    <rect x="0" y="390" width="900" height="10" fill="#0a0c18"/>
+    <rect x="0" y="390" width="900" height="1" fill="#00f0ff" opacity="0.5"/>
+    <rect x="0" y="390" width="200" height="2" fill="#ffd700" filter="url(#glow)"/>
+    <rect x="400" y="390" width="100" height="2" fill="#00f0ff" filter="url(#glow)"/>
+    <text x="450" y="398" text-anchor="middle" font-family="Consolas, monospace" font-size="7" fill="#6c5ce7" letter-spacing="8">
       OBSERVE · INVESTIGATE · DOCUMENT · IMPROVE
     </text>
   </g>
 
-  <!-- Shimmer overlay -->
-  <rect class="shimmer-bar" x="0" y="0" width="60" height="400" fill="url(#accentGrad)" opacity="0.03"/>
+  <!-- Global Overlay Effects -->
+  <!-- Scanline -->
+  <rect class="scan" x="0" y="0" width="900" height="4" fill="#00f0ff" opacity="0.3" filter="url(#glow)"/>
+  <!-- Light Shimmer -->
+  <rect class="shimmer-bar" x="0" y="0" width="100" height="400" fill="url(#accentGrad)" opacity="0.05"/>
 </svg>

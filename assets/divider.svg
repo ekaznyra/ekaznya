@@ -1,34 +1,49 @@
 <svg viewBox="0 0 900 40" xmlns="http://www.w3.org/2000/svg">
   <defs>
+    <!-- Luxury Cyber Wave Gradient -->
     <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#6c5ce7" stop-opacity="0"/>
-      <stop offset="20%" stop-color="#a29bfe" stop-opacity="0.6"/>
-      <stop offset="50%" stop-color="#6c5ce7" stop-opacity="0.8"/>
-      <stop offset="80%" stop-color="#a29bfe" stop-opacity="0.6"/>
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0"/>
+      <stop offset="15%" stop-color="#00f0ff" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#ffd700" stop-opacity="1"/>
+      <stop offset="85%" stop-color="#6c5ce7" stop-opacity="0.8"/>
       <stop offset="100%" stop-color="#6c5ce7" stop-opacity="0"/>
     </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
   <style>
     @keyframes dotFloat {
-      0%, 100% { opacity: 0.2; }
-      50% { opacity: 0.8; }
+      0%, 100% { opacity: 0.3; r: 1.5; }
+      50% { opacity: 1; r: 3; }
     }
     @keyframes lineShimmer {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 0.6; }
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.9; }
+    }
+    @keyframes dataFlow {
+      0% { stroke-dashoffset: 40; }
+      100% { stroke-dashoffset: 0; }
     }
     .wave { animation: lineShimmer 3s ease-in-out infinite; }
     .d1 { animation: dotFloat 2s ease-in-out infinite; }
     .d2 { animation: dotFloat 2s ease-in-out infinite 0.5s; }
     .d3 { animation: dotFloat 2s ease-in-out infinite 1s; }
     .d4 { animation: dotFloat 2s ease-in-out infinite 1.5s; }
+    .data-line { stroke-dasharray: 4 6; animation: dataFlow 1.5s linear infinite; }
   </style>
   <rect width="900" height="40" fill="transparent"/>
-  <!-- Static wave path with shimmer animation -->
-  <path class="wave" d="M0,20 Q50,8 100,20 Q150,32 200,20 Q250,8 300,20 Q350,32 400,20 Q450,8 500,20 Q550,32 600,20 Q650,8 700,20 Q750,32 800,20 Q850,8 900,20" fill="none" stroke="url(#waveGrad)" stroke-width="1"/>
-  <!-- Signal dots -->
-  <circle cx="200" cy="20" r="1.5" fill="#a29bfe" class="d1"/>
-  <circle cx="400" cy="20" r="1.5" fill="#6c5ce7" class="d2"/>
-  <circle cx="600" cy="20" r="1.5" fill="#a29bfe" class="d3"/>
-  <circle cx="800" cy="20" r="1.5" fill="#6c5ce7" class="d4"/>
+  
+  <!-- Dynamic wave path with shimmer -->
+  <path class="wave" d="M0,20 Q50,5 100,20 T200,20 T300,20 T400,20 T500,20 T600,20 T700,20 T800,20 T900,20" fill="none" stroke="url(#waveGrad)" stroke-width="1.5" filter="url(#glow)"/>
+  
+  <!-- Secondary tech trace -->
+  <path class="data-line" d="M0,20 Q50,35 100,20 T200,20 T300,20 T400,20 T500,20 T600,20 T700,20 T800,20 T900,20" fill="none" stroke="#00f0ff" stroke-width="0.5" opacity="0.5"/>
+
+  <!-- Signal nodes -->
+  <circle cx="200" cy="20" r="2" fill="#00f0ff" class="d1" filter="url(#glow)"/>
+  <circle cx="400" cy="20" r="2" fill="#ffd700" class="d2" filter="url(#glow)"/>
+  <circle cx="600" cy="20" r="2" fill="#ff4757" class="d3" filter="url(#glow)"/>
+  <circle cx="800" cy="20" r="2" fill="#6c5ce7" class="d4" filter="url(#glow)"/>
 </svg>

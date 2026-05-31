@@ -1,191 +1,231 @@
-<svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
   <defs>
+    <!-- Deep luxury background -->
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#06070d"/>
-      <stop offset="100%" stop-color="#0b0e1a"/>
-    </linearGradient>
-    <linearGradient id="barGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ff6b9d"/>
-      <stop offset="100%" stop-color="#c44569"/>
-    </linearGradient>
-    <linearGradient id="barGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ffd93d"/>
-      <stop offset="100%" stop-color="#f0932b"/>
-    </linearGradient>
-    <linearGradient id="barGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#4ecdc4"/>
-      <stop offset="100%" stop-color="#2d98a6"/>
-    </linearGradient>
-    <linearGradient id="barGrad4" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#a29bfe"/>
-      <stop offset="100%" stop-color="#6c5ce7"/>
-    </linearGradient>
-    <linearGradient id="barGrad5" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#74b9ff"/>
-      <stop offset="100%" stop-color="#0984e3"/>
-    </linearGradient>
-    <linearGradient id="barGrad6" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#fd79a8"/>
-      <stop offset="100%" stop-color="#e84393"/>
-    </linearGradient>
-    <linearGradient id="divLine" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#a29bfe" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#a29bfe" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#a29bfe" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#020205"/>
+      <stop offset="100%" stop-color="#080A12"/>
     </linearGradient>
 
+    <!-- Luxury Bar Gradients -->
+    <linearGradient id="barGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff"/><stop offset="100%" stop-color="#0080ff"/>
+    </linearGradient>
+    <linearGradient id="barGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffd700"/><stop offset="100%" stop-color="#ff9f43"/>
+    </linearGradient>
+    <linearGradient id="barGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff4757"/><stop offset="100%" stop-color="#c0392b"/>
+    </linearGradient>
+    <linearGradient id="barGrad4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a29bfe"/><stop offset="100%" stop-color="#6c5ce7"/>
+    </linearGradient>
+    <linearGradient id="barGrad5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff"/><stop offset="100%" stop-color="#4ecdc4"/>
+    </linearGradient>
+    <linearGradient id="barGrad6" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffd700"/><stop offset="100%" stop-color="#e84393"/>
+    </linearGradient>
+
+    <!-- Divider Line -->
+    <linearGradient id="divLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffd700" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="barGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="strongGlow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
 
   <style>
-    @keyframes growBar {
-      0% { width: 0; }
-      100% { width: var(--target-width); }
-    }
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateX(-10px); }
-      100% { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes nodeFloat {
-      0%, 100% { opacity: 0.3; r: 2; }
-      50% { opacity: 0.8; r: 3; }
-    }
-    @keyframes dataPulse {
-      0% { stroke-dashoffset: 20; }
-      100% { stroke-dashoffset: 0; }
-    }
-    .row1 { animation: fadeIn 0.6s ease-out 0.2s both; }
-    .row2 { animation: fadeIn 0.6s ease-out 0.35s both; }
-    .row3 { animation: fadeIn 0.6s ease-out 0.5s both; }
-    .row4 { animation: fadeIn 0.6s ease-out 0.65s both; }
-    .row5 { animation: fadeIn 0.6s ease-out 0.8s both; }
-    .row6 { animation: fadeIn 0.6s ease-out 0.95s both; }
-    .skill-label {
-      font-family: Consolas, monospace;
-      font-size: 10px;
-      letter-spacing: 1.5px;
-    }
-    .skill-sub {
-      font-family: Consolas, monospace;
-      font-size: 8px;
-      fill: #3d4155;
-    }
-    .section-title {
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      font-size: 10px;
-      letter-spacing: 4px;
-      fill: #6c5ce7;
-      opacity: 0.5;
-    }
-    .node { animation: nodeFloat 3s ease-in-out infinite; }
-    .node2 { animation: nodeFloat 3s ease-in-out infinite 1s; }
-    .node3 { animation: nodeFloat 3s ease-in-out infinite 2s; }
-    .data-line {
-      stroke-dasharray: 4 3;
-      animation: dataPulse 2s linear infinite;
-    }
+    @keyframes fadeIn { 0%{opacity:0;transform:translateX(-20px)} 100%{opacity:1;transform:translateX(0)} }
+    @keyframes nodeFloat { 0%,100%{opacity:0.4;r:2.5} 50%{opacity:1;r:4} }
+    @keyframes dataPulse { 0%{stroke-dashoffset:30} 100%{stroke-dashoffset:0} }
+    @keyframes cornerPulse { 0%,100%{opacity:0.5} 50%{opacity:1; stroke:#ffd700} }
+    @keyframes scanLine { 0%{transform:translateY(-300px)} 100%{transform:translateY(300px)} }
+    @keyframes barExpand { 0%{width:0; opacity:0} 100%{opacity:0.9} }
+    @keyframes hexRotate { 0%{transform:rotate(0deg);opacity:0.02} 50%{opacity:0.08} 100%{transform:rotate(60deg);opacity:0.02} }
+
+    .row1{animation:fadeIn 0.7s cubic-bezier(0.1, 0.8, 0.2, 1) 0.2s both}
+    .row2{animation:fadeIn 0.7s cubic-bezier(0.1, 0.8, 0.2, 1) 0.35s both}
+    .row3{animation:fadeIn 0.7s cubic-bezier(0.1, 0.8, 0.2, 1) 0.5s both}
+    .row4{animation:fadeIn 0.7s cubic-bezier(0.1, 0.8, 0.2, 1) 0.65s both}
+    .row5{animation:fadeIn 0.7s cubic-bezier(0.1, 0.8, 0.2, 1) 0.8s both}
+    .row6{animation:fadeIn 0.7s cubic-bezier(0.1, 0.8, 0.2, 1) 0.95s both}
+    
+    .bar1{animation:barExpand 1s cubic-bezier(0.1, 0.8, 0.2, 1) 0.4s both}
+    .bar2{animation:barExpand 1s cubic-bezier(0.1, 0.8, 0.2, 1) 0.55s both}
+    .bar3{animation:barExpand 1s cubic-bezier(0.1, 0.8, 0.2, 1) 0.7s both}
+    .bar4{animation:barExpand 1s cubic-bezier(0.1, 0.8, 0.2, 1) 0.85s both}
+    .bar5{animation:barExpand 1s cubic-bezier(0.1, 0.8, 0.2, 1) 1.0s both}
+    .bar6{animation:barExpand 1s cubic-bezier(0.1, 0.8, 0.2, 1) 1.15s both}
+
+    .skill-label{font-family:Consolas, monospace; font-size:11px; font-weight:bold; letter-spacing:2px}
+    .skill-sub{font-family:Consolas, monospace; font-size:9px; fill:#e2e8f0; font-weight:bold}
+    .section-title{font-family:'Segoe UI', system-ui, sans-serif; font-size:11px; font-weight:900; letter-spacing:6px; fill:#ffd700; opacity:0.9}
+    
+    .node-c{animation:nodeFloat 2s ease-in-out infinite}
+    .node-g{animation:nodeFloat 2s ease-in-out infinite 0.6s}
+    .node-p{animation:nodeFloat 2s ease-in-out infinite 1.2s}
+    
+    .data-line{stroke-dasharray:6 4; animation:dataPulse 1.5s linear infinite}
+    .corner-fx{animation:cornerPulse 2s ease-in-out infinite}
+    .scan{animation:scanLine 3s linear infinite}
+    .hud{font-family:Consolas, monospace; font-size:8px; font-weight:bold; fill:#00f0ff; letter-spacing:2px}
+    .pct{font-family:Consolas, monospace; font-size:10px; font-weight:bold; letter-spacing:1px}
+    .hex-spin{transform-origin:750px 150px; animation:hexRotate 20s linear infinite}
   </style>
 
-  <rect width="900" height="280" fill="url(#bg)"/>
+  <rect width="900" height="300" fill="url(#bg)"/>
 
-  <!-- Background particles -->
-  <circle cx="100" cy="40" r="0.6" fill="#a29bfe" class="node"/>
-  <circle cx="250" cy="250" r="0.5" fill="#6c5ce7" class="node2"/>
-  <circle cx="500" cy="30" r="0.7" fill="#c4b5fd" class="node3"/>
-  <circle cx="800" cy="60" r="0.5" fill="#a29bfe" class="node"/>
-  <circle cx="700" cy="250" r="0.6" fill="#6c5ce7" class="node2"/>
+  <!-- Complex Grid -->
+  <g opacity="0.05" stroke="#00f0ff" stroke-width="0.5">
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none"/>
+    </pattern>
+    <rect width="900" height="300" fill="url(#grid)"/>
+  </g>
 
-  <!-- Section header -->
-  <text x="450" y="28" text-anchor="middle" class="section-title">CAPABILITY MATRIX</text>
-  <rect x="150" y="35" width="600" height="0.5" fill="url(#divLine)"/>
+  <!-- Hexagonal Tech Background on Right -->
+  <g opacity="0.08" stroke="#ffd700" stroke-width="1" fill="none" class="hex-spin">
+    <polygon points="750,50 836,100 836,200 750,250 664,200 664,100"/>
+    <polygon points="750,100 793,125 793,175 750,200 707,175 707,125"/>
+  </g>
 
+  <!-- Vertical Scan Laser -->
+  <rect class="scan" x="0" y="0" width="900" height="2" fill="url(#divLine)" opacity="0.6"/>
+
+  <!-- Advanced HUD Corners -->
+  <g class="corner-fx" opacity="0.8" stroke="#00f0ff" stroke-width="1.5">
+    <!-- Top Left -->
+    <path d="M 15 25 L 15 10 L 30 10" fill="none" filter="url(#glow)"/>
+    <rect x="13" y="8" width="4" height="4" fill="#ffd700"/>
+    <!-- Top Right -->
+    <path d="M 885 25 L 885 10 L 870 10" fill="none" filter="url(#glow)"/>
+    <rect x="883" y="8" width="4" height="4" fill="#ffd700"/>
+    <!-- Bottom Left -->
+    <path d="M 15 275 L 15 290 L 30 290" fill="none" filter="url(#glow)"/>
+    <rect x="13" y="288" width="4" height="4" fill="#ffd700"/>
+    <!-- Bottom Right -->
+    <path d="M 885 275 L 885 290 L 870 290" fill="none" filter="url(#glow)"/>
+    <rect x="883" y="288" width="4" height="4" fill="#ffd700"/>
+  </g>
+
+  <!-- Top Title Bar -->
+  <text x="450" y="28" text-anchor="middle" class="section-title" filter="url(#glow)">CAPABILITY MATRIX</text>
+  <rect x="200" y="36" width="500" height="1" fill="url(#divLine)"/>
+  <rect x="445" y="34" width="10" height="4" fill="#ffd700" filter="url(#glow)"/>
+  
+  <text x="40" y="28" class="hud">SYS://CAPABILITIES</text>
+  <text x="860" y="28" text-anchor="end" class="hud">LVL:5_ACCESS</text>
+
+  <!-- Right Side: Neural Network Graph (Glowing) -->
+  <g opacity="0.4">
+    <path d="M 740 75 L 740 265" stroke="#00f0ff" stroke-width="1" class="data-line"/>
+    <path d="M 740 75 Q 780 110 820 100" stroke="#00f0ff" stroke-width="0.5"/>
+    <path d="M 740 113 Q 780 120 820 140" stroke="#ffd700" stroke-width="0.5"/>
+    <path d="M 740 151 Q 780 160 820 170" stroke="#ff4757" stroke-width="0.5"/>
+    <path d="M 740 189 Q 780 200 820 210" stroke="#a29bfe" stroke-width="0.5"/>
+    <path d="M 740 227 Q 780 230 820 240" stroke="#00f0ff" stroke-width="0.5"/>
+    <path d="M 740 265 Q 780 260 820 270" stroke="#ffd700" stroke-width="0.5"/>
+  </g>
+
+  <!-- Data Rows (Skills) -->
+  
   <!-- Row 1: DFIR -->
   <g class="row1">
-    <text x="50" y="78" class="skill-label" fill="#ff6b9d">DFIR</text>
-    <rect x="170" y="67" width="500" height="16" rx="2" fill="#0f1120" opacity="0.6"/>
-    <rect x="170" y="67" width="400" height="16" rx="2" fill="url(#barGrad1)" opacity="0.8"/>
-    <text x="175" y="78" class="skill-sub" fill="#0b0e1a" opacity="0.8">Evidence Acquisition · Timeline Analysis · Artifact Parsing · Memory Forensics</text>
-    <text x="680" y="78" class="skill-label" fill="#3d4155">80%</text>
-    <!-- Connection nodes -->
-    <circle cx="740" cy="75" r="2" fill="#ff6b9d" class="node" opacity="0.5"/>
-    <line x1="680" y1="75" x2="735" y2="75" stroke="#ff6b9d" stroke-width="0.3" opacity="0.2" class="data-line"/>
+    <text x="50" y="78" class="skill-label" fill="#00f0ff" filter="url(#glow)">DFIR_</text>
+    <rect x="170" y="67" width="500" height="16" rx="2" fill="#0f1120" stroke="#00f0ff" stroke-width="0.5" opacity="0.6"/>
+    <rect x="170" y="67" width="400" height="16" rx="2" fill="url(#barGrad1)" filter="url(#barGlow)" class="bar1"/>
+    <text x="175" y="79" class="skill-sub" fill="#020205">Evidence Acquisition · Timeline Analysis · Artifact Parsing · Memory Forensics</text>
+    <text x="680" y="79" class="pct" fill="#00f0ff">80%</text>
+    <circle cx="740" cy="75" r="3" fill="#00f0ff" class="node-c" filter="url(#glowStrong)"/>
+    <line x1="705" y1="75" x2="735" y2="75" stroke="#00f0ff" stroke-width="1" class="data-line"/>
   </g>
 
   <!-- Row 2: Threat Hunting -->
   <g class="row2">
-    <text x="50" y="116" class="skill-label" fill="#ffd93d">HUNT</text>
-    <rect x="170" y="105" width="500" height="16" rx="2" fill="#0f1120" opacity="0.6"/>
-    <rect x="170" y="105" width="375" height="16" rx="2" fill="url(#barGrad2)" opacity="0.8"/>
-    <text x="175" y="116" class="skill-sub" fill="#0b0e1a" opacity="0.8">Hypothesis-Driven · MITRE ATT&amp;CK · Behavioral Analysis · Threat Intel</text>
-    <text x="680" y="116" class="skill-label" fill="#3d4155">75%</text>
-    <circle cx="740" cy="113" r="2" fill="#ffd93d" class="node2" opacity="0.5"/>
-    <line x1="680" y1="113" x2="735" y2="113" stroke="#ffd93d" stroke-width="0.3" opacity="0.2" class="data-line"/>
+    <text x="50" y="116" class="skill-label" fill="#ffd700" filter="url(#glow)">HUNT_</text>
+    <rect x="170" y="105" width="500" height="16" rx="2" fill="#0f1120" stroke="#ffd700" stroke-width="0.5" opacity="0.6"/>
+    <rect x="170" y="105" width="375" height="16" rx="2" fill="url(#barGrad2)" filter="url(#barGlow)" class="bar2"/>
+    <text x="175" y="117" class="skill-sub" fill="#020205">Hypothesis-Driven · MITRE ATT&amp;CK · Behavioral Analysis · Threat Intel</text>
+    <text x="680" y="117" class="pct" fill="#ffd700">75%</text>
+    <circle cx="740" cy="113" r="3" fill="#ffd700" class="node-g" filter="url(#glowStrong)"/>
+    <line x1="705" y1="113" x2="735" y2="113" stroke="#ffd700" stroke-width="1" class="data-line"/>
   </g>
 
   <!-- Row 3: Detection -->
   <g class="row3">
-    <text x="50" y="154" class="skill-label" fill="#4ecdc4">DETECT</text>
-    <rect x="170" y="143" width="500" height="16" rx="2" fill="#0f1120" opacity="0.6"/>
-    <rect x="170" y="143" width="350" height="16" rx="2" fill="url(#barGrad3)" opacity="0.8"/>
-    <text x="175" y="154" class="skill-sub" fill="#0b0e1a" opacity="0.8">YARA Signatures · Sigma Rules · Log Correlation · ATT&amp;CK Coverage</text>
-    <text x="680" y="154" class="skill-label" fill="#3d4155">70%</text>
-    <circle cx="740" cy="151" r="2" fill="#4ecdc4" class="node3" opacity="0.5"/>
-    <line x1="680" y1="151" x2="735" y2="151" stroke="#4ecdc4" stroke-width="0.3" opacity="0.2" class="data-line"/>
+    <text x="50" y="154" class="skill-label" fill="#ff4757" filter="url(#glow)">DETECT_</text>
+    <rect x="170" y="143" width="500" height="16" rx="2" fill="#0f1120" stroke="#ff4757" stroke-width="0.5" opacity="0.6"/>
+    <rect x="170" y="143" width="350" height="16" rx="2" fill="url(#barGrad3)" filter="url(#barGlow)" class="bar3"/>
+    <text x="175" y="155" class="skill-sub" fill="#ffffff">YARA Signatures · Sigma Rules · Log Correlation · ATT&amp;CK Coverage</text>
+    <text x="680" y="155" class="pct" fill="#ff4757">70%</text>
+    <circle cx="740" cy="151" r="3" fill="#ff4757" class="node-p" filter="url(#glowStrong)"/>
+    <line x1="705" y1="151" x2="735" y2="151" stroke="#ff4757" stroke-width="1" class="data-line"/>
   </g>
 
   <!-- Row 4: SOC Ops -->
   <g class="row4">
-    <text x="50" y="192" class="skill-label" fill="#a29bfe">SOCOPS</text>
-    <rect x="170" y="181" width="500" height="16" rx="2" fill="#0f1120" opacity="0.6"/>
-    <rect x="170" y="181" width="325" height="16" rx="2" fill="url(#barGrad4)" opacity="0.8"/>
-    <text x="175" y="192" class="skill-sub" fill="#0b0e1a" opacity="0.8">SIEM · Alert Triage · Incident Response · Endpoint Monitoring</text>
-    <text x="680" y="192" class="skill-label" fill="#3d4155">65%</text>
-    <circle cx="740" cy="189" r="2" fill="#a29bfe" class="node" opacity="0.5"/>
-    <line x1="680" y1="189" x2="735" y2="189" stroke="#a29bfe" stroke-width="0.3" opacity="0.2" class="data-line"/>
+    <text x="50" y="192" class="skill-label" fill="#a29bfe" filter="url(#glow)">SOCOPS_</text>
+    <rect x="170" y="181" width="500" height="16" rx="2" fill="#0f1120" stroke="#a29bfe" stroke-width="0.5" opacity="0.6"/>
+    <rect x="170" y="181" width="325" height="16" rx="2" fill="url(#barGrad4)" filter="url(#barGlow)" class="bar4"/>
+    <text x="175" y="193" class="skill-sub" fill="#ffffff">SIEM · Alert Triage · Incident Response · Endpoint Monitoring</text>
+    <text x="680" y="193" class="pct" fill="#a29bfe">65%</text>
+    <circle cx="740" cy="189" r="3" fill="#a29bfe" class="node-c" filter="url(#glowStrong)"/>
+    <line x1="705" y1="189" x2="735" y2="189" stroke="#a29bfe" stroke-width="1" class="data-line"/>
   </g>
 
   <!-- Row 5: Programming -->
   <g class="row5">
-    <text x="50" y="230" class="skill-label" fill="#74b9ff">CODE</text>
-    <rect x="170" y="219" width="500" height="16" rx="2" fill="#0f1120" opacity="0.6"/>
-    <rect x="170" y="219" width="350" height="16" rx="2" fill="url(#barGrad5)" opacity="0.8"/>
-    <text x="175" y="230" class="skill-sub" fill="#0b0e1a" opacity="0.8">Python · Bash · Automation · Log Parsers · Analysis Tools</text>
-    <text x="680" y="230" class="skill-label" fill="#3d4155">70%</text>
-    <circle cx="740" cy="227" r="2" fill="#74b9ff" class="node2" opacity="0.5"/>
-    <line x1="680" y1="227" x2="735" y2="227" stroke="#74b9ff" stroke-width="0.3" opacity="0.2" class="data-line"/>
+    <text x="50" y="230" class="skill-label" fill="#00f0ff" filter="url(#glow)">CODE_</text>
+    <rect x="170" y="219" width="500" height="16" rx="2" fill="#0f1120" stroke="#00f0ff" stroke-width="0.5" opacity="0.6"/>
+    <rect x="170" y="219" width="350" height="16" rx="2" fill="url(#barGrad5)" filter="url(#barGlow)" class="bar5"/>
+    <text x="175" y="231" class="skill-sub" fill="#020205">Python · Bash · Automation · Log Parsers · Analysis Tools</text>
+    <text x="680" y="231" class="pct" fill="#00f0ff">70%</text>
+    <circle cx="740" cy="227" r="3" fill="#00f0ff" class="node-g" filter="url(#glowStrong)"/>
+    <line x1="705" y1="227" x2="735" y2="227" stroke="#00f0ff" stroke-width="1" class="data-line"/>
   </g>
 
   <!-- Row 6: Malware -->
   <g class="row6">
-    <text x="50" y="268" class="skill-label" fill="#fd79a8">MALWARE</text>
-    <rect x="170" y="257" width="500" height="16" rx="2" fill="#0f1120" opacity="0.6"/>
-    <rect x="170" y="257" width="300" height="16" rx="2" fill="url(#barGrad6)" opacity="0.8"/>
-    <text x="175" y="268" class="skill-sub" fill="#0b0e1a" opacity="0.8">Static Analysis · Dynamic Analysis · Behavioral Indicators · Sandboxing</text>
-    <text x="680" y="268" class="skill-label" fill="#3d4155">60%</text>
-    <circle cx="740" cy="265" r="2" fill="#fd79a8" class="node3" opacity="0.5"/>
-    <line x1="680" y1="265" x2="735" y2="265" stroke="#fd79a8" stroke-width="0.3" opacity="0.2" class="data-line"/>
+    <text x="50" y="268" class="skill-label" fill="#ffd700" filter="url(#glow)">MALWARE_</text>
+    <rect x="170" y="257" width="500" height="16" rx="2" fill="#0f1120" stroke="#ffd700" stroke-width="0.5" opacity="0.6"/>
+    <rect x="170" y="257" width="300" height="16" rx="2" fill="url(#barGrad6)" filter="url(#barGlow)" class="bar6"/>
+    <text x="175" y="269" class="skill-sub" fill="#020205">Static Analysis · Dynamic Analysis · Behavioral Indicators · Sandboxing</text>
+    <text x="680" y="269" class="pct" fill="#ffd700">60%</text>
+    <circle cx="740" cy="265" r="3" fill="#ffd700" class="node-p" filter="url(#glowStrong)"/>
+    <line x1="705" y1="265" x2="735" y2="265" stroke="#ffd700" stroke-width="1" class="data-line"/>
   </g>
 
-  <!-- Right side: Connection network -->
-  <g opacity="0.15">
-    <line x1="740" y1="75" x2="740" y2="113" stroke="#a29bfe" stroke-width="0.5"/>
-    <line x1="740" y1="113" x2="740" y2="151" stroke="#a29bfe" stroke-width="0.5"/>
-    <line x1="740" y1="151" x2="740" y2="189" stroke="#a29bfe" stroke-width="0.5"/>
-    <line x1="740" y1="189" x2="740" y2="227" stroke="#a29bfe" stroke-width="0.5"/>
-    <line x1="740" y1="227" x2="740" y2="265" stroke="#a29bfe" stroke-width="0.5"/>
-    <!-- Cross connections -->
-    <line x1="740" y1="75" x2="770" y2="151" stroke="#ff6b9d" stroke-width="0.3"/>
-    <line x1="740" y1="113" x2="770" y2="189" stroke="#ffd93d" stroke-width="0.3"/>
-    <line x1="740" y1="151" x2="770" y2="227" stroke="#4ecdc4" stroke-width="0.3"/>
-    <line x1="740" y1="75" x2="770" y2="265" stroke="#a29bfe" stroke-width="0.3"/>
-  </g>
-
-  <!-- Right side labels -->
-  <g>
-    <text x="780" y="120" font-family="Consolas, monospace" font-size="7" fill="#1e2035" letter-spacing="1">WINDOWS</text>
-    <text x="780" y="132" font-family="Consolas, monospace" font-size="7" fill="#1e2035" letter-spacing="1">LINUX</text>
-    <text x="780" y="170" font-family="Consolas, monospace" font-size="7" fill="#1e2035" letter-spacing="1">DOCKER</text>
-    <text x="780" y="182" font-family="Consolas, monospace" font-size="7" fill="#1e2035" letter-spacing="1">KALI</text>
-    <text x="780" y="220" font-family="Consolas, monospace" font-size="7" fill="#1e2035" letter-spacing="1">AUTOPSY</text>
-    <text x="780" y="232" font-family="Consolas, monospace" font-size="7" fill="#1e2035" letter-spacing="1">GHIDRA</text>
+  <!-- Neural Network Tools Nodes -->
+  <g font-family="Consolas, monospace" font-size="9" font-weight="bold" letter-spacing="1.5">
+    <circle cx="820" cy="100" r="2" fill="#00f0ff" filter="url(#glow)"/>
+    <text x="830" y="103" fill="#00f0ff">VELOCIRAPTOR</text>
+    
+    <circle cx="820" cy="140" r="2" fill="#ffd700" filter="url(#glow)"/>
+    <text x="830" y="143" fill="#ffd700">AUTOPSY</text>
+    
+    <circle cx="820" cy="170" r="2" fill="#ff4757" filter="url(#glow)"/>
+    <text x="830" y="173" fill="#ff4757">VOLATILITY</text>
+    
+    <circle cx="820" cy="210" r="2" fill="#a29bfe" filter="url(#glow)"/>
+    <text x="830" y="213" fill="#a29bfe">SPLUNK</text>
+    
+    <circle cx="820" cy="240" r="2" fill="#00f0ff" filter="url(#glow)"/>
+    <text x="830" y="243" fill="#00f0ff">GHIDRA</text>
+    
+    <circle cx="820" cy="270" r="2" fill="#ffd700" filter="url(#glow)"/>
+    <text x="830" y="273" fill="#ffd700">ANY.RUN</text>
   </g>
 </svg>
