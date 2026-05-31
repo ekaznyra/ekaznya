@@ -1,51 +1,33 @@
 <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Deep Cosmic Background -->
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#020105"/>
-      <stop offset="50%" stop-color="#06050b"/>
-      <stop offset="100%" stop-color="#030305"/>
+      <stop offset="0%" stop-color="#050110"/>
+      <stop offset="50%" stop-color="#0a0518"/>
+      <stop offset="100%" stop-color="#020005"/>
     </linearGradient>
 
-    <!-- Milky Way Dust Gradients -->
-    <radialGradient id="dust1" cx="40%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.04"/>
-      <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="dust2" cx="80%" cy="30%" r="50%">
-      <stop offset="0%" stop-color="#6c5ce7" stop-opacity="0.05"/>
-      <stop offset="100%" stop-color="#6c5ce7" stop-opacity="0"/>
-    </radialGradient>
-
-    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#b89b5e"/>
-      <stop offset="50%" stop-color="#d4af37"/>
-      <stop offset="100%" stop-color="#8a733f"/>
-    </linearGradient>
-
-    <filter id="starGlow">
-      <feGaussianBlur stdDeviation="1.5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="hyperGlow">
+      <feGaussianBlur stdDeviation="2.5" result="blur1"/>
+      <feGaussianBlur stdDeviation="5" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
   </defs>
 
   <style>
-    @keyframes fadeRight { 0% { opacity: 0; transform: translateX(-10px); } 100% { opacity: 1; transform: translateX(0); } }
-    @keyframes expandLine { 0% { stroke-dashoffset: 1000; } 100% { stroke-dashoffset: 0; } }
-    @keyframes twinkle { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
-    @keyframes driftStars { 0% { transform: translateX(0) translateY(0); } 100% { transform: translateX(-10px) translateY(-5px); } }
-
-    .f1 { animation: fadeRight 0.8s cubic-bezier(0.1, 0.8, 0.2, 1) 0.3s both; }
-    .f2 { animation: fadeRight 0.8s cubic-bezier(0.1, 0.8, 0.2, 1) 0.45s both; }
-    .f3 { animation: fadeRight 0.8s cubic-bezier(0.1, 0.8, 0.2, 1) 0.6s both; }
-    .f4 { animation: fadeRight 0.8s cubic-bezier(0.1, 0.8, 0.2, 1) 0.75s both; }
-    .f5 { animation: fadeRight 0.8s cubic-bezier(0.1, 0.8, 0.2, 1) 0.9s both; }
-    .f6 { animation: fadeRight 0.8s cubic-bezier(0.1, 0.8, 0.2, 1) 1.05s both; }
+    @keyframes energyBeam { 0% { stroke-dashoffset: 1000; } 100% { stroke-dashoffset: 0; } }
+    @keyframes pulseNode { 0%, 100% { r: 4; filter: drop-shadow(0 0 10px #00f0ff); } 50% { r: 6; filter: drop-shadow(0 0 20px #00f0ff); } }
+    @keyframes pulseNodeGold { 0%, 100% { r: 4; filter: drop-shadow(0 0 10px #ffd700); } 50% { r: 6; filter: drop-shadow(0 0 20px #ffd700); } }
     
-    .chart-line { stroke-dasharray: 1000; animation: expandLine 2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.5s both; }
-    .tw { animation: twinkle 4s ease-in-out infinite; }
-    .tw2 { animation: twinkle 5s ease-in-out infinite 1s; }
-    .star-drift { animation: driftStars 60s linear infinite alternate; }
+    .beam-cyan { stroke-dasharray: 50 1000; animation: energyBeam 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+    .beam-gold { stroke-dasharray: 50 1000; animation: energyBeam 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite 0.3s; }
+    .beam-purple { stroke-dasharray: 50 1000; animation: energyBeam 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite 0.6s; }
+
+    .node-cyan { animation: pulseNode 1s infinite; }
+    .node-gold { animation: pulseNodeGold 1s infinite 0.5s; }
 
     .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
     .font-mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
@@ -53,99 +35,69 @@
 
   <rect width="900" height="300" fill="url(#bg)"/>
 
-  <!-- Milky Way Dust -->
-  <ellipse cx="450" cy="150" rx="350" ry="150" fill="url(#dust1)" transform="rotate(-5 450 150)"/>
-  <ellipse cx="800" cy="100" rx="200" ry="100" fill="url(#dust2)" transform="rotate(-15 800 100)"/>
-
-  <!-- Starfield Layer -->
-  <g class="star-drift">
-    <!-- Background stars -->
-    <g fill="#ffffff" opacity="0.4">
-      <circle cx="60" cy="50" r="0.5"/><circle cx="150" cy="150" r="0.8"/><circle cx="300" cy="80" r="0.6"/>
-      <circle cx="480" cy="200" r="0.5"/><circle cx="650" cy="50" r="0.9"/><circle cx="850" cy="220" r="0.7"/>
-      <circle cx="750" cy="180" r="0.5"/><circle cx="380" cy="240" r="0.8"/><circle cx="100" cy="250" r="0.6"/>
-      <circle cx="550" cy="120" r="0.5"/><circle cx="820" cy="80" r="0.8"/><circle cx="950" cy="180" r="0.6"/>
-    </g>
-    <!-- Twinkling stars -->
-    <circle cx="200" cy="100" r="1.2" fill="#ffffff" class="tw" filter="url(#starGlow)"/>
-    <circle cx="600" cy="200" r="1.5" fill="#d4af37" class="tw2" filter="url(#starGlow)"/>
-    <circle cx="850" cy="100" r="1.5" fill="#ffffff" class="tw" filter="url(#starGlow)"/>
-  </g>
-
-  <!-- Constellation Connections -->
-  <g stroke="#ffffff" stroke-width="0.1" opacity="0.2">
-    <line x1="200" y1="100" x2="300" y2="80"/>
-    <line x1="300" y1="80" x2="480" y2="200"/>
-    <line x1="480" y1="200" x2="600" y2="200"/>
-    <line x1="600" y1="200" x2="850" y2="100"/>
-  </g>
-
-  <!-- Telemetry Grid -->
-  <g stroke="#ffffff" stroke-width="0.1" opacity="0.2">
+  <!-- High-FX Grid -->
+  <g stroke="#00f0ff" stroke-width="0.5" opacity="0.3">
     <line x1="200" y1="0" x2="200" y2="300"/>
     <line x1="400" y1="0" x2="400" y2="300"/>
     <line x1="600" y1="0" x2="600" y2="300"/>
     <line x1="800" y1="0" x2="800" y2="300"/>
-    <line x1="0" y1="40" x2="900" y2="40"/>
   </g>
-  
-  <text x="200" y="32" class="font-mono" font-size="8" fill="#888888">20%</text>
-  <text x="400" y="32" class="font-mono" font-size="8" fill="#888888">40%</text>
-  <text x="600" y="32" class="font-mono" font-size="8" fill="#888888">60%</text>
-  <text x="800" y="32" class="font-mono" font-size="8" fill="#888888">80%</text>
+  <line x1="200" y1="0" x2="200" y2="300" stroke="#ffd700" stroke-width="2" class="beam-gold"/>
+
+  <text x="200" y="32" class="font-mono" font-size="10" font-weight="bold" fill="#00f0ff" filter="url(#hyperGlow)">20%</text>
+  <text x="400" y="32" class="font-mono" font-size="10" font-weight="bold" fill="#00f0ff" filter="url(#hyperGlow)">40%</text>
+  <text x="600" y="32" class="font-mono" font-size="10" font-weight="bold" fill="#00f0ff" filter="url(#hyperGlow)">60%</text>
+  <text x="800" y="32" class="font-mono" font-size="10" font-weight="bold" fill="#ffd700" filter="url(#hyperGlow)">80%</text>
 
   <!-- Title -->
-  <text x="50" y="28" class="font-sans" font-weight="600" font-size="10" fill="#ffffff" letter-spacing="4">
+  <text x="50" y="28" class="font-sans" font-weight="900" font-size="12" fill="#ffd700" letter-spacing="4" filter="url(#hyperGlow)">
     CAPABILITY MATRIX
   </text>
-  <line x1="50" y1="40" x2="160" y2="40" stroke="url(#gold)" stroke-width="0.5"/>
+  <line x1="50" y1="40" x2="200" y2="40" stroke="#00f0ff" stroke-width="3" filter="url(#hyperGlow)"/>
 
-  <!-- Row 1: DFIR -->
-  <g class="f1">
-    <text x="50" y="80" class="font-mono" font-size="10" font-weight="bold" fill="#ffffff">DFIR</text>
-    <text x="50" y="95" class="font-sans" font-size="8" fill="#aaaaaa">Acquisition · Memory · Timelines</text>
-    <line x1="200" y1="80" x2="800" y2="80" stroke="url(#gold)" stroke-width="1.5" class="chart-line"/>
-    <circle cx="800" cy="80" r="2.5" fill="#d4af37" filter="url(#starGlow)"/>
-  </g>
+  <!-- Row 1: DFIR (Gold) -->
+  <text x="50" y="80" class="font-mono" font-size="12" font-weight="bold" fill="#ffffff">DFIR</text>
+  <text x="50" y="95" class="font-sans" font-size="10" font-weight="bold" fill="#ffd700">Acquisition · Memory · Timelines</text>
+  <line x1="200" y1="80" x2="800" y2="80" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+  <line x1="200" y1="80" x2="800" y2="80" stroke="#ffd700" stroke-width="4" stroke-linecap="round" filter="url(#hyperGlow)"/>
+  <line x1="200" y1="80" x2="800" y2="80" stroke="#ffffff" stroke-width="4" class="beam-gold"/>
+  <circle cx="800" cy="80" r="4" fill="#ffffff" class="node-gold"/>
 
-  <!-- Row 2: Threat Hunting -->
-  <g class="f2">
-    <text x="50" y="120" class="font-mono" font-size="10" font-weight="bold" fill="#ffffff">HUNTING</text>
-    <text x="50" y="135" class="font-sans" font-size="8" fill="#aaaaaa">MITRE ATT&amp;CK · Hypotheses</text>
-    <line x1="200" y1="120" x2="750" y2="120" stroke="#cccccc" stroke-width="1.5" class="chart-line"/>
-    <circle cx="750" cy="120" r="2.5" fill="#ffffff"/>
-  </g>
+  <!-- Row 2: Hunting (Cyan) -->
+  <text x="50" y="120" class="font-mono" font-size="12" font-weight="bold" fill="#ffffff">HUNTING</text>
+  <text x="50" y="135" class="font-sans" font-size="10" font-weight="bold" fill="#00f0ff">MITRE ATT&amp;CK · Hypotheses</text>
+  <line x1="200" y1="120" x2="750" y2="120" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+  <line x1="200" y1="120" x2="750" y2="120" stroke="#00f0ff" stroke-width="4" stroke-linecap="round" filter="url(#hyperGlow)"/>
+  <line x1="200" y1="120" x2="750" y2="120" stroke="#ffffff" stroke-width="4" class="beam-cyan"/>
+  <circle cx="750" cy="120" r="4" fill="#ffffff" class="node-cyan"/>
 
-  <!-- Row 3: Detection -->
-  <g class="f3">
-    <text x="50" y="160" class="font-mono" font-size="10" font-weight="bold" fill="#ffffff">DETECTION</text>
-    <text x="50" y="175" class="font-sans" font-size="8" fill="#aaaaaa">YARA · Sigma · Coverage</text>
-    <line x1="200" y1="160" x2="700" y2="160" stroke="#999999" stroke-width="1.5" class="chart-line"/>
-    <circle cx="700" cy="160" r="2.5" fill="#ffffff"/>
-  </g>
+  <!-- Row 3: Detection (Purple) -->
+  <text x="50" y="160" class="font-mono" font-size="12" font-weight="bold" fill="#ffffff">DETECTION</text>
+  <text x="50" y="175" class="font-sans" font-size="10" font-weight="bold" fill="#8e44ad">YARA · Sigma · Coverage</text>
+  <line x1="200" y1="160" x2="700" y2="160" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+  <line x1="200" y1="160" x2="700" y2="160" stroke="#8e44ad" stroke-width="4" stroke-linecap="round" filter="url(#hyperGlow)"/>
+  <line x1="200" y1="160" x2="700" y2="160" stroke="#ffffff" stroke-width="4" class="beam-purple"/>
+  <circle cx="700" cy="160" r="4" fill="#ffffff" class="node-cyan"/>
 
-  <!-- Row 4: SOC Ops -->
-  <g class="f4">
-    <text x="50" y="200" class="font-mono" font-size="10" font-weight="bold" fill="#ffffff">SOC OPS</text>
-    <text x="50" y="215" class="font-sans" font-size="8" fill="#aaaaaa">SIEM · Triage · Endpoint</text>
-    <line x1="200" y1="200" x2="650" y2="200" stroke="#777777" stroke-width="1.5" class="chart-line"/>
-    <circle cx="650" cy="200" r="2.5" fill="#ffffff"/>
-  </g>
+  <!-- Row 4: SOC Ops (Cyan) -->
+  <text x="50" y="200" class="font-mono" font-size="12" font-weight="bold" fill="#ffffff">SOC OPS</text>
+  <text x="50" y="215" class="font-sans" font-size="10" font-weight="bold" fill="#00f0ff">SIEM · Triage · Endpoint</text>
+  <line x1="200" y1="200" x2="650" y2="200" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+  <line x1="200" y1="200" x2="650" y2="200" stroke="#00f0ff" stroke-width="4" stroke-linecap="round" filter="url(#hyperGlow)"/>
+  <circle cx="650" cy="200" r="4" fill="#ffffff" class="node-cyan"/>
 
-  <!-- Row 5: Code -->
-  <g class="f5">
-    <text x="50" y="240" class="font-mono" font-size="10" font-weight="bold" fill="#ffffff">CODE</text>
-    <text x="50" y="255" class="font-sans" font-size="8" fill="#aaaaaa">Python · Bash · Automation</text>
-    <line x1="200" y1="240" x2="700" y2="240" stroke="#999999" stroke-width="1.5" class="chart-line"/>
-    <circle cx="700" cy="240" r="2.5" fill="#ffffff"/>
-  </g>
+  <!-- Row 5: Code (Gold) -->
+  <text x="50" y="240" class="font-mono" font-size="12" font-weight="bold" fill="#ffffff">CODE</text>
+  <text x="50" y="255" class="font-sans" font-size="10" font-weight="bold" fill="#ffd700">Python · Bash · Automation</text>
+  <line x1="200" y1="240" x2="700" y2="240" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+  <line x1="200" y1="240" x2="700" y2="240" stroke="#ffd700" stroke-width="4" stroke-linecap="round" filter="url(#hyperGlow)"/>
+  <circle cx="700" cy="240" r="4" fill="#ffffff" class="node-gold"/>
 
-  <!-- Row 6: Malware -->
-  <g class="f6">
-    <text x="50" y="280" class="font-mono" font-size="10" font-weight="bold" fill="#ffffff">MALWARE</text>
-    <text x="50" y="295" class="font-sans" font-size="8" fill="#aaaaaa">Static/Dynamic Analysis</text>
-    <line x1="200" y1="280" x2="600" y2="280" stroke="#555555" stroke-width="1.5" class="chart-line"/>
-    <circle cx="600" cy="280" r="2.5" fill="#ffffff"/>
-  </g>
+  <!-- Row 6: Malware (Cyan) -->
+  <text x="50" y="280" class="font-mono" font-size="12" font-weight="bold" fill="#ffffff">MALWARE</text>
+  <text x="50" y="295" class="font-sans" font-size="10" font-weight="bold" fill="#00f0ff">Static/Dynamic Analysis</text>
+  <line x1="200" y1="280" x2="600" y2="280" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+  <line x1="200" y1="280" x2="600" y2="280" stroke="#00f0ff" stroke-width="4" stroke-linecap="round" filter="url(#hyperGlow)"/>
+  <circle cx="600" cy="280" r="4" fill="#ffffff" class="node-cyan"/>
 
 </svg>
