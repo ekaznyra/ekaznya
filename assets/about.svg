@@ -1,0 +1,164 @@
+<svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06070d"/>
+      <stop offset="100%" stop-color="#0b0e1a"/>
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6c5ce7" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#a29bfe" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#6c5ce7" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="divLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a29bfe" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#a29bfe" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#a29bfe" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    @keyframes fadeSlide {
+      0% { opacity: 0; transform: translateX(-8px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeSlideR {
+      0% { opacity: 0; transform: translateX(8px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes typeChar {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes cursorBlink {
+      0%, 49% { opacity: 0.8; }
+      50%, 100% { opacity: 0; }
+    }
+    @keyframes dotPulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+    @keyframes lineDraw {
+      0% { stroke-dashoffset: 200; }
+      100% { stroke-dashoffset: 0; }
+    }
+    .f1 { animation: fadeSlide 0.5s ease-out 0.2s both; }
+    .f2 { animation: fadeSlide 0.5s ease-out 0.35s both; }
+    .f3 { animation: fadeSlide 0.5s ease-out 0.5s both; }
+    .f4 { animation: fadeSlide 0.5s ease-out 0.65s both; }
+    .f5 { animation: fadeSlide 0.5s ease-out 0.8s both; }
+    .f6 { animation: fadeSlide 0.5s ease-out 0.95s both; }
+    .fr1 { animation: fadeSlideR 0.5s ease-out 0.3s both; }
+    .fr2 { animation: fadeSlideR 0.5s ease-out 0.45s both; }
+    .fr3 { animation: fadeSlideR 0.5s ease-out 0.6s both; }
+    .fr4 { animation: fadeSlideR 0.5s ease-out 0.75s both; }
+    .fr5 { animation: fadeSlideR 0.5s ease-out 0.9s both; }
+    .cursor { animation: cursorBlink 1s step-end infinite; }
+    .dp1 { animation: dotPulse 2s ease-in-out infinite; }
+    .dp2 { animation: dotPulse 2s ease-in-out infinite 0.7s; }
+    .dp3 { animation: dotPulse 2s ease-in-out infinite 1.4s; }
+    .line-draw { stroke-dasharray: 200; animation: lineDraw 1.5s ease-out 0.5s both; }
+    .label {
+      font-family: 'JetBrains Mono', 'Cascadia Code', monospace;
+      font-size: 10px;
+      letter-spacing: 0.5px;
+    }
+    .value {
+      font-family: 'JetBrains Mono', 'Cascadia Code', monospace;
+      font-size: 10px;
+    }
+    .section-label {
+      font-family: 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+      font-size: 9px;
+      letter-spacing: 4px;
+      fill: #6c5ce7;
+      opacity: 0.5;
+    }
+    .focus-item {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+    }
+  </style>
+
+  <rect width="900" height="200" fill="url(#bg)"/>
+
+  <!-- Left panel border -->
+  <rect x="30" y="15" width="410" height="170" rx="4" fill="none" stroke="url(#borderGrad)" stroke-width="0.5"/>
+
+  <!-- Right panel border -->
+  <rect x="460" y="15" width="410" height="170" rx="4" fill="none" stroke="url(#borderGrad)" stroke-width="0.5"/>
+
+  <!-- Left panel: Identity -->
+  <g>
+    <!-- Terminal prompt -->
+    <text x="50" y="38" class="section-label">IDENTITY</text>
+    <line x1="50" y1="45" x2="180" y2="45" stroke="#1e2035" stroke-width="0.5"/>
+
+    <g class="f1">
+      <text x="50" y="68" class="label" fill="#565a6e">Name</text>
+      <text x="140" y="68" class="value" fill="#e2e8f0">Nguyễn Ngọc Anh Tú</text>
+    </g>
+    <g class="f2">
+      <text x="50" y="88" class="label" fill="#565a6e">Callsign</text>
+      <text x="140" y="88" class="value" fill="#a29bfe">ekaznyra</text>
+    </g>
+    <g class="f3">
+      <text x="50" y="108" class="label" fill="#565a6e">Role</text>
+      <text x="140" y="108" class="value" fill="#8b8fa3">Cybersecurity Student</text>
+    </g>
+    <g class="f4">
+      <text x="50" y="128" class="label" fill="#565a6e">Focus</text>
+      <text x="140" y="128" class="value" fill="#8b8fa3">DFIR · Threat Hunting · Detection</text>
+    </g>
+    <g class="f5">
+      <text x="50" y="148" class="label" fill="#565a6e">Path</text>
+      <text x="140" y="148" class="value" fill="#565a6e">SOC Analyst</text>
+      <text x="228" y="148" class="value" fill="#6c5ce7"> → </text>
+      <text x="255" y="148" class="value" fill="#8b8fa3">Detection Engineer</text>
+    </g>
+    <g class="f6">
+      <text x="50" y="172" class="label" fill="#3d4155">Method</text>
+      <text x="140" y="172" class="value" fill="#3d4155">Observe → Investigate → Document → Improve</text>
+      <text x="420" y="172" class="value cursor" fill="#6c5ce7">█</text>
+    </g>
+  </g>
+
+  <!-- Right panel: Current Focus -->
+  <g>
+    <text x="480" y="38" class="section-label">ACTIVE FOCUS</text>
+    <line x1="480" y1="45" x2="610" y2="45" stroke="#1e2035" stroke-width="0.5"/>
+
+    <g class="fr1">
+      <circle cx="490" cy="65" r="2.5" fill="#ff6b9d" class="dp1"/>
+      <text x="502" y="69" class="focus-item" fill="#8b8fa3">Digital Forensics &amp; Incident Response</text>
+    </g>
+    <g class="fr2">
+      <circle cx="490" cy="90" r="2.5" fill="#ffd93d" class="dp2"/>
+      <text x="502" y="94" class="focus-item" fill="#8b8fa3">Threat Hunting Workflows</text>
+    </g>
+    <g class="fr3">
+      <circle cx="490" cy="115" r="2.5" fill="#4ecdc4" class="dp3"/>
+      <text x="502" y="119" class="focus-item" fill="#8b8fa3">YARA &amp; Sigma Rule Engineering</text>
+    </g>
+    <g class="fr4">
+      <circle cx="490" cy="140" r="2.5" fill="#a29bfe" class="dp1"/>
+      <text x="502" y="144" class="focus-item" fill="#8b8fa3">Malware Behavior Analysis</text>
+    </g>
+    <g class="fr5">
+      <circle cx="490" cy="165" r="2.5" fill="#74b9ff" class="dp2"/>
+      <text x="502" y="169" class="focus-item" fill="#8b8fa3">Windows Event Log Correlation</text>
+    </g>
+  </g>
+
+  <!-- Center divider line -->
+  <line x1="450" y1="30" x2="450" y2="175" stroke="#1e2035" stroke-width="0.5" class="line-draw"/>
+
+  <!-- Decorative corner dots -->
+  <circle cx="36" cy="21" r="1" fill="#6c5ce7" opacity="0.3"/>
+  <circle cx="434" cy="21" r="1" fill="#6c5ce7" opacity="0.3"/>
+  <circle cx="36" cy="179" r="1" fill="#6c5ce7" opacity="0.3"/>
+  <circle cx="434" cy="179" r="1" fill="#6c5ce7" opacity="0.3"/>
+  <circle cx="466" cy="21" r="1" fill="#6c5ce7" opacity="0.3"/>
+  <circle cx="864" cy="21" r="1" fill="#6c5ce7" opacity="0.3"/>
+  <circle cx="466" cy="179" r="1" fill="#6c5ce7" opacity="0.3"/>
+  <circle cx="864" cy="179" r="1" fill="#6c5ce7" opacity="0.3"/>
+</svg>

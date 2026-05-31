@@ -1,140 +1,191 @@
-<svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06070d"/>
+      <stop offset="100%" stop-color="#0b0e1a"/>
+    </linearGradient>
+    <linearGradient id="barGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff6b9d"/>
+      <stop offset="100%" stop-color="#c44569"/>
+    </linearGradient>
+    <linearGradient id="barGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffd93d"/>
+      <stop offset="100%" stop-color="#f0932b"/>
+    </linearGradient>
+    <linearGradient id="barGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4ecdc4"/>
+      <stop offset="100%" stop-color="#2d98a6"/>
+    </linearGradient>
+    <linearGradient id="barGrad4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a29bfe"/>
+      <stop offset="100%" stop-color="#6c5ce7"/>
+    </linearGradient>
+    <linearGradient id="barGrad5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#74b9ff"/>
+      <stop offset="100%" stop-color="#0984e3"/>
+    </linearGradient>
+    <linearGradient id="barGrad6" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fd79a8"/>
+      <stop offset="100%" stop-color="#e84393"/>
+    </linearGradient>
+    <linearGradient id="divLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a29bfe" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#a29bfe" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#a29bfe" stop-opacity="0"/>
+    </linearGradient>
+
+  </defs>
+
   <style>
-    @keyframes waveform {
-      0% { d: path("M0,100 Q50,60 100,100 Q150,140 200,100 Q250,60 300,100 Q350,140 400,100 Q450,60 500,100 Q550,140 600,100 Q650,60 700,100 Q750,140 800,100 L800,200 L0,200 Z"); }
-      50% { d: path("M0,100 Q50,140 100,100 Q150,60 200,100 Q250,140 300,100 Q350,60 400,100 Q450,140 500,100 Q550,60 600,100 Q650,140 700,100 Q750,60 800,100 L800,200 L0,200 Z"); }
-      100% { d: path("M0,100 Q50,60 100,100 Q150,140 200,100 Q250,60 300,100 Q350,140 400,100 Q450,60 500,100 Q550,140 600,100 Q650,60 700,100 Q750,140 800,100 L800,200 L0,200 Z"); }
+    @keyframes growBar {
+      0% { width: 0; }
+      100% { width: var(--target-width); }
     }
-    @keyframes nodeGlow {
-      0%, 100% { opacity: 0.3; r: 3; }
-      50% { opacity: 1; r: 5; }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateX(-10px); }
+      100% { opacity: 1; transform: translateX(0); }
     }
-    @keyframes signalPulse {
-      0% { stroke-dashoffset: 1000; }
+    @keyframes nodeFloat {
+      0%, 100% { opacity: 0.3; r: 2; }
+      50% { opacity: 0.8; r: 3; }
+    }
+    @keyframes dataPulse {
+      0% { stroke-dashoffset: 20; }
       100% { stroke-dashoffset: 0; }
     }
-    @keyframes scanHoriz {
-      0% { transform: translateX(-900px); }
-      100% { transform: translateX(900px); }
-    }
+    .row1 { animation: fadeIn 0.6s ease-out 0.2s both; }
+    .row2 { animation: fadeIn 0.6s ease-out 0.35s both; }
+    .row3 { animation: fadeIn 0.6s ease-out 0.5s both; }
+    .row4 { animation: fadeIn 0.6s ease-out 0.65s both; }
+    .row5 { animation: fadeIn 0.6s ease-out 0.8s both; }
+    .row6 { animation: fadeIn 0.6s ease-out 0.95s both; }
     .skill-label {
-      font-family: 'Courier New', monospace;
+      font-family: 'JetBrains Mono', 'Cascadia Code', monospace;
       font-size: 10px;
-      fill: #8b949e;
+      letter-spacing: 1.5px;
     }
-    .skill-value {
-      font-family: 'Courier New', monospace;
-      font-size: 9px;
-      fill: #00ff41;
+    .skill-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      fill: #3d4155;
     }
-    .section-line {
-      stroke: #1b2332;
-      stroke-width: 1;
+    .section-title {
+      font-family: 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+      font-size: 10px;
+      letter-spacing: 4px;
+      fill: #6c5ce7;
+      opacity: 0.5;
     }
-    .node-active { animation: nodeGlow 3s ease-in-out infinite; }
-    .node-active2 { animation: nodeGlow 3s ease-in-out infinite 1s; }
-    .node-active3 { animation: nodeGlow 3s ease-in-out infinite 2s; }
-    .signal-path {
-      stroke-dasharray: 8 4;
-      animation: signalPulse 15s linear infinite;
-    }
-    .scan-line {
-      animation: scanHoriz 8s linear infinite;
+    .node { animation: nodeFloat 3s ease-in-out infinite; }
+    .node2 { animation: nodeFloat 3s ease-in-out infinite 1s; }
+    .node3 { animation: nodeFloat 3s ease-in-out infinite 2s; }
+    .data-line {
+      stroke-dasharray: 4 3;
+      animation: dataPulse 2s linear infinite;
     }
   </style>
 
-  <rect width="900" height="200" fill="#0a0e17"/>
-  
-  <!-- Background grid -->
-  <g opacity="0.03" stroke="#00ff41" stroke-width="0.5">
-    <line x1="0" y1="0" x2="0" y2="200"/><line x1="30" y1="0" x2="30" y2="200"/>
-    <line x1="60" y1="0" x2="60" y2="200"/><line x1="90" y1="0" x2="90" y2="200"/>
-    <line x1="120" y1="0" x2="120" y2="200"/><line x1="150" y1="0" x2="150" y2="200"/>
-    <line x1="180" y1="0" x2="180" y2="200"/><line x1="210" y1="0" x2="210" y2="200"/>
-    <line x1="240" y1="0" x2="240" y2="200"/><line x1="270" y1="0" x2="270" y2="200"/>
-    <line x1="300" y1="0" x2="300" y2="200"/><line x1="330" y1="0" x2="330" y2="200"/>
-    <line x1="360" y1="0" x2="360" y2="200"/><line x1="390" y1="0" x2="390" y2="200"/>
-    <line x1="420" y1="0" x2="420" y2="200"/><line x1="450" y1="0" x2="450" y2="200"/>
-    <line x1="480" y1="0" x2="480" y2="200"/><line x1="510" y1="0" x2="510" y2="200"/>
-    <line x1="540" y1="0" x2="540" y2="200"/><line x1="570" y1="0" x2="570" y2="200"/>
-    <line x1="600" y1="0" x2="600" y2="200"/><line x1="630" y1="0" x2="630" y2="200"/>
-    <line x1="660" y1="0" x2="660" y2="200"/><line x1="690" y1="0" x2="690" y2="200"/>
-    <line x1="720" y1="0" x2="720" y2="200"/><line x1="750" y1="0" x2="750" y2="200"/>
-    <line x1="780" y1="0" x2="780" y2="200"/><line x1="810" y1="0" x2="810" y2="200"/>
-    <line x1="840" y1="0" x2="840" y2="200"/><line x1="870" y1="0" x2="870" y2="200"/>
-    <line x1="0" y1="30" x2="900" y2="30"/><line x1="0" y1="60" x2="900" y2="60"/>
-    <line x1="0" y1="90" x2="900" y2="90"/><line x1="0" y1="120" x2="900" y2="120"/>
-    <line x1="0" y1="150" x2="900" y2="150"/><line x1="0" y1="180" x2="900" y2="180"/>
+  <rect width="900" height="280" fill="url(#bg)"/>
+
+  <!-- Background particles -->
+  <circle cx="100" cy="40" r="0.6" fill="#a29bfe" class="node"/>
+  <circle cx="250" cy="250" r="0.5" fill="#6c5ce7" class="node2"/>
+  <circle cx="500" cy="30" r="0.7" fill="#c4b5fd" class="node3"/>
+  <circle cx="800" cy="60" r="0.5" fill="#a29bfe" class="node"/>
+  <circle cx="700" cy="250" r="0.6" fill="#6c5ce7" class="node2"/>
+
+  <!-- Section header -->
+  <text x="450" y="28" text-anchor="middle" class="section-title">CAPABILITY MATRIX</text>
+  <rect x="150" y="35" width="600" height="0.5" fill="url(#divLine)"/>
+
+  <!-- Row 1: DFIR -->
+  <g class="row1">
+    <text x="50" y="78" class="skill-label" fill="#ff6b9d">DFIR</text>
+    <rect x="170" y="67" width="500" height="16" rx="2" fill="#0f1120" opacity="0.6"/>
+    <rect x="170" y="67" width="400" height="16" rx="2" fill="url(#barGrad1)" opacity="0.8"/>
+    <text x="175" y="78" class="skill-sub" fill="#0b0e1a" opacity="0.8">Evidence Acquisition · Timeline Analysis · Artifact Parsing · Memory Forensics</text>
+    <text x="680" y="78" class="skill-label" fill="#3d4155">80%</text>
+    <!-- Connection nodes -->
+    <circle cx="740" cy="75" r="2" fill="#ff6b9d" class="node" opacity="0.5"/>
+    <line x1="680" y1="75" x2="735" y2="75" stroke="#ff6b9d" stroke-width="0.3" opacity="0.2" class="data-line"/>
   </g>
 
-  <!-- Scan line -->
-  <rect class="scan-line" x="0" y="0" width="3" height="200" fill="#00ff41" opacity="0.06"/>
+  <!-- Row 2: Threat Hunting -->
+  <g class="row2">
+    <text x="50" y="116" class="skill-label" fill="#ffd93d">HUNT</text>
+    <rect x="170" y="105" width="500" height="16" rx="2" fill="#0f1120" opacity="0.6"/>
+    <rect x="170" y="105" width="375" height="16" rx="2" fill="url(#barGrad2)" opacity="0.8"/>
+    <text x="175" y="116" class="skill-sub" fill="#0b0e1a" opacity="0.8">Hypothesis-Driven · MITRE ATT&amp;CK · Behavioral Analysis · Threat Intel</text>
+    <text x="680" y="116" class="skill-label" fill="#3d4155">75%</text>
+    <circle cx="740" cy="113" r="2" fill="#ffd93d" class="node2" opacity="0.5"/>
+    <line x1="680" y1="113" x2="735" y2="113" stroke="#ffd93d" stroke-width="0.3" opacity="0.2" class="data-line"/>
+  </g>
 
-  <!-- Network topology visualization -->
-  <!-- Central hub -->
-  <circle cx="450" cy="100" r="8" fill="#0a0e17" stroke="#00ff41" stroke-width="2"/>
-  <circle cx="450" cy="100" r="3" fill="#00ff41" class="node-active"/>
-  <text x="450" y="80" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#3a4553">CORE</text>
-  
-  <!-- DFIR node -->
-  <line x1="450" y1="100" x2="120" y2="50" stroke="#ff6b6b" stroke-width="0.5" opacity="0.4" class="signal-path"/>
-  <circle cx="120" cy="50" r="5" fill="#0a0e17" stroke="#ff6b6b" stroke-width="1.5"/>
-  <circle cx="120" cy="50" r="2" fill="#ff6b6b" class="node-active"/>
-  <text x="120" y="38" text-anchor="middle" class="skill-label" fill="#ff6b6b">DFIR</text>
-  <text x="120" y="68" text-anchor="middle" class="skill-value">Forensics · Timeline · Artifacts</text>
-  
-  <!-- Threat Hunting node -->
-  <line x1="450" y1="100" x2="260" y2="40" stroke="#ffd93d" stroke-width="0.5" opacity="0.4" class="signal-path"/>
-  <circle cx="260" cy="40" r="5" fill="#0a0e17" stroke="#ffd93d" stroke-width="1.5"/>
-  <circle cx="260" cy="40" r="2" fill="#ffd93d" class="node-active2"/>
-  <text x="260" y="28" text-anchor="middle" class="skill-label" fill="#ffd93d">THREAT HUNT</text>
-  <text x="260" y="58" text-anchor="middle" class="skill-value">Hypothesis · MITRE · Behavior</text>
+  <!-- Row 3: Detection -->
+  <g class="row3">
+    <text x="50" y="154" class="skill-label" fill="#4ecdc4">DETECT</text>
+    <rect x="170" y="143" width="500" height="16" rx="2" fill="#0f1120" opacity="0.6"/>
+    <rect x="170" y="143" width="350" height="16" rx="2" fill="url(#barGrad3)" opacity="0.8"/>
+    <text x="175" y="154" class="skill-sub" fill="#0b0e1a" opacity="0.8">YARA Signatures · Sigma Rules · Log Correlation · ATT&amp;CK Coverage</text>
+    <text x="680" y="154" class="skill-label" fill="#3d4155">70%</text>
+    <circle cx="740" cy="151" r="2" fill="#4ecdc4" class="node3" opacity="0.5"/>
+    <line x1="680" y1="151" x2="735" y2="151" stroke="#4ecdc4" stroke-width="0.3" opacity="0.2" class="data-line"/>
+  </g>
 
-  <!-- Detection Engineering node -->
-  <line x1="450" y1="100" x2="640" y2="40" stroke="#6bcb77" stroke-width="0.5" opacity="0.4" class="signal-path"/>
-  <circle cx="640" cy="40" r="5" fill="#0a0e17" stroke="#6bcb77" stroke-width="1.5"/>
-  <circle cx="640" cy="40" r="2" fill="#6bcb77" class="node-active3"/>
-  <text x="640" y="28" text-anchor="middle" class="skill-label" fill="#6bcb77">DETECTION ENG</text>
-  <text x="640" y="58" text-anchor="middle" class="skill-value">YARA · Sigma · Rules</text>
+  <!-- Row 4: SOC Ops -->
+  <g class="row4">
+    <text x="50" y="192" class="skill-label" fill="#a29bfe">SOCOPS</text>
+    <rect x="170" y="181" width="500" height="16" rx="2" fill="#0f1120" opacity="0.6"/>
+    <rect x="170" y="181" width="325" height="16" rx="2" fill="url(#barGrad4)" opacity="0.8"/>
+    <text x="175" y="192" class="skill-sub" fill="#0b0e1a" opacity="0.8">SIEM · Alert Triage · Incident Response · Endpoint Monitoring</text>
+    <text x="680" y="192" class="skill-label" fill="#3d4155">65%</text>
+    <circle cx="740" cy="189" r="2" fill="#a29bfe" class="node" opacity="0.5"/>
+    <line x1="680" y1="189" x2="735" y2="189" stroke="#a29bfe" stroke-width="0.3" opacity="0.2" class="data-line"/>
+  </g>
 
-  <!-- SOC Ops node -->
-  <line x1="450" y1="100" x2="780" y2="50" stroke="#4d96ff" stroke-width="0.5" opacity="0.4" class="signal-path"/>
-  <circle cx="780" cy="50" r="5" fill="#0a0e17" stroke="#4d96ff" stroke-width="1.5"/>
-  <circle cx="780" cy="50" r="2" fill="#4d96ff" class="node-active"/>
-  <text x="780" y="38" text-anchor="middle" class="skill-label" fill="#4d96ff">SOC OPS</text>
-  <text x="780" y="68" text-anchor="middle" class="skill-value">SIEM · Triage · Response</text>
+  <!-- Row 5: Programming -->
+  <g class="row5">
+    <text x="50" y="230" class="skill-label" fill="#74b9ff">CODE</text>
+    <rect x="170" y="219" width="500" height="16" rx="2" fill="#0f1120" opacity="0.6"/>
+    <rect x="170" y="219" width="350" height="16" rx="2" fill="url(#barGrad5)" opacity="0.8"/>
+    <text x="175" y="230" class="skill-sub" fill="#0b0e1a" opacity="0.8">Python · Bash · Automation · Log Parsers · Analysis Tools</text>
+    <text x="680" y="230" class="skill-label" fill="#3d4155">70%</text>
+    <circle cx="740" cy="227" r="2" fill="#74b9ff" class="node2" opacity="0.5"/>
+    <line x1="680" y1="227" x2="735" y2="227" stroke="#74b9ff" stroke-width="0.3" opacity="0.2" class="data-line"/>
+  </g>
 
-  <!-- Malware Analysis node -->
-  <line x1="450" y1="100" x2="180" y2="155" stroke="#9b72cf" stroke-width="0.5" opacity="0.4" class="signal-path"/>
-  <circle cx="180" cy="155" r="5" fill="#0a0e17" stroke="#9b72cf" stroke-width="1.5"/>
-  <circle cx="180" cy="155" r="2" fill="#9b72cf" class="node-active2"/>
-  <text x="180" y="175" text-anchor="middle" class="skill-label" fill="#9b72cf">MALWARE LAB</text>
-  <text x="180" y="143" text-anchor="middle" class="skill-value">Static · Dynamic · Evasion</text>
+  <!-- Row 6: Malware -->
+  <g class="row6">
+    <text x="50" y="268" class="skill-label" fill="#fd79a8">MALWARE</text>
+    <rect x="170" y="257" width="500" height="16" rx="2" fill="#0f1120" opacity="0.6"/>
+    <rect x="170" y="257" width="300" height="16" rx="2" fill="url(#barGrad6)" opacity="0.8"/>
+    <text x="175" y="268" class="skill-sub" fill="#0b0e1a" opacity="0.8">Static Analysis · Dynamic Analysis · Behavioral Indicators · Sandboxing</text>
+    <text x="680" y="268" class="skill-label" fill="#3d4155">60%</text>
+    <circle cx="740" cy="265" r="2" fill="#fd79a8" class="node3" opacity="0.5"/>
+    <line x1="680" y1="265" x2="735" y2="265" stroke="#fd79a8" stroke-width="0.3" opacity="0.2" class="data-line"/>
+  </g>
 
-  <!-- Network Forensics node -->
-  <line x1="450" y1="100" x2="360" y2="165" stroke="#e8590c" stroke-width="0.5" opacity="0.4" class="signal-path"/>
-  <circle cx="360" cy="165" r="5" fill="#0a0e17" stroke="#e8590c" stroke-width="1.5"/>
-  <circle cx="360" cy="165" r="2" fill="#e8590c" class="node-active3"/>
-  <text x="360" y="185" text-anchor="middle" class="skill-label" fill="#e8590c">NET FORENSICS</text>
-  <text x="360" y="153" text-anchor="middle" class="skill-value">Packets · C2 · DNS</text>
-  
-  <!-- Log Analysis node -->
-  <line x1="450" y1="100" x2="540" y2="165" stroke="#20c997" stroke-width="0.5" opacity="0.4" class="signal-path"/>
-  <circle cx="540" cy="165" r="5" fill="#0a0e17" stroke="#20c997" stroke-width="1.5"/>
-  <circle cx="540" cy="165" r="2" fill="#20c997" class="node-active"/>
-  <text x="540" y="185" text-anchor="middle" class="skill-label" fill="#20c997">LOG ANALYSIS</text>
-  <text x="540" y="153" text-anchor="middle" class="skill-value">EventLog · Sysmon · Audit</text>
+  <!-- Right side: Connection network -->
+  <g opacity="0.15">
+    <line x1="740" y1="75" x2="740" y2="113" stroke="#a29bfe" stroke-width="0.5"/>
+    <line x1="740" y1="113" x2="740" y2="151" stroke="#a29bfe" stroke-width="0.5"/>
+    <line x1="740" y1="151" x2="740" y2="189" stroke="#a29bfe" stroke-width="0.5"/>
+    <line x1="740" y1="189" x2="740" y2="227" stroke="#a29bfe" stroke-width="0.5"/>
+    <line x1="740" y1="227" x2="740" y2="265" stroke="#a29bfe" stroke-width="0.5"/>
+    <!-- Cross connections -->
+    <line x1="740" y1="75" x2="770" y2="151" stroke="#ff6b9d" stroke-width="0.3"/>
+    <line x1="740" y1="113" x2="770" y2="189" stroke="#ffd93d" stroke-width="0.3"/>
+    <line x1="740" y1="151" x2="770" y2="227" stroke="#4ecdc4" stroke-width="0.3"/>
+    <line x1="740" y1="75" x2="770" y2="265" stroke="#a29bfe" stroke-width="0.3"/>
+  </g>
 
-  <!-- Programming node -->
-  <line x1="450" y1="100" x2="720" y2="160" stroke="#f59f00" stroke-width="0.5" opacity="0.4" class="signal-path"/>
-  <circle cx="720" cy="160" r="5" fill="#0a0e17" stroke="#f59f00" stroke-width="1.5"/>
-  <circle cx="720" cy="160" r="2" fill="#f59f00" class="node-active2"/>
-  <text x="720" y="180" text-anchor="middle" class="skill-label" fill="#f59f00">PROGRAMMING</text>
-  <text x="720" y="148" text-anchor="middle" class="skill-value">Python · Bash · Automation</text>
-
-  <!-- Cross connections (showing skill interconnections) -->
-  <line x1="120" y1="50" x2="180" y2="155" stroke="#1b2332" stroke-width="0.3" stroke-dasharray="3 3"/>
-  <line x1="260" y1="40" x2="640" y2="40" stroke="#1b2332" stroke-width="0.3" stroke-dasharray="3 3"/>
-  <line x1="360" y1="165" x2="540" y2="165" stroke="#1b2332" stroke-width="0.3" stroke-dasharray="3 3"/>
-  <line x1="780" y1="50" x2="720" y2="160" stroke="#1b2332" stroke-width="0.3" stroke-dasharray="3 3"/>
+  <!-- Right side labels -->
+  <g>
+    <text x="780" y="120" font-family="'JetBrains Mono', monospace" font-size="7" fill="#1e2035" letter-spacing="1">WINDOWS</text>
+    <text x="780" y="132" font-family="'JetBrains Mono', monospace" font-size="7" fill="#1e2035" letter-spacing="1">LINUX</text>
+    <text x="780" y="170" font-family="'JetBrains Mono', monospace" font-size="7" fill="#1e2035" letter-spacing="1">DOCKER</text>
+    <text x="780" y="182" font-family="'JetBrains Mono', monospace" font-size="7" fill="#1e2035" letter-spacing="1">KALI</text>
+    <text x="780" y="220" font-family="'JetBrains Mono', monospace" font-size="7" fill="#1e2035" letter-spacing="1">AUTOPSY</text>
+    <text x="780" y="232" font-family="'JetBrains Mono', monospace" font-size="7" fill="#1e2035" letter-spacing="1">GHIDRA</text>
+  </g>
 </svg>

@@ -1,0 +1,95 @@
+<svg viewBox="0 0 900 70" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06070d"/>
+      <stop offset="100%" stop-color="#0b0e1a"/>
+    </linearGradient>
+    <linearGradient id="linkLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a29bfe" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#a29bfe" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#a29bfe" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    @keyframes nodeAppear {
+      0% { opacity: 0; transform: scale(0.5); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes labelFade {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes lineExtend {
+      0% { stroke-dashoffset: 100; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes dotPulse {
+      0%, 100% { opacity: 0.4; r: 3; }
+      50% { opacity: 1; r: 4; }
+    }
+    .n1 { animation: nodeAppear 0.4s ease-out 0.2s both; }
+    .n2 { animation: nodeAppear 0.4s ease-out 0.4s both; }
+    .n3 { animation: nodeAppear 0.4s ease-out 0.6s both; }
+    .n4 { animation: nodeAppear 0.4s ease-out 0.8s both; }
+    .l1 { animation: labelFade 0.4s ease-out 0.3s both; }
+    .l2 { animation: labelFade 0.4s ease-out 0.5s both; }
+    .l3 { animation: labelFade 0.4s ease-out 0.7s both; }
+    .l4 { animation: labelFade 0.4s ease-out 0.9s both; }
+    .connect-line { stroke-dasharray: 100; animation: lineExtend 1s ease-out 0.3s both; }
+    .pulse1 { animation: dotPulse 2.5s ease-in-out infinite; }
+    .pulse2 { animation: dotPulse 2.5s ease-in-out infinite 0.6s; }
+    .pulse3 { animation: dotPulse 2.5s ease-in-out infinite 1.2s; }
+    .pulse4 { animation: dotPulse 2.5s ease-in-out infinite 1.8s; }
+    .contact-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 1px;
+    }
+    .contact-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+    }
+  </style>
+
+  <rect width="900" height="70" fill="url(#bg)"/>
+
+  <!-- Connection line through all nodes -->
+  <line x1="120" y1="30" x2="780" y2="30" stroke="url(#linkLine)" stroke-width="0.5" class="connect-line"/>
+
+  <!-- ProtonMail -->
+  <g class="n1">
+    <circle cx="180" cy="30" r="3" fill="#0b0e1a" stroke="#ff6b9d" stroke-width="1.5" class="pulse1"/>
+  </g>
+  <g class="l1">
+    <text x="180" y="20" text-anchor="middle" class="contact-label" fill="#ff6b9d">PROTONMAIL</text>
+    <text x="180" y="50" text-anchor="middle" class="contact-value" fill="#565a6e">anhtunguyen.sec</text>
+  </g>
+
+  <!-- Telegram -->
+  <g class="n2">
+    <circle cx="360" cy="30" r="3" fill="#0b0e1a" stroke="#a29bfe" stroke-width="1.5" class="pulse2"/>
+  </g>
+  <g class="l2">
+    <text x="360" y="20" text-anchor="middle" class="contact-label" fill="#a29bfe">TELEGRAM</text>
+    <text x="360" y="50" text-anchor="middle" class="contact-value" fill="#565a6e">@ekaznya</text>
+  </g>
+
+  <!-- GitHub -->
+  <g class="n3">
+    <circle cx="540" cy="30" r="3" fill="#0b0e1a" stroke="#4ecdc4" stroke-width="1.5" class="pulse3"/>
+  </g>
+  <g class="l3">
+    <text x="540" y="20" text-anchor="middle" class="contact-label" fill="#4ecdc4">GITHUB</text>
+    <text x="540" y="50" text-anchor="middle" class="contact-value" fill="#565a6e">ekaznyra</text>
+  </g>
+
+  <!-- LinkedIn -->
+  <g class="n4">
+    <circle cx="720" cy="30" r="3" fill="#0b0e1a" stroke="#74b9ff" stroke-width="1.5" class="pulse4"/>
+  </g>
+  <g class="l4">
+    <text x="720" y="20" text-anchor="middle" class="contact-label" fill="#74b9ff">LINKEDIN</text>
+    <text x="720" y="50" text-anchor="middle" class="contact-value" fill="#565a6e">Connect</text>
+  </g>
+</svg>

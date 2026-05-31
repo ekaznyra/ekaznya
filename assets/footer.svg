@@ -1,48 +1,66 @@
-<svg viewBox="0 0 900 80" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 900 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06070d"/>
+      <stop offset="100%" stop-color="#0b0e1a"/>
+    </linearGradient>
+    <linearGradient id="divLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a29bfe" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#a29bfe" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#a29bfe" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="fadeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6c5ce7" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#6c5ce7" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#6c5ce7" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
   <style>
-    @keyframes termType {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-    @keyframes cursorFlash {
-      0%, 49% { opacity: 1; }
+    @keyframes cursorBlink {
+      0%, 49% { opacity: 0.6; }
       50%, 100% { opacity: 0; }
     }
-    @keyframes fadeUp {
+    @keyframes fadeInUp {
       0% { opacity: 0; transform: translateY(5px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-    .footer-text {
-      font-family: 'Courier New', monospace;
-      font-size: 11px;
-      fill: #586069;
+    @keyframes shimmer {
+      0% { transform: translateX(-200px); }
+      100% { transform: translateX(900px); }
     }
-    .footer-accent {
-      font-family: 'Courier New', monospace;
-      font-size: 10px;
-      fill: #00ff41;
-      opacity: 0.5;
-    }
-    .cursor {
-      animation: cursorFlash 1s step-end infinite;
-    }
+    .cursor { animation: cursorBlink 1.2s step-end infinite; }
+    .f1 { animation: fadeInUp 0.6s ease-out 0.2s both; }
+    .f2 { animation: fadeInUp 0.6s ease-out 0.5s both; }
+    .f3 { animation: fadeInUp 0.6s ease-out 0.8s both; }
+    .shimmer-line { animation: shimmer 6s ease-in-out infinite; }
   </style>
 
-  <rect width="900" height="80" fill="#0a0e17"/>
-  
-  <!-- Top line -->
-  <line x1="50" y1="10" x2="850" y2="10" stroke="#1b2332" stroke-width="0.5"/>
-  
+  <rect width="900" height="100" fill="url(#bg)"/>
+
+  <!-- Top separator -->
+  <rect x="80" y="8" width="740" height="0.5" fill="url(#divLine)"/>
+
+  <!-- Shimmer effect -->
+  <rect class="shimmer-line" x="0" y="0" width="100" height="100" fill="url(#fadeGrad)" opacity="0.3"/>
+
   <!-- Quote -->
-  <text x="450" y="35" text-anchor="middle" class="footer-text">
-    "Every investigation teaches something. Every detection rule is a lesson documented."
-  </text>
-  <text x="450" y="52" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#3a4553">
-    Not chasing titles — building the discipline to understand what happened and detect it next time.
-  </text>
-  
-  <!-- Session end marker -->
-  <text x="450" y="72" text-anchor="middle" class="footer-accent">
-    ── SESSION.LOG ── LAST UPDATED: 2026 ── EOF ──<tspan class="cursor"> █</tspan>
-  </text>
+  <g class="f1">
+    <text x="450" y="38" text-anchor="middle" font-family="'SF Pro Display', 'Segoe UI', system-ui, sans-serif" font-weight="300" font-size="12" fill="#565a6e" font-style="italic">
+      "Every investigation teaches something. Every detection rule is a lesson documented."
+    </text>
+  </g>
+
+  <g class="f2">
+    <text x="450" y="60" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#2d3047" letter-spacing="0.5">
+      Not chasing titles — building the discipline to understand, detect, and defend.
+    </text>
+  </g>
+
+  <!-- Session marker -->
+  <g class="f3">
+    <text x="450" y="85" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7" fill="#1e2035" letter-spacing="3">
+      UPDATED 2026<tspan class="cursor" fill="#6c5ce7"> █</tspan>
+    </text>
+  </g>
 </svg>
