@@ -46,20 +46,20 @@
 
   <!-- Quote -->
   <g class="f1">
-    <text x="450" y="38" text-anchor="middle" font-family="'SF Pro Display', 'Segoe UI', system-ui, sans-serif" font-weight="300" font-size="12" fill="#565a6e" font-style="italic">
+    <text x="450" y="38" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="300" font-size="12" fill="#565a6e" font-style="italic">
       "Every investigation teaches something. Every detection rule is a lesson documented."
     </text>
   </g>
 
   <g class="f2">
-    <text x="450" y="60" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#2d3047" letter-spacing="0.5">
+    <text x="450" y="60" text-anchor="middle" font-family="Consolas, monospace" font-size="9" fill="#2d3047" letter-spacing="0.5">
       Not chasing titles — building the discipline to understand, detect, and defend.
     </text>
   </g>
 
   <!-- Session marker -->
   <g class="f3">
-    <text x="450" y="85" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7" fill="#1e2035" letter-spacing="3">
+    <text x="450" y="85" text-anchor="middle" font-family="Consolas, monospace" font-size="7" fill="#1e2035" letter-spacing="3">
       UPDATED 2026<tspan class="cursor" fill="#6c5ce7"> █</tspan>
     </text>
   </g>

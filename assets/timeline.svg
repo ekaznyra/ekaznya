@@ -62,17 +62,17 @@
     .l4 { animation: labelFade 0.5s ease-out 1.4s both; }
     .future { animation: futureFlicker 3s ease-in-out infinite; }
     .year-text {
-      font-family: 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+      font-family: 'Segoe UI', system-ui, sans-serif;
       font-weight: 700;
       font-size: 14px;
     }
     .desc-text {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: Consolas, monospace;
       font-size: 8px;
       letter-spacing: 0.5px;
     }
     .section-title {
-      font-family: 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+      font-family: 'Segoe UI', system-ui, sans-serif;
       font-size: 10px;
       letter-spacing: 4px;
       fill: #6c5ce7;
@@ -150,7 +150,7 @@
 
   <!-- Bottom decorative line -->
   <rect x="80" y="150" width="740" height="0.5" fill="url(#divLine)" opacity="0.3"/>
-  <text x="450" y="168" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7" fill="#1e2035" letter-spacing="3">
+  <text x="450" y="168" text-anchor="middle" font-family="Consolas, monospace" font-size="7" fill="#1e2035" letter-spacing="3">
     CONTINUOUS LEARNING · STRUCTURED GROWTH
   </text>
 </svg>

@@ -42,12 +42,12 @@
     .pulse3 { animation: dotPulse 2.5s ease-in-out infinite 1.2s; }
     .pulse4 { animation: dotPulse 2.5s ease-in-out infinite 1.8s; }
     .contact-label {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: Consolas, monospace;
       font-size: 8px;
       letter-spacing: 1px;
     }
     .contact-value {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: Consolas, monospace;
       font-size: 9px;
     }
   </style>

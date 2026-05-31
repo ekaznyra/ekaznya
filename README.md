@@ -16,94 +16,29 @@
 
 <br>
 
-<table>
-<tr>
-<td width="55%" valign="top">
+<div align="center">
 
-```yaml
-analyst@lab:~$ cat /etc/identity.conf
+<img src="assets/about.svg" width="100%"/>
 
-Name        : Nguyễn Ngọc Anh Tú
-Callsign    : ekaznyra
-Role        : Cybersecurity Student
-Focus       : DFIR | Threat Hunting | Detection Engineering
-Objective   : SOC Analyst ➔ Detection Engineer
-Method      : Observe ➔ Investigate ➔ Document ➔ Improve
-```
-
-</td>
-<td width="45%" valign="top">
-
-```text
-╭──────────────────────────────────╮
-│                                  │
-│   Currently focused on:          │
-│                                  │
-│   ◉ Digital Forensics & IR       │
-│   ◉ Threat Hunting Workflows     │
-│   ◉ YARA & Sigma Engineering     │
-│   ◉ Malware Behavior Analysis    │
-│   ◉ Windows Event Correlation    │
-│                                  │
-╰──────────────────────────────────╯
-```
-
-</td>
-</tr>
-</table>
+</div>
 
 <!-- ─── SECTION: CAPABILITY MAP ─────────────────────────────────── -->
 
-<table width="100%">
-<tr>
-<td width="100%" valign="top">
+<div align="center">
 
-```text
-╭────────────────────────────────────────────────────────────────────────╮
-│                                                                        │
-│   CAPABILITY MAP: NETWORK TOPOLOGY                                     │
-│                                                                        │
-│   [DFIR & MALWARE ANALYSIS]           [THREAT HUNTING & DETECTION]     │
-│   ████████░░ (80%)                    ███████░░░ (70%)                 │
-│   ├─ Memory & Disk Forensics          ├─ Log Analysis (Splunk, ELK)    │
-│   ├─ Static/Dynamic Analysis          ├─ YARA, Sigma, Snort            │
-│   └─ Reverse Engineering (Basic)      └─ KQL & EDR Telemetry           │
-│                                                                        │
-│   [SECURITY ENGINEERING]              [OFFENSIVE SECURITY]             │
-│   ██████░░░░ (60%)                    █████░░░░░ (50%)                 │
-│   ├─ Scripting (Python, PowerShell)   ├─ Web App Penetration Testing   │
-│   ├─ SIEM Deployment                  ├─ Network Scanning              │
-│   └─ Automation                       └─ Privilege Escalation          │
-│                                                                        │
-╰────────────────────────────────────────────────────────────────────────╯
-```
+<img src="assets/skillmap.svg" width="100%"/>
 
-</td>
-</tr>
-</table>
+</div>
 
 <!-- ─── SECTION: TIMELINE ───────────────────────────────────────── -->
 
-<table width="100%">
-<tr>
-<td width="100%" valign="top">
+<div align="center">
 
-```yaml
-analyst@lab:~$ ./timeline_progression.sh --view
+<img src="assets/timeline.svg" width="100%"/>
 
-[2025] ➔ [2026] ➔ [FUTURE TARGET]
-██████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+</div>
 
-- 2025    : Built Fundamentals (Linux, Networking, Home Lab)
-- 2026    : Specialized in DFIR & Detection Engineering (Current)
-- Target  : SOC Analyst / Threat Hunter
-```
-
-</td>
-</tr>
-</table>
-
-<!-- ─── SECTION: CASE FILES & METRICS ─────────────────────────────── -->
+<!-- ─── SECTION: METRICS ────────────────────────────────────────────── -->
 
 <div align="center">
 <img src="assets/divider.svg" width="60%"/>
@@ -112,13 +47,6 @@ analyst@lab:~$ ./timeline_progression.sh --view
 <br><br>
 
 <div align="center">
-
-<a href="https://github.com/ekaznyra"><img src="https://img.shields.io/badge/DFIR_Toolkit-Research-0b0e1a?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmNmI5ZCI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTAgMThjLTQuNDIgMC04LTMuNTgtOC04czMuNTgtOCA4LTggOCAzLjU4IDggOC0zLjU4IDgtOCA4eiIvPjwvc3ZnPg==&logoColor=ff6b9d&labelColor=0b0e1a&color=1a1d2e"/></a>
-<a href="https://github.com/ekaznyra"><img src="https://img.shields.io/badge/Detection_Rules-Engineering-0b0e1a?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzRlY2RjNCI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTAgMThjLTQuNDIgMC04LTMuNTgtOC04czMuNTgtOCA4LTggOCAzLjU4IDggOC0zLjU4IDgtOCA4eiIvPjwvc3ZnPg==&logoColor=4ecdc4&labelColor=0b0e1a&color=1a1d2e"/></a>
-<a href="https://github.com/ekaznyra"><img src="https://img.shields.io/badge/Threat_Hunting-Playbooks-0b0e1a?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZDkzZCI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTAgMThjLTQuNDIgMC04LTMuNTgtOC04czMuNTgtOCA4LTggOCAzLjU4IDggOC0zLjU4IDgtOCA4eiIvPjwvc3ZnPg==&logoColor=ffd93d&labelColor=0b0e1a&color=1a1d2e"/></a>
-<a href="https://github.com/ekaznyra"><img src="https://img.shields.io/badge/Malware_Analysis-Notes-0b0e1a?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2EyOWJmZSI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTAgMThjLTQuNDIgMC04LTMuNTgtOC04czMuNTgtOCA4LTggOCAzLjU4IDggOC0zLjU4IDgtOCA4eiIvPjwvc3ZnPg==&logoColor=a29bfe&labelColor=0b0e1a&color=1a1d2e"/></a>
-
-<br><br>
 
 <img src="https://github-readme-stats.vercel.app/api?username=ekaznyra&show_icons=true&hide_border=true&bg_color=06070d&title_color=a29bfe&text_color=565a6e&icon_color=6c5ce7&ring_color=a29bfe&border_radius=8" alt="Stats" height="150"/>
 &nbsp;&nbsp;
@@ -137,12 +65,9 @@ analyst@lab:~$ ./timeline_progression.sh --view
 <br>
 
 <div align="center">
-<a href="mailto:anhtunguyen.sec@proton.me"><img src="https://img.shields.io/badge/ProtonMail-anhtunguyen.sec-0b0e1a?style=for-the-badge&logo=protonmail&logoColor=a29bfe&labelColor=0b0e1a&color=1a1d2e" alt="Email"/></a>
-<a href="https://t.me/ekaznya"><img src="https://img.shields.io/badge/Telegram-@ekaznya-0b0e1a?style=for-the-badge&logo=telegram&logoColor=a29bfe&labelColor=0b0e1a&color=1a1d2e" alt="Telegram"/></a>
-<a href="https://github.com/ekaznyra"><img src="https://img.shields.io/badge/GitHub-ekaznyra-0b0e1a?style=for-the-badge&logo=github&logoColor=a29bfe&labelColor=0b0e1a&color=1a1d2e" alt="GitHub"/></a>
-<a href="https://linkedin.com/in/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0b0e1a?style=for-the-badge&logo=linkedin&logoColor=a29bfe&labelColor=0b0e1a&color=1a1d2e" alt="LinkedIn"/></a>
+<a href="mailto:anhtunguyen.sec@proton.me"><img src="assets/connect.svg" width="100%"/></a>
 
-<br><br>
+<br>
 
 <img src="https://komarev.com/ghpvc/?username=ekaznyra&style=flat-square&color=1a1d2e&label=views" alt="Views"/>
 

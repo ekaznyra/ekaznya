@@ -60,17 +60,17 @@
     .row5 { animation: fadeIn 0.6s ease-out 0.8s both; }
     .row6 { animation: fadeIn 0.6s ease-out 0.95s both; }
     .skill-label {
-      font-family: 'JetBrains Mono', 'Cascadia Code', monospace;
+      font-family: Consolas, monospace;
       font-size: 10px;
       letter-spacing: 1.5px;
     }
     .skill-sub {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: Consolas, monospace;
       font-size: 8px;
       fill: #3d4155;
     }
     .section-title {
-      font-family: 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+      font-family: 'Segoe UI', system-ui, sans-serif;
       font-size: 10px;
       letter-spacing: 4px;
       fill: #6c5ce7;
@@ -181,11 +181,11 @@
 
   <!-- Right side labels -->
   <g>
-    <text x="780" y="120" font-family="'JetBrains Mono', monospace" font-size="7" fill="#1e2035" letter-spacing="1">WINDOWS</text>
-    <text x="780" y="132" font-family="'JetBrains Mono', monospace" font-size="7" fill="#1e2035" letter-spacing="1">LINUX</text>
-    <text x="780" y="170" font-family="'JetBrains Mono', monospace" font-size="7" fill="#1e2035" letter-spacing="1">DOCKER</text>
-    <text x="780" y="182" font-family="'JetBrains Mono', monospace" font-size="7" fill="#1e2035" letter-spacing="1">KALI</text>
-    <text x="780" y="220" font-family="'JetBrains Mono', monospace" font-size="7" fill="#1e2035" letter-spacing="1">AUTOPSY</text>
-    <text x="780" y="232" font-family="'JetBrains Mono', monospace" font-size="7" fill="#1e2035" letter-spacing="1">GHIDRA</text>
+    <text x="780" y="120" font-family="Consolas, monospace" font-size="7" fill="#1e2035" letter-spacing="1">WINDOWS</text>
+    <text x="780" y="132" font-family="Consolas, monospace" font-size="7" fill="#1e2035" letter-spacing="1">LINUX</text>
+    <text x="780" y="170" font-family="Consolas, monospace" font-size="7" fill="#1e2035" letter-spacing="1">DOCKER</text>
+    <text x="780" y="182" font-family="Consolas, monospace" font-size="7" fill="#1e2035" letter-spacing="1">KALI</text>
+    <text x="780" y="220" font-family="Consolas, monospace" font-size="7" fill="#1e2035" letter-spacing="1">AUTOPSY</text>
+    <text x="780" y="232" font-family="Consolas, monospace" font-size="7" fill="#1e2035" letter-spacing="1">GHIDRA</text>
   </g>
 </svg>

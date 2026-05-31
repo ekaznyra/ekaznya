@@ -184,13 +184,13 @@
 
   <!-- Name -->
   <g class="fade2">
-    <text x="75" y="120" font-family="'SF Pro Display', 'Segoe UI', system-ui, sans-serif" font-weight="200" font-size="13" fill="#6c5ce7" letter-spacing="6" opacity="0.7">
+    <text x="75" y="120" font-family="'Segoe UI', system-ui, sans-serif" font-weight="200" font-size="13" fill="#6c5ce7" letter-spacing="6" opacity="0.7">
       IDENTITY
     </text>
-    <text x="75" y="170" font-family="'SF Pro Display', 'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="42" fill="url(#nameGrad)">
+    <text x="75" y="170" font-family="'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="42" fill="url(#nameGrad)">
       NGUYỄN NGỌC
     </text>
-    <text x="75" y="220" font-family="'SF Pro Display', 'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="42" fill="url(#nameGrad)">
+    <text x="75" y="220" font-family="'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="42" fill="url(#nameGrad)">
       ANH TÚ
     </text>
   </g>
@@ -198,7 +198,7 @@
   <!-- Role line -->
   <g class="fade3">
     <line x1="75" y1="240" x2="200" y2="240" stroke="#6c5ce7" stroke-width="0.5" opacity="0.4" class="trace2"/>
-    <text x="75" y="268" font-family="'JetBrains Mono', 'Cascadia Code', monospace" font-weight="300" font-size="13" fill="#8b8fa3" letter-spacing="1">
+    <text x="75" y="268" font-family="Consolas, monospace" font-weight="300" font-size="13" fill="#8b8fa3" letter-spacing="1">
       Cybersecurity · DFIR · Detection Engineering
     </text>
   </g>
@@ -206,7 +206,7 @@
   <!-- Status indicators -->
   <g class="fade4">
     <circle cx="83" cy="305" r="3" fill="#a29bfe" class="status-dot"/>
-    <text x="95" y="309" font-family="'JetBrains Mono', monospace" font-size="10" fill="#565a6e" letter-spacing="0.5">
+    <text x="95" y="309" font-family="Consolas, monospace" font-size="10" fill="#565a6e" letter-spacing="0.5">
       investigating threats · building detections
     </text>
   </g>
@@ -239,23 +239,23 @@
     <circle cx="740" cy="200" r="0" fill="none" stroke="#a29bfe" stroke-width="0.5" class="pulse-ring"/>
 
     <!-- Orbital labels -->
-    <text x="740" y="320" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#3d4155" letter-spacing="3">
+    <text x="740" y="320" text-anchor="middle" font-family="Consolas, monospace" font-size="8" fill="#3d4155" letter-spacing="3">
       THREAT LANDSCAPE
     </text>
 
     <!-- Skill nodes around orbit -->
     <g opacity="0.7">
-      <text x="640" y="135" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#ff6b9d" letter-spacing="1">DFIR</text>
-      <text x="835" y="165" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="8" fill="#ffd93d" letter-spacing="1">HUNT</text>
-      <text x="835" y="250" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="8" fill="#4ecdc4" letter-spacing="1">DETECT</text>
-      <text x="640" y="280" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#a29bfe" letter-spacing="1">ANALYZE</text>
+      <text x="640" y="135" text-anchor="middle" font-family="Consolas, monospace" font-size="8" fill="#ff6b9d" letter-spacing="1">DFIR</text>
+      <text x="835" y="165" text-anchor="end" font-family="Consolas, monospace" font-size="8" fill="#ffd93d" letter-spacing="1">HUNT</text>
+      <text x="835" y="250" text-anchor="end" font-family="Consolas, monospace" font-size="8" fill="#4ecdc4" letter-spacing="1">DETECT</text>
+      <text x="640" y="280" text-anchor="middle" font-family="Consolas, monospace" font-size="8" fill="#a29bfe" letter-spacing="1">ANALYZE</text>
     </g>
   </g>
 
   <!-- Bottom accent line -->
   <g class="fade5">
     <rect x="50" y="375" width="800" height="1" fill="url(#accentGrad)" opacity="0.3"/>
-    <text x="450" y="393" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#2d3047" letter-spacing="4">
+    <text x="450" y="393" text-anchor="middle" font-family="Consolas, monospace" font-size="8" fill="#2d3047" letter-spacing="4">
       OBSERVE · INVESTIGATE · DOCUMENT · IMPROVE
     </text>
   </g>
