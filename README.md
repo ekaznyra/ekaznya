@@ -3,7 +3,7 @@
 <!-- ═══════════════════════════════════════════════════════════════ -->
 
 <div align="center">
-<img src="assets/header.svg?v=9" width="100%"/>
+<img src="assets/header-dark.svg?v=1" width="100%"/>
 </div>
 
 <br>
@@ -11,14 +11,14 @@
 <!-- ─── SECTION: ABOUT ──────────────────────────────────────────── -->
 
 <div align="center">
-<img src="assets/divider.svg?v=9" width="60%"/>
+<img src="assets/divider-dark.svg?v=1" width="60%"/>
 </div>
 
 <br>
 
 <div align="center">
 
-<img src="assets/about.svg?v=9" width="100%"/>
+<img src="assets/about-dark.svg?v=1" width="100%"/>
 
 </div>
 
@@ -26,7 +26,7 @@
 
 <div align="center">
 
-<img src="assets/skillmap.svg?v=9" width="100%"/>
+<img src="assets/skillmap-dark.svg?v=1" width="100%"/>
 
 </div>
 
@@ -34,14 +34,14 @@
 
 <div align="center">
 
-<img src="assets/timeline.svg?v=9" width="100%"/>
+<img src="assets/timeline-dark.svg?v=1" width="100%"/>
 
 </div>
 
 <!-- ─── SECTION: METRICS ────────────────────────────────────────────── -->
 
 <div align="center">
-<img src="assets/divider.svg?v=9" width="60%"/>
+<img src="assets/divider-dark.svg?v=1" width="60%"/>
 </div>
 
 <br><br>
@@ -57,13 +57,13 @@
 <!-- ─── SECTION: CONNECT ────────────────────────────────────────── -->
 
 <div align="center">
-<img src="assets/divider.svg?v=9" width="60%"/>
+<img src="assets/divider-dark.svg?v=1" width="60%"/>
 </div>
 
 <br>
 
 <div align="center">
-<a href="mailto:anhtunguyen.sec@proton.me"><img src="assets/connect.svg?v=9" width="100%"/></a>
+<a href="mailto:anhtunguyen.sec@proton.me"><img src="assets/connect-dark.svg?v=1" width="100%"/></a>
 
 <br>
 
@@ -76,5 +76,5 @@
 <!-- ─── FOOTER ──────────────────────────────────────────────────── -->
 
 <div align="center">
-<img src="assets/footer.svg?v=9" width="100%"/>
+<img src="assets/footer-dark.svg?v=1" width="100%"/>
 </div>
