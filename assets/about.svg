@@ -1,25 +1,45 @@
 <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- True Black Background -->
-    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#000000"/>
-      <stop offset="100%" stop-color="#030303"/>
+    <!-- Deep Cosmic Background -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020105"/>
+      <stop offset="50%" stop-color="#06050b"/>
+      <stop offset="100%" stop-color="#030305"/>
     </linearGradient>
+
+    <!-- Milky Way Dust Gradients -->
+    <radialGradient id="dust1" cx="30%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="dust2" cx="70%" cy="60%" r="50%">
+      <stop offset="0%" stop-color="#6c5ce7" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#6c5ce7" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="dust3" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Subtle metallic accent -->
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b89b5e"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#8a733f"/>
+    </linearGradient>
+
+    <filter id="starGlow">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
 
   <style>
-    @keyframes fadeUp {
-      0% { opacity: 0; transform: translateY(5px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes drawLine {
-      0% { stroke-dashoffset: 200; }
-      100% { stroke-dashoffset: 0; }
-    }
-    @keyframes subtleBlink {
-      0%, 49% { opacity: 1; }
-      50%, 100% { opacity: 0; }
-    }
+    @keyframes fadeUp { 0% { opacity: 0; transform: translateY(5px); } 100% { opacity: 1; transform: translateY(0); } }
+    @keyframes drawLine { 0% { stroke-dashoffset: 200; } 100% { stroke-dashoffset: 0; } }
+    @keyframes subtleBlink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+    @keyframes twinkle { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
+    @keyframes driftStars { 0% { transform: translateX(0) translateY(0); } 100% { transform: translateX(-10px) translateY(-5px); } }
 
     .f1 { animation: fadeUp 1s cubic-bezier(0.1, 0.8, 0.2, 1) 0.3s both; }
     .f2 { animation: fadeUp 1s cubic-bezier(0.1, 0.8, 0.2, 1) 0.5s both; }
@@ -30,6 +50,10 @@
 
     .line-draw { stroke-dasharray: 200; animation: drawLine 1.5s cubic-bezier(0.2, 0.8, 0.3, 1) 0.5s both; }
     .cursor { animation: subtleBlink 1s step-end infinite; }
+    
+    .tw { animation: twinkle 4s ease-in-out infinite; }
+    .tw2 { animation: twinkle 5s ease-in-out infinite 1s; }
+    .star-drift { animation: driftStars 60s linear infinite alternate; }
 
     .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
     .font-mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
@@ -37,8 +61,29 @@
 
   <rect width="900" height="220" fill="url(#bg)"/>
 
-  <!-- Minimalist Grid -->
-  <g stroke="#111111" stroke-width="0.5">
+  <!-- Milky Way Cosmic Dust -->
+  <rect width="900" height="220" fill="url(#dust3)"/>
+  <ellipse cx="200" cy="110" rx="300" ry="100" fill="url(#dust1)" transform="rotate(-10 200 110)"/>
+  <ellipse cx="700" cy="150" rx="400" ry="120" fill="url(#dust2)" transform="rotate(-15 700 150)"/>
+
+  <!-- Starfield Layer -->
+  <g class="star-drift">
+    <!-- Tiny background stars -->
+    <g fill="#ffffff" opacity="0.4">
+      <circle cx="50" cy="50" r="0.5"/><circle cx="120" cy="140" r="0.8"/><circle cx="280" cy="80" r="0.6"/>
+      <circle cx="450" cy="180" r="0.5"/><circle cx="600" cy="50" r="0.9"/><circle cx="850" cy="120" r="0.7"/>
+      <circle cx="700" cy="180" r="0.5"/><circle cx="350" cy="40" r="0.8"/><circle cx="80" cy="200" r="0.6"/>
+      <circle cx="520" cy="120" r="0.5"/><circle cx="780" cy="40" r="0.8"/><circle cx="900" cy="180" r="0.6"/>
+    </g>
+    <!-- Twinkling stars -->
+    <circle cx="180" cy="80" r="1.5" fill="#ffffff" class="tw" filter="url(#starGlow)"/>
+    <circle cx="620" cy="160" r="1.5" fill="#d4af37" class="tw2" filter="url(#starGlow)"/>
+    <circle cx="400" cy="90" r="1.2" fill="#6c5ce7" class="tw" filter="url(#starGlow)"/>
+    <circle cx="800" cy="60" r="1.5" fill="#ffffff" class="tw2" filter="url(#starGlow)"/>
+  </g>
+
+  <!-- Minimalist Grid (Starlight traces) -->
+  <g stroke="#ffffff" stroke-width="0.2" opacity="0.1">
     <line x1="30" y1="0" x2="30" y2="220"/>
     <line x1="450" y1="0" x2="450" y2="220"/>
     <line x1="870" y1="0" x2="870" y2="220"/>
@@ -49,33 +94,33 @@
     <text x="50" y="38" class="font-sans" font-weight="600" font-size="10" fill="#ffffff" letter-spacing="4">
       PROFILE
     </text>
-    <line x1="50" y1="46" x2="150" y2="46" stroke="#d4af37" stroke-width="0.5" class="line-draw"/>
+    <line x1="50" y1="46" x2="150" y2="46" stroke="url(#gold)" stroke-width="0.5" class="line-draw"/>
 
     <g class="f1">
-      <text x="50" y="75" class="font-mono" font-size="9" fill="#555555">NAME_</text>
+      <text x="50" y="75" class="font-mono" font-size="9" fill="#aaaaaa">NAME_</text>
       <text x="140" y="75" class="font-sans" font-size="11" font-weight="600" fill="#ffffff">Nguyễn Ngọc Anh Tú</text>
     </g>
     <g class="f2">
-      <text x="50" y="98" class="font-mono" font-size="9" fill="#555555">ALIAS_</text>
-      <text x="140" y="98" class="font-mono" font-size="11" fill="#aaaaaa">ekaznyra</text>
+      <text x="50" y="98" class="font-mono" font-size="9" fill="#aaaaaa">ALIAS_</text>
+      <text x="140" y="98" class="font-mono" font-size="11" fill="#dddddd">ekaznyra</text>
     </g>
     <g class="f3">
-      <text x="50" y="121" class="font-mono" font-size="9" fill="#555555">ROLE_</text>
+      <text x="50" y="121" class="font-mono" font-size="9" fill="#aaaaaa">ROLE_</text>
       <text x="140" y="121" class="font-sans" font-size="11" font-weight="400" fill="#cccccc">Cybersecurity Operative</text>
     </g>
     <g class="f4">
-      <text x="50" y="144" class="font-mono" font-size="9" fill="#555555">FOCUS_</text>
+      <text x="50" y="144" class="font-mono" font-size="9" fill="#aaaaaa">FOCUS_</text>
       <text x="140" y="144" class="font-sans" font-size="11" font-weight="400" fill="#cccccc">DFIR · Threat Hunting · Detection</text>
     </g>
     <g class="f5">
-      <text x="50" y="167" class="font-mono" font-size="9" fill="#555555">PATH_</text>
+      <text x="50" y="167" class="font-mono" font-size="9" fill="#aaaaaa">PATH_</text>
       <text x="140" y="167" class="font-sans" font-size="11" font-weight="400" fill="#888888">SOC Analyst</text>
       <text x="215" y="167" class="font-sans" font-size="11" fill="#d4af37">→</text>
       <text x="235" y="167" class="font-sans" font-size="11" font-weight="400" fill="#ffffff">Detection Engineer</text>
     </g>
     <g class="f6">
-      <text x="50" y="192" class="font-mono" font-size="9" fill="#333333">METHOD_</text>
-      <text x="140" y="192" class="font-mono" font-size="9" fill="#444444">Observe · Investigate · Document · Improve</text>
+      <text x="50" y="192" class="font-mono" font-size="9" fill="#666666">METHOD_</text>
+      <text x="140" y="192" class="font-mono" font-size="9" fill="#888888">Observe · Investigate · Document · Improve</text>
     </g>
   </g>
 
@@ -84,11 +129,11 @@
     <text x="470" y="38" class="font-sans" font-weight="600" font-size="10" fill="#ffffff" letter-spacing="4">
       ACTIVE RESEARCH
     </text>
-    <line x1="470" y1="46" x2="570" y2="46" stroke="#d4af37" stroke-width="0.5" class="line-draw" style="animation-delay: 0.6s"/>
+    <line x1="470" y1="46" x2="570" y2="46" stroke="url(#gold)" stroke-width="0.5" class="line-draw" style="animation-delay: 0.6s"/>
 
     <!-- Minimalist Data List -->
     <g class="f1">
-      <rect x="470" y="69" width="3" height="3" fill="#d4af37"/>
+      <rect x="470" y="69" width="3" height="3" fill="url(#gold)"/>
       <text x="485" y="73" class="font-sans" font-size="11" font-weight="400" fill="#dddddd">Digital Forensics &amp; Incident Response</text>
     </g>
     <g class="f2">
@@ -110,10 +155,10 @@
   </g>
 
   <!-- Corner accents -->
-  <path d="M 865 15 L 870 15 L 870 20" fill="none" stroke="#333333" stroke-width="0.5"/>
-  <path d="M 865 205 L 870 205 L 870 200" fill="none" stroke="#333333" stroke-width="0.5"/>
+  <path d="M 865 15 L 870 15 L 870 20" fill="none" stroke="#ffffff" stroke-width="0.3" opacity="0.3"/>
+  <path d="M 865 205 L 870 205 L 870 200" fill="none" stroke="#ffffff" stroke-width="0.3" opacity="0.3"/>
   
-  <text x="865" y="210" text-anchor="end" class="font-mono" font-size="8" fill="#555555" letter-spacing="1">
+  <text x="865" y="210" text-anchor="end" class="font-mono" font-size="8" fill="#888888" letter-spacing="1">
     ENGAGED<tspan class="cursor" fill="#d4af37">_</tspan>
   </text>
 </svg>

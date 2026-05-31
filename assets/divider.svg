@@ -1,18 +1,50 @@
 <svg viewBox="0 0 900 40" xmlns="http://www.w3.org/2000/svg">
   <defs>
+    <!-- Deep Cosmic Background -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020105"/>
+      <stop offset="50%" stop-color="#06050b"/>
+      <stop offset="100%" stop-color="#030305"/>
+    </linearGradient>
+
+    <!-- Milky Way Dust Gradients -->
+    <radialGradient id="dust1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+
     <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#b89b5e"/>
       <stop offset="100%" stop-color="#d4af37"/>
     </linearGradient>
+
+    <filter id="starGlow">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
   <style>
-    @keyframes moveDash {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(900px); }
-    }
+    @keyframes moveDash { 0% { transform: translateX(0); } 100% { transform: translateX(900px); } }
+    @keyframes twinkle { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
+    
     .dash { animation: moveDash 8s linear infinite; }
+    .tw { animation: twinkle 4s ease-in-out infinite; }
+    .tw2 { animation: twinkle 5s ease-in-out infinite 1s; }
   </style>
-  <rect width="900" height="40" fill="transparent"/>
-  <line x1="0" y1="20" x2="900" y2="20" stroke="#1a1a1a" stroke-width="0.5"/>
-  <rect class="dash" x="-20" y="19" width="20" height="2" fill="url(#gold)"/>
+
+  <rect width="900" height="40" fill="url(#bg)"/>
+  
+  <ellipse cx="450" cy="20" rx="450" ry="20" fill="url(#dust1)"/>
+
+  <!-- Shooting Star / Orbit Line -->
+  <line x1="0" y1="20" x2="900" y2="20" stroke="#ffffff" stroke-width="0.2" opacity="0.2"/>
+  <rect class="dash" x="-20" y="19" width="20" height="2" fill="url(#gold)" filter="url(#starGlow)"/>
+
+  <!-- Scattered Stars -->
+  <g fill="#ffffff" opacity="0.4">
+    <circle cx="100" cy="10" r="0.5"/><circle cx="250" cy="30" r="0.8"/><circle cx="500" cy="8" r="0.6"/>
+    <circle cx="750" cy="35" r="0.5"/><circle cx="850" cy="15" r="0.8"/>
+  </g>
+  <circle cx="350" cy="15" r="1.5" fill="#ffffff" class="tw" filter="url(#starGlow)"/>
+  <circle cx="650" cy="25" r="1.5" fill="#d4af37" class="tw2" filter="url(#starGlow)"/>
 </svg>

@@ -1,21 +1,37 @@
 <svg viewBox="0 0 900 90" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#000000"/>
-      <stop offset="100%" stop-color="#030303"/>
+    <!-- Deep Cosmic Background -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020105"/>
+      <stop offset="50%" stop-color="#06050b"/>
+      <stop offset="100%" stop-color="#030305"/>
     </linearGradient>
+
+    <!-- Milky Way Dust Gradients -->
+    <radialGradient id="dust1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="starGlow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
 
   <style>
-    @keyframes fadeUp {
-      0% { opacity: 0; transform: translateY(5px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeUp { 0% { opacity: 0; transform: translateY(5px); } 100% { opacity: 1; transform: translateY(0); } }
+    @keyframes twinkle { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
+    @keyframes driftStars { 0% { transform: translateX(0) translateY(0); } 100% { transform: translateX(-5px) translateY(-2px); } }
 
     .f1 { animation: fadeUp 0.8s cubic-bezier(0.1, 0.8, 0.2, 1) 0.3s both; }
     .f2 { animation: fadeUp 0.8s cubic-bezier(0.1, 0.8, 0.2, 1) 0.5s both; }
     .f3 { animation: fadeUp 0.8s cubic-bezier(0.1, 0.8, 0.2, 1) 0.7s both; }
     .f4 { animation: fadeUp 0.8s cubic-bezier(0.1, 0.8, 0.2, 1) 0.9s both; }
+
+    .tw { animation: twinkle 4s ease-in-out infinite; }
+    .tw2 { animation: twinkle 5s ease-in-out infinite 1s; }
+    .star-drift { animation: driftStars 60s linear infinite alternate; }
 
     .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
     .font-mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
@@ -23,34 +39,50 @@
 
   <rect width="900" height="90" fill="url(#bg)"/>
 
-  <line x1="100" y1="45" x2="800" y2="45" stroke="#222222" stroke-width="0.5"/>
+  <ellipse cx="450" cy="45" rx="450" ry="45" fill="url(#dust1)"/>
+
+  <!-- Starfield Layer -->
+  <g class="star-drift">
+    <!-- Background stars -->
+    <g fill="#ffffff" opacity="0.4">
+      <circle cx="100" cy="20" r="0.5"/><circle cx="250" cy="70" r="0.8"/><circle cx="500" cy="20" r="0.6"/>
+      <circle cx="750" cy="80" r="0.5"/><circle cx="850" cy="30" r="0.8"/>
+    </g>
+    <!-- Twinkling stars -->
+    <circle cx="350" cy="25" r="1.5" fill="#ffffff" class="tw" filter="url(#starGlow)"/>
+    <circle cx="650" cy="65" r="1.5" fill="#d4af37" class="tw2" filter="url(#starGlow)"/>
+  </g>
+
+  <!-- Orbit Line -->
+  <line x1="100" y1="45" x2="800" y2="45" stroke="#ffffff" stroke-width="0.3" opacity="0.3"/>
 
   <!-- ProtonMail -->
   <g class="f1">
-    <circle cx="200" cy="45" r="3" fill="#000000" stroke="#888888" stroke-width="1"/>
+    <circle cx="200" cy="45" r="3" fill="#000000" stroke="#ffffff" stroke-width="1"/>
     <text x="200" y="30" text-anchor="middle" class="font-sans" font-weight="600" font-size="9" fill="#aaaaaa" letter-spacing="2">PROTONMAIL</text>
-    <text x="200" y="65" text-anchor="middle" class="font-mono" font-size="9" fill="#555555">anhtunguyen.sec</text>
+    <text x="200" y="65" text-anchor="middle" class="font-mono" font-size="9" fill="#888888">anhtunguyen.sec</text>
   </g>
 
   <!-- Telegram -->
   <g class="f2">
-    <circle cx="366" cy="45" r="3" fill="#000000" stroke="#888888" stroke-width="1"/>
+    <circle cx="366" cy="45" r="3" fill="#000000" stroke="#ffffff" stroke-width="1"/>
     <text x="366" y="30" text-anchor="middle" class="font-sans" font-weight="600" font-size="9" fill="#aaaaaa" letter-spacing="2">TELEGRAM</text>
-    <text x="366" y="65" text-anchor="middle" class="font-mono" font-size="9" fill="#555555">@ekaznya</text>
+    <text x="366" y="65" text-anchor="middle" class="font-mono" font-size="9" fill="#888888">@ekaznya</text>
   </g>
 
   <!-- GitHub -->
   <g class="f3">
-    <polygon points="533,42 536,45 533,48 530,45" fill="#d4af37"/>
+    <!-- Active Constellation Star -->
+    <path d="M 533 42 L 535 44 L 537 42 L 535 48 Z" fill="#d4af37" filter="url(#starGlow)"/>
     <text x="533" y="30" text-anchor="middle" class="font-sans" font-weight="600" font-size="9" fill="#ffffff" letter-spacing="2">GITHUB</text>
     <text x="533" y="65" text-anchor="middle" class="font-mono" font-size="9" fill="#d4af37">ekaznyra</text>
   </g>
 
   <!-- LinkedIn -->
   <g class="f4">
-    <circle cx="700" cy="45" r="3" fill="#000000" stroke="#888888" stroke-width="1"/>
+    <circle cx="700" cy="45" r="3" fill="#000000" stroke="#ffffff" stroke-width="1"/>
     <text x="700" y="30" text-anchor="middle" class="font-sans" font-weight="600" font-size="9" fill="#aaaaaa" letter-spacing="2">LINKEDIN</text>
-    <text x="700" y="65" text-anchor="middle" class="font-mono" font-size="9" fill="#555555">Connect</text>
+    <text x="700" y="65" text-anchor="middle" class="font-mono" font-size="9" fill="#888888">Connect</text>
   </g>
 
 </svg>
