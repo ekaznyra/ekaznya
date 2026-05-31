@@ -18,7 +18,7 @@
   </defs>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700;900&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap');
 
     @keyframes energyBeam { 0% { stroke-dashoffset: 1000; } 100% { stroke-dashoffset: 0; } }
     @keyframes pulseNode { 0%, 100% { r: 4; filter: drop-shadow(0 0 10px #00f0ff); } 50% { r: 6; filter: drop-shadow(0 0 20px #00f0ff); } }

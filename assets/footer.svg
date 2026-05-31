@@ -18,7 +18,7 @@
   </defs>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700;900&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap');
 
     @keyframes pulseGlow { 0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 5px #00f0ff); } 50% { opacity: 1; filter: drop-shadow(0 0 15px #00f0ff); } }
     @keyframes pulseGold { 0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 5px #ffd700); } 50% { opacity: 1; filter: drop-shadow(0 0 15px #ffd700); } }

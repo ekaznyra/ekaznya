@@ -13,7 +13,7 @@
   </defs>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700;900&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap');
 
     @keyframes pulseGlow { 0%, 100% { filter: drop-shadow(0 0 5px #00f0ff); opacity: 0.8; } 50% { filter: drop-shadow(0 0 20px #00f0ff); opacity: 1; } }
     @keyframes fastSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
