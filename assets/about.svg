@@ -1,234 +1,119 @@
 <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Deep luxury background -->
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#020205"/>
-      <stop offset="50%" stop-color="#05060A"/>
-      <stop offset="100%" stop-color="#080A12"/>
+    <!-- True Black Background -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="100%" stop-color="#030303"/>
     </linearGradient>
-    
-    <!-- Border Gradient with Cyan and Gold -->
-    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.8"/>
-      <stop offset="50%" stop-color="#6c5ce7" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#ffd700" stop-opacity="0.8"/>
-    </linearGradient>
-
-    <!-- Scanning line glow -->
-    <linearGradient id="glowLine" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#00f0ff" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
-    </linearGradient>
-
-    <!-- Filters -->
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2.5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="glowStrong">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="glass">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
-      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"/>
-    </filter>
   </defs>
 
   <style>
-    @keyframes fadeSlide { 0%{opacity:0;transform:translateX(-15px)} 100%{opacity:1;transform:translateX(0)} }
-    @keyframes fadeSlideR { 0%{opacity:0;transform:translateX(15px)} 100%{opacity:1;transform:translateX(0)} }
-    @keyframes cursorBlink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
-    @keyframes dotPulse { 0%,100%{opacity:0.4; r:3; stroke-width:1} 50%{opacity:1; r:4; stroke-width:2} }
-    @keyframes lineDraw { 0%{stroke-dashoffset:250} 100%{stroke-dashoffset:0} }
-    @keyframes scanLine { 0%{transform:translateX(-900px)} 100%{transform:translateX(900px)} }
-    @keyframes cornerPulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
-    @keyframes dataFlow { 0%{stroke-dashoffset:24} 100%{stroke-dashoffset:0} }
-    @keyframes breathe { 0%,100%{opacity:0.02} 50%{opacity:0.08} }
-    @keyframes decrypt { 0%{opacity:0} 20%{opacity:1; content:"0101"} 100%{opacity:1} }
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(5px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes drawLine {
+      0% { stroke-dashoffset: 200; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes subtleBlink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
 
-    .f1{animation:fadeSlide 0.6s cubic-bezier(0.1, 0.8, 0.2, 1) 0.2s both}
-    .f2{animation:fadeSlide 0.6s cubic-bezier(0.1, 0.8, 0.2, 1) 0.35s both}
-    .f3{animation:fadeSlide 0.6s cubic-bezier(0.1, 0.8, 0.2, 1) 0.5s both}
-    .f4{animation:fadeSlide 0.6s cubic-bezier(0.1, 0.8, 0.2, 1) 0.65s both}
-    .f5{animation:fadeSlide 0.6s cubic-bezier(0.1, 0.8, 0.2, 1) 0.8s both}
-    .f6{animation:fadeSlide 0.6s cubic-bezier(0.1, 0.8, 0.2, 1) 0.95s both}
-    
-    .fr1{animation:fadeSlideR 0.6s cubic-bezier(0.1, 0.8, 0.2, 1) 0.3s both}
-    .fr2{animation:fadeSlideR 0.6s cubic-bezier(0.1, 0.8, 0.2, 1) 0.45s both}
-    .fr3{animation:fadeSlideR 0.6s cubic-bezier(0.1, 0.8, 0.2, 1) 0.6s both}
-    .fr4{animation:fadeSlideR 0.6s cubic-bezier(0.1, 0.8, 0.2, 1) 0.75s both}
-    .fr5{animation:fadeSlideR 0.6s cubic-bezier(0.1, 0.8, 0.2, 1) 0.9s both}
-    
-    .cursor{animation:cursorBlink 1s step-end infinite}
-    .dp-cyan{animation:dotPulse 2s ease-in-out infinite}
-    .dp-gold{animation:dotPulse 2s ease-in-out infinite 0.6s}
-    .dp-purple{animation:dotPulse 2s ease-in-out infinite 1.2s}
-    
-    .line-draw{stroke-dasharray:250;animation:lineDraw 1.5s cubic-bezier(0.2, 0.8, 0.3, 1) 0.5s both}
-    .scan-fx{animation:scanLine 4s linear infinite}
-    .corner-fx{animation:cornerPulse 2.5s ease-in-out infinite}
-    .data-fx{stroke-dasharray:8 4;animation:dataFlow 1s linear infinite}
-    
-    .label{font-family:Consolas, monospace; font-size:11px; font-weight:bold; letter-spacing:1px; fill:#6c5ce7}
-    .value{font-family:Consolas, monospace; font-size:11px; font-weight:bold;}
-    .section-label{font-family:'Segoe UI', system-ui, sans-serif; font-size:10px; font-weight:900; letter-spacing:6px; fill:#00f0ff; opacity:0.8}
-    .focus-item{font-family:Consolas, monospace; font-size:11px; font-weight:bold; fill:#e2e8f0}
-    .hud-text{font-family:Consolas, monospace; font-size:8px; font-weight:bold; letter-spacing:2px; fill:#00f0ff}
+    .f1 { animation: fadeUp 1s cubic-bezier(0.1, 0.8, 0.2, 1) 0.3s both; }
+    .f2 { animation: fadeUp 1s cubic-bezier(0.1, 0.8, 0.2, 1) 0.5s both; }
+    .f3 { animation: fadeUp 1s cubic-bezier(0.1, 0.8, 0.2, 1) 0.7s both; }
+    .f4 { animation: fadeUp 1s cubic-bezier(0.1, 0.8, 0.2, 1) 0.9s both; }
+    .f5 { animation: fadeUp 1s cubic-bezier(0.1, 0.8, 0.2, 1) 1.1s both; }
+    .f6 { animation: fadeUp 1s cubic-bezier(0.1, 0.8, 0.2, 1) 1.3s both; }
+
+    .line-draw { stroke-dasharray: 200; animation: drawLine 1.5s cubic-bezier(0.2, 0.8, 0.3, 1) 0.5s both; }
+    .cursor { animation: subtleBlink 1s step-end infinite; }
+
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .font-mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
   </style>
 
   <rect width="900" height="220" fill="url(#bg)"/>
 
-  <!-- Advanced Grid & Hex Pattern -->
-  <g opacity="0.04" stroke="#00f0ff" stroke-width="0.5">
-    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
-      <path d="M 30 0 L 0 0 0 30" fill="none"/>
-    </pattern>
-    <rect width="900" height="220" fill="url(#grid)"/>
+  <!-- Minimalist Grid -->
+  <g stroke="#111111" stroke-width="0.5">
+    <line x1="30" y1="0" x2="30" y2="220"/>
+    <line x1="450" y1="0" x2="450" y2="220"/>
+    <line x1="870" y1="0" x2="870" y2="220"/>
   </g>
 
-  <!-- Horizontal Scanning Laser -->
-  <rect class="scan-fx" x="0" y="0" width="120" height="220" fill="url(#glowLine)" opacity="0.06"/>
-
-  <!-- LEFT PANEL: IDENTITY TERMINAL -->
+  <!-- Left Panel: Identity -->
   <g>
-    <!-- Glassmorphic panel background -->
-    <rect x="30" y="15" width="405" height="190" rx="4" fill="#00f0ff" opacity="0.02"/>
-    <rect x="30" y="15" width="405" height="190" rx="4" fill="none" stroke="url(#borderGrad)" stroke-width="1"/>
-    
-    <!-- Intricate HUD Corners -->
-    <g class="corner-fx" stroke="#00f0ff" stroke-width="2">
-      <!-- TL -->
-      <path d="M 28 30 L 28 13 L 45 13" fill="none" filter="url(#glow)"/>
-      <rect x="26" y="11" width="4" height="4" fill="#00f0ff"/>
-      <!-- TR -->
-      <path d="M 437 30 L 437 13 L 420 13" fill="none" filter="url(#glow)"/>
-      <rect x="435" y="11" width="4" height="4" fill="#00f0ff"/>
-      <!-- BL -->
-      <path d="M 28 190 L 28 207 L 45 207" fill="none" filter="url(#glow)"/>
-      <rect x="26" y="205" width="4" height="4" fill="#00f0ff"/>
-      <!-- BR -->
-      <path d="M 437 190 L 437 207 L 420 207" fill="none" filter="url(#glow)"/>
-      <rect x="435" y="205" width="4" height="4" fill="#00f0ff"/>
-    </g>
+    <text x="50" y="38" class="font-sans" font-weight="600" font-size="10" fill="#ffffff" letter-spacing="4">
+      PROFILE
+    </text>
+    <line x1="50" y1="46" x2="150" y2="46" stroke="#d4af37" stroke-width="0.5" class="line-draw"/>
 
-    <!-- Header Section -->
-    <text x="50" y="38" class="section-label" filter="url(#glow)">IDENTITY</text>
-    <line x1="50" y1="46" x2="220" y2="46" stroke="#00f0ff" stroke-width="1" opacity="0.5"/>
-    <rect x="220" y="44" width="4" height="4" fill="#ffd700"/>
-    <text x="345" y="38" text-anchor="end" class="hud-text" opacity="0.6">SEC://CLEARANCE_5</text>
-    <rect x="355" y="32" width="60" height="8" fill="#ffd700" opacity="0.2"/>
-    <text x="360" y="39" class="hud-text" fill="#ffd700">VERIFIED</text>
-
-    <!-- Content Lines -->
     <g class="f1">
-      <text x="50" y="75" class="label">NAME_</text>
-      <text x="140" y="75" class="value" fill="#ffffff" filter="url(#glowStrong)">Nguyễn Ngọc Anh Tú</text>
+      <text x="50" y="75" class="font-mono" font-size="9" fill="#555555">NAME_</text>
+      <text x="140" y="75" class="font-sans" font-size="11" font-weight="600" fill="#ffffff">Nguyễn Ngọc Anh Tú</text>
     </g>
     <g class="f2">
-      <text x="50" y="98" class="label">CALLSIGN_</text>
-      <text x="140" y="98" class="value" fill="#ffd700" filter="url(#glow)">ekaznyra</text>
+      <text x="50" y="98" class="font-mono" font-size="9" fill="#555555">ALIAS_</text>
+      <text x="140" y="98" class="font-mono" font-size="11" fill="#aaaaaa">ekaznyra</text>
     </g>
     <g class="f3">
-      <text x="50" y="121" class="label">ROLE_</text>
-      <text x="140" y="121" class="value" fill="#a29bfe">Cybersecurity Operative</text>
+      <text x="50" y="121" class="font-mono" font-size="9" fill="#555555">ROLE_</text>
+      <text x="140" y="121" class="font-sans" font-size="11" font-weight="400" fill="#cccccc">Cybersecurity Operative</text>
     </g>
     <g class="f4">
-      <text x="50" y="144" class="label">FOCUS_</text>
-      <text x="140" y="144" class="value" fill="#00f0ff">DFIR // Threat Hunting // Detection</text>
+      <text x="50" y="144" class="font-mono" font-size="9" fill="#555555">FOCUS_</text>
+      <text x="140" y="144" class="font-sans" font-size="11" font-weight="400" fill="#cccccc">DFIR · Threat Hunting · Detection</text>
     </g>
     <g class="f5">
-      <text x="50" y="167" class="label">TRAJEC_</text>
-      <text x="140" y="167" class="value" fill="#6c5ce7">SOC Analyst</text>
-      <text x="235" y="167" class="value" fill="#ffd700"> ➜ </text>
-      <text x="260" y="167" class="value" fill="#a29bfe">Detection Engineer</text>
+      <text x="50" y="167" class="font-mono" font-size="9" fill="#555555">PATH_</text>
+      <text x="140" y="167" class="font-sans" font-size="11" font-weight="400" fill="#888888">SOC Analyst</text>
+      <text x="215" y="167" class="font-sans" font-size="11" fill="#d4af37">→</text>
+      <text x="235" y="167" class="font-sans" font-size="11" font-weight="400" fill="#ffffff">Detection Engineer</text>
     </g>
     <g class="f6">
-      <text x="50" y="192" class="label" fill="#ff4757">METHOD_</text>
-      <text x="140" y="192" class="value" fill="#ff4757" opacity="0.8">Observe ➜ Investigate ➜ Document ➜ Improve</text>
-      <text x="440" y="192" class="value cursor" fill="#00f0ff">█</text>
+      <text x="50" y="192" class="font-mono" font-size="9" fill="#333333">METHOD_</text>
+      <text x="140" y="192" class="font-mono" font-size="9" fill="#444444">Observe · Investigate · Document · Improve</text>
     </g>
   </g>
 
-  <!-- RIGHT PANEL: ACTIVE FOCUS TERMINAL -->
+  <!-- Right Panel: Current Focus -->
   <g>
-    <!-- Glassmorphic panel background -->
-    <rect x="465" y="15" width="405" height="190" rx="4" fill="#ffd700" opacity="0.015"/>
-    <rect x="465" y="15" width="405" height="190" rx="4" fill="none" stroke="url(#borderGrad)" stroke-width="1"/>
-    
-    <!-- Intricate HUD Corners -->
-    <g class="corner-fx" stroke="#ffd700" stroke-width="2" style="animation-delay:1.2s">
-      <!-- TL -->
-      <path d="M 463 30 L 463 13 L 480 13" fill="none" filter="url(#glow)"/>
-      <rect x="461" y="11" width="4" height="4" fill="#ffd700"/>
-      <!-- TR -->
-      <path d="M 872 30 L 872 13 L 855 13" fill="none" filter="url(#glow)"/>
-      <rect x="870" y="11" width="4" height="4" fill="#ffd700"/>
-      <!-- BL -->
-      <path d="M 463 190 L 463 207 L 480 207" fill="none" filter="url(#glow)"/>
-      <rect x="461" y="205" width="4" height="4" fill="#ffd700"/>
-      <!-- BR -->
-      <path d="M 872 190 L 872 207 L 855 207" fill="none" filter="url(#glow)"/>
-      <rect x="870" y="205" width="4" height="4" fill="#ffd700"/>
-    </g>
+    <text x="470" y="38" class="font-sans" font-weight="600" font-size="10" fill="#ffffff" letter-spacing="4">
+      ACTIVE RESEARCH
+    </text>
+    <line x1="470" y1="46" x2="570" y2="46" stroke="#d4af37" stroke-width="0.5" class="line-draw" style="animation-delay: 0.6s"/>
 
-    <!-- Header Section -->
-    <text x="490" y="38" class="section-label" fill="#ffd700" filter="url(#glow)">ACTIVE FOCUS</text>
-    <line x1="490" y1="46" x2="660" y2="46" stroke="#ffd700" stroke-width="1" opacity="0.5"/>
-    <rect x="660" y="44" width="4" height="4" fill="#00f0ff"/>
-    <text x="785" y="38" text-anchor="end" class="hud-text" opacity="0.6">STATUS://ENGAGED</text>
-    <rect x="795" y="32" width="60" height="8" fill="#00f0ff" opacity="0.2"/>
-    <text x="805" y="39" class="hud-text" fill="#00f0ff">ONLINE</text>
-
-    <!-- Focus Items List -->
-    <g class="fr1">
-      <circle cx="500" cy="72" r="3" fill="#080A12" stroke="#00f0ff" class="dp-cyan"/>
-      <circle cx="500" cy="72" r="1.5" fill="#00f0ff" filter="url(#glow)"/>
-      <text x="520" y="76" class="focus-item">Digital Forensics &amp; Incident Response</text>
-      <!-- Data trace line to the right -->
-      <path d="M 760 72 L 780 72 L 790 82 L 850 82" fill="none" stroke="#00f0ff" stroke-width="0.5" opacity="0.3"/>
+    <!-- Minimalist Data List -->
+    <g class="f1">
+      <rect x="470" y="69" width="3" height="3" fill="#d4af37"/>
+      <text x="485" y="73" class="font-sans" font-size="11" font-weight="400" fill="#dddddd">Digital Forensics &amp; Incident Response</text>
     </g>
-    
-    <g class="fr2">
-      <circle cx="500" cy="100" r="3" fill="#080A12" stroke="#ffd700" class="dp-gold"/>
-      <circle cx="500" cy="100" r="1.5" fill="#ffd700" filter="url(#glow)"/>
-      <text x="520" y="104" class="focus-item">Threat Hunting Workflows</text>
+    <g class="f2">
+      <rect x="470" y="97" width="3" height="3" fill="#aaaaaa"/>
+      <text x="485" y="101" class="font-sans" font-size="11" font-weight="400" fill="#dddddd">Threat Hunting Workflows</text>
     </g>
-    
-    <g class="fr3">
-      <circle cx="500" cy="128" r="3" fill="#080A12" stroke="#ff4757" class="dp-purple"/>
-      <circle cx="500" cy="128" r="1.5" fill="#ff4757" filter="url(#glow)"/>
-      <text x="520" y="132" class="focus-item">YARA &amp; Sigma Rule Engineering</text>
-      <path d="M 720 128 L 740 128 L 750 118 L 850 118" fill="none" stroke="#ff4757" stroke-width="0.5" opacity="0.3"/>
+    <g class="f3">
+      <rect x="470" y="125" width="3" height="3" fill="#aaaaaa"/>
+      <text x="485" y="129" class="font-sans" font-size="11" font-weight="400" fill="#dddddd">YARA &amp; Sigma Rule Engineering</text>
     </g>
-    
-    <g class="fr4">
-      <circle cx="500" cy="156" r="3" fill="#080A12" stroke="#a29bfe" class="dp-cyan"/>
-      <circle cx="500" cy="156" r="1.5" fill="#a29bfe" filter="url(#glow)"/>
-      <text x="520" y="160" class="focus-item">Malware Behavior Analysis</text>
+    <g class="f4">
+      <rect x="470" y="153" width="3" height="3" fill="#aaaaaa"/>
+      <text x="485" y="157" class="font-sans" font-size="11" font-weight="400" fill="#dddddd">Malware Behavior Analysis</text>
     </g>
-    
-    <g class="fr5">
-      <circle cx="500" cy="184" r="3" fill="#080A12" stroke="#00f0ff" class="dp-gold"/>
-      <circle cx="500" cy="184" r="1.5" fill="#00f0ff" filter="url(#glow)"/>
-      <text x="520" y="188" class="focus-item">Windows Event Log Correlation</text>
-      <path d="M 740 184 L 760 184 L 770 174 L 850 174" fill="none" stroke="#00f0ff" stroke-width="0.5" opacity="0.3"/>
+    <g class="f5">
+      <rect x="470" y="181" width="3" height="3" fill="#aaaaaa"/>
+      <text x="485" y="185" class="font-sans" font-size="11" font-weight="400" fill="#dddddd">Windows Event Log Correlation</text>
     </g>
   </g>
 
-  <!-- CENTER DIVIDER - HIGH-TECH CIRCUIT SPINE -->
-  <g class="line-draw">
-    <path d="M 450 20 L 450 200" stroke="#00f0ff" stroke-width="1.5" fill="none" filter="url(#glow)"/>
-    <!-- Central Node -->
-    <polygon points="450,100 455,110 450,120 445,110" fill="#ffd700" filter="url(#glowStrong)"/>
-    <circle cx="450" cy="110" r="8" fill="none" stroke="#00f0ff" stroke-width="1"/>
-  </g>
+  <!-- Corner accents -->
+  <path d="M 865 15 L 870 15 L 870 20" fill="none" stroke="#333333" stroke-width="0.5"/>
+  <path d="M 865 205 L 870 205 L 870 200" fill="none" stroke="#333333" stroke-width="0.5"/>
   
-  <!-- Data packets flowing across the spine -->
-  <g stroke="#ffd700" stroke-width="1.5" opacity="0.8">
-    <path d="M 445 50 L 455 50" class="data-fx"/>
-    <path d="M 445 150 L 455 150" class="data-fx" style="animation-delay:0.5s" stroke="#00f0ff"/>
-    <path d="M 445 170 L 455 170" class="data-fx" style="animation-delay:0.8s" stroke="#ff4757"/>
-  </g>
+  <text x="865" y="210" text-anchor="end" class="font-mono" font-size="8" fill="#555555" letter-spacing="1">
+    ENGAGED<tspan class="cursor" fill="#d4af37">_</tspan>
+  </text>
 </svg>

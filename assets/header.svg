@@ -1,310 +1,135 @@
 <svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Deeper luxury dark background -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#020205"/>
-      <stop offset="40%" stop-color="#05060A"/>
-      <stop offset="80%" stop-color="#080A12"/>
-      <stop offset="100%" stop-color="#030408"/>
-    </linearGradient>
-    
-    <!-- Cyberpunk Accent Gradient (Purple to Cyan) -->
-    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#6c5ce7" stop-opacity="0"/>
-      <stop offset="20%" stop-color="#a29bfe" stop-opacity="0.7"/>
-      <stop offset="50%" stop-color="#00f0ff" stop-opacity="0.9"/>
-      <stop offset="80%" stop-color="#6c5ce7" stop-opacity="0.7"/>
-      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
+    <!-- True Black Background -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="100%" stop-color="#030303"/>
     </linearGradient>
 
-    <!-- Luxury Gold Accent -->
-    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffd700"/>
-      <stop offset="50%" stop-color="#ffb86c"/>
-      <stop offset="100%" stop-color="#d4af37"/>
+    <!-- Subtle metallic accent -->
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b89b5e"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#8a733f"/>
     </linearGradient>
-
-    <!-- Name Text Gradient -->
-    <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="30%" stop-color="#e2e8f0"/>
-      <stop offset="60%" stop-color="#00f0ff"/>
-      <stop offset="100%" stop-color="#a29bfe"/>
-    </linearGradient>
-
-    <!-- Core Glow (Cyan/Purple mix) -->
-    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.3"/>
-      <stop offset="40%" stop-color="#6c5ce7" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#020205" stop-opacity="0"/>
-    </radialGradient>
-
-    <radialGradient id="goldGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#ffd700" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#ffd700" stop-opacity="0"/>
-    </radialGradient>
-
-    <!-- Filters for Intense Glow -->
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2.5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="glowStrong">
-      <feGaussianBlur stdDeviation="5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="glitch">
-      <feOffset dx="2" dy="0" in="SourceGraphic" result="red-shift"/>
-      <feOffset dx="-2" dy="0" in="SourceGraphic" result="blue-shift"/>
-      <!-- A simplified glitch effect by overlaying slightly offset versions -->
-    </filter>
   </defs>
 
   <style>
-    @keyframes drift { 0%,100%{transform:translateY(0);opacity:.4} 50%{transform:translateY(-12px);opacity:.9} }
-    @keyframes drift2 { 0%,100%{transform:translate(0,0);opacity:.3} 50%{transform:translate(-5px, 8px);opacity:.7} }
-    @keyframes orbitFast { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
-    @keyframes orbitSlow { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
-    @keyframes orbitReverse { 0%{transform:rotate(360deg)} 100%{transform:rotate(0deg)} }
-    @keyframes fadeSlideUp { 0%{opacity:0;transform:translateY(20px)} 100%{opacity:1;transform:translateY(0)} }
-    @keyframes scanV { 0%{transform:translateY(-400px)} 100%{transform:translateY(400px)} }
-    @keyframes shimmer { 0%{transform:translateX(-900px)} 100%{transform:translateX(900px)} }
-    @keyframes pulseRing { 0%{r:20;opacity:0.6;stroke-width:2} 100%{r:90;opacity:0;stroke-width:0.5} }
-    @keyframes hexRotate { 0%{transform:rotate(0deg);opacity:0.05} 50%{opacity:0.18} 100%{transform:rotate(60deg);opacity:0.05} }
-    @keyframes matrixFall { 0%{transform:translateY(-20px);opacity:0} 10%{opacity:0.8} 90%{opacity:0.8} 100%{transform:translateY(420px);opacity:0} }
-    @keyframes glitchAnim { 0%,100%{transform:translate(0)} 20%{transform:translate(-2px,1px)} 40%{transform:translate(2px,-1px)} 60%{transform:translate(-1px,2px)} 80%{transform:translate(1px,-2px)} }
-    @keyframes dataStream { 0%{stroke-dashoffset:60} 100%{stroke-dashoffset:0} }
-    @keyframes corePulse { 0%,100%{opacity:0.7;r:5} 50%{opacity:1;r:7} }
-    @keyframes radarSweep { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
-    @keyframes blink { 0%,49%{opacity:1} 50%,100%{opacity:0.2} }
+    @keyframes slowRotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes slowRotateRev {
+      0% { transform: rotate(360deg); }
+      100% { transform: rotate(0deg); }
+    }
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulseOpacity {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 0.8; }
+    }
+    @keyframes drawLine {
+      0% { stroke-dashoffset: 400; }
+      100% { stroke-dashoffset: 0; }
+    }
 
-    .p1{animation:drift 5s ease-in-out infinite}
-    .p2{animation:drift2 7s ease-in-out infinite 1s}
-    .p3{animation:drift 6s ease-in-out infinite 2s}
+    .f1 { animation: fadeUp 1.5s cubic-bezier(0.1, 0.8, 0.2, 1) 0.5s both; }
+    .f2 { animation: fadeUp 1.5s cubic-bezier(0.1, 0.8, 0.2, 1) 0.8s both; }
+    .f3 { animation: fadeUp 1.5s cubic-bezier(0.1, 0.8, 0.2, 1) 1.1s both; }
     
-    .orbit-outer{transform-origin:720px 200px;animation:orbitSlow 30s linear infinite}
-    .orbit-mid{transform-origin:720px 200px;animation:orbitReverse 20s linear infinite}
-    .orbit-inner{transform-origin:720px 200px;animation:orbitFast 10s linear infinite}
+    .rot1 { transform-origin: 700px 200px; animation: slowRotate 40s linear infinite; }
+    .rot2 { transform-origin: 700px 200px; animation: slowRotateRev 60s linear infinite; }
+    .rot3 { transform-origin: 700px 200px; animation: slowRotate 80s linear infinite; }
     
-    .fade1{animation:fadeSlideUp 1s cubic-bezier(0.1, 0.8, 0.2, 1) 0.2s both}
-    .fade2{animation:fadeSlideUp 1s cubic-bezier(0.1, 0.8, 0.2, 1) 0.4s both}
-    .fade3{animation:fadeSlideUp 1s cubic-bezier(0.1, 0.8, 0.2, 1) 0.6s both}
-    .fade4{animation:fadeSlideUp 1s cubic-bezier(0.1, 0.8, 0.2, 1) 0.8s both}
-    .fade5{animation:fadeSlideUp 1s cubic-bezier(0.1, 0.8, 0.2, 1) 1.0s both}
-    
-    .scan{animation:scanV 4s linear infinite}
-    .shimmer-bar{animation:shimmer 3s ease-in-out infinite}
-    
-    .hex-spin{transform-origin:450px 200px;animation:hexRotate 15s linear infinite}
-    .matrix{animation:matrixFall 6s linear infinite}
-    .data-s{stroke-dasharray:10 5;animation:dataStream 1s linear infinite}
-    .pulse-ring{transform-origin:720px 200px; animation:pulseRing 2.5s cubic-bezier(0.2, 0.8, 0.3, 1) infinite}
-    .pulse-ring2{transform-origin:720px 200px; animation:pulseRing 2.5s cubic-bezier(0.2, 0.8, 0.3, 1) infinite 1.25s}
-    .core-p{animation:corePulse 2s ease-in-out infinite}
-    .radar{transform-origin:720px 200px; animation:radarSweep 4s linear infinite}
-    .glitch-text{animation:glitchAnim 4s infinite step-end}
-    .blinker{animation:blink 1.5s step-end infinite}
+    .pulse { animation: pulseOpacity 4s ease-in-out infinite; }
+    .draw { stroke-dasharray: 400; animation: drawLine 2s cubic-bezier(0.2, 0.8, 0.3, 1) 1s both; }
+
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .font-mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
   </style>
 
-  <!-- Void Background -->
-  <rect width="900" height="400" fill="url(#bgGrad)"/>
+  <rect width="900" height="400" fill="url(#bg)"/>
 
-  <!-- Complex Data Grid -->
-  <g opacity="0.04" stroke="#00f0ff" stroke-width="0.5">
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00f0ff" stroke-width="0.5"/>
-    </pattern>
-    <rect width="900" height="400" fill="url(#grid)"/>
-    <!-- Diagonal crosshatches for luxury tech feel -->
-    <pattern id="diag" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-      <line x1="0" y1="0" x2="0" y2="20" stroke="#6c5ce7" stroke-width="0.2"/>
-    </pattern>
-    <rect width="900" height="400" fill="url(#diag)"/>
+  <!-- Minimalist Architectural Grid (Extremely subtle) -->
+  <g stroke="#111111" stroke-width="0.5">
+    <line x1="100" y1="0" x2="100" y2="400"/>
+    <line x1="800" y1="0" x2="800" y2="400"/>
+    <line x1="0" y1="50" x2="900" y2="50"/>
+    <line x1="0" y1="350" x2="900" y2="350"/>
   </g>
 
-  <!-- Large Core Glows -->
-  <circle cx="200" cy="200" r="180" fill="url(#coreGlow)" opacity="0.6"/>
-  <circle cx="720" cy="200" r="220" fill="url(#coreGlow)" opacity="0.8"/>
-  <circle cx="450" cy="350" r="150" fill="url(#goldGlow)" opacity="0.3"/>
-
-  <!-- Rotating Hex Grid Layer -->
-  <g opacity="0.06" stroke="#00f0ff" stroke-width="0.5" fill="none" class="hex-spin">
-    <polygon points="450,50 493,75 493,125 450,150 407,125 407,75"/>
-    <polygon points="450,150 493,175 493,225 450,250 407,225 407,175"/>
-    <polygon points="364,100 407,125 407,175 364,200 321,175 321,125"/>
-    <polygon points="536,100 579,125 579,175 536,200 493,175 493,125"/>
-    <!-- Extra hexes -->
-    <polygon points="364,200 407,225 407,275 364,300 321,275 321,225"/>
-    <polygon points="536,200 579,225 579,275 536,300 493,275 493,225"/>
-  </g>
-
-  <!-- Matrix Rain / Encrypted Data -->
-  <g font-family="Consolas, monospace" font-size="10" font-weight="bold" opacity="0.12">
-    <text x="40" y="0" fill="#00f0ff" class="matrix" style="animation-delay:0.1s">0x9A</text>
-    <text x="120" y="0" fill="#6c5ce7" class="matrix" style="animation-delay:1.5s">DECRYPT</text>
-    <text x="220" y="0" fill="#ffd700" class="matrix" style="animation-delay:0.8s">SYS_OK</text>
-    <text x="320" y="0" fill="#00f0ff" class="matrix" style="animation-delay:2.4s">YARA_MATCH</text>
-    <text x="410" y="0" fill="#6c5ce7" class="matrix" style="animation-delay:0.3s">SIGMA</text>
-    <text x="500" y="0" fill="#ffd700" class="matrix" style="animation-delay:3.1s">ANOMALY</text>
-    <text x="590" y="0" fill="#00f0ff" class="matrix" style="animation-delay:1.9s">IOC_FOUND</text>
-    <text x="680" y="0" fill="#6c5ce7" class="matrix" style="animation-delay:0.7s">MEMDUMP</text>
-    <text x="790" y="0" fill="#ffd700" class="matrix" style="animation-delay:2.8s">0xFF</text>
-    <text x="860" y="0" fill="#00f0ff" class="matrix" style="animation-delay:1.2s">C2_SYNC</text>
-  </g>
-
-  <!-- High-Tech HUD Corners (Luxury Gold & Cyan) -->
-  <g opacity="0.8">
-    <!-- Top Left -->
-    <path d="M 20 50 L 20 20 L 50 20" fill="none" stroke="#00f0ff" stroke-width="2" filter="url(#glow)"/>
-    <rect x="18" y="18" width="4" height="4" fill="#ffd700"/>
-    <!-- Top Right -->
-    <path d="M 880 50 L 880 20 L 850 20" fill="none" stroke="#00f0ff" stroke-width="2" filter="url(#glow)"/>
-    <rect x="878" y="18" width="4" height="4" fill="#ffd700"/>
-    <!-- Bottom Left -->
-    <path d="M 20 350 L 20 380 L 50 380" fill="none" stroke="#00f0ff" stroke-width="2" filter="url(#glow)"/>
-    <rect x="18" y="378" width="4" height="4" fill="#ffd700"/>
-    <!-- Bottom Right -->
-    <path d="M 880 350 L 880 380 L 850 380" fill="none" stroke="#00f0ff" stroke-width="2" filter="url(#glow)"/>
-    <rect x="878" y="378" width="4" height="4" fill="#ffd700"/>
-  </g>
-
-  <!-- Circuit Traces / Data Streams -->
-  <g opacity="0.3" stroke="#00f0ff" stroke-width="1.5">
-    <path d="M 0 120 L 80 120 L 100 140 L 180 140" class="data-s"/>
-    <circle cx="180" cy="140" r="3" fill="#ffd700" filter="url(#glow)"/>
-    
-    <path d="M 900 280 L 820 280 L 800 260 L 750 260" class="data-s" style="animation-delay:0.5s" stroke="#6c5ce7"/>
-    <circle cx="750" cy="260" r="3" fill="#00f0ff" filter="url(#glow)"/>
-    
-    <path d="M 400 380 L 420 350 L 480 350 L 500 380" class="data-s" style="animation-delay:0.2s" stroke="#ffd700"/>
-  </g>
-
-  <!-- Left Side: Identity & Profile -->
-  <g class="fade1">
-    <!-- Vertical luxury line -->
-    <line x1="50" y1="60" x2="50" y2="340" stroke="url(#goldGrad)" stroke-width="3" filter="url(#glow)"/>
-    <rect x="47" y="60" width="6" height="6" fill="#00f0ff" filter="url(#glow)"/>
-    <rect x="47" y="334" width="6" height="6" fill="#00f0ff" filter="url(#glow)"/>
-  </g>
-
-  <!-- Classification Label -->
-  <g class="fade2">
-    <rect x="75" y="82" width="130" height="18" fill="#00f0ff" opacity="0.1"/>
-    <text x="82" y="94" font-family="Consolas, monospace" font-size="10" font-weight="bold" fill="#00f0ff" letter-spacing="3" class="blinker">
-      CLEARANCE // L-5
+  <!-- Left Side: Identity -->
+  <g class="f1">
+    <text x="100" y="160" class="font-sans" font-weight="300" font-size="12" fill="#555555" letter-spacing="8">
+      IDENTITY / DOSSIER
     </text>
-  </g>
-
-  <!-- Name Plate -->
-  <g class="fade3">
-    <text x="75" y="130" font-family="'Segoe UI', system-ui, sans-serif" font-weight="400" font-size="14" fill="#a29bfe" letter-spacing="8">
-      OPERATIVE ID
-    </text>
-    <text x="75" y="180" font-family="'Segoe UI', system-ui, sans-serif" font-weight="900" font-size="48" fill="url(#nameGrad)" filter="url(#glow)" class="glitch-text">
+    
+    <text x="96" y="220" class="font-sans" font-weight="200" font-size="52" fill="#ffffff" letter-spacing="1">
       NGUYỄN NGỌC
     </text>
-    <text x="75" y="235" font-family="'Segoe UI', system-ui, sans-serif" font-weight="900" font-size="48" fill="url(#nameGrad)" filter="url(#glow)">
+    <text x="96" y="275" class="font-sans" font-weight="600" font-size="52" fill="#ffffff" letter-spacing="1">
       ANH TÚ
     </text>
   </g>
 
-  <!-- Role Description -->
-  <g class="fade4">
-    <!-- Underline -->
-    <path d="M 75 255 L 250 255 L 270 270" stroke="#00f0ff" stroke-width="1.5" fill="none" filter="url(#glow)"/>
-    <text x="75" y="285" font-family="Consolas, monospace" font-weight="bold" font-size="14" fill="#ffb86c" letter-spacing="1">
-      Cybersecurity · DFIR · Detection Eng.
+  <!-- Accent Line -->
+  <g class="f2">
+    <line x1="100" y1="305" x2="300" y2="305" stroke="url(#gold)" stroke-width="1" class="draw"/>
+    <rect x="100" y="303" width="4" height="4" fill="url(#gold)"/>
+  </g>
+
+  <!-- Role Details -->
+  <g class="f3">
+    <text x="100" y="330" class="font-mono" font-size="10" fill="#888888" letter-spacing="2">
+      CYBERSECURITY · DFIR · DETECTION ENGINEERING
     </text>
   </g>
 
-  <!-- Status Module -->
-  <g class="fade5">
-    <rect x="75" y="320" width="180" height="24" rx="2" fill="#080A12" stroke="#6c5ce7" stroke-width="1"/>
-    <circle cx="90" cy="332" r="4" fill="#00f0ff" class="blinker" filter="url(#glow)"/>
-    <text x="105" y="336" font-family="Consolas, monospace" font-size="11" fill="#e2e8f0" letter-spacing="0.5">
-      SYSTEM STATUS: <tspan fill="#00f0ff">ACTIVE</tspan>
-    </text>
-  </g>
-
-  <!-- Right Side: Complex Threat Radar / Orbital System -->
-  <g class="fade5">
-    <!-- Radar Base Rings -->
-    <circle cx="720" cy="200" r="140" fill="none" stroke="#6c5ce7" stroke-width="1" opacity="0.3" stroke-dasharray="4 8"/>
-    <circle cx="720" cy="200" r="100" fill="none" stroke="#00f0ff" stroke-width="0.5" opacity="0.4"/>
-    <circle cx="720" cy="200" r="60" fill="none" stroke="#ffd700" stroke-width="0.5" opacity="0.2"/>
-
-    <!-- Radar Sweep Effect -->
-    <g class="radar">
-      <path d="M 720 200 L 720 60 A 140 140 0 0 1 860 200 Z" fill="url(#accentGrad)" opacity="0.3"/>
-      <line x1="720" y1="200" x2="720" y2="60" stroke="#00f0ff" stroke-width="2" filter="url(#glow)"/>
-    </g>
-
-    <!-- Outer Orbit (Threats) -->
-    <g class="orbit-outer">
-      <circle cx="720" cy="60" r="4" fill="#ff4757" filter="url(#glow)"/>
-      <circle cx="860" cy="200" r="3" fill="#ff4757" opacity="0.6"/>
-      <circle cx="620" cy="300" r="5" fill="#ff4757" filter="url(#glowStrong)"/>
-    </g>
-
-    <!-- Mid Orbit (Defenses) -->
-    <g class="orbit-mid">
-      <circle cx="720" cy="100" r="5" fill="#00f0ff" filter="url(#glow)"/>
-      <circle cx="633" cy="250" r="4" fill="#00f0ff"/>
-      <circle cx="807" cy="150" r="4" fill="#00f0ff"/>
-    </g>
-
-    <!-- Inner Orbit (Analysis) -->
-    <g class="orbit-inner">
-      <circle cx="720" cy="140" r="3" fill="#ffd700" filter="url(#glow)"/>
-      <circle cx="780" cy="200" r="2" fill="#ffd700"/>
-    </g>
-
-    <!-- Glowing Core Center -->
-    <circle cx="720" cy="200" r="12" fill="#00f0ff" filter="url(#glowStrong)" class="core-p"/>
-    <circle cx="720" cy="200" r="6" fill="#ffffff"/>
+  <!-- Right Side: Abstract Geometric Data Visual -->
+  <g class="f2">
+    <!-- Center Node -->
+    <circle cx="700" cy="200" r="2" fill="url(#gold)"/>
+    <circle cx="700" cy="200" r="8" fill="none" stroke="#333333" stroke-width="0.5"/>
     
-    <!-- Expanding Pulse Rings -->
-    <circle cx="720" cy="200" fill="none" stroke="#00f0ff" class="pulse-ring"/>
-    <circle cx="720" cy="200" fill="none" stroke="#6c5ce7" class="pulse-ring2"/>
-
-    <!-- Crosshairs -->
-    <path d="M 720 180 L 720 190 M 720 210 L 720 220 M 700 200 L 710 200 M 730 200 L 740 200" stroke="#ffd700" stroke-width="1.5"/>
-
-    <!-- High-Tech Radar Labels -->
-    <text x="720" y="360" text-anchor="middle" font-family="Consolas, monospace" font-size="10" fill="#a29bfe" letter-spacing="4" font-weight="bold">
-      THREAT RADAR // ONLINE
-    </text>
-    
-    <!-- Skill/Node text on radar -->
-    <g font-family="Consolas, monospace" font-size="11" font-weight="bold">
-      <text x="600" y="110" fill="#00f0ff" filter="url(#glow)">[ FORENSICS ]</text>
-      <text x="820" y="110" fill="#ffd700" filter="url(#glow)">[ HUNTING ]</text>
-      <text x="820" y="300" fill="#ff4757" filter="url(#glow)">[ DETECTION ]</text>
-      <text x="600" y="300" fill="#6c5ce7" filter="url(#glow)">[ ANALYSIS ]</text>
+    <!-- Inner Abstract Ring -->
+    <g class="rot1">
+      <circle cx="700" cy="200" r="40" fill="none" stroke="#222222" stroke-width="0.5"/>
+      <path d="M 700 160 A 40 40 0 0 1 740 200" fill="none" stroke="#555555" stroke-width="1"/>
+      <circle cx="700" cy="160" r="2" fill="#ffffff"/>
     </g>
+
+    <!-- Mid Abstract Ring -->
+    <g class="rot2">
+      <circle cx="700" cy="200" r="80" fill="none" stroke="#1a1a1a" stroke-width="0.5" stroke-dasharray="2 4"/>
+      <path d="M 620 200 A 80 80 0 0 0 700 280" fill="none" stroke="#444444" stroke-width="1"/>
+      <rect x="618" y="198" width="4" height="4" fill="#555555" transform="rotate(45 620 200)"/>
+    </g>
+
+    <!-- Outer Abstract Ring -->
+    <g class="rot3">
+      <circle cx="700" cy="200" r="130" fill="none" stroke="#151515" stroke-width="0.5"/>
+      <path d="M 700 70 A 130 130 0 0 1 830 200" fill="none" stroke="url(#gold)" stroke-width="0.5"/>
+      <circle cx="700" cy="70" r="1.5" fill="url(#gold)" class="pulse"/>
+      <!-- Data ticks -->
+      <line x1="700" y1="65" x2="700" y2="75" stroke="#333333" stroke-width="0.5"/>
+      <line x1="700" y1="325" x2="700" y2="335" stroke="#333333" stroke-width="0.5"/>
+      <line x1="565" y1="200" x2="575" y2="200" stroke="#333333" stroke-width="0.5"/>
+      <line x1="825" y1="200" x2="835" y2="200" stroke="#333333" stroke-width="0.5"/>
+    </g>
+    
+    <!-- Fixed Geometric Overlays -->
+    <line x1="550" y1="200" x2="850" y2="200" stroke="#111111" stroke-width="0.5"/>
+    <line x1="700" y1="50" x2="700" y2="350" stroke="#111111" stroke-width="0.5"/>
   </g>
 
-  <!-- Top Info Bar (Luxury Details) -->
-  <g opacity="0.6">
-    <text x="40" y="35" font-family="Consolas, monospace" font-size="8" fill="#a29bfe" letter-spacing="2">IP: 127.0.0.1</text>
-    <text x="450" y="35" text-anchor="middle" font-family="Consolas, monospace" font-size="8" fill="#ffd700" letter-spacing="6">ENCRYPTED CONNECTION</text>
-    <text x="860" y="35" text-anchor="end" font-family="Consolas, monospace" font-size="8" fill="#00f0ff" letter-spacing="2">TIME: 2026.05.31</text>
+  <!-- Top / Bottom Metadata -->
+  <g class="f1" opacity="0.6">
+    <text x="30" y="30" class="font-mono" font-size="8" fill="#555555" letter-spacing="1">OP_ID: EKAZNYRA</text>
+    <text x="870" y="30" text-anchor="end" class="font-mono" font-size="8" fill="#555555" letter-spacing="1">CLEARANCE: V</text>
+    <text x="30" y="380" class="font-mono" font-size="8" fill="#555555" letter-spacing="1">SYS_ACTIVE</text>
+    <text x="870" y="380" text-anchor="end" class="font-mono" font-size="8" fill="#555555" letter-spacing="1">LOC: 127.0.0.1</text>
   </g>
-
-  <!-- Bottom Data Bar -->
-  <g class="fade5">
-    <rect x="0" y="390" width="900" height="10" fill="#0a0c18"/>
-    <rect x="0" y="390" width="900" height="1" fill="#00f0ff" opacity="0.5"/>
-    <rect x="0" y="390" width="200" height="2" fill="#ffd700" filter="url(#glow)"/>
-    <rect x="400" y="390" width="100" height="2" fill="#00f0ff" filter="url(#glow)"/>
-    <text x="450" y="398" text-anchor="middle" font-family="Consolas, monospace" font-size="7" fill="#6c5ce7" letter-spacing="8">
-      OBSERVE · INVESTIGATE · DOCUMENT · IMPROVE
-    </text>
-  </g>
-
-  <!-- Global Overlay Effects -->
-  <!-- Scanline -->
-  <rect class="scan" x="0" y="0" width="900" height="4" fill="#00f0ff" opacity="0.3" filter="url(#glow)"/>
-  <!-- Light Shimmer -->
-  <rect class="shimmer-bar" x="0" y="0" width="100" height="400" fill="url(#accentGrad)" opacity="0.05"/>
 </svg>

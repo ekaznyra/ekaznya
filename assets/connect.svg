@@ -1,126 +1,56 @@
 <svg viewBox="0 0 900 90" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Deep luxury background -->
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#020205"/><stop offset="100%" stop-color="#080A12"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="100%" stop-color="#030303"/>
     </linearGradient>
-    <linearGradient id="linkLine" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#ffd700" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
   </defs>
 
   <style>
-    @keyframes nodeAppear { 0%{opacity:0;transform:scale(.5)} 100%{opacity:1;transform:scale(1)} }
-    @keyframes labelFade { 0%{opacity:0; transform:translateY(5px)} 100%{opacity:1; transform:translateY(0)} }
-    @keyframes lineExtend { 0%{stroke-dashoffset:200} 100%{stroke-dashoffset:0} }
-    @keyframes dotPulse { 0%,100%{opacity:0.6;r:4} 50%{opacity:1;r:6} }
-    @keyframes cornerPulse { 0%,100%{opacity:0.4; stroke:#00f0ff} 50%{opacity:1; stroke:#ffd700} }
-    @keyframes dataFlow { 0%{stroke-dashoffset:16} 100%{stroke-dashoffset:0} }
-    
-    .n1{animation:nodeAppear 0.5s cubic-bezier(0.1, 0.8, 0.2, 1) 0.2s both}
-    .n2{animation:nodeAppear 0.5s cubic-bezier(0.1, 0.8, 0.2, 1) 0.4s both}
-    .n3{animation:nodeAppear 0.5s cubic-bezier(0.1, 0.8, 0.2, 1) 0.6s both}
-    .n4{animation:nodeAppear 0.5s cubic-bezier(0.1, 0.8, 0.2, 1) 0.8s both}
-    
-    .l1{animation:labelFade 0.5s cubic-bezier(0.1, 0.8, 0.2, 1) 0.3s both}
-    .l2{animation:labelFade 0.5s cubic-bezier(0.1, 0.8, 0.2, 1) 0.5s both}
-    .l3{animation:labelFade 0.5s cubic-bezier(0.1, 0.8, 0.2, 1) 0.7s both}
-    .l4{animation:labelFade 0.5s cubic-bezier(0.1, 0.8, 0.2, 1) 0.9s both}
-    
-    .connect-line{stroke-dasharray:200;animation:lineExtend 1.5s cubic-bezier(0.2, 0.8, 0.3, 1) 0.3s both}
-    
-    .pulse1{animation:dotPulse 2s ease-in-out infinite}
-    .pulse2{animation:dotPulse 2s ease-in-out infinite 0.5s}
-    .pulse3{animation:dotPulse 2s ease-in-out infinite 1s}
-    .pulse4{animation:dotPulse 2s ease-in-out infinite 1.5s}
-    
-    .corner-fx{animation:cornerPulse 2.5s ease-in-out infinite}
-    .circuit{stroke-dasharray:8 4;animation:dataFlow 1s linear infinite}
-    
-    .contact-label{font-family:Consolas,monospace;font-size:10px;font-weight:bold;letter-spacing:3px}
-    .contact-value{font-family:Consolas,monospace;font-size:9px;font-weight:bold;fill:#e2e8f0}
-    .hud{font-family:Consolas,monospace;font-size:8px;fill:#00f0ff;letter-spacing:2px;font-weight:bold}
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(5px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .f1 { animation: fadeUp 0.8s cubic-bezier(0.1, 0.8, 0.2, 1) 0.3s both; }
+    .f2 { animation: fadeUp 0.8s cubic-bezier(0.1, 0.8, 0.2, 1) 0.5s both; }
+    .f3 { animation: fadeUp 0.8s cubic-bezier(0.1, 0.8, 0.2, 1) 0.7s both; }
+    .f4 { animation: fadeUp 0.8s cubic-bezier(0.1, 0.8, 0.2, 1) 0.9s both; }
+
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .font-mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
   </style>
 
   <rect width="900" height="90" fill="url(#bg)"/>
 
-  <!-- High-Tech Grid -->
-  <g opacity="0.04" stroke="#00f0ff" stroke-width="0.5">
-    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-      <path d="M 10 0 L 0 0 0 10" fill="none"/>
-    </pattern>
-    <rect width="900" height="90" fill="url(#grid)"/>
-  </g>
-
-  <!-- HUD Corners -->
-  <g class="corner-fx" stroke-width="1.5" opacity="0.8">
-    <path d="M 15 20 L 15 10 L 25 10" fill="none" filter="url(#glow)"/>
-    <rect x="13" y="8" width="4" height="4" fill="#ffd700"/>
-    <path d="M 885 20 L 885 10 L 875 10" fill="none" filter="url(#glow)"/>
-    <rect x="883" y="8" width="4" height="4" fill="#ffd700"/>
-    <path d="M 15 70 L 15 80 L 25 80" fill="none" filter="url(#glow)"/>
-    <rect x="13" y="78" width="4" height="4" fill="#ffd700"/>
-    <path d="M 885 70 L 885 80 L 875 80" fill="none" filter="url(#glow)"/>
-    <rect x="883" y="78" width="4" height="4" fill="#ffd700"/>
-  </g>
-
-  <!-- HUD label -->
-  <text x="450" y="14" text-anchor="middle" class="hud" filter="url(#glow)">SECURE_CHANNELS // ENCRYPTED_LINKS</text>
-
-  <!-- Connection Line Main -->
-  <line x1="120" y1="45" x2="780" y2="45" stroke="url(#linkLine)" stroke-width="1" class="connect-line"/>
-
-  <!-- Circuit branch lines -->
-  <g opacity="0.6">
-    <path d="M180,45 L180,25 L195,25" stroke="#ff4757" stroke-width="1" fill="none" class="circuit"/>
-    <path d="M360,45 L360,25 L375,25" stroke="#00f0ff" stroke-width="1" fill="none" class="circuit" style="animation-delay:.3s"/>
-    <path d="M540,45 L540,25 L555,25" stroke="#ffd700" stroke-width="1" fill="none" class="circuit" style="animation-delay:.6s"/>
-    <path d="M720,45 L720,25 L735,25" stroke="#a29bfe" stroke-width="1" fill="none" class="circuit" style="animation-delay:.9s"/>
-  </g>
+  <line x1="100" y1="45" x2="800" y2="45" stroke="#222222" stroke-width="0.5"/>
 
   <!-- ProtonMail -->
-  <g class="n1">
-    <circle cx="180" cy="45" r="4.5" fill="#020205" stroke="#ff4757" stroke-width="2" class="pulse1" filter="url(#glow)"/>
-    <circle cx="180" cy="45" r="2" fill="#ff4757"/>
-  </g>
-  <g class="l1">
-    <text x="180" y="28" text-anchor="middle" class="contact-label" fill="#ff4757" filter="url(#glow)">PROTONMAIL_</text>
-    <text x="180" y="65" text-anchor="middle" class="contact-value">anhtunguyen.sec</text>
+  <g class="f1">
+    <circle cx="200" cy="45" r="3" fill="#000000" stroke="#888888" stroke-width="1"/>
+    <text x="200" y="30" text-anchor="middle" class="font-sans" font-weight="600" font-size="9" fill="#aaaaaa" letter-spacing="2">PROTONMAIL</text>
+    <text x="200" y="65" text-anchor="middle" class="font-mono" font-size="9" fill="#555555">anhtunguyen.sec</text>
   </g>
 
   <!-- Telegram -->
-  <g class="n2">
-    <circle cx="360" cy="45" r="4.5" fill="#020205" stroke="#00f0ff" stroke-width="2" class="pulse2" filter="url(#glow)"/>
-    <circle cx="360" cy="45" r="2" fill="#00f0ff"/>
-  </g>
-  <g class="l2">
-    <text x="360" y="28" text-anchor="middle" class="contact-label" fill="#00f0ff" filter="url(#glow)">TELEGRAM_</text>
-    <text x="360" y="65" text-anchor="middle" class="contact-value">@ekaznya</text>
+  <g class="f2">
+    <circle cx="366" cy="45" r="3" fill="#000000" stroke="#888888" stroke-width="1"/>
+    <text x="366" y="30" text-anchor="middle" class="font-sans" font-weight="600" font-size="9" fill="#aaaaaa" letter-spacing="2">TELEGRAM</text>
+    <text x="366" y="65" text-anchor="middle" class="font-mono" font-size="9" fill="#555555">@ekaznya</text>
   </g>
 
   <!-- GitHub -->
-  <g class="n3">
-    <circle cx="540" cy="45" r="4.5" fill="#020205" stroke="#ffd700" stroke-width="2" class="pulse3" filter="url(#glow)"/>
-    <circle cx="540" cy="45" r="2" fill="#ffd700"/>
-  </g>
-  <g class="l3">
-    <text x="540" y="28" text-anchor="middle" class="contact-label" fill="#ffd700" filter="url(#glow)">GITHUB_</text>
-    <text x="540" y="65" text-anchor="middle" class="contact-value">ekaznyra</text>
+  <g class="f3">
+    <polygon points="533,42 536,45 533,48 530,45" fill="#d4af37"/>
+    <text x="533" y="30" text-anchor="middle" class="font-sans" font-weight="600" font-size="9" fill="#ffffff" letter-spacing="2">GITHUB</text>
+    <text x="533" y="65" text-anchor="middle" class="font-mono" font-size="9" fill="#d4af37">ekaznyra</text>
   </g>
 
   <!-- LinkedIn -->
-  <g class="n4">
-    <circle cx="720" cy="45" r="4.5" fill="#020205" stroke="#a29bfe" stroke-width="2" class="pulse4" filter="url(#glow)"/>
-    <circle cx="720" cy="45" r="2" fill="#a29bfe"/>
+  <g class="f4">
+    <circle cx="700" cy="45" r="3" fill="#000000" stroke="#888888" stroke-width="1"/>
+    <text x="700" y="30" text-anchor="middle" class="font-sans" font-weight="600" font-size="9" fill="#aaaaaa" letter-spacing="2">LINKEDIN</text>
+    <text x="700" y="65" text-anchor="middle" class="font-mono" font-size="9" fill="#555555">Connect</text>
   </g>
-  <g class="l4">
-    <text x="720" y="28" text-anchor="middle" class="contact-label" fill="#a29bfe" filter="url(#glow)">LINKEDIN_</text>
-    <text x="720" y="65" text-anchor="middle" class="contact-value">Connect</text>
-  </g>
+
 </svg>
