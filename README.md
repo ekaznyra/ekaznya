@@ -44,21 +44,13 @@
 <img src="assets/divider-dark.svg?v=11" width="60%" alt=""/>
 </div>
 
-<br><br>
+<br>
 
 <div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=ekaznyra&show_icons=true&hide_border=true&hide_title=true&count_private=true&include_all_commits=true&bg_color=0D1117&icon_color=D4AF37&text_color=8B949E&title_color=D4AF37&ring_color=D4AF37&border_radius=8" alt="GitHub Stats" height="160"/>
-&nbsp;&nbsp;
-<img src="https://github-readme-streak-stats.demolab.com?user=ekaznyra&hide_border=true&background=0D1117&ring=D4AF37&fire=F0D060&currStreakLabel=D4AF37&sideLabels=8B949E&dates=484F58&currStreakNum=E6EDF3&sideNums=8B949E&border_radius=8" alt="Streak" height="160"/>
-
-<br><br>
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ekaznyra&layout=compact&hide_border=true&langs_count=8&bg_color=0D1117&text_color=8B949E&title_color=D4AF37&border_radius=8" alt="Top Languages" height="150"/>
-
+<img src="assets/metrics-dark.svg?v=1" width="100%" alt="Metrics · Language Mix & Contribution Activity"/>
 </div>
 
-<br><br>
+<br>
 
 <!-- ─── SECTION: CONNECT ────────────────────────────────────────── -->
 
