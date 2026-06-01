@@ -1,12 +1,17 @@
-<svg viewBox="0 0 900 240" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0d1117"/>
+    <radialGradient id="bgRad" cx="50%" cy="0%" r="100%">
+      <stop offset="0%" stop-color="#10161f"/>
+      <stop offset="60%" stop-color="#0d1117"/>
       <stop offset="100%" stop-color="#010409"/>
-    </linearGradient>
+    </radialGradient>
     <linearGradient id="barGold" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#d4af37"/>
       <stop offset="100%" stop-color="#f0d060"/>
+    </linearGradient>
+    <linearGradient id="barSilver" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6e7681"/>
+      <stop offset="100%" stop-color="#b1bac4"/>
     </linearGradient>
     <filter id="glow">
       <feGaussianBlur stdDeviation="2" result="b"/>
@@ -14,50 +19,66 @@
     </filter>
   </defs>
   <style>
-    @keyframes grow1{0%{width:0}100%{width:580px}}
-    @keyframes grow2{0%{width:0}100%{width:520px}}
-    @keyframes grow3{0%{width:0}100%{width:480px}}
-    @keyframes grow4{0%{width:0}100%{width:440px}}
-    @keyframes grow5{0%{width:0}100%{width:400px}}
+    @keyframes grow{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+    @keyframes shimmer{0%{transform:translateX(-40px)}100%{transform:translateX(800px)}}
     @keyframes pulse{0%,100%{opacity:0.5}50%{opacity:1}}
+    @keyframes fadeUp{0%{opacity:0;transform:translateY(4px)}100%{opacity:1;transform:translateY(0)}}
+    .bar{transform-origin:60px 0;transform:scaleX(0);animation:grow 1.3s cubic-bezier(.16,1,.3,1) forwards}
+    .b1{animation-delay:.3s}
+    .b2{animation-delay:.5s}
+    .b3{animation-delay:.7s}
+    .b4{animation-delay:.9s}
+    .b5{animation-delay:1.1s}
+    .lab{opacity:0;animation:fadeUp .5s ease-out forwards}
+    .l1{animation-delay:.3s}.l2{animation-delay:.5s}.l3{animation-delay:.7s}.l4{animation-delay:.9s}.l5{animation-delay:1.1s}
     .p{animation:pulse 3s infinite ease-in-out}
     .fs{font-family:Arial,"Segoe UI",Helvetica,sans-serif}
     .fm{font-family:"Courier New",Consolas,monospace}
   </style>
 
-  <rect width="900" height="240" fill="url(#bg)"/>
+  <rect width="900" height="250" fill="url(#bgRad)"/>
 
   <!-- Section label -->
   <text x="60" y="30" class="fm" font-size="10" fill="#484f58" letter-spacing="4">// SKILLS</text>
   <line x1="60" y1="40" x2="840" y2="40" stroke="#21262d" stroke-width="0.5"/>
 
-  <!-- Skill 1: DFIR -->
-  <text x="60" y="75" class="fs" font-size="12" fill="#e6edf3" font-weight="500">DFIR</text>
-  <text x="840" y="75" text-anchor="end" class="fm" font-size="10" fill="#484f58">advanced</text>
-  <rect x="60" y="82" width="780" height="3" rx="1.5" fill="#161b22"/>
-  <rect x="60" y="82" width="700" height="3" rx="1.5" fill="url(#barGold)" filter="url(#glow)"/>
+  <!-- Skill 1: DFIR (90%) -->
+  <g class="lab l1">
+    <text x="60" y="75" class="fs" font-size="12" fill="#e6edf3" font-weight="500">DFIR</text>
+    <text x="840" y="75" text-anchor="end" class="fm" font-size="10" fill="#d4af37">90% · advanced</text>
+  </g>
+  <rect x="60" y="82" width="780" height="4" rx="2" fill="#161b22"/>
+  <rect x="60" y="82" width="702" height="4" rx="2" fill="url(#barGold)" filter="url(#glow)" class="bar b1"/>
 
-  <!-- Skill 2: Threat Hunting -->
-  <text x="60" y="115" class="fs" font-size="12" fill="#e6edf3" font-weight="500">Threat Hunting</text>
-  <text x="840" y="115" text-anchor="end" class="fm" font-size="10" fill="#484f58">advanced</text>
-  <rect x="60" y="122" width="780" height="3" rx="1.5" fill="#161b22"/>
-  <rect x="60" y="122" width="640" height="3" rx="1.5" fill="#d4af37"/>
+  <!-- Skill 2: Threat Hunting (82%) -->
+  <g class="lab l2">
+    <text x="60" y="115" class="fs" font-size="12" fill="#e6edf3" font-weight="500">Threat Hunting</text>
+    <text x="840" y="115" text-anchor="end" class="fm" font-size="10" fill="#d4af37">82% · advanced</text>
+  </g>
+  <rect x="60" y="122" width="780" height="4" rx="2" fill="#161b22"/>
+  <rect x="60" y="122" width="640" height="4" rx="2" fill="url(#barGold)" filter="url(#glow)" class="bar b2"/>
 
-  <!-- Skill 3: Detection Engineering -->
-  <text x="60" y="155" class="fs" font-size="12" fill="#e6edf3" font-weight="500">Detection Engineering</text>
-  <text x="840" y="155" text-anchor="end" class="fm" font-size="10" fill="#484f58">intermediate</text>
-  <rect x="60" y="162" width="780" height="3" rx="1.5" fill="#161b22"/>
-  <rect x="60" y="162" width="560" height="3" rx="1.5" fill="#8b949e"/>
+  <!-- Skill 3: Detection Engineering (72%) -->
+  <g class="lab l3">
+    <text x="60" y="155" class="fs" font-size="12" fill="#e6edf3" font-weight="500">Detection Engineering</text>
+    <text x="840" y="155" text-anchor="end" class="fm" font-size="10" fill="#8b949e">72% · intermediate</text>
+  </g>
+  <rect x="60" y="162" width="780" height="4" rx="2" fill="#161b22"/>
+  <rect x="60" y="162" width="562" height="4" rx="2" fill="url(#barSilver)" class="bar b3"/>
 
-  <!-- Skill 4: Python / Automation -->
-  <text x="60" y="195" class="fs" font-size="12" fill="#e6edf3" font-weight="500">Python &amp; Automation</text>
-  <text x="840" y="195" text-anchor="end" class="fm" font-size="10" fill="#484f58">intermediate</text>
-  <rect x="60" y="202" width="780" height="3" rx="1.5" fill="#161b22"/>
-  <rect x="60" y="202" width="520" height="3" rx="1.5" fill="#8b949e"/>
+  <!-- Skill 4: Python / Automation (67%) -->
+  <g class="lab l4">
+    <text x="60" y="195" class="fs" font-size="12" fill="#e6edf3" font-weight="500">Python &amp; Automation</text>
+    <text x="840" y="195" text-anchor="end" class="fm" font-size="10" fill="#8b949e">67% · intermediate</text>
+  </g>
+  <rect x="60" y="202" width="780" height="4" rx="2" fill="#161b22"/>
+  <rect x="60" y="202" width="522" height="4" rx="2" fill="url(#barSilver)" class="bar b4"/>
 
-  <!-- Skill 5: Malware Analysis -->
-  <text x="60" y="235" class="fs" font-size="12" fill="#e6edf3" font-weight="500">Malware Analysis</text>
-  <text x="840" y="235" text-anchor="end" class="fm" font-size="10" fill="#484f58">learning</text>
-  <rect x="60" y="242" width="780" height="3" rx="1.5" fill="#161b22"/>
-  <rect x="60" y="242" width="400" height="3" rx="1.5" fill="#484f58"/>
+  <!-- Skill 5: Malware Analysis (51%) -->
+  <g class="lab l5">
+    <text x="60" y="235" class="fs" font-size="12" fill="#e6edf3" font-weight="500">Malware Analysis</text>
+    <text x="840" y="235" text-anchor="end" class="fm" font-size="10" fill="#484f58">51% · learning</text>
+  </g>
+  <rect x="60" y="242" width="780" height="4" rx="2" fill="#161b22"/>
+  <rect x="60" y="242" width="400" height="4" rx="2" fill="#484f58" class="bar b5"/>
 </svg>

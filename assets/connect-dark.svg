@@ -1,37 +1,62 @@
-<svg viewBox="0 0 900 80" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 900 92" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0d1117"/>
+    <radialGradient id="bgRad" cx="50%" cy="0%" r="100%">
+      <stop offset="0%" stop-color="#10161f"/>
+      <stop offset="70%" stop-color="#0d1117"/>
       <stop offset="100%" stop-color="#010409"/>
-    </linearGradient>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
   <style>
+    @keyframes pulse{0%,100%{opacity:0.4}50%{opacity:1}}
+    @keyframes fadeUp{0%{opacity:0;transform:translateY(5px)}100%{opacity:1;transform:translateY(0)}}
+    .p{animation:pulse 3s infinite ease-in-out}
+    .c1{opacity:0;animation:fadeUp .5s ease-out .2s forwards}
+    .c2{opacity:0;animation:fadeUp .5s ease-out .35s forwards}
+    .c3{opacity:0;animation:fadeUp .5s ease-out .5s forwards}
+    .c4{opacity:0;animation:fadeUp .5s ease-out .65s forwards}
     .fs{font-family:Arial,"Segoe UI",Helvetica,sans-serif}
     .fm{font-family:"Courier New",Consolas,monospace}
   </style>
 
-  <rect width="900" height="80" fill="url(#bg)"/>
+  <rect width="900" height="92" fill="url(#bgRad)"/>
 
   <!-- Section label -->
   <text x="60" y="22" class="fm" font-size="10" fill="#484f58" letter-spacing="4">// CONNECT</text>
   <line x1="60" y1="30" x2="840" y2="30" stroke="#21262d" stroke-width="0.5"/>
 
-  <!-- Contact items in a clean row -->
-  <text x="120" y="58" text-anchor="middle" class="fm" font-size="10" fill="#8b949e">ProtonMail</text>
-  <text x="120" y="72" text-anchor="middle" class="fm" font-size="9" fill="#484f58">anhtunguyen.sec</text>
+  <!-- ProtonMail -->
+  <g class="c1">
+    <rect x="70" y="44" width="160" height="34" rx="5" fill="#d4af3708" stroke="#d4af37" stroke-width="0.5" opacity="0.6"/>
+    <circle cx="92" cy="61" r="2.4" fill="#d4af37" class="p"/>
+    <text x="150" y="59" text-anchor="middle" class="fm" font-size="10" fill="#d4af37">ProtonMail</text>
+    <text x="150" y="71" text-anchor="middle" class="fm" font-size="8" fill="#8b949e">anhtunguyen.sec</text>
+  </g>
 
-  <line x1="230" y1="45" x2="230" y2="72" stroke="#21262d" stroke-width="0.5"/>
+  <!-- Telegram -->
+  <g class="c2">
+    <rect x="262" y="44" width="160" height="34" rx="5" fill="none" stroke="#30363d" stroke-width="0.5"/>
+    <circle cx="284" cy="61" r="2.4" fill="#8b949e"/>
+    <text x="342" y="59" text-anchor="middle" class="fm" font-size="10" fill="#c9d1d9">Telegram</text>
+    <text x="342" y="71" text-anchor="middle" class="fm" font-size="8" fill="#484f58">@ekaznya</text>
+  </g>
 
-  <text x="340" y="58" text-anchor="middle" class="fm" font-size="10" fill="#8b949e">Telegram</text>
-  <text x="340" y="72" text-anchor="middle" class="fm" font-size="9" fill="#484f58">@ekaznya</text>
+  <!-- GitHub -->
+  <g class="c3">
+    <rect x="454" y="44" width="160" height="34" rx="5" fill="none" stroke="#30363d" stroke-width="0.5"/>
+    <circle cx="476" cy="61" r="2.4" fill="#8b949e"/>
+    <text x="534" y="59" text-anchor="middle" class="fm" font-size="10" fill="#c9d1d9">GitHub</text>
+    <text x="534" y="71" text-anchor="middle" class="fm" font-size="8" fill="#484f58">ekaznyra</text>
+  </g>
 
-  <line x1="450" y1="45" x2="450" y2="72" stroke="#21262d" stroke-width="0.5"/>
-
-  <text x="560" y="58" text-anchor="middle" class="fm" font-size="10" fill="#d4af37">GitHub</text>
-  <text x="560" y="72" text-anchor="middle" class="fm" font-size="9" fill="#e6edf3">ekaznyra</text>
-
-  <line x1="670" y1="45" x2="670" y2="72" stroke="#21262d" stroke-width="0.5"/>
-
-  <text x="780" y="58" text-anchor="middle" class="fm" font-size="10" fill="#8b949e">LinkedIn</text>
-  <text x="780" y="72" text-anchor="middle" class="fm" font-size="9" fill="#484f58">Connect</text>
+  <!-- LinkedIn -->
+  <g class="c4">
+    <rect x="646" y="44" width="160" height="34" rx="5" fill="none" stroke="#30363d" stroke-width="0.5"/>
+    <circle cx="668" cy="61" r="2.4" fill="#8b949e"/>
+    <text x="726" y="59" text-anchor="middle" class="fm" font-size="10" fill="#c9d1d9">LinkedIn</text>
+    <text x="726" y="71" text-anchor="middle" class="fm" font-size="8" fill="#484f58">Connect</text>
+  </g>
 </svg>

@@ -1,16 +1,42 @@
-<svg viewBox="0 0 900 20" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 900 24" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#0d1117"/>
-      <stop offset="100%" stop-color="#010409"/>
+      <stop offset="50%" stop-color="#010409"/>
+      <stop offset="100%" stop-color="#0d1117"/>
     </linearGradient>
     <linearGradient id="gl" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#d4af37" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#d4af37" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#d4af37" stop-opacity="0.45"/>
       <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
     </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
-  <rect width="900" height="20" fill="url(#bg)"/>
-  <line x1="200" y1="10" x2="700" y2="10" stroke="url(#gl)" stroke-width="0.5"/>
-  <circle cx="450" cy="10" r="1.5" fill="#d4af37" opacity="0.5"/>
+  <style>
+    @keyframes travel{0%{transform:translateX(-250px)}100%{transform:translateX(250px)}}
+    @keyframes pulse{0%,100%{opacity:0.3}50%{opacity:0.9}}
+    .tr{animation:travel 4s ease-in-out infinite}
+    .p{animation:pulse 3s ease-in-out infinite}
+    .fm{font-family:"Courier New",Consolas,monospace}
+  </style>
+  <rect width="900" height="24" fill="url(#bg)"/>
+  <line x1="200" y1="12" x2="700" y2="12" stroke="url(#gl)" stroke-width="0.5"/>
+
+  <!-- center diamond -->
+  <g transform="translate(450,12)">
+    <rect x="-3" y="-3" width="6" height="6" fill="#d4af37" opacity="0.6" transform="rotate(45)" class="p"/>
+    <rect x="-5.5" y="-5.5" width="11" height="11" fill="none" stroke="#d4af37" stroke-width="0.4" opacity="0.25" transform="rotate(45)"/>
+  </g>
+
+  <!-- side ticks -->
+  <line x1="360" y1="12" x2="380" y2="12" stroke="#d4af37" stroke-width="0.5" opacity="0.3"/>
+  <line x1="520" y1="12" x2="540" y2="12" stroke="#d4af37" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- traveling pulse -->
+  <g class="tr">
+    <circle cx="450" cy="12" r="1.6" fill="#f0d060" filter="url(#glow)"/>
+  </g>
 </svg>

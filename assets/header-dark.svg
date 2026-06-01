@@ -1,12 +1,18 @@
-<svg viewBox="0 0 900 350" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0d1117"/>
+    <radialGradient id="bgRad" cx="62%" cy="48%" r="75%">
+      <stop offset="0%" stop-color="#10161f"/>
+      <stop offset="55%" stop-color="#0d1117"/>
       <stop offset="100%" stop-color="#010409"/>
-    </linearGradient>
+    </radialGradient>
     <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#d4af37"/>
-      <stop offset="100%" stop-color="#f0d060"/>
+      <stop offset="50%" stop-color="#f0d060"/>
+      <stop offset="100%" stop-color="#d4af37"/>
+    </linearGradient>
+    <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#cdd6e0"/>
     </linearGradient>
     <linearGradient id="line1" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#d4af37" stop-opacity="0"/>
@@ -15,192 +21,203 @@
     </linearGradient>
     <linearGradient id="scanLine" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#d4af37" stop-opacity="0"/>
-      <stop offset="45%" stop-color="#d4af37" stop-opacity="0.08"/>
-      <stop offset="50%" stop-color="#d4af37" stop-opacity="0.15"/>
-      <stop offset="55%" stop-color="#d4af37" stop-opacity="0.08"/>
+      <stop offset="48%" stop-color="#d4af37" stop-opacity="0.1"/>
+      <stop offset="50%" stop-color="#f0d060" stop-opacity="0.18"/>
+      <stop offset="52%" stop-color="#d4af37" stop-opacity="0.1"/>
       <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
     </linearGradient>
+    <linearGradient id="sweep" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="nameGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+    </radialGradient>
     <filter id="glow">
       <feGaussianBlur stdDeviation="3" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <filter id="glow2">
-      <feGaussianBlur stdDeviation="6" result="b"/>
+    <filter id="glowSoft">
+      <feGaussianBlur stdDeviation="1.4" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <!-- Clip for typing effect -->
     <clipPath id="typeClip">
-      <rect x="80" y="100" width="0" height="80">
-        <animate attributeName="width" from="0" to="500" dur="3s" fill="freeze"/>
+      <rect x="80" y="96" width="0" height="80">
+        <animate attributeName="width" from="0" to="540" dur="2.4s" begin="0.3s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.16 1 0.3 1"/>
       </rect>
     </clipPath>
     <clipPath id="typeClip2">
       <rect x="80" y="190" width="0" height="50">
-        <animate attributeName="width" from="0" to="360" dur="2s" begin="3s" fill="freeze"/>
+        <animate attributeName="width" from="0" to="400" dur="1.6s" begin="2.6s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.16 1 0.3 1"/>
       </rect>
     </clipPath>
   </defs>
   <style>
-    @keyframes scanDown{0%{transform:translateY(-350px)}100%{transform:translateY(350px)}}
+    @keyframes scanDown{0%{transform:translateY(-360px)}100%{transform:translateY(360px)}}
     @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-    @keyframes fadeIn{0%{opacity:0}100%{opacity:1}}
-    @keyframes slideRight{0%{transform:translateX(-20px);opacity:0}100%{transform:translateX(0);opacity:1}}
+    @keyframes fadeIn{0%{opacity:0;transform:translateY(4px)}100%{opacity:1;transform:translateY(0)}}
     @keyframes pulse{0%,100%{opacity:0.3}50%{opacity:1}}
-    @keyframes pulse2{0%,100%{opacity:0.15}50%{opacity:0.5}}
     @keyframes dashMove{0%{stroke-dashoffset:20}100%{stroke-dashoffset:0}}
-    @keyframes expandLine{0%{x2:80}100%{x2:500}}
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-    @keyframes twinkle{0%,100%{opacity:0.1}50%{opacity:0.6}}
+    @keyframes twinkle{0%,100%{opacity:0.1}50%{opacity:0.65}}
     @keyframes orbitSlow{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
-    @keyframes ripple{0%{r:0;opacity:0.5}100%{r:30;opacity:0}}
-    @keyframes glowPulse{0%,100%{filter:drop-shadow(0 0 2px #d4af37)}50%{filter:drop-shadow(0 0 10px #d4af37)}}
+    @keyframes livePulse{0%{transform:scale(1);opacity:1}70%{transform:scale(2.6);opacity:0}100%{opacity:0}}
 
-    .scan{animation:scanDown 4s linear infinite}
+    .scan{animation:scanDown 5s linear infinite}
     .cursor{animation:blink 0.7s step-end infinite}
-    .fadeIn1{animation:fadeIn 0.8s ease-out 5s both}
-    .fadeIn2{animation:fadeIn 0.8s ease-out 5.3s both}
-    .fadeIn3{animation:fadeIn 0.8s ease-out 5.6s both}
-    .fadeIn4{animation:fadeIn 0.8s ease-out 5.9s both}
-    .fadeIn5{animation:fadeIn 0.8s ease-out 6.2s both}
+    .fadeIn1{animation:fadeIn 0.7s ease-out 4.2s both}
+    .fadeIn2{animation:fadeIn 0.7s ease-out 4.45s both}
+    .fadeIn3{animation:fadeIn 0.7s ease-out 4.6s both}
+    .fadeIn4{animation:fadeIn 0.7s ease-out 4.75s both}
+    .fadeIn5{animation:fadeIn 0.7s ease-out 4.9s both}
+    .fadeIn6{animation:fadeIn 0.7s ease-out 5.05s both}
     .p1{animation:pulse 3s infinite ease-in-out}
     .p2{animation:pulse 4s infinite ease-in-out 1s}
-    .p3{animation:pulse 5s infinite ease-in-out 2s}
-    .pp{animation:pulse2 6s infinite ease-in-out}
     .dm{animation:dashMove 3s linear infinite}
     .fl{animation:float 6s ease-in-out infinite}
     .tw{animation:twinkle 4s infinite ease-in-out}
     .tw2{animation:twinkle 5s infinite ease-in-out 1.5s}
     .tw3{animation:twinkle 3s infinite ease-in-out 3s}
-    .orb{animation:orbitSlow 20s linear infinite;transform-origin:750px 175px}
-    .gp{animation:glowPulse 3s infinite ease-in-out}
+    .orb{animation:orbitSlow 22s linear infinite;transform-origin:750px 178px}
+    .live{animation:livePulse 2.4s ease-out infinite;transform-origin:center;transform-box:fill-box}
 
     .fs{font-family:Arial,"Segoe UI",Helvetica,sans-serif}
     .fm{font-family:"Courier New",Consolas,monospace}
   </style>
 
-  <rect width="900" height="350" fill="url(#bg)"/>
+  <rect width="900" height="360" fill="url(#bgRad)"/>
 
-  <!-- Scan line effect -->
-  <rect width="900" height="80" fill="url(#scanLine)" class="scan"/>
+  <!-- Soft glow behind the name -->
+  <ellipse cx="300" cy="150" rx="320" ry="120" fill="url(#nameGlow)"/>
 
-  <!-- Grid pattern (subtle) -->
-  <g stroke="#21262d" stroke-width="0.3" opacity="0.3">
-    <line x1="0" y1="70" x2="900" y2="70"/>
-    <line x1="0" y1="140" x2="900" y2="140"/>
-    <line x1="0" y1="210" x2="900" y2="210"/>
-    <line x1="0" y1="280" x2="900" y2="280"/>
+  <!-- Scan line -->
+  <rect width="900" height="90" fill="url(#scanLine)" class="scan"/>
+
+  <!-- Subtle grid -->
+  <g stroke="#21262d" stroke-width="0.3" opacity="0.28">
+    <line x1="0" y1="72" x2="900" y2="72"/>
+    <line x1="0" y1="144" x2="900" y2="144"/>
+    <line x1="0" y1="216" x2="900" y2="216"/>
+    <line x1="0" y1="288" x2="900" y2="288"/>
   </g>
 
-  <!-- Constellation dots (right side) -->
+  <!-- Constellation dots -->
   <g fill="#d4af37">
-    <circle cx="620" cy="50" r="1.5" class="tw" opacity="0.3"/>
-    <circle cx="700" cy="80" r="1" class="tw2" opacity="0.2"/>
+    <circle cx="600" cy="48" r="1.5" class="tw" opacity="0.3"/>
+    <circle cx="690" cy="78" r="1" class="tw2" opacity="0.2"/>
     <circle cx="760" cy="40" r="1.2" class="tw3" opacity="0.25"/>
-    <circle cx="810" cy="100" r="1.5" class="tw" opacity="0.3"/>
-    <circle cx="680" cy="130" r="1" class="tw2" opacity="0.2"/>
-    <circle cx="850" cy="60" r="1.2" class="tw3" opacity="0.25"/>
-    <circle cx="770" cy="160" r="1" class="tw" opacity="0.2"/>
-    <circle cx="830" cy="200" r="1.5" class="tw2" opacity="0.3"/>
-    <circle cx="640" cy="180" r="1.2" class="tw3" opacity="0.25"/>
-    <circle cx="720" cy="220" r="1" class="tw" opacity="0.2"/>
-    <circle cx="870" cy="270" r="1.5" class="tw2" opacity="0.3"/>
-    <circle cx="600" cy="280" r="1" class="tw3" opacity="0.2"/>
-    <circle cx="780" cy="300" r="1.2" class="tw" opacity="0.25"/>
-    <circle cx="700" cy="310" r="1" class="tw2" opacity="0.2"/>
+    <circle cx="850" cy="96" r="1.5" class="tw" opacity="0.3"/>
+    <circle cx="650" cy="128" r="1" class="tw2" opacity="0.2"/>
+    <circle cx="868" cy="56" r="1.2" class="tw3" opacity="0.25"/>
+    <circle cx="600" cy="300" r="1" class="tw3" opacity="0.2"/>
+    <circle cx="615" cy="200" r="1.2" class="tw" opacity="0.22"/>
+    <circle cx="870" cy="250" r="1.5" class="tw2" opacity="0.28"/>
   </g>
-  <!-- Constellation lines -->
-  <g stroke="#d4af37" stroke-width="0.3" opacity="0.06">
-    <line x1="620" y1="50" x2="700" y2="80"/>
-    <line x1="700" y1="80" x2="760" y2="40"/>
-    <line x1="700" y1="80" x2="810" y2="100"/>
-    <line x1="810" y1="100" x2="850" y2="60"/>
-    <line x1="810" y1="100" x2="770" y2="160"/>
-    <line x1="680" y1="130" x2="770" y2="160"/>
-    <line x1="770" y1="160" x2="830" y2="200"/>
-    <line x1="640" y1="180" x2="720" y2="220"/>
-    <line x1="830" y1="200" x2="870" y2="270"/>
-    <line x1="720" y1="220" x2="780" y2="300"/>
+  <g stroke="#d4af37" stroke-width="0.3" opacity="0.07">
+    <line x1="600" y1="48" x2="690" y2="78"/>
+    <line x1="690" y1="78" x2="760" y2="40"/>
+    <line x1="850" y1="96" x2="868" y2="56"/>
+    <line x1="650" y1="128" x2="615" y2="200"/>
   </g>
 
-  <!-- Orbiting ring (right side) -->
+  <!-- ===== RADAR / DETECTION MOTIF (right) ===== -->
+  <g opacity="0.9">
+    <!-- rings -->
+    <circle cx="750" cy="178" r="38" fill="none" stroke="#d4af37" stroke-width="0.4" opacity="0.16"/>
+    <circle cx="750" cy="178" r="68" fill="none" stroke="#d4af37" stroke-width="0.4" opacity="0.12"/>
+    <circle cx="750" cy="178" r="98" fill="none" stroke="#d4af37" stroke-width="0.3" opacity="0.08"/>
+    <!-- crosshair -->
+    <line x1="652" y1="178" x2="848" y2="178" stroke="#d4af37" stroke-width="0.3" opacity="0.1"/>
+    <line x1="750" y1="80" x2="750" y2="276" stroke="#d4af37" stroke-width="0.3" opacity="0.1"/>
+
+    <!-- rotating sweep wedge -->
+    <g>
+      <path d="M750 178 L848 178 A98 98 0 0 0 819 109 Z" fill="url(#sweep)"/>
+      <line x1="750" y1="178" x2="848" y2="178" stroke="#f0d060" stroke-width="0.8" opacity="0.5"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 750 178" to="360 750 178" dur="4.5s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- detected blips -->
+    <circle cx="788" cy="150" r="2" fill="#f0d060" filter="url(#glowSoft)">
+      <animate attributeName="opacity" values="0;1;1;0" dur="4.5s" begin="0.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="712" cy="216" r="1.6" fill="#f0d060" filter="url(#glowSoft)">
+      <animate attributeName="opacity" values="0;1;1;0" dur="4.5s" begin="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="210" r="1.6" fill="#f0d060" filter="url(#glowSoft)">
+      <animate attributeName="opacity" values="0;1;1;0" dur="4.5s" begin="3.4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <!-- outer orbit ring -->
   <g class="orb">
-    <circle cx="750" cy="175" r="80" fill="none" stroke="#d4af37" stroke-width="0.3" opacity="0.1" stroke-dasharray="4 6"/>
+    <circle cx="750" cy="178" r="120" fill="none" stroke="#d4af37" stroke-width="0.25" opacity="0.07" stroke-dasharray="2 9"/>
   </g>
-  <g class="orb" style="animation-direction:reverse;animation-duration:30s">
-    <circle cx="750" cy="175" r="120" fill="none" stroke="#d4af37" stroke-width="0.2" opacity="0.06" stroke-dasharray="2 8"/>
-  </g>
-  <!-- Center glow dot -->
-  <circle cx="750" cy="175" r="3" fill="#d4af37" opacity="0.3" filter="url(#glow)" class="p1"/>
-  <!-- Ripple effect from center -->
-  <circle cx="750" cy="175" fill="none" stroke="#d4af37" stroke-width="0.5">
-    <animate attributeName="r" from="5" to="40" dur="3s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" from="0.3" to="0" dur="3s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="750" cy="175" fill="none" stroke="#d4af37" stroke-width="0.5">
-    <animate attributeName="r" from="5" to="40" dur="3s" begin="1s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" from="0.3" to="0" dur="3s" begin="1s" repeatCount="indefinite"/>
-  </circle>
+  <circle cx="750" cy="178" r="3" fill="#d4af37" opacity="0.4" filter="url(#glow)" class="p1"/>
 
-  <!-- Left accent line -->
-  <line x1="60" y1="60" x2="60" y2="290" stroke="#d4af37" stroke-width="1" opacity="0.12"/>
+  <!-- Left accent rail -->
+  <line x1="60" y1="60" x2="60" y2="300" stroke="#d4af37" stroke-width="1" opacity="0.12"/>
   <circle cx="60" cy="60" r="2.5" fill="#d4af37" opacity="0.4" class="p1"/>
-  <circle cx="60" cy="290" r="2.5" fill="#d4af37" opacity="0.4" class="p2"/>
-  <!-- Dashed moving segment on accent line -->
-  <line x1="60" y1="100" x2="60" y2="250" stroke="#d4af37" stroke-width="1" stroke-dasharray="3 6" opacity="0.15" class="dm"/>
-
-  <!-- Top-left bracket -->
+  <circle cx="60" cy="300" r="2.5" fill="#d4af37" opacity="0.4" class="p2"/>
+  <line x1="60" y1="100" x2="60" y2="260" stroke="#d4af37" stroke-width="1" stroke-dasharray="3 6" opacity="0.16" class="dm"/>
   <polyline points="80,65 68,65 68,80" fill="none" stroke="#d4af37" stroke-width="0.8" opacity="0.3"/>
-  <!-- Bottom-left bracket -->
-  <polyline points="68,270 68,285 80,285" fill="none" stroke="#d4af37" stroke-width="0.8" opacity="0.3"/>
+  <polyline points="68,280 68,295 80,295" fill="none" stroke="#d4af37" stroke-width="0.8" opacity="0.3"/>
 
-  <!-- Label with typing cursor -->
-  <text x="80" y="90" class="fm" font-size="11" fill="#484f58" letter-spacing="3">// PROFILE</text>
-  <rect x="175" y="80" width="7" height="12" fill="#d4af37" opacity="0.6" class="cursor"/>
+  <!-- Terminal label -->
+  <text x="80" y="88" class="fm" font-size="11" fill="#484f58" letter-spacing="3">user@sec:~$ whoami</text>
+  <rect x="262" y="78" width="7" height="12" fill="#d4af37" opacity="0.6" class="cursor"/>
 
-  <!-- MAIN NAME: Typing animation -->
+  <!-- Name (typing) -->
   <g clip-path="url(#typeClip)">
-    <text x="80" y="155" class="fs" font-weight="300" font-size="64" fill="#e6edf3" letter-spacing="5">ekaznyra</text>
+    <text x="80" y="152" class="fs" font-weight="300" font-size="64" fill="url(#nameGrad)" letter-spacing="5">ekaznyra</text>
   </g>
 
-  <!-- Vietnamese name: Typing animation (delayed) -->
+  <!-- Vietnamese name (typing) -->
   <g clip-path="url(#typeClip2)">
     <text x="80" y="210" class="fs" font-weight="700" font-size="28" fill="url(#accent)" letter-spacing="3">NGUYEN NGOC ANH TU</text>
   </g>
 
-  <!-- Animated underline that draws itself -->
-  <line x1="80" y1="225" x2="80" y2="225" stroke="url(#accent)" stroke-width="2" filter="url(#glow)">
-    <animate attributeName="x2" from="80" to="500" dur="1s" begin="5s" fill="freeze"/>
+  <!-- Drawn underline -->
+  <line x1="80" y1="224" x2="80" y2="224" stroke="url(#accent)" stroke-width="2" filter="url(#glow)">
+    <animate attributeName="x2" from="80" to="470" dur="0.8s" begin="4.1s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.16 1 0.3 1"/>
   </line>
-  <circle cx="500" cy="225" r="3" fill="#d4af37" filter="url(#glow)" class="p1" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="6s" fill="freeze"/>
+  <circle cx="470" cy="224" r="3" fill="#d4af37" filter="url(#glow)" class="p1" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="4.9s" fill="freeze"/>
   </circle>
 
-  <!-- Role line (fades in after typing) -->
-  <text x="82" y="252" class="fm fadeIn1" font-size="11" fill="#8b949e" letter-spacing="2">Cybersecurity Researcher // DFIR Operative</text>
+  <!-- Role -->
+  <text x="82" y="250" class="fm fadeIn1" font-size="11" fill="#8b949e" letter-spacing="2">Cybersecurity Researcher // DFIR Operative</text>
 
-  <!-- Tags (fade in sequentially) -->
+  <!-- Status -->
   <g class="fadeIn2">
-    <rect x="82" y="265" width="52" height="20" rx="3" fill="#d4af3710" stroke="#d4af37" stroke-width="0.6" opacity="0.6"/>
-    <text x="108" y="279" text-anchor="middle" class="fm" font-size="8" fill="#d4af37" letter-spacing="1">DFIR</text>
+    <circle cx="88" cy="271" r="3.4" fill="#3fb950"/>
+    <circle cx="88" cy="271" r="3.4" fill="#3fb950" class="live"/>
+    <text x="98" y="275" class="fm" font-size="9" fill="#3fb950" letter-spacing="1">OPEN TO COLLABORATE</text>
   </g>
+
+  <!-- Tags -->
   <g class="fadeIn3">
-    <rect x="144" y="265" width="100" height="20" rx="3" fill="none" stroke="#30363d" stroke-width="0.5"/>
-    <text x="194" y="279" text-anchor="middle" class="fm" font-size="8" fill="#8b949e" letter-spacing="1">THREAT HUNT</text>
+    <rect x="262" y="262" width="50" height="18" rx="3" fill="#d4af3712" stroke="#d4af37" stroke-width="0.6" opacity="0.7"/>
+    <text x="287" y="274" text-anchor="middle" class="fm" font-size="8" fill="#d4af37" letter-spacing="1">DFIR</text>
   </g>
   <g class="fadeIn4">
-    <rect x="254" y="265" width="96" height="20" rx="3" fill="none" stroke="#30363d" stroke-width="0.5"/>
-    <text x="302" y="279" text-anchor="middle" class="fm" font-size="8" fill="#8b949e" letter-spacing="1">DETECTION</text>
+    <rect x="318" y="262" width="92" height="18" rx="3" fill="none" stroke="#30363d" stroke-width="0.5"/>
+    <text x="364" y="274" text-anchor="middle" class="fm" font-size="8" fill="#8b949e" letter-spacing="1">THREAT HUNT</text>
   </g>
   <g class="fadeIn5">
-    <rect x="360" y="265" width="70" height="20" rx="3" fill="none" stroke="#30363d" stroke-width="0.5"/>
-    <text x="395" y="279" text-anchor="middle" class="fm" font-size="8" fill="#8b949e" letter-spacing="1">SIGMA</text>
+    <rect x="416" y="262" width="88" height="18" rx="3" fill="none" stroke="#30363d" stroke-width="0.5"/>
+    <text x="460" y="274" text-anchor="middle" class="fm" font-size="8" fill="#8b949e" letter-spacing="1">DETECTION</text>
+  </g>
+  <g class="fadeIn6">
+    <rect x="510" y="262" width="62" height="18" rx="3" fill="none" stroke="#30363d" stroke-width="0.5"/>
+    <text x="541" y="274" text-anchor="middle" class="fm" font-size="8" fill="#8b949e" letter-spacing="1">SIGMA</text>
   </g>
 
   <!-- Bottom decorative line -->
-  <line x1="0" y1="348" x2="900" y2="348" stroke="url(#line1)" stroke-width="1"/>
+  <line x1="0" y1="358" x2="900" y2="358" stroke="url(#line1)" stroke-width="1"/>
 
-  <!-- Tiny particles floating -->
+  <!-- Floating particles -->
   <circle cx="500" cy="60" r="1" fill="#d4af37" opacity="0.2" class="fl"/>
-  <circle cx="550" cy="300" r="0.8" fill="#d4af37" opacity="0.15" class="fl" style="animation-delay:2s"/>
-  <circle cx="300" cy="320" r="1" fill="#8b949e" opacity="0.1" class="fl" style="animation-delay:4s"/>
+  <circle cx="560" cy="310" r="0.8" fill="#d4af37" opacity="0.15" class="fl" style="animation-delay:2s"/>
+  <circle cx="320" cy="320" r="1" fill="#8b949e" opacity="0.1" class="fl" style="animation-delay:4s"/>
 </svg>
