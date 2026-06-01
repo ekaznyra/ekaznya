@@ -1,223 +1,173 @@
-<svg viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 900 330" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <radialGradient id="bgRad" cx="62%" cy="48%" r="75%">
-      <stop offset="0%" stop-color="#10161f"/>
+    <radialGradient id="bgRad" cx="50%" cy="42%" r="75%">
+      <stop offset="0%" stop-color="#11171f"/>
       <stop offset="55%" stop-color="#0d1117"/>
       <stop offset="100%" stop-color="#010409"/>
     </radialGradient>
     <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#d4af37"/>
+      <stop offset="50%" stop-color="#f4d978"/>
+      <stop offset="80%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="goldText" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#d4af37"/>
-      <stop offset="50%" stop-color="#f0d060"/>
+      <stop offset="50%" stop-color="#f4d978"/>
       <stop offset="100%" stop-color="#d4af37"/>
     </linearGradient>
-    <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#cdd6e0"/>
+      <stop offset="100%" stop-color="#b9c2cd"/>
     </linearGradient>
-    <linearGradient id="line1" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="edge" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#d4af37" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#d4af37" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#d4af37" stop-opacity="0.55"/>
       <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="scanLine" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#d4af37" stop-opacity="0"/>
-      <stop offset="48%" stop-color="#d4af37" stop-opacity="0.1"/>
-      <stop offset="50%" stop-color="#f0d060" stop-opacity="0.18"/>
-      <stop offset="52%" stop-color="#d4af37" stop-opacity="0.1"/>
-      <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="sweep" x1="0%" y1="0%" x2="100%" y2="50%">
-      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
-    </linearGradient>
-    <radialGradient id="nameGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.12"/>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.14"/>
       <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
     </radialGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="glowSoft">
-      <feGaussianBlur stdDeviation="1.4" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <clipPath id="typeClip">
-      <rect x="80" y="96" width="0" height="80">
-        <animate attributeName="width" from="0" to="540" dur="2.4s" begin="0.3s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.16 1 0.3 1"/>
-      </rect>
-    </clipPath>
-    <clipPath id="typeClip2">
-      <rect x="80" y="190" width="0" height="50">
-        <animate attributeName="width" from="0" to="400" dur="1.6s" begin="2.6s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.16 1 0.3 1"/>
-      </rect>
-    </clipPath>
+    <filter id="glow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="glowSoft"><feGaussianBlur stdDeviation="1.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   </defs>
   <style>
-    @keyframes scanDown{0%{transform:translateY(-360px)}100%{transform:translateY(360px)}}
+    @keyframes scanDown{0%{transform:translateY(-330px)}100%{transform:translateY(330px)}}
     @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-    @keyframes fadeIn{0%{opacity:0;transform:translateY(4px)}100%{opacity:1;transform:translateY(0)}}
+    @keyframes rise{0%{opacity:0;transform:translateY(8px)}100%{opacity:1;transform:translateY(0)}}
     @keyframes pulse{0%,100%{opacity:0.3}50%{opacity:1}}
-    @keyframes dashMove{0%{stroke-dashoffset:20}100%{stroke-dashoffset:0}}
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-    @keyframes twinkle{0%,100%{opacity:0.1}50%{opacity:0.65}}
-    @keyframes orbitSlow{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
-    @keyframes livePulse{0%{transform:scale(1);opacity:1}70%{transform:scale(2.6);opacity:0}100%{opacity:0}}
+    @keyframes twinkle{0%,100%{opacity:0.1}50%{opacity:0.6}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    @keyframes live{0%{transform:scale(1);opacity:.9}70%{transform:scale(2.6);opacity:0}100%{opacity:0}}
+    @keyframes drawW{0%{width:0}100%{width:300px}}
+    @keyframes sweep{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
 
-    .scan{animation:scanDown 5s linear infinite}
-    .cursor{animation:blink 0.7s step-end infinite}
-    .fadeIn1{animation:fadeIn 0.7s ease-out 4.2s both}
-    .fadeIn2{animation:fadeIn 0.7s ease-out 4.45s both}
-    .fadeIn3{animation:fadeIn 0.7s ease-out 4.6s both}
-    .fadeIn4{animation:fadeIn 0.7s ease-out 4.75s both}
-    .fadeIn5{animation:fadeIn 0.7s ease-out 4.9s both}
-    .fadeIn6{animation:fadeIn 0.7s ease-out 5.05s both}
+    .scan{animation:scanDown 6s linear infinite}
+    .cursor{animation:blink .8s step-end infinite}
+    .r1{opacity:0;animation:rise .7s ease-out .2s forwards}
+    .r2{opacity:0;animation:rise .7s ease-out .9s forwards}
+    .r3{opacity:0;animation:rise .7s ease-out 1.15s forwards}
+    .r4{opacity:0;animation:rise .7s ease-out 1.4s forwards}
+    .r5{opacity:0;animation:rise .7s ease-out 1.65s forwards}
     .p1{animation:pulse 3s infinite ease-in-out}
     .p2{animation:pulse 4s infinite ease-in-out 1s}
-    .dm{animation:dashMove 3s linear infinite}
-    .fl{animation:float 6s ease-in-out infinite}
     .tw{animation:twinkle 4s infinite ease-in-out}
     .tw2{animation:twinkle 5s infinite ease-in-out 1.5s}
-    .tw3{animation:twinkle 3s infinite ease-in-out 3s}
-    .orb{animation:orbitSlow 22s linear infinite;transform-origin:750px 178px}
-    .live{animation:livePulse 2.4s ease-out infinite;transform-origin:center;transform-box:fill-box}
-
+    .tw3{animation:twinkle 3.4s infinite ease-in-out 2.4s}
+    .fl{animation:float 7s ease-in-out infinite}
+    .live{animation:live 2.4s ease-out infinite;transform-box:fill-box;transform-origin:center}
+    .sweep{animation:sweep 5s linear infinite;transform-origin:450px 150px}
     .fs{font-family:Arial,"Segoe UI",Helvetica,sans-serif}
     .fm{font-family:"Courier New",Consolas,monospace}
   </style>
 
-  <rect width="900" height="360" fill="url(#bgRad)"/>
+  <rect width="900" height="330" fill="url(#bgRad)"/>
+  <ellipse cx="450" cy="150" rx="360" ry="130" fill="url(#halo)"/>
 
-  <!-- Soft glow behind the name -->
-  <ellipse cx="300" cy="150" rx="320" ry="120" fill="url(#nameGlow)"/>
+  <!-- scan line -->
+  <rect width="900" height="80" fill="#d4af37" opacity="0.05" class="scan"/>
 
-  <!-- Scan line -->
-  <rect width="900" height="90" fill="url(#scanLine)" class="scan"/>
-
-  <!-- Subtle grid -->
-  <g stroke="#21262d" stroke-width="0.3" opacity="0.28">
-    <line x1="0" y1="72" x2="900" y2="72"/>
-    <line x1="0" y1="144" x2="900" y2="144"/>
-    <line x1="0" y1="216" x2="900" y2="216"/>
-    <line x1="0" y1="288" x2="900" y2="288"/>
+  <!-- subtle grid -->
+  <g stroke="#21262d" stroke-width="0.3" opacity="0.25">
+    <line x1="0" y1="66" x2="900" y2="66"/>
+    <line x1="0" y1="264" x2="900" y2="264"/>
   </g>
 
-  <!-- Constellation dots -->
+  <!-- symmetric constellation (both sides, mirrored feel) -->
   <g fill="#d4af37">
-    <circle cx="600" cy="48" r="1.5" class="tw" opacity="0.3"/>
-    <circle cx="690" cy="78" r="1" class="tw2" opacity="0.2"/>
-    <circle cx="760" cy="40" r="1.2" class="tw3" opacity="0.25"/>
-    <circle cx="850" cy="96" r="1.5" class="tw" opacity="0.3"/>
-    <circle cx="650" cy="128" r="1" class="tw2" opacity="0.2"/>
-    <circle cx="868" cy="56" r="1.2" class="tw3" opacity="0.25"/>
-    <circle cx="600" cy="300" r="1" class="tw3" opacity="0.2"/>
-    <circle cx="615" cy="200" r="1.2" class="tw" opacity="0.22"/>
-    <circle cx="870" cy="250" r="1.5" class="tw2" opacity="0.28"/>
+    <circle cx="90" cy="60" r="1.4" class="tw" opacity=".3"/>
+    <circle cx="150" cy="90" r="1" class="tw2" opacity=".22"/>
+    <circle cx="60" cy="120" r="1.2" class="tw3" opacity=".25"/>
+    <circle cx="120" cy="250" r="1.2" class="tw2" opacity=".22"/>
+    <circle cx="70" cy="220" r="1" class="tw" opacity=".2"/>
+    <circle cx="810" cy="60" r="1.4" class="tw" opacity=".3"/>
+    <circle cx="750" cy="90" r="1" class="tw2" opacity=".22"/>
+    <circle cx="840" cy="120" r="1.2" class="tw3" opacity=".25"/>
+    <circle cx="780" cy="250" r="1.2" class="tw2" opacity=".22"/>
+    <circle cx="830" cy="220" r="1" class="tw" opacity=".2"/>
   </g>
   <g stroke="#d4af37" stroke-width="0.3" opacity="0.07">
-    <line x1="600" y1="48" x2="690" y2="78"/>
-    <line x1="690" y1="78" x2="760" y2="40"/>
-    <line x1="850" y1="96" x2="868" y2="56"/>
-    <line x1="650" y1="128" x2="615" y2="200"/>
+    <line x1="90" y1="60" x2="150" y2="90"/><line x1="150" y1="90" x2="60" y2="120"/>
+    <line x1="810" y1="60" x2="750" y2="90"/><line x1="750" y1="90" x2="840" y2="120"/>
   </g>
 
-  <!-- ===== RADAR / DETECTION MOTIF (right) ===== -->
-  <g opacity="0.9">
-    <!-- rings -->
-    <circle cx="750" cy="178" r="38" fill="none" stroke="#d4af37" stroke-width="0.4" opacity="0.16"/>
-    <circle cx="750" cy="178" r="68" fill="none" stroke="#d4af37" stroke-width="0.4" opacity="0.12"/>
-    <circle cx="750" cy="178" r="98" fill="none" stroke="#d4af37" stroke-width="0.3" opacity="0.08"/>
-    <!-- crosshair -->
-    <line x1="652" y1="178" x2="848" y2="178" stroke="#d4af37" stroke-width="0.3" opacity="0.1"/>
-    <line x1="750" y1="80" x2="750" y2="276" stroke="#d4af37" stroke-width="0.3" opacity="0.1"/>
+  <!-- faint centered radar rings behind name (symmetric) -->
+  <g opacity="0.5">
+    <circle cx="450" cy="150" r="150" fill="none" stroke="#d4af37" stroke-width="0.3" opacity="0.06"/>
+    <circle cx="450" cy="150" r="200" fill="none" stroke="#d4af37" stroke-width="0.25" opacity="0.04"/>
+    <g class="sweep"><line x1="450" y1="150" x2="450" y2="0" stroke="#d4af37" stroke-width="0.4" opacity="0.05"/></g>
+  </g>
 
-    <!-- rotating sweep wedge -->
+  <!-- symmetric corner brackets -->
+  <g stroke="#d4af37" stroke-width="1" fill="none" opacity="0.35">
+    <polyline points="40,52 40,40 52,40"/>
+    <polyline points="860,40 872,40 872,52"/>
+    <polyline points="40,278 40,290 52,290"/>
+    <polyline points="860,290 872,290 872,278"/>
+  </g>
+
+  <!-- terminal label (centered) -->
+  <g class="r1">
+    <text x="450" y="58" text-anchor="middle" class="fm" font-size="11" fill="#6e7681" letter-spacing="3">user@sec:~$ whoami</text>
+  </g>
+
+  <!-- NAME (centered) -->
+  <g class="r2">
+    <text x="450" y="148" text-anchor="middle" class="fs" font-weight="300" font-size="70" fill="url(#nameGrad)" letter-spacing="6">ekaznyra</text>
+    <rect x="660" y="118" width="6" height="40" fill="#d4af37" opacity="0.7" class="cursor"/>
+  </g>
+
+  <!-- centered underline (draws out) -->
+  <g class="r3">
+    <rect x="300" y="168" height="2.4" rx="1" fill="url(#accent)" filter="url(#glow)">
+      <animate attributeName="width" from="0" to="300" dur="0.9s" begin="1.15s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.16 1 0.3 1"/>
+    </rect>
+  </g>
+
+  <!-- Vietnamese name with full diacritics (centered) -->
+  <g class="r3">
+    <text x="450" y="202" text-anchor="middle" class="fs" font-weight="700" font-size="27" fill="url(#goldText)" letter-spacing="4">NGUYỄN NGỌC ANH TÚ</text>
+  </g>
+
+  <!-- role (centered) -->
+  <g class="r4">
+    <text x="450" y="228" text-anchor="middle" class="fm" font-size="11.5" fill="#8b949e" letter-spacing="2">Cybersecurity Researcher · DFIR Operative</text>
+  </g>
+
+  <!-- tag chips (centered, symmetric) -->
+  <g class="r5">
     <g>
-      <path d="M750 178 L848 178 A98 98 0 0 0 819 109 Z" fill="url(#sweep)"/>
-      <line x1="750" y1="178" x2="848" y2="178" stroke="#f0d060" stroke-width="0.8" opacity="0.5"/>
-      <animateTransform attributeName="transform" type="rotate" from="0 750 178" to="360 750 178" dur="4.5s" repeatCount="indefinite"/>
+      <rect x="300" y="244" width="58" height="20" rx="4" fill="#d4af3712" stroke="#d4af37" stroke-width="0.7" opacity="0.8"/>
+      <text x="329" y="257" text-anchor="middle" class="fm" font-size="8.5" fill="#d4af37" letter-spacing="1">DFIR</text>
     </g>
-
-    <!-- detected blips -->
-    <circle cx="788" cy="150" r="2" fill="#f0d060" filter="url(#glowSoft)">
-      <animate attributeName="opacity" values="0;1;1;0" dur="4.5s" begin="0.6s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="712" cy="216" r="1.6" fill="#f0d060" filter="url(#glowSoft)">
-      <animate attributeName="opacity" values="0;1;1;0" dur="4.5s" begin="2.4s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="800" cy="210" r="1.6" fill="#f0d060" filter="url(#glowSoft)">
-      <animate attributeName="opacity" values="0;1;1;0" dur="4.5s" begin="3.4s" repeatCount="indefinite"/>
-    </circle>
-  </g>
-  <!-- outer orbit ring -->
-  <g class="orb">
-    <circle cx="750" cy="178" r="120" fill="none" stroke="#d4af37" stroke-width="0.25" opacity="0.07" stroke-dasharray="2 9"/>
-  </g>
-  <circle cx="750" cy="178" r="3" fill="#d4af37" opacity="0.4" filter="url(#glow)" class="p1"/>
-
-  <!-- Left accent rail -->
-  <line x1="60" y1="60" x2="60" y2="300" stroke="#d4af37" stroke-width="1" opacity="0.12"/>
-  <circle cx="60" cy="60" r="2.5" fill="#d4af37" opacity="0.4" class="p1"/>
-  <circle cx="60" cy="300" r="2.5" fill="#d4af37" opacity="0.4" class="p2"/>
-  <line x1="60" y1="100" x2="60" y2="260" stroke="#d4af37" stroke-width="1" stroke-dasharray="3 6" opacity="0.16" class="dm"/>
-  <polyline points="80,65 68,65 68,80" fill="none" stroke="#d4af37" stroke-width="0.8" opacity="0.3"/>
-  <polyline points="68,280 68,295 80,295" fill="none" stroke="#d4af37" stroke-width="0.8" opacity="0.3"/>
-
-  <!-- Terminal label -->
-  <text x="80" y="88" class="fm" font-size="11" fill="#484f58" letter-spacing="3">user@sec:~$ whoami</text>
-  <rect x="262" y="78" width="7" height="12" fill="#d4af37" opacity="0.6" class="cursor"/>
-
-  <!-- Name (typing) -->
-  <g clip-path="url(#typeClip)">
-    <text x="80" y="152" class="fs" font-weight="300" font-size="64" fill="url(#nameGrad)" letter-spacing="5">ekaznyra</text>
+    <g>
+      <rect x="364" y="244" width="96" height="20" rx="4" fill="none" stroke="#30363d"/>
+      <text x="412" y="257" text-anchor="middle" class="fm" font-size="8.5" fill="#9ba3ae" letter-spacing="1">THREAT HUNT</text>
+    </g>
+    <g>
+      <rect x="466" y="244" width="90" height="20" rx="4" fill="none" stroke="#30363d"/>
+      <text x="511" y="257" text-anchor="middle" class="fm" font-size="8.5" fill="#9ba3ae" letter-spacing="1">DETECTION</text>
+    </g>
+    <g>
+      <rect x="562" y="244" width="58" height="20" rx="4" fill="none" stroke="#30363d"/>
+      <text x="591" y="257" text-anchor="middle" class="fm" font-size="8.5" fill="#9ba3ae" letter-spacing="1">SIGMA</text>
+    </g>
   </g>
 
-  <!-- Vietnamese name (typing) -->
-  <g clip-path="url(#typeClip2)">
-    <text x="80" y="210" class="fs" font-weight="700" font-size="28" fill="url(#accent)" letter-spacing="3">NGUYEN NGOC ANH TU</text>
+  <!-- status (centered) -->
+  <g class="r5">
+    <circle cx="392" cy="287" r="3.4" fill="#3fb950"/>
+    <circle cx="392" cy="287" r="3.4" fill="#3fb950" class="live"/>
+    <text x="404" y="291" class="fm" font-size="9" fill="#3fb950" letter-spacing="1.5">OPEN TO COLLABORATE</text>
   </g>
 
-  <!-- Drawn underline -->
-  <line x1="80" y1="224" x2="80" y2="224" stroke="url(#accent)" stroke-width="2" filter="url(#glow)">
-    <animate attributeName="x2" from="80" to="470" dur="0.8s" begin="4.1s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.16 1 0.3 1"/>
-  </line>
-  <circle cx="470" cy="224" r="3" fill="#d4af37" filter="url(#glow)" class="p1" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="4.9s" fill="freeze"/>
-  </circle>
+  <!-- bottom edge line -->
+  <rect x="0" y="328" width="900" height="2" fill="url(#edge)"/>
 
-  <!-- Role -->
-  <text x="82" y="250" class="fm fadeIn1" font-size="11" fill="#8b949e" letter-spacing="2">Cybersecurity Researcher // DFIR Operative</text>
-
-  <!-- Status -->
-  <g class="fadeIn2">
-    <circle cx="88" cy="271" r="3.4" fill="#3fb950"/>
-    <circle cx="88" cy="271" r="3.4" fill="#3fb950" class="live"/>
-    <text x="98" y="275" class="fm" font-size="9" fill="#3fb950" letter-spacing="1">OPEN TO COLLABORATE</text>
-  </g>
-
-  <!-- Tags -->
-  <g class="fadeIn3">
-    <rect x="262" y="262" width="50" height="18" rx="3" fill="#d4af3712" stroke="#d4af37" stroke-width="0.6" opacity="0.7"/>
-    <text x="287" y="274" text-anchor="middle" class="fm" font-size="8" fill="#d4af37" letter-spacing="1">DFIR</text>
-  </g>
-  <g class="fadeIn4">
-    <rect x="318" y="262" width="92" height="18" rx="3" fill="none" stroke="#30363d" stroke-width="0.5"/>
-    <text x="364" y="274" text-anchor="middle" class="fm" font-size="8" fill="#8b949e" letter-spacing="1">THREAT HUNT</text>
-  </g>
-  <g class="fadeIn5">
-    <rect x="416" y="262" width="88" height="18" rx="3" fill="none" stroke="#30363d" stroke-width="0.5"/>
-    <text x="460" y="274" text-anchor="middle" class="fm" font-size="8" fill="#8b949e" letter-spacing="1">DETECTION</text>
-  </g>
-  <g class="fadeIn6">
-    <rect x="510" y="262" width="62" height="18" rx="3" fill="none" stroke="#30363d" stroke-width="0.5"/>
-    <text x="541" y="274" text-anchor="middle" class="fm" font-size="8" fill="#8b949e" letter-spacing="1">SIGMA</text>
-  </g>
-
-  <!-- Bottom decorative line -->
-  <line x1="0" y1="358" x2="900" y2="358" stroke="url(#line1)" stroke-width="1"/>
-
-  <!-- Floating particles -->
-  <circle cx="500" cy="60" r="1" fill="#d4af37" opacity="0.2" class="fl"/>
-  <circle cx="560" cy="310" r="0.8" fill="#d4af37" opacity="0.15" class="fl" style="animation-delay:2s"/>
-  <circle cx="320" cy="320" r="1" fill="#8b949e" opacity="0.1" class="fl" style="animation-delay:4s"/>
+  <!-- floating particles -->
+  <circle cx="220" cy="80" r="1" fill="#d4af37" opacity="0.25" class="fl"/>
+  <circle cx="680" cy="100" r="0.9" fill="#d4af37" opacity="0.2" class="fl" style="animation-delay:2s"/>
+  <circle cx="600" cy="300" r="1" fill="#8b949e" opacity="0.12" class="fl" style="animation-delay:4s"/>
 </svg>
