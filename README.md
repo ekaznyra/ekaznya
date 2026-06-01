@@ -3,7 +3,7 @@
 <!-- ═══════════════════════════════════════════════════════════════ -->
 
 <div align="center">
-<img src="assets/header-dark.svg?v=17" width="100%" alt="ekaznyra · Nguyen Ngoc Anh Tu · Cybersecurity Researcher"/>
+<img src="assets/header-dark.svg?v=18" width="100%" alt="ekaznyra · Nguyen Ngoc Anh Tu · Cybersecurity Researcher"/>
 </div>
 
 <br>
@@ -11,25 +11,25 @@
 <!-- ─── SECTION: ABOUT ──────────────────────────────────────────── -->
 
 <div align="center">
-<img src="assets/divider-dark.svg?v=17" width="60%" alt=""/>
+<img src="assets/divider-dark.svg?v=18" width="60%" alt=""/>
 </div>
 
 <br>
 
 <div align="center">
-<img src="assets/about-dark.svg?v=17" width="100%" alt="About"/>
+<img src="assets/about-dark.svg?v=18" width="100%" alt="About"/>
 </div>
 
 <!-- ─── SECTION: CAPABILITY MAP ─────────────────────────────────── -->
 
 <div align="center">
-<img src="assets/skillmap-dark.svg?v=17" width="100%" alt="Skills"/>
+<img src="assets/skillmap-dark.svg?v=18" width="100%" alt="Skills"/>
 </div>
 
 <!-- ─── SECTION: ARSENAL ────────────────────────────────────────── -->
 
 <div align="center">
-<img src="assets/arsenal-dark.svg?v=17" width="100%" alt="Arsenal · Tools & Tech Stack"/>
+<img src="assets/arsenal-dark.svg?v=18" width="100%" alt="Arsenal · Tools & Tech Stack"/>
 </div>
 
 <br>
@@ -61,56 +61,19 @@
 <!-- ─── SECTION: TIMELINE ───────────────────────────────────────── -->
 
 <div align="center">
-<img src="assets/timeline-dark.svg?v=17" width="100%" alt="Journey"/>
+<img src="assets/timeline-dark.svg?v=18" width="100%" alt="Journey"/>
 </div>
-
-<!-- ─── SECTION: GITHUB STATS ───────────────────────────────────── -->
-
-<div align="center">
-<img src="assets/divider-dark.svg?v=17" width="60%" alt=""/>
-</div>
-
-<br>
-
-<div align="center">
-
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=ekaznyra&show_icons=true&hide_border=true&bg_color=0a0a0c&title_color=caa84d&text_color=c9c2b4&icon_color=caa84d&include_all_commits=true&count_private=true" alt="GitHub Stats"/>
-<img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=ekaznyra&hide_border=true&background=0a0a0c&ring=caa84d&fire=f5e3a3&currStreakLabel=caa84d&sideLabels=c9c2b4&dates=8a8578&currStreakNum=ece6d8&sideNums=ece6d8&stroke=2a2a31" alt="GitHub Streak"/>
-
-<br>
-
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ekaznyra&layout=compact&hide_border=true&bg_color=0a0a0c&title_color=caa84d&text_color=c9c2b4&langs_count=8" alt="Top Languages"/>
-
-</div>
-
-<br>
-
-<!-- ─── TROPHIES ────────────────────────────────────────────────── -->
-
-<div align="center">
-<img src="https://github-profile-trophy.vercel.app/?username=ekaznyra&theme=onedark&no-frame=true&no-bg=true&margin-w=6&column=7&title_color=caa84d&text_color=c9c2b4" alt="Trophies"/>
-</div>
-
-<br>
-
-<!-- ─── CONTRIBUTION ACTIVITY GRAPH ─────────────────────────────── -->
-
-<div align="center">
-<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=ekaznyra&bg_color=0a0a0c&color=caa84d&line=caa84d&point=f5e3a3&area=true&hide_border=true" alt="Activity Graph"/>
-</div>
-
-<br>
 
 <!-- ─── SECTION: METRICS ────────────────────────────────────────────── -->
 
 <div align="center">
-<img src="assets/divider-dark.svg?v=17" width="60%" alt=""/>
+<img src="assets/divider-dark.svg?v=18" width="60%" alt=""/>
 </div>
 
 <br>
 
 <div align="center">
-<img src="assets/metrics-dark.svg?v=17" width="100%" alt="Metrics · Language Mix & Contribution Activity"/>
+<img src="assets/metrics-dark.svg?v=18" width="100%" alt="Metrics · Language Mix & Contribution Activity"/>
 </div>
 
 <br>
@@ -118,13 +81,13 @@
 <!-- ─── SECTION: CONNECT ────────────────────────────────────────── -->
 
 <div align="center">
-<img src="assets/divider-dark.svg?v=17" width="60%" alt=""/>
+<img src="assets/divider-dark.svg?v=18" width="60%" alt=""/>
 </div>
 
 <br>
 
 <div align="center">
-<a href="mailto:anhtunguyen.sec@proton.me"><img src="assets/connect-dark.svg?v=17" width="100%" alt="Connect"/></a>
+<a href="mailto:anhtunguyen.sec@proton.me"><img src="assets/connect-dark.svg?v=18" width="100%" alt="Connect"/></a>
 
 <br>
 
@@ -145,5 +108,5 @@
 <!-- ─── FOOTER ──────────────────────────────────────────────────── -->
 
 <div align="center">
-<img src="assets/footer-dark.svg?v=17" width="100%" alt="Understand · Detect · Defend"/>
+<img src="assets/footer-dark.svg?v=18" width="100%" alt="Understand · Detect · Defend"/>
 </div>
