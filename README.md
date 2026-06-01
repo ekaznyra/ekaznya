@@ -3,7 +3,7 @@
 <!-- ═══════════════════════════════════════════════════════════════ -->
 
 <div align="center">
-<img src="assets/header-dark.svg?v=16" width="100%" alt="ekaznyra · Nguyen Ngoc Anh Tu · Cybersecurity Researcher"/>
+<img src="assets/header-dark.svg?v=17" width="100%" alt="ekaznyra · Nguyen Ngoc Anh Tu · Cybersecurity Researcher"/>
 </div>
 
 <br>
@@ -11,25 +11,25 @@
 <!-- ─── SECTION: ABOUT ──────────────────────────────────────────── -->
 
 <div align="center">
-<img src="assets/divider-dark.svg?v=16" width="60%" alt=""/>
+<img src="assets/divider-dark.svg?v=17" width="60%" alt=""/>
 </div>
 
 <br>
 
 <div align="center">
-<img src="assets/about-dark.svg?v=16" width="100%" alt="About"/>
+<img src="assets/about-dark.svg?v=17" width="100%" alt="About"/>
 </div>
 
 <!-- ─── SECTION: CAPABILITY MAP ─────────────────────────────────── -->
 
 <div align="center">
-<img src="assets/skillmap-dark.svg?v=16" width="100%" alt="Skills"/>
+<img src="assets/skillmap-dark.svg?v=17" width="100%" alt="Skills"/>
 </div>
 
 <!-- ─── SECTION: ARSENAL ────────────────────────────────────────── -->
 
 <div align="center">
-<img src="assets/arsenal-dark.svg?v=16" width="100%" alt="Arsenal · Tools & Tech Stack"/>
+<img src="assets/arsenal-dark.svg?v=17" width="100%" alt="Arsenal · Tools & Tech Stack"/>
 </div>
 
 <br>
@@ -61,13 +61,13 @@
 <!-- ─── SECTION: TIMELINE ───────────────────────────────────────── -->
 
 <div align="center">
-<img src="assets/timeline-dark.svg?v=16" width="100%" alt="Journey"/>
+<img src="assets/timeline-dark.svg?v=17" width="100%" alt="Journey"/>
 </div>
 
 <!-- ─── SECTION: GITHUB STATS ───────────────────────────────────── -->
 
 <div align="center">
-<img src="assets/divider-dark.svg?v=16" width="60%" alt=""/>
+<img src="assets/divider-dark.svg?v=17" width="60%" alt=""/>
 </div>
 
 <br>
@@ -104,13 +104,13 @@
 <!-- ─── SECTION: METRICS ────────────────────────────────────────────── -->
 
 <div align="center">
-<img src="assets/divider-dark.svg?v=16" width="60%" alt=""/>
+<img src="assets/divider-dark.svg?v=17" width="60%" alt=""/>
 </div>
 
 <br>
 
 <div align="center">
-<img src="assets/metrics-dark.svg?v=16" width="100%" alt="Metrics · Language Mix & Contribution Activity"/>
+<img src="assets/metrics-dark.svg?v=17" width="100%" alt="Metrics · Language Mix & Contribution Activity"/>
 </div>
 
 <br>
@@ -118,13 +118,13 @@
 <!-- ─── SECTION: CONNECT ────────────────────────────────────────── -->
 
 <div align="center">
-<img src="assets/divider-dark.svg?v=16" width="60%" alt=""/>
+<img src="assets/divider-dark.svg?v=17" width="60%" alt=""/>
 </div>
 
 <br>
 
 <div align="center">
-<a href="mailto:anhtunguyen.sec@proton.me"><img src="assets/connect-dark.svg?v=16" width="100%" alt="Connect"/></a>
+<a href="mailto:anhtunguyen.sec@proton.me"><img src="assets/connect-dark.svg?v=17" width="100%" alt="Connect"/></a>
 
 <br>
 
@@ -145,5 +145,5 @@
 <!-- ─── FOOTER ──────────────────────────────────────────────────── -->
 
 <div align="center">
-<img src="assets/footer-dark.svg?v=16" width="100%" alt="Understand · Detect · Defend"/>
+<img src="assets/footer-dark.svg?v=17" width="100%" alt="Understand · Detect · Defend"/>
 </div>

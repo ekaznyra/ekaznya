@@ -46,7 +46,6 @@
     </radialGradient>
     <filter id="glow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
     <filter id="glowSoft"><feGaussianBlur stdDeviation="1.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer></filter>
     <clipPath id="frame"><rect width="900" height="330"/></clipPath>
   </defs>
   <style>
@@ -257,9 +256,6 @@
 
   <!-- vignette for depth -->
   <rect width="900" height="330" fill="url(#vign)"/>
-
-  <!-- film grain for matte luxury texture -->
-  <rect width="900" height="330" filter="url(#grain)" opacity="0.5" pointer-events="none"/>
 
   <!-- floating embers -->
   <circle cx="220" cy="80" r="1" fill="#caa84d" opacity="0.25" class="fl"/>

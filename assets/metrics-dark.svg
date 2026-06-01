@@ -6,7 +6,6 @@
       <stop offset="100%" stop-color="#000000"/>
     </radialGradient>
     <filter id="glowSoft"><feGaussianBlur stdDeviation="1.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.04"/></feComponentTransfer></filter>
       <radialGradient id="vign" cx="50%" cy="50%" r="75%">
       <stop offset="60%" stop-color="#000000" stop-opacity="0"/>
       <stop offset="100%" stop-color="#000000" stop-opacity="0.7"/>
@@ -239,5 +238,4 @@
   <text x="686" y="227" class="fm" font-size="9" fill="#5c574c">More</text>
 
   <rect width="900" height="280" fill="url(#vign)" pointer-events="none"/>
-  <rect width="900" height="280" filter="url(#grain)" opacity="0.45" pointer-events="none"/>
 </svg>

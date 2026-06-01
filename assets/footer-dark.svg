@@ -25,7 +25,6 @@
       <feGaussianBlur stdDeviation="1.4" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.04"/></feComponentTransfer></filter>
   </defs>
   <style>
     @keyframes pulse{0%,100%{opacity:0.3}50%{opacity:0.8}}
@@ -54,5 +53,4 @@
   <text x="450" y="62" text-anchor="middle" class="fm" font-size="10" fill="url(#mottoShine)" letter-spacing="4">
     UNDERSTAND · DETECT · DEFEND
   </text>
-  <rect width="900" height="80" filter="url(#grain)" opacity="0.4" pointer-events="none"/>
 </svg>
