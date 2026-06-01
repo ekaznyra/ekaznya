@@ -1,14 +1,19 @@
 <svg viewBox="0 0 900 92" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <radialGradient id="bgRad" cx="50%" cy="0%" r="100%">
-      <stop offset="0%" stop-color="#10161f"/>
-      <stop offset="70%" stop-color="#0d1117"/>
-      <stop offset="100%" stop-color="#010409"/>
+      <stop offset="0%" stop-color="#13110a"/>
+      <stop offset="68%" stop-color="#0a0a0c"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <radialGradient id="vign" cx="50%" cy="50%" r="75%">
+      <stop offset="60%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.7"/>
     </radialGradient>
     <filter id="glow">
       <feGaussianBlur stdDeviation="1.6" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.04"/></feComponentTransfer></filter>
   </defs>
   <style>
     @keyframes pulse{0%,100%{opacity:0.4}50%{opacity:1}}
@@ -18,45 +23,48 @@
     .c2{opacity:0;animation:fadeUp .5s ease-out .35s forwards}
     .c3{opacity:0;animation:fadeUp .5s ease-out .5s forwards}
     .c4{opacity:0;animation:fadeUp .5s ease-out .65s forwards}
-    .fs{font-family:Arial,"Segoe UI",Helvetica,sans-serif}
     .fm{font-family:"Courier New",Consolas,monospace}
   </style>
 
   <rect width="900" height="92" fill="url(#bgRad)"/>
 
   <!-- Section label -->
-  <text x="60" y="22" class="fm" font-size="10" fill="#484f58" letter-spacing="4">// CONNECT</text>
-  <line x1="60" y1="30" x2="840" y2="30" stroke="#21262d" stroke-width="0.5"/>
+  <text x="60" y="22" class="fm" font-size="10" fill="#5c574c" letter-spacing="4">// CONNECT</text>
+  <rect x="128" y="15" width="6" height="6" fill="#caa84d" opacity="0.6" transform="rotate(45 131 18)"/>
+  <line x1="60" y1="30" x2="840" y2="30" stroke="#1a1a1f" stroke-width="0.5"/>
 
   <!-- ProtonMail -->
   <g class="c1">
-    <rect x="70" y="44" width="160" height="34" rx="5" fill="#d4af3708" stroke="#d4af37" stroke-width="0.5" opacity="0.6"/>
-    <circle cx="92" cy="61" r="2.4" fill="#d4af37" class="p"/>
-    <text x="150" y="59" text-anchor="middle" class="fm" font-size="10" fill="#d4af37">ProtonMail</text>
-    <text x="150" y="71" text-anchor="middle" class="fm" font-size="8" fill="#8b949e">anhtunguyen.sec</text>
+    <rect x="70" y="44" width="160" height="34" rx="5" fill="#caa84d08" stroke="#caa84d" stroke-width="0.5" opacity="0.6"/>
+    <circle cx="92" cy="61" r="2.4" fill="#caa84d" class="p"/>
+    <text x="150" y="59" text-anchor="middle" class="fm" font-size="10" fill="#caa84d">ProtonMail</text>
+    <text x="150" y="71" text-anchor="middle" class="fm" font-size="8" fill="#8a8578">anhtunguyen.sec</text>
   </g>
 
   <!-- Telegram -->
   <g class="c2">
-    <rect x="262" y="44" width="160" height="34" rx="5" fill="none" stroke="#30363d" stroke-width="0.5"/>
-    <circle cx="284" cy="61" r="2.4" fill="#8b949e"/>
-    <text x="342" y="59" text-anchor="middle" class="fm" font-size="10" fill="#c9d1d9">Telegram</text>
-    <text x="342" y="71" text-anchor="middle" class="fm" font-size="8" fill="#484f58">@ekaznya</text>
+    <rect x="262" y="44" width="160" height="34" rx="5" fill="none" stroke="#2a2a31" stroke-width="0.5"/>
+    <circle cx="284" cy="61" r="2.4" fill="#8a8578"/>
+    <text x="342" y="59" text-anchor="middle" class="fm" font-size="10" fill="#c9c2b4">Telegram</text>
+    <text x="342" y="71" text-anchor="middle" class="fm" font-size="8" fill="#5c574c">@ekaznya</text>
   </g>
 
   <!-- GitHub -->
   <g class="c3">
-    <rect x="454" y="44" width="160" height="34" rx="5" fill="none" stroke="#30363d" stroke-width="0.5"/>
-    <circle cx="476" cy="61" r="2.4" fill="#8b949e"/>
-    <text x="534" y="59" text-anchor="middle" class="fm" font-size="10" fill="#c9d1d9">GitHub</text>
-    <text x="534" y="71" text-anchor="middle" class="fm" font-size="8" fill="#484f58">ekaznyra</text>
+    <rect x="454" y="44" width="160" height="34" rx="5" fill="none" stroke="#2a2a31" stroke-width="0.5"/>
+    <circle cx="476" cy="61" r="2.4" fill="#8a8578"/>
+    <text x="534" y="59" text-anchor="middle" class="fm" font-size="10" fill="#c9c2b4">GitHub</text>
+    <text x="534" y="71" text-anchor="middle" class="fm" font-size="8" fill="#5c574c">ekaznyra</text>
   </g>
 
   <!-- LinkedIn -->
   <g class="c4">
-    <rect x="646" y="44" width="160" height="34" rx="5" fill="none" stroke="#30363d" stroke-width="0.5"/>
-    <circle cx="668" cy="61" r="2.4" fill="#8b949e"/>
-    <text x="726" y="59" text-anchor="middle" class="fm" font-size="10" fill="#c9d1d9">LinkedIn</text>
-    <text x="726" y="71" text-anchor="middle" class="fm" font-size="8" fill="#484f58">Connect</text>
+    <rect x="646" y="44" width="160" height="34" rx="5" fill="none" stroke="#2a2a31" stroke-width="0.5"/>
+    <circle cx="668" cy="61" r="2.4" fill="#8a8578"/>
+    <text x="726" y="59" text-anchor="middle" class="fm" font-size="10" fill="#c9c2b4">LinkedIn</text>
+    <text x="726" y="71" text-anchor="middle" class="fm" font-size="8" fill="#5c574c">Connect</text>
   </g>
+
+  <rect width="900" height="92" fill="url(#vign)"/>
+  <rect width="900" height="92" filter="url(#grain)" opacity="0.4" pointer-events="none"/>
 </svg>

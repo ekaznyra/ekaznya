@@ -1,59 +1,63 @@
 <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <radialGradient id="bgRad" cx="50%" cy="0%" r="100%">
-      <stop offset="0%" stop-color="#11171f"/>
-      <stop offset="60%" stop-color="#0d1117"/>
-      <stop offset="100%" stop-color="#010409"/>
+      <stop offset="0%" stop-color="#14110a"/>
+      <stop offset="58%" stop-color="#0a0a0c"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <radialGradient id="vign" cx="50%" cy="50%" r="70%">
+      <stop offset="60%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.75"/>
     </radialGradient>
     <filter id="glowSoft"><feGaussianBlur stdDeviation="1.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.04"/></feComponentTransfer></filter>
   </defs>
   <style>
     @keyframes pop{0%{opacity:0;transform:scale(.86)}100%{opacity:1;transform:scale(1)}}
     @keyframes pulse{0%,100%{opacity:0.4}50%{opacity:1}}
     .chip{opacity:0;animation:pop .5s cubic-bezier(.16,1,.3,1) forwards;transform-box:fill-box;transform-origin:center}
     .p{animation:pulse 3s ease-in-out infinite}
-    .fs{font-family:Arial,"Segoe UI",Helvetica,sans-serif}
     .fm{font-family:"Courier New",Consolas,monospace}
   </style>
 
   <rect width="900" height="220" fill="url(#bgRad)"/>
 
   <!-- Section label centered -->
-  <text x="450" y="32" text-anchor="middle" class="fm" font-size="11" fill="#6e7681" letter-spacing="4">// ARSENAL</text>
-  <line x1="60" y1="44" x2="840" y2="44" stroke="#21262d" stroke-width="0.5"/>
+  <text x="450" y="32" text-anchor="middle" class="fm" font-size="11" fill="#5c574c" letter-spacing="4">// ARSENAL</text>
+  <line x1="60" y1="44" x2="840" y2="44" stroke="#1a1a1f" stroke-width="0.5"/>
 
-  <!-- Row 1: forensics & IR (gold) — centered group -->
-  <text x="450" y="68" text-anchor="middle" class="fm" font-size="9" fill="#d4af37" letter-spacing="3">FORENSICS &amp; INCIDENT RESPONSE</text>
+  <!-- Row 1: forensics & IR (gold) -->
+  <text x="450" y="68" text-anchor="middle" class="fm" font-size="9" fill="#caa84d" letter-spacing="3">FORENSICS &amp; INCIDENT RESPONSE</text>
   <g transform="translate(0,0)">
-    <!-- 6 chips, total ~ 6*92+5*10=602 -> centered: startX=(900-602)/2=149 -->
-    <g class="chip" style="animation-delay:.15s"><rect x="149" y="78" width="92" height="26" rx="5" fill="#d4af3712" stroke="#d4af37" stroke-width="0.6" opacity="0.85"/><text x="195" y="95" text-anchor="middle" class="fm" font-size="10" fill="#e8c84a">Volatility</text></g>
-    <g class="chip" style="animation-delay:.23s"><rect x="251" y="78" width="92" height="26" rx="5" fill="#d4af3712" stroke="#d4af37" stroke-width="0.6" opacity="0.85"/><text x="297" y="95" text-anchor="middle" class="fm" font-size="10" fill="#e8c84a">Autopsy</text></g>
-    <g class="chip" style="animation-delay:.31s"><rect x="353" y="78" width="92" height="26" rx="5" fill="#d4af3712" stroke="#d4af37" stroke-width="0.6" opacity="0.85"/><text x="399" y="95" text-anchor="middle" class="fm" font-size="9" fill="#e8c84a">Velociraptor</text></g>
-    <g class="chip" style="animation-delay:.39s"><rect x="455" y="78" width="92" height="26" rx="5" fill="#d4af3712" stroke="#d4af37" stroke-width="0.6" opacity="0.85"/><text x="501" y="95" text-anchor="middle" class="fm" font-size="10" fill="#e8c84a">Wireshark</text></g>
-    <g class="chip" style="animation-delay:.47s"><rect x="557" y="78" width="92" height="26" rx="5" fill="#d4af3712" stroke="#d4af37" stroke-width="0.6" opacity="0.85"/><text x="603" y="95" text-anchor="middle" class="fm" font-size="10" fill="#e8c84a">YARA</text></g>
-    <g class="chip" style="animation-delay:.55s"><rect x="659" y="78" width="92" height="26" rx="5" fill="#d4af3712" stroke="#d4af37" stroke-width="0.6" opacity="0.85"/><text x="705" y="95" text-anchor="middle" class="fm" font-size="10" fill="#e8c84a">Sigma</text></g>
+    <g class="chip" style="animation-delay:.15s"><rect x="149" y="78" width="92" height="26" rx="5" fill="#caa84d12" stroke="#caa84d" stroke-width="0.6" opacity="0.85"/><text x="195" y="95" text-anchor="middle" class="fm" font-size="10" fill="#e3c463">Volatility</text></g>
+    <g class="chip" style="animation-delay:.23s"><rect x="251" y="78" width="92" height="26" rx="5" fill="#caa84d12" stroke="#caa84d" stroke-width="0.6" opacity="0.85"/><text x="297" y="95" text-anchor="middle" class="fm" font-size="10" fill="#e3c463">Autopsy</text></g>
+    <g class="chip" style="animation-delay:.31s"><rect x="353" y="78" width="92" height="26" rx="5" fill="#caa84d12" stroke="#caa84d" stroke-width="0.6" opacity="0.85"/><text x="399" y="95" text-anchor="middle" class="fm" font-size="9" fill="#e3c463">Velociraptor</text></g>
+    <g class="chip" style="animation-delay:.39s"><rect x="455" y="78" width="92" height="26" rx="5" fill="#caa84d12" stroke="#caa84d" stroke-width="0.6" opacity="0.85"/><text x="501" y="95" text-anchor="middle" class="fm" font-size="10" fill="#e3c463">Wireshark</text></g>
+    <g class="chip" style="animation-delay:.47s"><rect x="557" y="78" width="92" height="26" rx="5" fill="#caa84d12" stroke="#caa84d" stroke-width="0.6" opacity="0.85"/><text x="603" y="95" text-anchor="middle" class="fm" font-size="10" fill="#e3c463">YARA</text></g>
+    <g class="chip" style="animation-delay:.55s"><rect x="659" y="78" width="92" height="26" rx="5" fill="#caa84d12" stroke="#caa84d" stroke-width="0.6" opacity="0.85"/><text x="705" y="95" text-anchor="middle" class="fm" font-size="10" fill="#e3c463">Sigma</text></g>
   </g>
 
-  <!-- Row 2: detection & SIEM (silver) — centered -->
-  <text x="450" y="130" text-anchor="middle" class="fm" font-size="9" fill="#8b949e" letter-spacing="3">DETECTION &amp; SIEM</text>
+  <!-- Row 2: detection & SIEM (silver) -->
+  <text x="450" y="130" text-anchor="middle" class="fm" font-size="9" fill="#8a8578" letter-spacing="3">DETECTION &amp; SIEM</text>
   <g>
-    <!-- 5 chips width 100, gap 10 => 5*100+4*10=540 -> startX=180 -->
-    <g class="chip" style="animation-delay:.5s"><rect x="180" y="140" width="100" height="26" rx="5" fill="none" stroke="#30363d"/><text x="230" y="157" text-anchor="middle" class="fm" font-size="10" fill="#c9d1d9">Splunk</text></g>
-    <g class="chip" style="animation-delay:.58s"><rect x="290" y="140" width="100" height="26" rx="5" fill="none" stroke="#30363d"/><text x="340" y="157" text-anchor="middle" class="fm" font-size="10" fill="#c9d1d9">Elastic / ELK</text></g>
-    <g class="chip" style="animation-delay:.66s"><rect x="400" y="140" width="100" height="26" rx="5" fill="none" stroke="#30363d"/><text x="450" y="157" text-anchor="middle" class="fm" font-size="10" fill="#c9d1d9">Suricata</text></g>
-    <g class="chip" style="animation-delay:.74s"><rect x="510" y="140" width="100" height="26" rx="5" fill="none" stroke="#30363d"/><text x="560" y="157" text-anchor="middle" class="fm" font-size="10" fill="#c9d1d9">Zeek</text></g>
-    <g class="chip" style="animation-delay:.82s"><rect x="620" y="140" width="100" height="26" rx="5" fill="none" stroke="#30363d"/><text x="670" y="157" text-anchor="middle" class="fm" font-size="9" fill="#c9d1d9">MITRE ATT&amp;CK</text></g>
+    <g class="chip" style="animation-delay:.5s"><rect x="180" y="140" width="100" height="26" rx="5" fill="none" stroke="#2a2a31"/><text x="230" y="157" text-anchor="middle" class="fm" font-size="10" fill="#c9c2b4">Splunk</text></g>
+    <g class="chip" style="animation-delay:.58s"><rect x="290" y="140" width="100" height="26" rx="5" fill="none" stroke="#2a2a31"/><text x="340" y="157" text-anchor="middle" class="fm" font-size="10" fill="#c9c2b4">Elastic / ELK</text></g>
+    <g class="chip" style="animation-delay:.66s"><rect x="400" y="140" width="100" height="26" rx="5" fill="none" stroke="#2a2a31"/><text x="450" y="157" text-anchor="middle" class="fm" font-size="10" fill="#c9c2b4">Suricata</text></g>
+    <g class="chip" style="animation-delay:.74s"><rect x="510" y="140" width="100" height="26" rx="5" fill="none" stroke="#2a2a31"/><text x="560" y="157" text-anchor="middle" class="fm" font-size="10" fill="#c9c2b4">Zeek</text></g>
+    <g class="chip" style="animation-delay:.82s"><rect x="620" y="140" width="100" height="26" rx="5" fill="none" stroke="#2a2a31"/><text x="670" y="157" text-anchor="middle" class="fm" font-size="9" fill="#c9c2b4">MITRE ATT&amp;CK</text></g>
   </g>
 
-  <!-- Row 3: languages / platforms — centered dotted list -->
-  <text x="450" y="192" text-anchor="middle" class="fm" font-size="9" fill="#8b949e" letter-spacing="3">LANGUAGES &amp; PLATFORMS</text>
+  <!-- Row 3: languages / platforms -->
+  <text x="450" y="192" text-anchor="middle" class="fm" font-size="9" fill="#8a8578" letter-spacing="3">LANGUAGES &amp; PLATFORMS</text>
   <g>
-    <!-- centered single line of dot+label items -->
-    <g class="chip" style="animation-delay:.8s"><circle cx="252" cy="208" r="2" fill="#d4af37" class="p"/><text x="262" y="212" class="fm" font-size="10" fill="#9ba3ae">Python</text></g>
-    <g class="chip" style="animation-delay:.88s"><circle cx="330" cy="208" r="2" fill="#d4af37" class="p"/><text x="340" y="212" class="fm" font-size="10" fill="#9ba3ae">Bash</text></g>
-    <g class="chip" style="animation-delay:.96s"><circle cx="398" cy="208" r="2" fill="#d4af37" class="p"/><text x="408" y="212" class="fm" font-size="10" fill="#9ba3ae">PowerShell</text></g>
-    <g class="chip" style="animation-delay:1.04s"><circle cx="500" cy="208" r="2" fill="#d4af37" class="p"/><text x="510" y="212" class="fm" font-size="10" fill="#9ba3ae">Linux</text></g>
-    <g class="chip" style="animation-delay:1.12s"><circle cx="570" cy="208" r="2" fill="#d4af37" class="p"/><text x="580" y="212" class="fm" font-size="10" fill="#9ba3ae">Docker</text></g>
-    <g class="chip" style="animation-delay:1.2s"><circle cx="648" cy="208" r="2" fill="#d4af37" class="p"/><text x="658" y="212" class="fm" font-size="10" fill="#9ba3ae">Git</text></g>
+    <g class="chip" style="animation-delay:.8s"><circle cx="252" cy="208" r="2" fill="#caa84d" class="p"/><text x="262" y="212" class="fm" font-size="10" fill="#9a958a">Python</text></g>
+    <g class="chip" style="animation-delay:.88s"><circle cx="330" cy="208" r="2" fill="#caa84d" class="p"/><text x="340" y="212" class="fm" font-size="10" fill="#9a958a">Bash</text></g>
+    <g class="chip" style="animation-delay:.96s"><circle cx="398" cy="208" r="2" fill="#caa84d" class="p"/><text x="408" y="212" class="fm" font-size="10" fill="#9a958a">PowerShell</text></g>
+    <g class="chip" style="animation-delay:1.04s"><circle cx="500" cy="208" r="2" fill="#caa84d" class="p"/><text x="510" y="212" class="fm" font-size="10" fill="#9a958a">Linux</text></g>
+    <g class="chip" style="animation-delay:1.12s"><circle cx="570" cy="208" r="2" fill="#caa84d" class="p"/><text x="580" y="212" class="fm" font-size="10" fill="#9a958a">Docker</text></g>
+    <g class="chip" style="animation-delay:1.2s"><circle cx="648" cy="208" r="2" fill="#caa84d" class="p"/><text x="658" y="212" class="fm" font-size="10" fill="#9a958a">Git</text></g>
   </g>
+
+  <rect width="900" height="220" fill="url(#vign)"/>
+  <rect width="900" height="220" filter="url(#grain)" opacity="0.45" pointer-events="none"/>
 </svg>

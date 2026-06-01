@@ -1,26 +1,30 @@
 <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <radialGradient id="bgRad" cx="30%" cy="40%" r="90%">
-      <stop offset="0%" stop-color="#10161f"/>
-      <stop offset="60%" stop-color="#0d1117"/>
-      <stop offset="100%" stop-color="#010409"/>
+      <stop offset="0%" stop-color="#13110a"/>
+      <stop offset="58%" stop-color="#0a0a0c"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <radialGradient id="vign" cx="50%" cy="50%" r="65%">
+      <stop offset="58%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.8"/>
     </radialGradient>
     <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#d4af37" stop-opacity="0"/>
-      <stop offset="20%" stop-color="#d4af37" stop-opacity="0.5"/>
-      <stop offset="80%" stop-color="#d4af37" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#caa84d" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#caa84d" stop-opacity="0.5"/>
+      <stop offset="80%" stop-color="#caa84d" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#caa84d" stop-opacity="0"/>
     </linearGradient>
     <filter id="glow">
       <feGaussianBlur stdDeviation="2" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.04"/></feComponentTransfer></filter>
   </defs>
   <style>
     @keyframes pulse{0%,100%{opacity:0.4}50%{opacity:0.9}}
     @keyframes rise{0%{opacity:0;transform:translateY(6px)}100%{opacity:1;transform:translateY(0)}}
     @keyframes scanFp{0%{transform:translateY(0)}50%{transform:translateY(70px)}100%{transform:translateY(0)}}
-    @keyframes lineGrow{0%{width:0}100%{width:780px}}
     .p1{animation:pulse 3s infinite ease-in-out}
     .p2{animation:pulse 4s infinite ease-in-out 1s}
     .r1{animation:rise 0.6s ease-out 0.2s both}
@@ -32,70 +36,72 @@
     .rr3{animation:rise 0.6s ease-out 1.05s both}
     .rr4{animation:rise 0.6s ease-out 1.3s both}
     .fpscan{animation:scanFp 4s ease-in-out infinite}
-    .fs{font-family:Arial,"Segoe UI",Helvetica,sans-serif}
+    .fs{font-family:Georgia,"Times New Roman",serif}
+    .fsa{font-family:Arial,"Segoe UI",Helvetica,sans-serif}
     .fm{font-family:"Courier New",Consolas,monospace}
   </style>
 
   <rect width="900" height="220" fill="url(#bgRad)"/>
 
   <!-- Section label -->
-  <text x="60" y="35" class="fm" font-size="10" fill="#484f58" letter-spacing="4">// ABOUT</text>
-  <line x1="60" y1="45" x2="60" y2="45" stroke="#21262d" stroke-width="0.5">
+  <text x="60" y="35" class="fm" font-size="10" fill="#5c574c" letter-spacing="4">// ABOUT</text>
+  <rect x="118" y="28" width="6" height="6" fill="#caa84d" opacity="0.6" transform="rotate(45 121 31)"/>
+  <line x1="60" y1="45" x2="60" y2="45" stroke="#1a1a1f" stroke-width="0.5">
     <animate attributeName="x2" from="60" to="840" dur="0.9s" begin="0.1s" fill="freeze"/>
   </line>
 
   <!-- Left column -->
   <g>
     <g class="r1">
-      <text x="60" y="80" class="fm" font-size="10" fill="#484f58">name</text>
-      <text x="160" y="80" class="fs" font-size="13" fill="#e6edf3" font-weight="500">Anh Tu Nguyen</text>
+      <text x="60" y="80" class="fm" font-size="10" fill="#5c574c">name</text>
+      <text x="160" y="80" class="fsa" font-size="13" fill="#ece6d8" font-weight="500">Anh Tu Nguyen</text>
     </g>
     <g class="r2">
-      <text x="60" y="108" class="fm" font-size="10" fill="#484f58">alias</text>
-      <text x="160" y="108" class="fm" font-size="13" fill="#d4af37">ekaznyra</text>
+      <text x="60" y="108" class="fm" font-size="10" fill="#5c574c">alias</text>
+      <text x="160" y="108" class="fm" font-size="13" fill="#caa84d">ekaznyra</text>
     </g>
     <g class="r3">
-      <text x="60" y="136" class="fm" font-size="10" fill="#484f58">role</text>
-      <text x="160" y="136" class="fs" font-size="13" fill="#e6edf3" font-weight="500">Cybersecurity Researcher</text>
+      <text x="60" y="136" class="fm" font-size="10" fill="#5c574c">role</text>
+      <text x="160" y="136" class="fsa" font-size="13" fill="#ece6d8" font-weight="500">Cybersecurity Researcher</text>
     </g>
     <g class="r4">
-      <text x="60" y="164" class="fm" font-size="10" fill="#484f58">focus</text>
-      <text x="160" y="164" class="fs" font-size="13" fill="#8b949e">DFIR &amp; Detection Engineering</text>
+      <text x="60" y="164" class="fm" font-size="10" fill="#5c574c">focus</text>
+      <text x="160" y="164" class="fsa" font-size="13" fill="#8a8578">DFIR &amp; Detection Engineering</text>
     </g>
     <g class="r4">
-      <text x="60" y="192" class="fm" font-size="10" fill="#484f58">stack</text>
-      <text x="160" y="192" class="fm" font-size="12" fill="#8b949e">Splunk · ELK · YARA · Sigma</text>
+      <text x="60" y="192" class="fm" font-size="10" fill="#5c574c">stack</text>
+      <text x="160" y="192" class="fm" font-size="12" fill="#8a8578">Splunk · ELK · YARA · Sigma</text>
     </g>
   </g>
 
   <!-- Vertical separator -->
-  <line x1="450" y1="60" x2="450" y2="200" stroke="#21262d" stroke-width="0.5"/>
+  <line x1="450" y1="60" x2="450" y2="200" stroke="#1a1a1f" stroke-width="0.5"/>
 
   <!-- Right column -->
   <g>
-    <text x="480" y="80" class="fm" font-size="10" fill="#484f58">research_focus</text>
+    <text x="480" y="80" class="fm" font-size="10" fill="#5c574c">research_focus</text>
 
     <g class="rr1">
-      <circle cx="490" cy="103" r="2" fill="#d4af37" opacity="0.6" class="p1"/>
-      <text x="502" y="107" class="fs" font-size="12" fill="#e6edf3">Digital Forensics &amp; Incident Response</text>
+      <circle cx="490" cy="103" r="2" fill="#caa84d" opacity="0.6" class="p1"/>
+      <text x="502" y="107" class="fsa" font-size="12" fill="#ece6d8">Digital Forensics &amp; Incident Response</text>
     </g>
     <g class="rr2">
-      <circle cx="490" cy="127" r="2" fill="#8b949e" opacity="0.5" class="p2"/>
-      <text x="502" y="131" class="fs" font-size="12" fill="#8b949e">Threat Hunting Workflows</text>
+      <circle cx="490" cy="127" r="2" fill="#8a8578" opacity="0.5" class="p2"/>
+      <text x="502" y="131" class="fsa" font-size="12" fill="#8a8578">Threat Hunting Workflows</text>
     </g>
     <g class="rr3">
-      <circle cx="490" cy="151" r="2" fill="#8b949e" opacity="0.5" class="p1"/>
-      <text x="502" y="155" class="fs" font-size="12" fill="#8b949e">YARA &amp; Sigma Rule Engineering</text>
+      <circle cx="490" cy="151" r="2" fill="#8a8578" opacity="0.5" class="p1"/>
+      <text x="502" y="155" class="fsa" font-size="12" fill="#8a8578">YARA &amp; Sigma Rule Engineering</text>
     </g>
     <g class="rr4">
-      <circle cx="490" cy="175" r="2" fill="#8b949e" opacity="0.5" class="p2"/>
-      <text x="502" y="179" class="fs" font-size="12" fill="#8b949e">Malware Behavior Analysis</text>
+      <circle cx="490" cy="175" r="2" fill="#8a8578" opacity="0.5" class="p2"/>
+      <text x="502" y="179" class="fsa" font-size="12" fill="#8a8578">Malware Behavior Analysis</text>
     </g>
   </g>
 
-  <!-- Decorative fingerprint motif (top-right, DFIR vibe) -->
+  <!-- Decorative fingerprint motif -->
   <g transform="translate(795,95)" opacity="0.22" clip-path="url(#fpClip)">
-    <g fill="none" stroke="#d4af37" stroke-width="1">
+    <g fill="none" stroke="#caa84d" stroke-width="1">
       <path d="M0 35 A35 35 0 0 1 70 35"/>
       <path d="M8 38 A27 27 0 0 1 62 38"/>
       <path d="M16 40 A19 19 0 0 1 54 40"/>
@@ -103,8 +109,11 @@
       <path d="M3 50 A32 32 0 0 0 67 50"/>
       <path d="M12 56 A23 23 0 0 0 58 56"/>
     </g>
-    <!-- scan bar across fingerprint -->
-    <rect x="-4" y="-6" width="78" height="3" fill="#f0d060" opacity="0.7" class="fpscan" filter="url(#glow)"/>
+    <rect x="-4" y="-6" width="78" height="3" fill="#f5e3a3" opacity="0.7" class="fpscan" filter="url(#glow)"/>
   </g>
   <clipPath id="fpClip"><rect x="785" y="88" width="90" height="74"/></clipPath>
+
+  <!-- vignette -->
+  <rect width="900" height="220" fill="url(#vign)"/>
+  <rect width="900" height="220" filter="url(#grain)" opacity="0.45" pointer-events="none"/>
 </svg>
