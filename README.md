@@ -8,6 +8,13 @@
 
 <br>
 
+<!-- ─── DYNAMIC HACKER TERMINAL ─────────────────────────────────── -->
+<div align="center">
+  <img src="assets/terminal.svg" width="90%" alt="Recent Activity Terminal"/>
+</div>
+
+<br>
+
 <!-- ─── SECTION: ABOUT ──────────────────────────────────────────── -->
 
 <div align="center">
@@ -91,6 +98,24 @@
 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=ekaznyra&bg_color=0a0a0c&color=caa84d&line=caa84d&point=ffffff&area=true&hide_border=true" alt="Activity Graph" width="80%"/>
+</div>
+
+<br>
+
+<!-- ─── 3D CONTRIBUTION GRAPH ─────────────────────────────────────── -->
+<div align="center">
+  <img src="profile-3d-contrib/profile-night-view.svg" width="100%" alt="3D Contribution Graph"/>
+</div>
+
+<br>
+
+<!-- ─── CYBER SNAKE ───────────────────────────────────────────────── -->
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ekaznyra/ekaznyra/output/dist/github-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ekaznyra/ekaznyra/output/dist/github-snake-dark.svg">
+    <img src="https://raw.githubusercontent.com/ekaznyra/ekaznyra/output/dist/github-snake-dark.svg" width="100%" alt="Contribution Snake"/>
+  </picture>
 </div>
 
 <br>
