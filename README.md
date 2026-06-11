@@ -111,7 +111,7 @@
 
 <!-- ─── CYBER SNAKE ───────────────────────────────────────────────── -->
 <div align="center">
-  <img src="dist/github-snake-dark.svg" width="100%" alt="Contribution Snake"/>
+  <img src="assets/github-snake-dark.svg" width="100%" alt="Contribution Snake"/>
 </div>
 
 <br>

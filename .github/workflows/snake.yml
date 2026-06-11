@@ -28,15 +28,13 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-snake-dark.svg?palette=github-dark&color_snake=#caa84d&color_dots=#0a0a0c,#1f1a11,#3e3321,#816b45,#caa84d
+            assets/github-snake-dark.svg?palette=github-dark&color_snake=#caa84d&color_dots=#0a0a0c,#1f1a11,#3e3321,#816b45,#caa84d
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Commit & Push
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add dist/
-          git commit -m "Update Cyber Snake" || echo "No changes to commit"
-          git push
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update Cyber Snake"
+          file_pattern: "assets/github-snake-dark.svg"
 
