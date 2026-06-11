@@ -112,9 +112,9 @@
 <!-- ─── CYBER SNAKE ───────────────────────────────────────────────── -->
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ekaznyra/ekaznyra/output/dist/github-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ekaznyra/ekaznyra/output/dist/github-snake-dark.svg">
-    <img src="https://raw.githubusercontent.com/ekaznyra/ekaznyra/output/dist/github-snake-dark.svg" width="100%" alt="Contribution Snake"/>
+    <source media="(prefers-color-scheme: dark)" srcset="dist/github-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="dist/github-snake-dark.svg">
+    <img src="dist/github-snake-dark.svg" width="100%" alt="Contribution Snake"/>
   </picture>
 </div>
 
